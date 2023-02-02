@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tnpzjGD3Gf4MuvnSloCjPZKSDcYHBAIXwZRJqpQhwx1/SKxlN2bH7sflE2Wuv01aGzMVtllCJw8pEr85rSfmdA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleSymmetricQuadratureTest/TriangleSymmetricQuadratureTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

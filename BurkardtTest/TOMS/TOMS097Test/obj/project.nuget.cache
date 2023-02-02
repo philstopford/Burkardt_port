@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "j6AwNjZx6GwdTA2FM8Gz1NYj9yJ6m9YRd/o8SMWVLj6ioPRKckd48tx/1ZtjOtrHotZORpZsFoZZYlNdsG58oQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/TOMS/TOMS097Test/TOMS097Test.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "HsqLwFk8WpcHvBFcW41NGNxJhVDK1v9rWdKGC6KBZ9LGeZhESa4E7r355l3NvoVz6GSb/0YSV9DvS/yntwZxyQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Tetrahedron/TetMeshNeighborsTest/TetMeshNeighborsTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

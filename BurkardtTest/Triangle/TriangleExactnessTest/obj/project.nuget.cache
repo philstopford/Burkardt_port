@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "VbzyvIWGA2/6J8fgV/RczK7CHNDRZxpWYwDM1URnjjxNYaXP1JQoYfxjlTd0KCDVu7ozAaf4UTrfgKy0kQK0RA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleExactnessTest/TriangleExactnessTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

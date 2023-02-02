@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "a2yW/yEuvbvJG55jjZE4BoWUpVQuDLeayyXmn2KiFrjxW2OKhutA8ohl8U5kUpLUKOR2r1KXVPuwBrlplvYcEg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Jacobi/JacobiEigenValueTest/JacobiEigenValueTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

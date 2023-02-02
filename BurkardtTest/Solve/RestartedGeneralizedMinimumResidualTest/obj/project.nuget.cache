@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PXPVx0TPPEo/+qGlQs1ntCEe/XqgXBkVfSRpWwMcVGsh0Fv+IAyci3KqDX7ciBHYtMiNUZl1TbGtrFytz+6qHA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Solve/RestartedGeneralizedMinimumResidualTest/RestartedGeneralizedMinimumResidualTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

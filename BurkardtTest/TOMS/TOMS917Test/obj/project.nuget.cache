@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "eye7msetplHc1l+4qALYuWLdADTwGRJOVQ413UnYh0hfRk4r8zpQlOaSRrAMklaA73tzeIm6O1eMyusQn3XeIA==",
+  "success": false,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/TOMS/TOMS917Test/TOMS917Test.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project '/home/phil/Documents/GitHub/Burkardt_port/Common/utility/utility.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "/home/phil/Documents/GitHub/Burkardt_port/Common/utility/utility.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

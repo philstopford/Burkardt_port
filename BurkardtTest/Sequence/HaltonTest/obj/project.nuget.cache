@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZSXuE0/GnL03uVl5L+lOV1lmeNprQV3kVPmqtfJLfD+siscAvqNM4pXG7V5pagRPbqxpC+j+3J2Hr1nKY6BsYA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Sequence/HaltonTest/HaltonTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

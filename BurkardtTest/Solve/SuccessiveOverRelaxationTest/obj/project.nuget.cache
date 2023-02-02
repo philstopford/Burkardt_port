@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "v7LRr8YdL8mZF+Eak5qUMDoo5o24zFMbVAIEMYcA+NSwN+GDm7B+JlnheErqQZ4g6Xr6TUBjYsRaGg2j1qXIEQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Solve/SuccessiveOverRelaxationTest/SuccessiveOverRelaxationTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

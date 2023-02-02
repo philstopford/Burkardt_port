@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JOSEUh+pCZ1M8ZyywP08KL6r17A7g6ozzDvVLssyU0XwG2pvyVRr0fYT+z3ZVe04wE48Y9ERxt68NsUURBfhww==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/HankelSPDCholesky/HankelSPDCholesky.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

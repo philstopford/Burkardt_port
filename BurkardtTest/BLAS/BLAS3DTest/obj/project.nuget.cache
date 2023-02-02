@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "9YP1/8RVCuiRbjySNPLQZB1nq92keTGWrsOsorS5FqhbD5axDs6XMiS5dissDjDg/Mo4PKrHQXz3GiSqkTr7UQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/BLAS/BLAS3DTest/BLAS3DTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

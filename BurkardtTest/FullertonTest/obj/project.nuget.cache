@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GTo4obco2BEiAVcIFAnCkVX1peozcM7UIPTHHsB8bB0DiZ1LRx0k5ioX2g/0e3MdQXUSmm4sJlZuoIbw4Tgv0A==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FullertonTest/FullertonTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

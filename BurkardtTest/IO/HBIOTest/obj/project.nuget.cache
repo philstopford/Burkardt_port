@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7EvNx3HaPNKTeklo3P2qYsr7mis6TEe7Ft/+LJEDNIe0p4ldoZRj2AwwmpaUCIog4dvy/zpcYJ8uVqR5nfAf0A==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/IO/HBIOTest/HBIOTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

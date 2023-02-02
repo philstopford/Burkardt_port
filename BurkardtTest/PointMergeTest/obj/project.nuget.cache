@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Kre2OVIZvO54sPPdeT1JqPHys/wIgP9e4wzxMRGbgI+/4oniB72PugAPlTWD5F5dVAGEse6QzN0kt8g7O1+chA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/PointMergeTest/PointMergeTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

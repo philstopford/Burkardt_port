@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RJXqn/P5mGqa/cs2rTOqQWF3hVcwgiA6KvbFbjNjamGaWcIj3S7qqz+76ZI8JeLJvF1rdRBZ2y/uZSNrJravjg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Sandia/SandiaCubatureTest/SandiaCubatureTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "B2nHqjQ+kOLtCNNvE4HObw2M0K8eHNPK0kr5pwNo8HeOuZlUJvzVILTL20eHC20e14nhvfaCr/XMNLCEUa3Ycw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Cube/CubeFelippaTest/CubeFelippaTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

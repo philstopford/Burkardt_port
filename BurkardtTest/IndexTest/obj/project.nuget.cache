@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rQoHg/Cxx9ku17Cc/77lyLI4dgvBzHFcizMMy7tmEljU2A7+dyecPT6rhFfeeQ9tFBjV+Rl5Onud3F1V1Y+icA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/IndexTest/IndexTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

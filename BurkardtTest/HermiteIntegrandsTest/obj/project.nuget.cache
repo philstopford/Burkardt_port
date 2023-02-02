@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GMl1BxxryD+Lh4whJXhnksryFvVgU9RYOAe6492QK5XN1cZyA8pz+d2e7vp7Wr+MpuYh55EbKT7XdmDjL8oGXg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/HermiteIntegrandsTest/HermiteIntegrandsTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

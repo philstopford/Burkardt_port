@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "VP0gJ1/CgzfFLk7ZShv55cdoUwH5SwNVoldzVZ2H5f9RXtfmtxOFY1Iu5qc7aKhSBEw0qGa+KUtBXvAvosmkyQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Circle/CircleIntegralsTest/CircleIntegralsTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

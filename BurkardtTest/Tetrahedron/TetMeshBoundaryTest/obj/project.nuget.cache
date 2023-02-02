@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zpeRQ/XbH9FaqbQJuhpIeLLzOlLeDaMF+dslmcPWtJfUYVv990P58ctKziU6ShiSdvrsp6nlraVrHlwO0y7QTQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Tetrahedron/TetMeshBoundaryTest/TetMeshBoundaryTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

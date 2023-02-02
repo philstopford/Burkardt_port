@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OxQ/F3rm+zTvJuvuqo6zUPQH7xafHBZ/w6CZ0M1hQ7qEXstob7O1dIz67D4KIMi/q2ygs3hFXylGUTdEhloC/g==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/AppliedStatisticsAlgorithms/ASA159Test/ASA159Test.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

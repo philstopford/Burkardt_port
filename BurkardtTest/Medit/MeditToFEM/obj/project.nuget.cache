@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "mU8Faar6y24inbkZ3TK+BKtQroUgX7c0+sGqUALESug0dDlddGK7M+sC7tqsc6Z2LIJVZusm8Vjh4mcZctl1mA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Medit/MeditToFEM/MeditToFEM.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "j2O+PWvKqFn/SiqwbYMB2Ul5JbOTtuZeU4Ak99uejAxJeAP0Flg70S5CaD9SpNC7gq8Z6ltgywVnPREtK0L+TQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Dataset/UniformDataset/UniformDataset.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

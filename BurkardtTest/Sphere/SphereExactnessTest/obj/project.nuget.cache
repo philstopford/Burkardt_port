@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "H7xLs5Y4sFnl+rxDaH+YQOmVGpJgMu8oq+b3lZpth00w43ejbhFjCeMBMKIjEmKGuwdarlkh8lIKAL8LcxHH5w==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Sphere/SphereExactnessTest/SphereExactnessTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

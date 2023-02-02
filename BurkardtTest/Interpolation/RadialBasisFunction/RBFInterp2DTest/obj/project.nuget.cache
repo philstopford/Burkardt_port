@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nPlRfdQwO/QtXA+4pbAwQeO6sybiLYv2fPKcxFq8kEb2bY2Q7AtXGxtYLnt6T53bkb/ZKesSmDp1y0w7AvqmAA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/RadialBasisFunction/RBFInterp2DTest/RBFInterp2DTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

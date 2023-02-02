@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zs33QPjmALTvOk6Ln2pcthIYeNRGjrg8dZtA/+1Z9xYiawy3qIPXvKqnVDTX8fgmt7aWYb1ym5XG6D0B1qm9Iw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangulation/TriangulationNodeToElementTest/TriangulationNodeToElementTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

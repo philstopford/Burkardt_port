@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pnW6l6/b3EqcQtRGrtejn0zycgtvT3ijdkIK4ti1AXQpnqfb5jARH0tLlwTdGG1BydvqOP2RLmsMQ1B+sTrt8Q==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Tetrahedron/TetMeshL2QTest/TetMeshL2QTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

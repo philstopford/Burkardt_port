@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "aMLX+fv6rE6iSmwIvGxOaltezoWMtI1+V8x1Nof55POD03R6nHT7xH5ueYZk/QnExKOJr0aCFVmZdAQhpP1Usw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/HistogramData2DSampleTest/HistogramData2DSampleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

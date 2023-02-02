@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "n/fZPLDdEKC+LSTmCcEaEJEEo3/Ev/Momw0kA0qbx6+uTGa5M+AvMF/0DQfd8ou3qIdzgnizNQsIYqPy67ZTUQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/BernsteinPolynomialTest/BernsteinPolynomialTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

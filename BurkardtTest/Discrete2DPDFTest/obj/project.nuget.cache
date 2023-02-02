@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DowKrNpKglmv53KDBdZpbB1KCzNJfMZdyj/bKE7/h16Y5QuBH84RCod5XHOoSxHp7Uromed2ilDUaTCJHN3+nA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Discrete2DPDFTest/Discrete2DPDFTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

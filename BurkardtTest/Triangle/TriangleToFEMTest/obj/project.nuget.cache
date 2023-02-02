@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "/FkGgErZVauFNw2b6AoGtV2JW+ODDUN4iUv+mcUTpIAt/C6yM45yAu3D2vFYXLoTh+8mB1TBh2sOsKPEV6WKXQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleToFEMTest/TriangleToFEMTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BSzHjD3mMv+Qvt0zb/watKob41X0dDs6QqEh0cyz+3ZluUu4U4LPGs9QaAo6xU1Y4HCmBLq0fflzOA9jXtsL5w==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Line/LineMonteCarloTest/LineMonteCarloTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

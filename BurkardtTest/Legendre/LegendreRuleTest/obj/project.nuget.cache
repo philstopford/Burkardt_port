@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zbt7Qp+cGH6vdNnGcMc0jmLN5ncWevUOhg+cOtAT+KP8YhNUKIPer8Tle2ZyI1Uql/1L0NMRNor090ryjai2pw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Legendre/LegendreRuleTest/LegendreRuleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

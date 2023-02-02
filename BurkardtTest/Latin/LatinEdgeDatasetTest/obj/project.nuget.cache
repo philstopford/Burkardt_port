@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DyG49CbW0Phf34VylNy4TXJALNZV56+iqbyrBbgmbMqQ0dGma70tqETdsPjOvxll0XeXDUGg6TDNgeEkBfWi9A==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Latin/LatinEdgeDatasetTest/LatinEdgeDatasetTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

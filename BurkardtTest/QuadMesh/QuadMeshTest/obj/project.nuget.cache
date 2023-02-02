@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "vurJaq5Z0ZXaPhiQRadtK7WQ0KRWulz642b8M2LgoF6QRqNshOg9J44wRwUOmxs3xf52wyhomjnVPxgk+1PBNg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/QuadMesh/QuadMeshTest/QuadMeshTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

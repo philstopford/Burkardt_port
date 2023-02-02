@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "IE+4wRhDec9Widgplm91OSR02azOljGB6cdsn6ws15mefGBo1ELBU+Ie1gEvyvC4Nno6C3c7K+VOM4SZ00rZUA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Matrix/Vandermonde/VandermondeTest/VandermondeTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

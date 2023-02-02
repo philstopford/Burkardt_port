@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "83C4/csqp230CLSHsVDzofNzFYCWRBZtLqtYxiYJAFT7qyz4yU7u8OkEOTRaZUQ8tNwSj2byHT8XKxAm3ukKng==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleMonteCarloTest/TriangleMonteCarloTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

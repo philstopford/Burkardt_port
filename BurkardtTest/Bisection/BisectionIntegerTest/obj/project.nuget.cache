@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "m91OiDfU344KLnvh/gL3wKWtMXjWIBYWNj5s+mjJ/i/T3ZBalO9GVp8+xSdnex0YfvyMnF8+mgCpi7sIG0XJzQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionIntegerTest/BisectionIntegerTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

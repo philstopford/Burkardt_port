@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "PIOQOQcXYWY3O4R4l0FvfgRjMSw3j1gI9/rxSMnfA0tkaNlpgKCOyYsJeAz6+SmPaXWs/d5gRPpsj5woidiwNg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Latin/LatinizeTest/LatinizeTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

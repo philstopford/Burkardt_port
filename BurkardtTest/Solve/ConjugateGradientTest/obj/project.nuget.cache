@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YljWK4CD9grBWcChuIwWGpfLh/0LFrBtfL1ls8kIuZuJIgQ/OfJSDqiz7r6NgqzSNbh5naOW6nCJxImdpVE5fg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Solve/ConjugateGradientTest/ConjugateGradientTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

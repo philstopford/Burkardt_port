@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "caQppMdsXBQ44PsQ8fPV2AjkGrFd24ngS7Rt00cC8cwAQ+WIb7nRjo8ovDqeby/2U70KhPPUSbQDUiFrktt22w==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Square/SquareArbqTest/SquareArbqTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

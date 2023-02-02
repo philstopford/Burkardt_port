@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8xm76VjNfor7tH6aRrKu2FUyVW9b0A4m2uVISKeaISXoC/ULKWkOqBjKbRNjS9GFVk/Mkh1IG2waYg63xNHBIg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Dataset/VanderCorputDataset/VanderCorputDataset.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

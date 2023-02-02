@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UYjm1v0n7nfESZvoQakmolaWd7nQQGg1PwUfm7a9XIsODUCtcaUkGf26XvCk68ncXVP6b+CyciyILNB6QJRskQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/Nearest1DTest/Nearest1DTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

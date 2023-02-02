@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Eq8j0chKBfC5j4UKJbjisAVbBAO1/ubJmcDbpeT83qD34dT0LiFgEWA68aUdvWNUn9QICfjAbsIxX0suOoVQkA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Sandia/SandiaSparseTest/SandiaSparseTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

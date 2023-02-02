@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ILh8iyyA5QGk7btMwOW2ex2FFQVcIfz2KhqcGLO2b0fpRyfPQ9fp3NO0NlG1MWPiN6UYdR17w5QsW+7tXCyfFA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleNewtonCotesClosedTest/TriangleNewtonCotesClosedTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

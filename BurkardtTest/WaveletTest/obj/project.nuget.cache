@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "FZZ7Z5QE+GCc0av0cKdHoXlFJFGt/ObLqc9Q9zpVUGFc50+M0jjvtNTBO83XmFPLgTsKrsMPTRGnqp2WaC8m9A==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/WaveletTest/WaveletTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

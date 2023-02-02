@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "v3JmvupQdL9HZsBh4N8CsIz0DNj32l+w0t4dZ7jfvWuqAdyW4XvkBjPcNmZC9nE9FppKd6L0nUwXaFu27tMWUQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Integral/LatticeRuleTest/LatticeRuleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

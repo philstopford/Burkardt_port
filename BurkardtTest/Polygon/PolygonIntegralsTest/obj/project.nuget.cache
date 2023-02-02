@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "B+OhgLGXLGcLT/yF6x2pD4eN5zJT8VaIyW5e9l0X9h364rU82WwBj3qLFeOXR5RnPNJKpyhOatFyF94HjDgf0w==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Polygon/PolygonIntegralsTest/PolygonIntegralsTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

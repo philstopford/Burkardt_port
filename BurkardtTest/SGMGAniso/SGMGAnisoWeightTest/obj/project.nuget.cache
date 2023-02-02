@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "69KHR0JxPzmfE/9REahOY9jKvCD6Fg5XXDx/NtM2mCxASsuqRIMX2tfvg6CCey1TKa9/PLT04sz+NJ9G+naJMw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SGMGAniso/SGMGAnisoWeightTest/SGMGAnisoWeightTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

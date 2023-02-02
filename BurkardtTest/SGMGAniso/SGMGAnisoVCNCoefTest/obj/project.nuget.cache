@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pDLiqsPlbxLrtlWZdf87mHfQqx7KszEkLz58v4lRZnc7v2SOKglW/fh2wzDs4/vy2Hj3DoI/bpVRdyA+HY/mEg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SGMGAniso/SGMGAnisoVCNCoefTest/SGMGAnisoVCNCoefTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

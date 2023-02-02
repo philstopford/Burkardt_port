@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ELHWL4FlFXOdTYwWUS/ig9yFXvsr6fW+01MkGtGCSq1kVkwTtzRqinEXXgtESoC7pQ6EgR7Ob7NGqXKfi8GdRw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Tetrahedron/TetrahedronGridTest/TetrahedronGridTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

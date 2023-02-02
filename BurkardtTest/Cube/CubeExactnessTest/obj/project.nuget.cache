@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8zyq+TyBgtlGOIFnwnjEOOlwekvOM5U5LfQbOFecNKdtHoIZ8HLt3cu/vM0jBNRDD2cYMUHzpirP43kz+8Q9jg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Cube/CubeExactnessTest/CubeExactnessTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

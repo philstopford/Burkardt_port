@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nx1WEjUxUId4pZ88c3Y9k/tqdww4DfrDt3b+E+h97pTqR9Fw6CDSAsCHuTJVOhvcxQcuVqcJAiHcpzDforxlHg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Linpack/LinpackBench/LinpackBench.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

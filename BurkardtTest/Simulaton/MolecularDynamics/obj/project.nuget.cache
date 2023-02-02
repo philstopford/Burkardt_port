@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4RcAN5pdxDnLsKQvWpkiJsy80E0FMuXtbANU6FCnorneojaZQxrCWcZbmD/1WMYy1gOkHju4NTLpUXb90yq0eA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/MolecularDynamics/MolecularDynamics.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

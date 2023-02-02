@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qVcL4jyZdPjrPvARCIGpOYjMIfH/M6YNTHi89FoAMOeQG9gnMI7N44jOmzB/nj9n16Tbzjkv773tiyF4UVq6yw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FEM/FEM2DPoissonTest/FEM2DPoissonTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

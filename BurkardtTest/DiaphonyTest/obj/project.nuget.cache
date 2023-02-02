@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "u9GkCPZBvcp/qJDSpseJBfK7Npue74DOZulH2AvShcBa7mu//Syz+mCp3S4nrhKARC8kguIyNLAK+xP2LlzAhA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/DiaphonyTest/DiaphonyTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

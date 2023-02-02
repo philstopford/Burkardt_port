@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UxskuxR6crkoUtJTkGQ87gjaYN1TDgh6CfMfK/Eq5yrF4p8whcAr504ArTm7ittoOA2rs3EwWm4EgdkoW4YAGg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/IO/WavefrontOBJTest/WavefrontOBJTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

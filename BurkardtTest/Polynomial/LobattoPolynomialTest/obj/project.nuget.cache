@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ayt5FCB4WD1lM1iEkduMqmmmLJa0nMxZOcMWRQplG/8F7i3MyhKg7Hxmr2mqMINaT9FLPP4dnTvx/3g8/JdkTg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Polynomial/LobattoPolynomialTest/LobattoPolynomialTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

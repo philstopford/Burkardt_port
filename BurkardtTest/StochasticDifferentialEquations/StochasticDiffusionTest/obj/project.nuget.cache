@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UWPaVlbIk/CjMdKu9a3coCVCVkaReoIbviMMDw4j1jj2bGi0LfP6HdjMY4rP8BXFCYCun7tM/399/oeQgocyqA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/StochasticDifferentialEquations/StochasticDiffusionTest/StochasticDiffusionTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

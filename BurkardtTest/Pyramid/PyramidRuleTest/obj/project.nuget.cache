@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nUawAvF3trZjoJNYXL/buRD8n5lagIHa5sODV6obu0fe9u4+BVrv5iOejM4NGiOtQVmR3mp2oQa2KEf1lltpKQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Pyramid/PyramidRuleTest/PyramidRuleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

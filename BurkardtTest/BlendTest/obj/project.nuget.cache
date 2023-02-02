@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "wZQP1BMOR0N6SyRuHr/t12Jq2LdynmRfk/o5PG3As/l8tlMkMZ0K9jQ6sHvq5sRh+FyJAct9RhHecrWU2SWLeg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/BlendTest/BlendTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

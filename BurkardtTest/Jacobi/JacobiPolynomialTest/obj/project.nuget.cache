@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "WZsKGoiV0gvy9Sx5eJr9vMyn9zaBcr7B3CL5Ey+quV6V8SaRka65IX4X46J0XReG+XmpaycdqUgi0ZfMTf9oyQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Jacobi/JacobiPolynomialTest/JacobiPolynomialTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

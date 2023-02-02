@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kdDDPBsKBSNDoW9uCUCT23ijH8PA8MlJ3ABPRmqtHg7svEzzJekl9fvaZnvmY59sRS2fPdgyCXy2GmLjbocBAg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Quadrature/IntExactnessChebyshev2/IntExactnessChebyshev2.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

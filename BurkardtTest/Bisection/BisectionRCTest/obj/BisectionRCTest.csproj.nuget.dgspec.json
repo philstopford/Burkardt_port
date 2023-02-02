@@ -1,0 +1,346 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionRCTest/BisectionRCTest.csproj": {}
+  },
+  "projects": {
+    "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj",
+        "projectName": "Burkardt",
+        "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj",
+        "packagesPath": "/home/phil/.nuget/packages/",
+        "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/phil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj": {
+                "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj"
+              },
+              "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj": {
+                "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionRCTest/BisectionRCTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionRCTest/BisectionRCTest.csproj",
+        "projectName": "BisectionRCTest",
+        "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionRCTest/BisectionRCTest.csproj",
+        "packagesPath": "/home/phil/.nuget/packages/",
+        "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Bisection/BisectionRCTest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/phil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj": {
+                "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj",
+        "projectName": "mersenneTwister",
+        "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj",
+        "packagesPath": "/home/phil/.nuget/packages/",
+        "outputPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/artifacts/obj/Linux/mersenneTwister/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/phil/Documents/GitHub/Quilt_dev/nuget.config",
+          "/home/phil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/eto/api/v3/index.json": {},
+          "https://www.myget.org/F/mellinoe/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj",
+        "projectName": "MiscUtil",
+        "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj",
+        "packagesPath": "/home/phil/.nuget/packages/",
+        "outputPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/artifacts/obj/Linux/MiscUtil/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/phil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj",
+        "projectName": "entropyRNG",
+        "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj",
+        "packagesPath": "/home/phil/.nuget/packages/",
+        "outputPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/artifacts/obj/Linux/entropyRNG/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/phil/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj": {
+                "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.13, 6.0.13]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

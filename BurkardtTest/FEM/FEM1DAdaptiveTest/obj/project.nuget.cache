@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "s9RKDERHON43yQup4o2xK11kd01X9ctUIHljB5c1vzMECw1IPZe1SZPw4aujPQSMnoG+hww8SLffOxmB+RePdg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FEM/FEM1DAdaptiveTest/FEM1DAdaptiveTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

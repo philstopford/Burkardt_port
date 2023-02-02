@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "TQFxm46c+lsxfN4Y9pw+B6B07WQbbxbtHyfM2Qrw+mh0PFA47vvEEdOfoytL/Pt3D65/u7+uqnvlvb0gvaqwug==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleLynessRuleTest/TriangleLynessRuleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

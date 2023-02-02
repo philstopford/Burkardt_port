@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "umN8bmfrWWNWJ6j8sSVKOmRROm1DIWh1C2yvQU/9vlhpRByqnq2PplrY2imtdawS67Lf0UOm1CRsCKceU/s3Uw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FDM/FD1DHeatImplicitTest/FD1DHeatImplicitTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

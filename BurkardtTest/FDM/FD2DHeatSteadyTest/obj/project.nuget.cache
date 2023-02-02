@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "WfKO7deOLTW/oN40mR6hZQqlOVm0biU4P3Jw25z31SkFYXFthUdmdMA3E6sBnZ5touP/19t+BPByjZkrn1l5dg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FDM/FD2DHeatSteadyTest/FD2DHeatSteadyTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

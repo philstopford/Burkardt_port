@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "z1KUqGFWbtBU2ax5vc8nT4kqIjnPCE3jLDNvXToLPZk+9He+JhpLL8rw9v1p3yQn92ewboeQ28jTJQVbG6qWZA==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangle/TriangleWandzuraRuleTest/TriangleWandzuraRuleTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

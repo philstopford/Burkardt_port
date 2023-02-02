@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CJcmVXAj7Z8iS1vO5Tu2hZ1BTu9l7mNMcvhb8an5RteYD0tmUFi5fFZa93p+DXQA11FXXdT5CHTisjJYBGrQIg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SortRCTest/SortRCTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

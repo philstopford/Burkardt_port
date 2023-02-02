@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BADB7z4hl8z/j/z5stKr2qXgAr6cFs3RBhGSmEH7fe2MjafiDaiZw79eSgD5vKwA+seNbvqk7y+G2oy1Esqm0w==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SGMG/SGMGPointTest/SGMGPointTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

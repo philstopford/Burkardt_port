@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yRyt5zmOjYSehEWi9iUDiT5HZlgSmCRn/EGS0S3aLJwSG3AJzQ7adEavQ/VdTSMOgoLfUIPQrnyPRV/+n2Oxag==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Hyper/HypersphereMonteCarloTest/HypersphereMonteCarloTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

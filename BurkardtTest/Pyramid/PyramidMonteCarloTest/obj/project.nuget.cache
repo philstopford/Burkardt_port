@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "k3wAIaYaKjh0XawtqiRWac2+MCltaNqB1zu6vO6v7U0/bSp1E36xwwmRZolM+/3QVtcP9xlgwsWI/8ChIKh/6Q==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Pyramid/PyramidMonteCarloTest/PyramidMonteCarloTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

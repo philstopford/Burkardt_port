@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MDyQ5Bkh3rTiZ8tyQGrTwUJgOTrHIiGb0HKoicZEURsA5RvU+Hqqwu/rKEwJBgJIvtxYGM+G1rqigiej6E0XnQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Table/TableQualityTest/TableQualityTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

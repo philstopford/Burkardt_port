@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yN5bF/kwgVLyVsVzKbIejOCTa8qaCgysyi7e2MNi6sjZrTyy138EjbMWQOJW/PwboLAHfXWsySu9dnqkRC2L8g==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/TruncatedNormalTest/TruncatedNormalTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

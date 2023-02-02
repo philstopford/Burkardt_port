@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "v8c6q9amH53yz6YMkoujxIDiv4Xem5ESIoQc88tRH6yXZh1JvdKNArJ9CxrV5Y62Zs4z/K5mlZRgTcd/IVzVaQ==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FFTSerialTest/FFTSerialTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

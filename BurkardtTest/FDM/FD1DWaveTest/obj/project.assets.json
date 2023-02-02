@@ -1,0 +1,155 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Burkardt/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MiscUtil": "1.0.0",
+          "entropyRNG": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Burkardt.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Burkardt.dll": {}
+        }
+      },
+      "entropyRNG/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "mersenneTwister": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/entropyRNG.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/entropyRNG.dll": {}
+        }
+      },
+      "mersenneTwister/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/mersenneTwister.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mersenneTwister.dll": {}
+        }
+      },
+      "MiscUtil/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MiscUtil.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MiscUtil.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Burkardt/1.0.0": {
+      "type": "project",
+      "path": "../../../Burkardt/Burkardt.csproj",
+      "msbuildProject": "../../../Burkardt/Burkardt.csproj"
+    },
+    "entropyRNG/1.0.0": {
+      "type": "project",
+      "path": "../../../../DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj",
+      "msbuildProject": "../../../../DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj"
+    },
+    "mersenneTwister/1.0.0": {
+      "type": "project",
+      "path": "../../../../DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj",
+      "msbuildProject": "../../../../DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj"
+    },
+    "MiscUtil/1.0.0": {
+      "type": "project",
+      "path": "../../../../DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj",
+      "msbuildProject": "../../../../DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Burkardt >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/phil/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FDM/FD1DWaveTest/FD1DWaveTest.csproj",
+      "projectName": "FD1DWaveTest",
+      "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FDM/FD1DWaveTest/FD1DWaveTest.csproj",
+      "packagesPath": "/home/phil/.nuget/packages/",
+      "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/FDM/FD1DWaveTest/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/phil/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj": {
+              "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.13, 6.0.13]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

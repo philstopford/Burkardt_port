@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bkw62k0Ma0oNHBTvNw9a30O4HcRkShv+8tAQ/Zj1MY4UwW24hHEboT8yK363p+oYSfZbzkVS20vbfLlk9zG9dg==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Solve/PartitionTest/PartitionTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

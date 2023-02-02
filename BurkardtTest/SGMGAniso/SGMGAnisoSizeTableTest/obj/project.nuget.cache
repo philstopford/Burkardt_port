@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MK8DG9y3usYtLQDKlDQpT0yZFLxC/4m+UNpCsR5NknBwUgkidJuqZM+qV3nQx3plP7TPaSwjZqfcJ/i7m1wPgw==",
+  "success": true,
+  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SGMGAniso/SGMGAnisoSizeTableTest/SGMGAnisoSizeTableTest.csproj",
+  "expectedPackageFiles": [
+    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
