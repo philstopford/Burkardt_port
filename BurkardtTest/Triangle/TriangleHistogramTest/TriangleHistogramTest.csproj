@@ -17,13 +17,4 @@
       <ProjectReference Include="..\..\..\Burkardt\Burkardt.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="b10000.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="g10000.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>
