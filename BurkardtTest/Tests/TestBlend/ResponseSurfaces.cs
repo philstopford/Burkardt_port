@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BlendTest;
+namespace Burkhardt_Tests.BlendTest;
 
-internal static partial class Program
+public partial class BlendTest
 {
     private static double identity_r ( double r, int i )
         //****************************************************************************80
