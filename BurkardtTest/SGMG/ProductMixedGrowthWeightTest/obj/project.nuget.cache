@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "QuKgc7yVv7tB4EYSHa3euuNbq6kInUMUJQBBCq7Nz1y2APjh6kA+RLW10OVHrB3GQ+GOR5IbBGOG1VONyUYSXQ==",
-  "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/SGMG/ProductMixedGrowthWeightTest/ProductMixedGrowthWeightTest.csproj",
+  "dgSpecHash": "yHwa/m9K/4ZlDuDMM7LK7rUjWaULDk1qs96sAOfXPvC0u13Hj0THIcjYY2R4HdOpDhje07jap3czStl6h5H/Fg==",
+  "success": false,
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/SGMG/ProductMixedGrowthWeightTest/ProductMixedGrowthWeightTest.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

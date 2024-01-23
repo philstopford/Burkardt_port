@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "beEybYUEZy0fHnVHX0QGb2Qw1Me1ytyeUAO7ukc/Z+PWwivSktdy07uP+WFs7cqD7WLybCz67XHVrT6JjWR9EQ==",
-  "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Triangulation/TriangulationT3toT4Test/TriangulationT3toT4Test.csproj",
+  "dgSpecHash": "hIquXvMi6WHoDcjnQa6olP7Yk5U7Uy+30R/8tdhyNaB7hPjn+LYOvcp1Xk2QjEliMhDFXdy/QqgL7UQ9E0Bmlg==",
+  "success": false,
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/Triangulation/TriangulationT3toT4Test/TriangulationT3toT4Test.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

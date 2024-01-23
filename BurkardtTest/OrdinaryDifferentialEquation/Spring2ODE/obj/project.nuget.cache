@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "D1vjh1V2LG+QoZX87fqu3JcAf7bW6apBNxAm2H+XFEvCvER2CPwYCNfscmQTHBjHLD3B+6xxCW/ekYp91L9w0w==",
+  "dgSpecHash": "wxliAjJJxWXsx0DOlOHlgdOZURyDFlDIICxWwcjH5S5ROofNjUfju2+ze1YD/ZTOcn+MNV6QNYfAPdHil2aSlQ==",
   "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/OrdinaryDifferentialEquation/Spring2ODE/Spring2ODE.csproj",
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/OrdinaryDifferentialEquation/Spring2ODE/Spring2ODE.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

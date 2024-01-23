@@ -19,10 +19,4 @@
       <ProjectReference Include="..\..\..\Burkardt\Burkardt.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="points_100.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

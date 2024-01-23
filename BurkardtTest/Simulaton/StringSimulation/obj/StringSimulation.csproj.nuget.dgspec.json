@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj": {}
+    "/d/development/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj": {}
   },
   "projects": {
-    "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj": {
+    "/d/development/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj",
+        "projectUniqueName": "/d/development/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj",
         "projectName": "StringSimulation",
-        "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj",
+        "projectPath": "/d/development/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/StringSimulation.csproj",
         "packagesPath": "/home/phil/.nuget/packages/",
-        "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/obj/",
+        "outputPath": "/d/development/Burkardt_port/BurkardtTest/Simulaton/StringSimulation/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/phil/.nuget/NuGet/NuGet.Config"
@@ -51,15 +51,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
+              "version": "[6.0.26, 6.0.26]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
+              "version": "[6.0.26, 6.0.26]"
             }
           ],
           "frameworkReferences": {
@@ -67,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
         }
       }
     }

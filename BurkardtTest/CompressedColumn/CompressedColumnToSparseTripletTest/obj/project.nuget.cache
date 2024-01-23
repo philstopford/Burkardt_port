@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "qUPSNfwtjy5SVI2gP147b9MIIyP/M5yY/TcrH4yZIdumGpHH0UzHcCvQ2pyE7gVbfUi/ZQwmUM/pMMUpwP7mVw==",
-  "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/CompressedColumn/CompressedColumnToSparseTripletTest/CompressedColumnToSparseTripletTest.csproj",
+  "dgSpecHash": "5H4OXptAOHMr1n9poVEXqjyQz6VWC6JctbrGwVlD+XX/u3BJR8jNix0+2WLISkQ6X8NKtIUr73b+QUe7av1kAQ==",
+  "success": false,
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/CompressedColumn/CompressedColumnToSparseTripletTest/CompressedColumnToSparseTripletTest.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

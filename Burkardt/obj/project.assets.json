@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "entropyRNG/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "mersenneTwister": "1.0.0"
         },
@@ -17,7 +17,7 @@
       },
       "mersenneTwister/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/mersenneTwister.dll": {}
         },
@@ -27,7 +27,7 @@
       },
       "MiscUtil/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/MiscUtil.dll": {}
         },
@@ -55,7 +55,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "MiscUtil >= 1.0.0",
       "entropyRNG >= 1.0.0"
     ]
@@ -66,30 +66,30 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj",
+      "projectUniqueName": "/d/development/Burkardt_port/Burkardt/Burkardt.csproj",
       "projectName": "Burkardt",
-      "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj",
+      "projectPath": "/d/development/Burkardt_port/Burkardt/Burkardt.csproj",
       "packagesPath": "/home/phil/.nuget/packages/",
-      "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/obj/",
+      "outputPath": "/d/development/Burkardt_port/Burkardt/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/phil/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj": {
-              "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj"
+            "/d/development/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj": {
+              "projectPath": "/d/development/DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj"
             },
-            "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj": {
-              "projectPath": "/home/phil/Documents/GitHub/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj"
+            "/d/development/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj": {
+              "projectPath": "/d/development/DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj"
             }
           }
         }
@@ -101,8 +101,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
@@ -117,11 +117,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[7.0.15, 7.0.15]"
           }
         ],
         "frameworkReferences": {
@@ -129,7 +125,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
       }
     }
   }

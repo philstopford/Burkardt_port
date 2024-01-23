@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "8zyq+TyBgtlGOIFnwnjEOOlwekvOM5U5LfQbOFecNKdtHoIZ8HLt3cu/vM0jBNRDD2cYMUHzpirP43kz+8Q9jg==",
-  "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Cube/CubeExactnessTest/CubeExactnessTest.csproj",
+  "dgSpecHash": "E0aCXi/QpvJ8OpwajgriG00DbxrbpYLydL0NihZ6J8eYH2oXFmGX+OwEVLoBJReN9roBEevkhlWsa7LRUVne0Q==",
+  "success": false,
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/Cube/CubeExactnessTest/CubeExactnessTest.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

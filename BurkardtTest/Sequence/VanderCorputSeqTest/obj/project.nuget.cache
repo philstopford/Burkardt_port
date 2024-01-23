@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "4vLA1MdANncfM3xeZoWm1MV6UXQaEw7qkkaiTsLMHXZGs098g2r7rgxLcZ3lfloHu/kKIRWX9Au1968FUCFeaw==",
-  "success": true,
-  "projectFilePath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Sequence/VanderCorputSeqTest/VanderCorputSeqTest.csproj",
+  "dgSpecHash": "wpkbkT7AmnU75gusNyRxhzpLEOaQ0jL1hvA/mX9LSQz2nm4QeMLAck2S0vCaK2tZweQjP9tXIGdjCIWMc6m9cw==",
+  "success": false,
+  "projectFilePath": "/d/development/Burkardt_port/BurkardtTest/Sequence/VanderCorputSeqTest/VanderCorputSeqTest.csproj",
   "expectedPackageFiles": [
-    "/home/phil/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.13/microsoft.netcore.app.host.linux-x64.6.0.13.nupkg.sha512"
+    "/home/phil/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "/home/phil/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.26/microsoft.netcore.app.host.linux-x64.6.0.26.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

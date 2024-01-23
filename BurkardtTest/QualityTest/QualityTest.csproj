@@ -17,16 +17,4 @@
       <ProjectReference Include="..\..\Burkardt\Burkardt.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="cvt_02_00100.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="halton_02_00100.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="sphere_02_00100.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

@@ -4,29 +4,12 @@
     "net6.0": {
       "Burkardt/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "MiscUtil": "1.0.0",
-          "entropyRNG": "1.0.0"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/Burkardt.dll": {}
         },
         "runtime": {
           "bin/placeholder/Burkardt.dll": {}
-        }
-      },
-      "entropyRNG/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "mersenneTwister": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/entropyRNG.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/entropyRNG.dll": {}
         }
       },
       "InterpTestData/1.0.0": {
@@ -41,26 +24,6 @@
         "runtime": {
           "bin/placeholder/InterpTestData.dll": {}
         }
-      },
-      "mersenneTwister/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/mersenneTwister.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/mersenneTwister.dll": {}
-        }
-      },
-      "MiscUtil/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/MiscUtil.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MiscUtil.dll": {}
-        }
       }
     }
   },
@@ -70,25 +33,10 @@
       "path": "../../../../Burkardt/Burkardt.csproj",
       "msbuildProject": "../../../../Burkardt/Burkardt.csproj"
     },
-    "entropyRNG/1.0.0": {
-      "type": "project",
-      "path": "../../../../../DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj",
-      "msbuildProject": "../../../../../DesignLibs_GPL/Common/entropyRNG/entropyRNG.csproj"
-    },
     "InterpTestData/1.0.0": {
       "type": "project",
       "path": "../../InterpTestData/InterpTestData.csproj",
       "msbuildProject": "../../InterpTestData/InterpTestData.csproj"
-    },
-    "mersenneTwister/1.0.0": {
-      "type": "project",
-      "path": "../../../../../DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj",
-      "msbuildProject": "../../../../../DesignLibs_GPL/Common/MersenneTwister/mersenneTwister.csproj"
-    },
-    "MiscUtil/1.0.0": {
-      "type": "project",
-      "path": "../../../../../DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj",
-      "msbuildProject": "../../../../../DesignLibs_GPL/Common/MiscUtil/MiscUtil.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -103,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/Shepard2DTest.csproj",
+      "projectUniqueName": "/d/development/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/Shepard2DTest.csproj",
       "projectName": "Shepard2DTest",
-      "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/Shepard2DTest.csproj",
+      "projectPath": "/d/development/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/Shepard2DTest.csproj",
       "packagesPath": "/home/phil/.nuget/packages/",
-      "outputPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/obj/",
+      "outputPath": "/d/development/Burkardt_port/BurkardtTest/Interpolation/Shepard/Shepard2DTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/phil/.nuget/NuGet/NuGet.Config"
@@ -122,11 +70,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj": {
-              "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/Burkardt/Burkardt.csproj"
+            "/d/development/Burkardt_port/Burkardt/Burkardt.csproj": {
+              "projectPath": "/d/development/Burkardt_port/Burkardt/Burkardt.csproj"
             },
-            "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/InterpTestData/InterpTestData.csproj": {
-              "projectPath": "/home/phil/Documents/GitHub/Burkardt_port/BurkardtTest/Interpolation/InterpTestData/InterpTestData.csproj"
+            "/d/development/Burkardt_port/BurkardtTest/Interpolation/InterpTestData/InterpTestData.csproj": {
+              "projectPath": "/d/development/Burkardt_port/BurkardtTest/Interpolation/InterpTestData/InterpTestData.csproj"
             }
           }
         }
@@ -154,15 +102,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.26, 6.0.26]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.26, 6.0.26]"
           }
         ],
         "frameworkReferences": {
@@ -170,8 +114,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Burkardt is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project Burkardt supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "Burkardt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
