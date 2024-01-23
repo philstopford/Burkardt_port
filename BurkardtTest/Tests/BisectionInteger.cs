@@ -1,47 +1,11 @@
-﻿using System;
 using Burkardt.Bisection;
 
-namespace BisectionIntegerTest;
+namespace Burkhardt_Tests;
 
-internal static class Program
+public class BisectionIntegerTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BISECTION_INTEGER_TEST.
-        //
-        //  Discussion:
-        //
-        //    BISECTION_INTEGER_TEST tests the BISECTION_INTEGER library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    23 August 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BISECTION_INTEGER_TEST");
-        Console.WriteLine("  Test the BISECTION_INTEGER library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("BISECTION_INTEGER_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -160,4 +124,5 @@ internal static class Program
 
         return value;
     }
+    
 }

@@ -1,54 +1,14 @@
-﻿using System;
 using System.Globalization;
-using BLASTestData;
 using Burkardt.Types;
 using Burkardt.Uniform;
+using Burkhardt_Tests.BLAS.TestData;
 
-namespace BLAS0Test;
+namespace Burkhardt_Tests.BLAS;
 
-internal static class Program
+public class BLAS0Test
 {
-    private static void Main()
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    MAIN is the main program for BLAS0_TEST.
-//
-//  Discussion:
-//
-//    BLAS0_TEST tests the BLAS0 library.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    25 March 2014
-//
-//  Author:
-//
-//    John Burkardt
-//
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BLAS0_TEST");
-        Console.WriteLine("  Test the BLAS0 library.");
-
-        dmach_test();
-        test01();
-        test015();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("BLAS0_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void dmach_test()
+    [Test]
+    public static void dmach_test()
 //****************************************************************************80
 //
 //  Purpose:
@@ -80,7 +40,8 @@ internal static class Program
         Console.WriteLine("  DMACH(3) = HUGE = " + BLASData.dmach(job) + "");
     }
 
-    private static void test01()
+    [Test]
+    public static void test01()
 
 //****************************************************************************80
 //
@@ -121,7 +82,8 @@ internal static class Program
         }
     }
 
-    private static void test015()
+    [Test]
+    public static void test015()
 
 //****************************************************************************80
 //
@@ -162,7 +124,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 //****************************************************************************80
 //
 //  Purpose:
@@ -204,7 +167,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
 //****************************************************************************80
 //
@@ -244,4 +208,5 @@ internal static class Program
                                    + "  " + typeMethods.r8_sign(x).ToString(CultureInfo.InvariantCulture).PadLeft(8) + "");
         }
     }
+    
 }

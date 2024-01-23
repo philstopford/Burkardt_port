@@ -1,59 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.BLAS;
 using Burkardt.Uniform;
 
-namespace BLAS1DTest;
+namespace Burkhardt_Tests.BLAS;
 
-internal static class Program
+public class BLAS1DTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BLAS1_D_TEST.
-        //
-        //  Discussion:
-        //
-        //    BLAS1_D_TEST tests the BLAS1_D library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    15 May 2006
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BLAS1_D_TEST:");
-
-        Console.WriteLine("  Test the BLAS1_D library.");
-
-        dasum_test();
-        daxpy_test();
-        dcopy_test();
-        ddot_test();
-        dnrm2_test();
-        drot_test();
-        drotg_test();
-        dscal_test();
-        dswap_test();
-        idamax_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("BLAS1_D_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void dasum_test()
+        [Test]
+    public static void dasum_test()
 
         //****************************************************************************80
         //
@@ -134,7 +88,8 @@ internal static class Program
 
     }
 
-    private static void daxpy_test()
+    [Test]
+    public static void daxpy_test()
 
         //****************************************************************************80
         //
@@ -265,7 +220,8 @@ internal static class Program
         }
     }
 
-    private static void dcopy_test()
+    [Test]
+    public static void dcopy_test()
 
         //****************************************************************************80
         //
@@ -417,7 +373,8 @@ internal static class Program
         }
     }
 
-    private static void ddot_test()
+    [Test]
+    public static void ddot_test()
 
         //****************************************************************************80
         //
@@ -527,7 +484,8 @@ internal static class Program
     }
 
 
-    private static void dnrm2_test()
+    [Test]
+    public static void dnrm2_test()
 
         //****************************************************************************80
         //
@@ -602,7 +560,8 @@ internal static class Program
 
     }
 
-    private static void drot_test()
+    [Test]
+    public static void drot_test()
 
         //****************************************************************************80
         //
@@ -691,7 +650,8 @@ internal static class Program
         }
     }
 
-    private static void drotg_test()
+    [Test]
+    public static void drotg_test()
 
         //****************************************************************************80
         //
@@ -747,7 +707,8 @@ internal static class Program
         }
     }
 
-    private static void dscal_test()
+    [Test]
+    public static void dscal_test()
 
         //****************************************************************************80
         //
@@ -820,7 +781,8 @@ internal static class Program
         }
     }
 
-    private static void dswap_test()
+    [Test]
+    public static void dswap_test()
 
         //****************************************************************************80
         //
@@ -910,7 +872,8 @@ internal static class Program
         }
     }
 
-    private static void idamax_test()
+    [Test]
+    public static void idamax_test()
 
         //****************************************************************************80
         //
@@ -962,4 +925,5 @@ internal static class Program
         Console.WriteLine("  The index of maximum magnitude = " + i1 + "");
 
     }
+
 }

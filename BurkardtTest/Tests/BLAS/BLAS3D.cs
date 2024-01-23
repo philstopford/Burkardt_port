@@ -1,51 +1,13 @@
-﻿using System;
-using BLASTestData;
 using Burkardt.BLAS;
 using Burkardt.Types;
+using Burkhardt_Tests.BLAS.TestData;
 
-namespace BLAS3DTest;
+namespace Burkhardt_Tests.BLAS;
 
-internal static class Program
+public class BLAS3DTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BLAS3_D_TEST.
-        //
-        //  Discussion:
-        //
-        //    BLAS3_D_TEST tests the BLAS3_D library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 March 2017
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BLAS3_D_TEST");
-        Console.WriteLine("  Test the BLAS3_D library.");
-
-        dgemm_test();
-        dtrmm_test();
-        dtrsm_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("BLAS3_D_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void dgemm_test()
+    [Test]
+    public static void dgemm_test()
 
         //****************************************************************************80
         //
@@ -168,7 +130,8 @@ internal static class Program
 
     }
 
-    private static void dtrmm_test()
+    [Test]
+    public static void dtrmm_test()
 
         //****************************************************************************80
         //
@@ -269,7 +232,8 @@ internal static class Program
 
     }
 
-    private static void dtrsm_test()
+    [Test]
+    public static void dtrsm_test()
 
         //****************************************************************************80
         //
@@ -439,4 +403,5 @@ internal static class Program
 
         typeMethods.r8mat_print(m, n, b, "  X = alpha * B * inv ( A' ):");
     }
+    
 }

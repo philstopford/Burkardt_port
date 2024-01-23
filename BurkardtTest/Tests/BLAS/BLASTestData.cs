@@ -1,7 +1,7 @@
 ﻿using System;
 using Burkardt.Types;
 
-namespace BLASTestData;
+namespace Burkhardt_Tests.BLAS.TestData;
 
 public static class BLASData
 {

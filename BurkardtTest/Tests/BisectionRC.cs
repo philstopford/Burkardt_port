@@ -1,53 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt;
 using Burkardt.Bisection;
 
-namespace BisectionRCTest;
+namespace Burkhardt_Tests;
 
-internal static class Program
+public class BisectionRCTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BISECTION_RC_TEST.
-        //
-        //  Discussion:
-        //
-        //    BISECTION_RC_TEST tests the BISECTION_RC library.
-        //
-        //  LicenMath.Sing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    17 January 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BISECTION_RC_TEST:");
-        Console.WriteLine("  Test the BISECTION_RC library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-
-        Console.WriteLine("");
-        Console.WriteLine("BISECTION_RC_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -179,7 +139,8 @@ internal static class Program
         return value;
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -283,7 +244,8 @@ internal static class Program
         Console.WriteLine("  B = " + b.ToString(CultureInfo.InvariantCulture).PadLeft(14) + ", F(B) = " + fx.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -416,7 +378,8 @@ internal static class Program
         Console.WriteLine("  Cardioid(" + x + ") = " + cdf + "");
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -554,7 +517,8 @@ internal static class Program
         Console.WriteLine("  B = " + b + ", F(B) = " + fx + "");
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -743,4 +707,5 @@ internal static class Program
         fx = (bd - md) * Math.PI / 180.0 - e * Math.Sin(bd * Math.PI / 180.0);
         Console.WriteLine("  B = " + bd + ", F(B) = " + fx + "");
     }
+    
 }

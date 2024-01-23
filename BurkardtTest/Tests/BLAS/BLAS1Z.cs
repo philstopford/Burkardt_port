@@ -1,67 +1,14 @@
-﻿using System;
 using System.Globalization;
 using System.Numerics;
 using Burkardt.BLAS;
 using Burkardt.Uniform;
 
-namespace BLAS1ZTest;
+namespace Burkhardt_Tests.BLAS;
 
-internal static class Program
+public class BLAS1ZTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BLAS1_Z_TEST.
-        //
-        //  Discussion:
-        //
-        //    BLAS1_Z_TEST tests the BLAS1_Z library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    19 April 2007
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BLAS1_Z_TEST:");
-        Console.WriteLine("  Test the BLAS1_Z library,");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-
-        test10();
-        test11();
-        test12();
-        test13();
-        test14();
-        test15();
-        test16();
-        test17();
-
-        Console.WriteLine("");
-        Console.WriteLine("BLAS1_Z_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -166,7 +113,8 @@ internal static class Program
                           + BLAS1Z.dzasum(NA, a, +1 , MA) + "");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -219,7 +167,8 @@ internal static class Program
         Console.WriteLine("  The L2 norm of X is " + norm + "");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -279,7 +228,8 @@ internal static class Program
 
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -330,7 +280,8 @@ internal static class Program
         }
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -375,7 +326,8 @@ internal static class Program
     }
     //****************************************************************************80
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -459,7 +411,8 @@ internal static class Program
         }
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -618,7 +571,8 @@ internal static class Program
         }
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -697,7 +651,8 @@ internal static class Program
         Console.WriteLine("  The dot product X.Y* is " + xy_dot + "");
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -777,7 +732,8 @@ internal static class Program
         Console.WriteLine("  The dot product ( X dot Y ) is " + xy_dot + "");
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************80
         //
@@ -841,7 +797,8 @@ internal static class Program
         }
     }
 
-    private static void test11()
+    [Test]
+    public static void test11()
 
         //****************************************************************************80
         //
@@ -915,7 +872,8 @@ internal static class Program
         }
     }
 
-    private static void test12()
+    [Test]
+    public static void test12()
 
         //****************************************************************************80
         //
@@ -947,7 +905,8 @@ internal static class Program
         Console.WriteLine("  ZMACH(3)  = a huge value    = " + BLAS0.zmach(3) + "");
     }
 
-    private static void test13()
+    [Test]
+    public static void test13()
 
         //****************************************************************************80
         //
@@ -1004,7 +963,8 @@ internal static class Program
         }
     }
 
-    private static void test14()
+    [Test]
+    public static void test14()
 
         //****************************************************************************80
         //
@@ -1078,7 +1038,8 @@ internal static class Program
         }
     }
 
-    private static void test15()
+    [Test]
+    public static void test15()
 
         //****************************************************************************80
         //
@@ -1124,7 +1085,8 @@ internal static class Program
         }
     }
 
-    private static void test16()
+    [Test]
+    public static void test16()
 
         //****************************************************************************80
         //
@@ -1170,7 +1132,8 @@ internal static class Program
         }
     }
 
-    private static void test17()
+    [Test]
+    public static void test17()
 
         //****************************************************************************80
         //
@@ -1255,4 +1218,5 @@ internal static class Program
                                    + "  " + y[i].ToString(CultureInfo.InvariantCulture).PadLeft(20) + "");
         }
     }
+    
 }

@@ -1,51 +1,13 @@
-﻿using System;
-using BLASTestData;
+using Burkhardt_Tests.BLAS.TestData;
 using Burkardt.BLAS;
 using Burkardt.Types;
 
-namespace BLAS2DTest;
+namespace Burkhardt_Tests.BLAS;
 
-internal static class Program
+public class BLAS2DTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for BLAS2_D_TEST.
-        //
-        //  Discussion:
-        //
-        //    BLAS2_D_TEST tests the BLAS2_D library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 March 2017
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("BLAS2_D_TEST");
-        Console.WriteLine("  Test the BLAS2_D library.");
-
-        dgemv_test();
-        dger_test();
-        dtrmv_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("BLAS2_D_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void dgemv_test()
+    [Test]
+    public static void dgemv_test()
 
         //****************************************************************************80
         //
@@ -139,7 +101,8 @@ internal static class Program
         typeMethods.r8vec_print(n, y, "  Result Y = alpha * A  * x + beta * y");
     }
 
-    private static void dger_test()
+    [Test]
+    public static void dger_test()
 
         //****************************************************************************80
         //
@@ -196,7 +159,8 @@ internal static class Program
         typeMethods.r8mat_print(m, n, a, "  Result A = A + alpha * x * y");
     }
 
-    private static void dtrmv_test()
+    [Test]
+    public static void dtrmv_test()
 
         //****************************************************************************80
         //
@@ -274,4 +238,5 @@ internal static class Program
         }
 
     }
+    
 }
