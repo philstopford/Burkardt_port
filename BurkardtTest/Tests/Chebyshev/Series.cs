@@ -1,51 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt;
 using Burkardt.Chebyshev;
 
-namespace ChebyshevSeriestTest;
+namespace Burkhardt_Tests.ChebyshevTest;
 
-internal static class Program
+public class SeriesTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CHEBYSHEV_SERIES_TEST.
-        //
-        //  Discussion:
-        //
-        //    CHEBYSHEV_SERIES_TEST tests the CHEBYSHEV_SERIES library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    26 January 2014
-        //
-        //  Author:
-        //
-        //    Manfred Zimmer
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_SERIES_TEST:");
-        Console.WriteLine("  Test the CHEBYSHEV_SERIES libary.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_SERIES_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -131,7 +93,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -211,7 +174,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -284,4 +248,5 @@ internal static class Program
                               + s2.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
         }
     }
+    
 }

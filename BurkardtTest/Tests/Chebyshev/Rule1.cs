@@ -1,11 +1,10 @@
-﻿using System;
+namespace Burkhardt_Tests.ChebyshevTest;
 using Burkardt.Quadrature;
 
-namespace Chebyshev1RuleTest;
-
-internal static class Program
+public class Rule1Test
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -71,6 +70,8 @@ internal static class Program
         //
         //  Get ORDER.
         //
+        order = 2;
+        /*
         try
         {
             order = Convert.ToInt32(args[0]);
@@ -81,10 +82,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of ORDER (1 or greater)");
             order = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get A.
         //
+        a = -2;
+        /*
         try
         {
             a = Convert.ToDouble(args[1]);
@@ -95,10 +99,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of A:");
             a = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get B.
         //
+        b = 2;
+        /*
         try
         {
             b = Convert.ToDouble(args[2]);
@@ -109,10 +116,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of B:");
             b = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get FILENAME:
         //
+        filename = "out.txt";
+        /*
         try
         {
             filename = args[3];
@@ -123,6 +133,7 @@ internal static class Program
             Console.WriteLine("  Enter FILENAME, the \"root name\" of the quadrature files).");
             filename = Console.ReadLine();
         }
+        */
 
         //
         //  Input summary.
@@ -155,4 +166,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+    
 }

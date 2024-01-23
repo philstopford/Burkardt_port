@@ -1,105 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ChebyshevPolynomialNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace ChebyshevPolynomialTest;
+namespace Burkhardt_Tests.ChebyshevTest;
 
-internal static class Program
+public class PolynomialTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CHEBYSHEV_POLYNOMIAL_TEST.
-        //
-        //  Discussion:
-        //
-        //    CHEBYSHEV_POLYNOMIAL_TEST tests the CHEBYSHEV_POLYNOMIAL library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    21 July 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_POLYNOMIAL_TEST");
-        Console.WriteLine("  Test the CHEBYSHEV_POLYNOMIAL library.");
-
-        test01();
-        t_mass_matrix_test();
-        t_moment_test();
-        t_polynomial_test();
-        t_polynomial_ab_test();
-        t_polynomial_ab_value_test();
-        t_polynomial_coefficients_test();
-        t_polynomial_plot_test();
-        t_polynomial_value_test();
-        t_polynomial_zeros_test();
-        t_quadrature_rule_test();
-        test07();
-        test08();
-        test09();
-        test10();
-        tt_product_test();
-        tt_product_integral_test();
-        ttt_product_integral_test();
-        tu_product_test();
-
-        u_mass_matrix_test();
-        u_moment_test();
-        u_polynomial_test();
-        u_polynomial_ab_test();
-        u_polynomial_ab_value_test();
-        u_polynomial_coefficients_test();
-        u_polynomial_plot_test();
-        u_polynomial_value_test();
-        u_polynomial_zeros_test();
-        u_quadrature_rule_test();
-        uu_product_test();
-        uu_product_integral_test();
-
-        v_mass_matrix_test();
-        v_moment_test();
-        v_polynomial_test();
-        v_polynomial_ab_test();
-        v_polynomial_ab_value_test();
-        v_polynomial_coefficients_test();
-        v_polynomial_plot_test();
-        v_polynomial_value_test();
-        v_polynomial_zeros_test();
-        v_quadrature_rule_test();
-        vv_product_integral_test();
-
-        w_mass_matrix_test();
-        w_moment_test();
-        w_polynomial_test();
-        w_polynomial_ab_test();
-        w_polynomial_ab_value_test();
-        w_polynomial_coefficients_test();
-        w_polynomial_plot_test();
-        w_polynomial_value_test();
-        w_polynomial_zeros_test();
-        w_quadrature_rule_test();
-        ww_product_integral_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_POLYNOMIAL_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -175,7 +84,8 @@ internal static class Program
         }
     }
 
-    private static void t_mass_matrix_test()
+    [Test]
+    public static void t_mass_matrix_test()
 
         //****************************************************************************80
         //
@@ -211,7 +121,8 @@ internal static class Program
         typeMethods.r8mat_print(n + 1, n + 1, a, "  T mass matrix:");
     }
 
-    private static void t_moment_test()
+    [Test]
+    public static void t_moment_test()
 
         //****************************************************************************80
         //
@@ -247,7 +158,8 @@ internal static class Program
         }
     }
 
-    private static void t_polynomial_test()
+    [Test]
+    public static void t_polynomial_test()
 
         //****************************************************************************80
         //
@@ -309,7 +221,8 @@ internal static class Program
         }
     }
 
-    private static void t_polynomial_ab_test()
+    [Test]
+    public static void t_polynomial_ab_test()
 
         //****************************************************************************80
         //
@@ -351,7 +264,8 @@ internal static class Program
 
     }
 
-    private static void t_polynomial_ab_value_test()
+    [Test]
+    public static void t_polynomial_ab_value_test()
 
         //****************************************************************************80
         //
@@ -411,7 +325,8 @@ internal static class Program
     }
     //****************************************************************************80
 
-    private static void t_polynomial_coefficients_test()
+    [Test]
+    public static void t_polynomial_coefficients_test()
 
         //****************************************************************************80
         //
@@ -456,7 +371,8 @@ internal static class Program
         }
     }
 
-    private static void t_polynomial_plot_test()
+    [Test]
+    public static void t_polynomial_plot_test()
 
         //****************************************************************************80
         //
@@ -496,7 +412,8 @@ internal static class Program
 
     }
 
-    private static void t_polynomial_value_test()
+    [Test]
+    public static void t_polynomial_value_test()
 
         //****************************************************************************80
         //
@@ -549,7 +466,8 @@ internal static class Program
         }
     }
 
-    private static void t_polynomial_zeros_test()
+    [Test]
+    public static void t_polynomial_zeros_test()
 
         //****************************************************************************80
         //
@@ -596,7 +514,8 @@ internal static class Program
         }
     }
 
-    private static void t_quadrature_rule_test()
+    [Test]
+    public static void t_quadrature_rule_test()
 
         //****************************************************************************80
         //
@@ -672,7 +591,8 @@ internal static class Program
         }
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -728,7 +648,8 @@ internal static class Program
         typeMethods.r8vec_print(n + 1, c, "  Chebyshev coefficients for sqrt(x) in [0,+1]");
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -853,7 +774,8 @@ internal static class Program
         typeMethods.r8vec_print(n + 1, c, "  Chebyshev coefficients for sin(x) on [-1,+1]");
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -909,7 +831,8 @@ internal static class Program
         }
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************80
         //
@@ -965,7 +888,8 @@ internal static class Program
         }
     }
 
-    private static void tt_product_test()
+    [Test]
+    public static void tt_product_test()
 
         //****************************************************************************80
         //
@@ -1017,7 +941,8 @@ internal static class Program
         }
     }
 
-    private static void tt_product_integral_test()
+    [Test]
+    public static void tt_product_integral_test()
 
         //****************************************************************************80
         //
@@ -1067,7 +992,8 @@ internal static class Program
         typeMethods.r8mat_print(n + 1, n + 1, a, "  T(i,x)*T(j,x) integral matrix:");
     }
 
-    private static void ttt_product_integral_test()
+    [Test]
+    public static void ttt_product_integral_test()
 
         //****************************************************************************80
         //
@@ -1132,7 +1058,8 @@ internal static class Program
         }
     }
 
-    private static void tu_product_test()
+    [Test]
+    public static void tu_product_test()
 
         //****************************************************************************80
         //
@@ -1185,7 +1112,8 @@ internal static class Program
 
     }
 
-    private static void u_mass_matrix_test()
+    [Test]
+    public static void u_mass_matrix_test()
 
         //****************************************************************************80
         //
@@ -1220,7 +1148,8 @@ internal static class Program
         typeMethods.r8mat_print(n + 1, n + 1, a, "  U mass matrix:");
     }
 
-    private static void u_moment_test()
+    [Test]
+    public static void u_moment_test()
 
         //****************************************************************************80
         //
@@ -1258,7 +1187,8 @@ internal static class Program
         }
     }
 
-    private static void u_polynomial_test()
+    [Test]
+    public static void u_polynomial_test()
 
         //****************************************************************************80
         //
@@ -1319,7 +1249,8 @@ internal static class Program
         }
     }
 
-    private static void u_polynomial_ab_test()
+    [Test]
+    public static void u_polynomial_ab_test()
 
         //****************************************************************************80
         //
@@ -1361,7 +1292,8 @@ internal static class Program
 
     }
 
-    private static void u_polynomial_ab_value_test()
+    [Test]
+    public static void u_polynomial_ab_value_test()
 
         //****************************************************************************80
         //
@@ -1420,7 +1352,8 @@ internal static class Program
         }
     }
 
-    private static void u_polynomial_coefficients_test()
+    [Test]
+    public static void u_polynomial_coefficients_test()
 
         //****************************************************************************80
         //
@@ -1465,7 +1398,8 @@ internal static class Program
         }
     }
 
-    private static void u_polynomial_plot_test()
+    [Test]
+    public static void u_polynomial_plot_test()
 
         //****************************************************************************80
         //
@@ -1505,7 +1439,8 @@ internal static class Program
         ChebyshevPolynomial.u_polynomial_plot(n_num, n_val, output_filename);
     }
 
-    private static void u_polynomial_value_test()
+    [Test]
+    public static void u_polynomial_value_test()
 
         //****************************************************************************80
         //
@@ -1558,7 +1493,8 @@ internal static class Program
         }
     }
 
-    private static void u_polynomial_zeros_test()
+    [Test]
+    public static void u_polynomial_zeros_test()
 
         //****************************************************************************80
         //
@@ -1605,7 +1541,8 @@ internal static class Program
         }
     }
 
-    private static void u_quadrature_rule_test()
+    [Test]
+    public static void u_quadrature_rule_test()
 
         //****************************************************************************80
         //
@@ -1684,7 +1621,8 @@ internal static class Program
         }
     }
 
-    private static void uu_product_test()
+    [Test]
+    public static void uu_product_test()
 
         //****************************************************************************80
         //
@@ -1736,7 +1674,8 @@ internal static class Program
         }
     }
 
-    private static void uu_product_integral_test()
+    [Test]
+    public static void uu_product_integral_test()
 
         //****************************************************************************80
         //
@@ -1786,7 +1725,8 @@ internal static class Program
 
     }
 
-    private static void v_mass_matrix_test()
+    [Test]
+    public static void v_mass_matrix_test()
 
         //****************************************************************************80
         //
@@ -1822,7 +1762,8 @@ internal static class Program
 
     }
 
-    private static void v_moment_test()
+    [Test]
+    public static void v_moment_test()
 
         //****************************************************************************80
         //
@@ -1860,7 +1801,8 @@ internal static class Program
         }
     }
 
-    private static void v_polynomial_test()
+    [Test]
+    public static void v_polynomial_test()
 
         //****************************************************************************80
         //
@@ -1922,7 +1864,8 @@ internal static class Program
         }
     }
 
-    private static void v_polynomial_ab_test()
+    [Test]
+    public static void v_polynomial_ab_test()
 
         //****************************************************************************80
         //
@@ -1963,7 +1906,8 @@ internal static class Program
         typeMethods.r8mat_print(m, n + 1, v, "  Tables of V values:");
     }
 
-    private static void v_polynomial_ab_value_test()
+    [Test]
+    public static void v_polynomial_ab_value_test()
 
         //****************************************************************************80
         //
@@ -2022,7 +1966,8 @@ internal static class Program
         }
     }
 
-    private static void v_polynomial_coefficients_test()
+    [Test]
+    public static void v_polynomial_coefficients_test()
 
         //****************************************************************************80
         //
@@ -2064,7 +2009,8 @@ internal static class Program
         }
     }
 
-    private static void v_polynomial_plot_test()
+    [Test]
+    public static void v_polynomial_plot_test()
 
         //****************************************************************************80
         //
@@ -2103,7 +2049,8 @@ internal static class Program
         ChebyshevPolynomial.v_polynomial_plot(n_num, n_val, output_filename);
     }
 
-    private static void v_polynomial_value_test()
+    [Test]
+    public static void v_polynomial_value_test()
 
         //****************************************************************************80
         //
@@ -2156,7 +2103,8 @@ internal static class Program
         }
     }
 
-    private static void v_polynomial_zeros_test()
+    [Test]
+    public static void v_polynomial_zeros_test()
 
         //****************************************************************************80
         //
@@ -2201,7 +2149,8 @@ internal static class Program
         }
     }
 
-    private static void v_quadrature_rule_test()
+    [Test]
+    public static void v_quadrature_rule_test()
 
         //****************************************************************************80
         //
@@ -2277,7 +2226,8 @@ internal static class Program
         }
     }
 
-    private static void vv_product_integral_test()
+    [Test]
+    public static void vv_product_integral_test()
 
         //****************************************************************************80
         //
@@ -2326,7 +2276,8 @@ internal static class Program
         typeMethods.r8mat_print(n + 1, n + 1, a, "  V(i,x)*V(j,x) integral matrix:");
     }
 
-    private static void w_mass_matrix_test()
+    [Test]
+    public static void w_mass_matrix_test()
 
         //****************************************************************************80
         //
@@ -2362,7 +2313,8 @@ internal static class Program
 
     }
 
-    private static void w_moment_test()
+    [Test]
+    public static void w_moment_test()
 
         //****************************************************************************80
         //
@@ -2400,7 +2352,8 @@ internal static class Program
         }
     }
 
-    private static void w_polynomial_test()
+    [Test]
+    public static void w_polynomial_test()
 
         //****************************************************************************80
         //
@@ -2461,7 +2414,8 @@ internal static class Program
         }
     }
 
-    private static void w_polynomial_ab_test()
+    [Test]
+    public static void w_polynomial_ab_test()
 
         //****************************************************************************80
         //
@@ -2502,7 +2456,8 @@ internal static class Program
         typeMethods.r8mat_print(m, n + 1, v, "  Tables of W values:");
     }
 
-    private static void w_polynomial_ab_value_test()
+    [Test]
+    public static void w_polynomial_ab_value_test()
 
         //****************************************************************************80
         //
@@ -2561,7 +2516,8 @@ internal static class Program
         }
     }
 
-    private static void w_polynomial_coefficients_test()
+    [Test]
+    public static void w_polynomial_coefficients_test()
 
         //****************************************************************************80
         //
@@ -2603,7 +2559,8 @@ internal static class Program
         }
     }
 
-    private static void w_polynomial_plot_test()
+    [Test]
+    public static void w_polynomial_plot_test()
 
         //****************************************************************************80
         //
@@ -2643,7 +2600,8 @@ internal static class Program
         ChebyshevPolynomial.w_polynomial_plot(n_num, n_val, output_filename);
     }
 
-    private static void w_polynomial_value_test()
+    [Test]
+    public static void w_polynomial_value_test()
 
         //****************************************************************************80
         //
@@ -2696,7 +2654,8 @@ internal static class Program
         }
     }
 
-    private static void w_polynomial_zeros_test()
+    [Test]
+    public static void w_polynomial_zeros_test()
 
         //****************************************************************************80
         //
@@ -2743,7 +2702,8 @@ internal static class Program
         }
     }
 
-    private static void w_quadrature_rule_test()
+    [Test]
+    public static void w_quadrature_rule_test()
 
         //****************************************************************************80
         //
@@ -2819,7 +2779,8 @@ internal static class Program
         }
     }
 
-    private static void ww_product_integral_test()
+    [Test]
+    public static void ww_product_integral_test()
 
         //****************************************************************************80
         //
@@ -2864,4 +2825,5 @@ internal static class Program
 
         typeMethods.r8mat_print(n + 1, n + 1, a, "  W(i,x)*W(j,x) integral matrix:");
     }
+    
 }

@@ -1,48 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ChebyshevNS;
 
-namespace ChebyshevTest;
+namespace Burkhardt_Tests.ChebyshevTest;
 
-internal static class Program
+public class Test
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CHEBYSHEV_TEST.
-        //
-        //  Discussion:
-        //
-        //    CHEBYSHEV_TEST tests the CHEBYSHEV library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    14 September 2011
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_TEST");
-        Console.WriteLine("  Test the CHEBYSHEV library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("CHEBYSHEV_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -321,4 +285,5 @@ internal static class Program
 
         return value;
     }
+
 }
