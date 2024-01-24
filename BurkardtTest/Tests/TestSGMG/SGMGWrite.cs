@@ -1,62 +1,14 @@
-﻿using System;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGWriteTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class SGMGWriteTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMG_WRITE_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMG_WRITE_TEST tests SGMG_WRITE.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 December 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Fabio Nobile, Raul Tempone, Clayton Webster,
-        //    A Sparse Grid Stochastic Collocation Method for Partial Differential
-        //    Equations with Random Input Data,
-        //    SIAM Journal on Numerical Analysis,
-        //    Volume 46, Number 5, 2008, pages 2309-2345.
-        //
-    {
-        double tol = typeMethods.r8_epsilon();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_WRITE_TEST");
-        //
-        //  Generate sparse grid rules and write them to files.
-        //
-        sgmg_write_tests(tol);
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_WRITE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmg_write_tests(double tol)
+    [Test]
+    public static void sgmg_write_tests()
 
         //****************************************************************************80
         //
@@ -92,6 +44,7 @@ internal static class Program
         //    regardless of duplication.
         //
     {
+        double tol = typeMethods.r8_epsilon();
         Console.WriteLine("");
         Console.WriteLine("SGMG_WRITE_TESTS");
         Console.WriteLine("  Call SGMG_WRITE_TEST with various arguments.");
@@ -484,4 +437,5 @@ internal static class Program
             point_num, sparse_weight, sparse_point, file_name);
 
     }
+    
 }

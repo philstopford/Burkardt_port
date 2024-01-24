@@ -1,24 +1,24 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGPointTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class SGMGSizeTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for SGMG_POINT_TEST.
+        //    MAIN is the main program for SGMG_SIZE_TEST.
         //
         //  Discussion:
         //
-        //    SGMG_POINT_TEST tests SGMG_POINT.
+        //    SGMG_TEST tests the SGMG routines.
         //
         //  Licensing:
         //
@@ -26,7 +26,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    22 March 2010
+        //    21 December 2009
         //
         //  Author:
         //
@@ -42,29 +42,37 @@ internal static class Program
         //
     {
         Console.WriteLine("");
-        Console.WriteLine("SGMG_POINT_TEST");
+        Console.WriteLine("SGMG_SIZE_TEST");
         //
-        //  Generate the abscissas for sparse grid rules.
+        //  1) Using a tolerance that is less than 0 means that there will be no
+        //  consolidation of duplicate points.
         //
-        double tol = Math.Sqrt(typeMethods.r8_epsilon());
-        sgmg_point_tests(tol);
+        //  2) Using a small positive tolerance means there will be consolidation of
+        //  points whose maximum difference is no more than TOL.
+        //
+        double tol = -1.0;
+        sgmg_size_tests(tol);
+
+        tol = Math.Sqrt(typeMethods.r8_epsilon());
+        sgmg_size_tests(tol);
         //
         //  Terminate.
         //
         Console.WriteLine("");
-        Console.WriteLine("SGMG_POINT_TEST");
+        Console.WriteLine("SGMG_SIZE_TEST");
         Console.WriteLine("  Normal end of execution.");
 
         Console.WriteLine("");
+
     }
 
-    private static void sgmg_point_tests(double tol)
+    private static void sgmg_size_tests(double tol)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMG_POINT_TESTS calls SGMG_POINT_TEST.
+        //    SGMG_SIZE_TESTS calls SGMG_SIZE_TEST.
         //
         //  Licensing:
         //
@@ -88,8 +96,8 @@ internal static class Program
         //
     {
         Console.WriteLine("");
-        Console.WriteLine("SGMG_POINT_TESTS");
-        Console.WriteLine("  Call SGMG_POINT_TEST with various arguments.");
+        Console.WriteLine("SGMG_SIZE_TESTS");
+        Console.WriteLine("  Call SGMG_SIZE_TEST with various arguments.");
         Console.WriteLine("");
         Console.WriteLine("  All tests will use a point equality tolerance of " + tol + "");
 
@@ -110,7 +118,7 @@ internal static class Program
         Func<int, int, double[], double[], double[]>[] gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -130,7 +138,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -150,7 +158,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -170,7 +178,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -191,7 +199,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -213,15 +221,15 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = Fejer2.fejer2_compute_points_np;
         gw_compute_points[1] = JacobiQuadrature.jacobi_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
         level_max_min = 0;
         level_max_max = 2;
         np = new int[dim_num];
-        np[0] = 1;
-        np[1] = 0;
+        np[0] = 0;
+        np[1] = 1;
         np_sum = typeMethods.i4vec_sum(dim_num, np);
         p = new double[np_sum];
         p[0] = 2.0;
@@ -234,7 +242,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = HermiteQuadrature.gen_hermite_compute_points_np;
         gw_compute_points[1] = HermiteQuadrature.hermite_genz_keister_lookup_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 3;
@@ -258,7 +266,7 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
         //
         //  Repeat, treating  rules #2 and #3 as Golub Welsch rules.
@@ -284,55 +292,11 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
-        //
-        //  Dimension 2, Level 3, Rule 3, Slow Exponential Growth.
-        //
-        dim_num = 2;
-        level_max_min = 3;
-        level_max_max = 3;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
-        rule = new int[dim_num];
-        rule[0] = 3;
-        rule[1] = 3;
-        growth = new int[dim_num];
-        growth[0] = 4;
-        growth[1] = 4;
-        gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
-        gw_compute_points[0] = PattersonQuadrature.patterson_lookup_points_np;
-        gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
-        //
-        //  Dimension 2, Level 3, Rule 3, Moderate Exponential Growth.
-        //
-        dim_num = 2;
-        level_max_min = 3;
-        level_max_max = 3;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
-        rule = new int[dim_num];
-        rule[0] = 3;
-        rule[1] = 3;
-        growth = new int[dim_num];
-        growth[0] = 5;
-        growth[1] = 5;
-        gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
-        gw_compute_points[0] = PattersonQuadrature.patterson_lookup_points_np;
-        gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_point_test(dim_num, level_max_min, level_max_max,
+        sgmg_size_test(dim_num, level_max_min, level_max_max,
             rule, growth, np, p, gw_compute_points, tol);
     }
 
-    private static void sgmg_point_test(int dim_num, int level_max_min,
+    private static void sgmg_size_test(int dim_num, int level_max_min,
             int level_max_max, int[] rule, int[] growth, int[] np, double[] p,
             Func<int, int, double[], double[], double[]>[] gw_compute_points,
             double tol)
@@ -341,7 +305,7 @@ internal static class Program
         //
         //  Purpose:
         //
-        //    SGMG_POINT_TEST tests SGMG_POINT.
+        //    SGMG_SIZE_TEST tests SGMG_SIZE, SGMG_SIZE_TOTAL.
         //
         //  Licensing:
         //
@@ -389,7 +353,7 @@ internal static class Program
         //
         //    Input, double P[sum(NP[*])], the parameters needed by each rule.
         //
-        //    Input, void ( *GW_COMPUTE_POINTS[] ) ( int order, int np, double p[], double x[] ),
+        //    Input, void ( *GW_COMPUTE_POINTS[] ) ( int order, int np, double p[], double w[] ),
         //    an array of pointers to functions which return the 1D quadrature points 
         //    associated with each spatial dimension for which a Golub Welsch rule 
         //    is used.
@@ -401,9 +365,13 @@ internal static class Program
         int level_max;
 
         Console.WriteLine("");
-        Console.WriteLine("SGMG_POINT_TEST");
-        Console.WriteLine("  SGMG_POINT returns an array of the points");
-        Console.WriteLine("  forming a multidimensional sparse grid with mixed factors.");
+        Console.WriteLine("SGMG_SIZE_TEST");
+        Console.WriteLine("  SGMG_SIZE returns the number of distinct");
+        Console.WriteLine("  points in a multidimensional sparse grid with mixed factors.");
+        Console.WriteLine("");
+        Console.WriteLine("  SGMG_SIZE_TOTAL returns the TOTAL number of");
+        Console.WriteLine("  points in a multidimensional sparse grid with mixed factors,");
+        Console.WriteLine("  without checking for duplication.");
         Console.WriteLine("");
         Console.WriteLine("  Each sparse grid is of spatial dimension DIM_NUM,");
         Console.WriteLine("  and is made up of product grids of levels up to LEVEL_MAX.");
@@ -497,11 +465,16 @@ internal static class Program
                 }
                 default:
                     Console.WriteLine("");
-                    Console.WriteLine("SGMG_POINT_TEST - Fatal error!");
+                    Console.WriteLine("SGMG_SIZE_TEST - Fatal error!");
                     Console.WriteLine("  Unexpected value of RULE = " + rule[dim] + "");
                     return;
             }
         }
+
+        Console.WriteLine("");
+        Console.WriteLine(" LEVEL_MIN LEVEL_MAX POINT_NUM POINT_NUM");
+        Console.WriteLine("                        Unique     Total");
+        Console.WriteLine("");
 
         for (level_max = level_max_min; level_max <= level_max_max; level_max++)
         {
@@ -511,39 +484,14 @@ internal static class Program
             int point_num = SGMG.sgmg_size(dim_num, level_max,
                 rule, np, p, gw_compute_points, tol, growth);
 
-            int[] sparse_unique_index = new int[point_total_num];
+            int level_min = Math.Max(0, level_max + 1 - dim_num);
 
-            SGMG.sgmg_unique_index(dim_num, level_max, rule,
-                np, p, gw_compute_points, tol, point_num, point_total_num, growth,
-                ref sparse_unique_index);
-
-            int[] sparse_order = new int[dim_num * point_num];
-            int[] sparse_index = new int[dim_num * point_num];
-
-            SGMG.sgmg_index(dim_num, level_max, rule,
-                point_num, point_total_num, sparse_unique_index,
-                growth, ref sparse_order, ref sparse_index);
-
-            double[] sparse_point = new double [dim_num * point_num];
-
-            SGMG.sgmg_point(dim_num, level_max, rule, np,
-                p, gw_compute_points, point_num, sparse_order, sparse_index,
-                growth, ref sparse_point);
-
-            Console.WriteLine("");
-            Console.WriteLine("  For LEVEL_MAX = " + level_max + "");
-            Console.WriteLine("");
-            int point;
-            for (point = 0; point < point_num; point++)
-            {
-                string cout = "  " + point.ToString().PadLeft(4) + "  ";
-                for (dim = 0; dim < dim_num; dim++)
-                {
-                    cout += "  " + sparse_point[dim + point * dim_num].ToString(CultureInfo.InvariantCulture).PadLeft(10);
-                }
-
-                Console.WriteLine(cout);
-            }
+            Console.WriteLine("  " + level_min.ToString().PadLeft(8)
+                                   + "  " + level_max.ToString().PadLeft(8)
+                                   + "  " + point_num.ToString().PadLeft(8)
+                                   + "  " + point_total_num.ToString().PadLeft(8) + "");
         }
+
     }
+    
 }

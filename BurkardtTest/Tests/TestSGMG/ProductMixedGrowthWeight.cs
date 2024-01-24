@@ -1,63 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Types;
 
-namespace ProductMixedGrowthWeightTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class ProductMixedGrowthWeightTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for PRODUCT_MIXED_GROWTH_WEIGHT_TEST.
-        //
-        //  Discussion:
-        //
-        //    PRODUCT_MIXED_GROWTH_WEIGHT tests PRODUCT_MIXED_GROWTH_WEIGHT.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 December 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Fabio Nobile, Raul Tempone, Clayton Webster,
-        //    A Sparse Grid Stochastic Collocation Method for Partial Differential
-        //    Equations with Random Input Data,
-        //    SIAM Journal on Numerical Analysis,
-        //    Volume 46, Number 5, 2008, pages 2309-2345.
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("PRODUCT_MIXED_GROWTH_WEIGHT_TEST");
-        //
-        //  Make sure the individual product rule weights are computed correctly.
-        //
-        product_mixed_growth_weight_tests();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("PRODUCT_MIXED_GROWTH_WEIGHT");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-
-    }
-
-    private static void product_mixed_growth_weight_tests()
+    [Test]
+    public static void product_mixed_growth_weight_tests()
 
         //****************************************************************************80
         //
@@ -559,4 +510,5 @@ internal static class Program
                                + "  " + weight_sum_error.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
 
     }
+    
 }

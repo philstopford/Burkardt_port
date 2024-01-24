@@ -1,73 +1,21 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGUniqueIndexTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class SGMGWeightTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMG_UNIQUE_INDEX_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMG_UNIQUE_INDEX_TEST tests SGMG_UNIQUE_INDEX.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 December 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Fabio Nobile, Raul Tempone, Clayton Webster,
-        //    A Sparse Grid Stochastic Collocation Method for Partial Differential
-        //    Equations with Random Input Data,
-        //    SIAM Journal on Numerical Analysis,
-        //    Volume 46, Number 5, 2008, pages 2309-2345.
-        //
-    {
-        double tol = typeMethods.r8_epsilon();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_UNIQUE_INDEX_TEST");
-        //
-        //  Check that we can determine a UNIQUE_INDEX mapping, so that we can
-        //  generate all the points, and then select unique representatives, and
-        //  then match each point to its representative.
-        //
-        sgmg_unique_index_tests(tol);
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_UNIQUE_INDEX_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmg_unique_index_tests(double tol)
+    [Test]
+    public static void sgmg_weight_tests()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMG_UNIQUE_INDEX_TESTS calls SGMG_UNIQUE_INDEX_TEST.
+        //    SGMG_WEIGHT_TESTS calls SGMG_WEIGHT_TEST.
         //
         //  Licensing:
         //
@@ -90,9 +38,10 @@ internal static class Program
         //    regardless of duplication.
         //
     {
+        double tol = typeMethods.r8_epsilon();
         Console.WriteLine("");
-        Console.WriteLine("SGMG_UNIQUE_INDEX_TESTS");
-        Console.WriteLine("  Call SGMG_UNIQUE_INDEX_TEST with various arguments.");
+        Console.WriteLine("SGMG_WEIGHT_TESTS");
+        Console.WriteLine("  Call SGMG_WEIGHT_TEST with various arguments.");
         Console.WriteLine("");
         Console.WriteLine("  All tests will use a point equality tolerance of " + tol + "");
 
@@ -113,8 +62,11 @@ internal static class Program
         Func<int, int, double[], double[], double[]>[] gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        Func<int, int, double[], double[], double[]>[] gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -132,9 +84,12 @@ internal static class Program
         growth[1] = 6;
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_points[1] = Fejer2.fejer2_compute_points_np;
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Fejer2.fejer2_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -153,8 +108,11 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -173,8 +131,11 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -194,8 +155,11 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -216,8 +180,11 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = Fejer2.fejer2_compute_points_np;
         gw_compute_points[1] = JacobiQuadrature.jacobi_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = Fejer2.fejer2_compute_weights_np;
+        gw_compute_weights[1] = JacobiQuadrature.jacobi_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         level_max_min = 0;
@@ -237,8 +204,11 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = HermiteQuadrature.gen_hermite_compute_points_np;
         gw_compute_points[1] = HermiteQuadrature.hermite_genz_keister_lookup_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = HermiteQuadrature.gen_hermite_compute_weights_np;
+        gw_compute_weights[1] = HermiteQuadrature.hermite_genz_keister_lookup_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 3;
         level_max_min = 0;
@@ -261,8 +231,12 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        gw_compute_weights[2] = HermiteQuadrature.hermite_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
         //  Repeat, treating  rules #2 and #3 as Golub Welsch rules.
         //
@@ -287,13 +261,17 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        gw_compute_weights[2] = HermiteQuadrature.hermite_compute_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
         //  Dimension 2, Level 4, Rule 3, exponential growth.
         //
         dim_num = 2;
-        level_max_min = 4;
+        level_max_min = 0;
         level_max_max = 4;
         np = new int[dim_num];
         np[0] = 0;
@@ -309,13 +287,16 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = PattersonQuadrature.patterson_lookup_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = PattersonQuadrature.patterson_lookup_weights_np;
+        gw_compute_weights[1] = PattersonQuadrature.patterson_lookup_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
         //  Dimension 2, Level 4, Rule 3, slow exponential growth.
         //
         dim_num = 2;
-        level_max_min = 4;
+        level_max_min = 0;
         level_max_max = 4;
         np = new int[dim_num];
         np[0] = 0;
@@ -331,13 +312,16 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = PattersonQuadrature.patterson_lookup_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = PattersonQuadrature.patterson_lookup_weights_np;
+        gw_compute_weights[1] = PattersonQuadrature.patterson_lookup_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
         //  Dimension 2, Level 4, Rule 3, moderate exponential growth.
         //
         dim_num = 2;
-        level_max_min = 4;
+        level_max_min = 0;
         level_max_max = 4;
         np = new int[dim_num];
         np[0] = 0;
@@ -353,21 +337,30 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = PattersonQuadrature.patterson_lookup_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmg_unique_index_test(dim_num, level_max_min, level_max_max,
-            rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = PattersonQuadrature.patterson_lookup_weights_np;
+        gw_compute_weights[1] = PattersonQuadrature.patterson_lookup_weights_np;
+        sgmg_weight_test(dim_num, level_max_min, level_max_max,
+            rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
     }
 
-    private static void sgmg_unique_index_test(int dim_num, int level_max_min,
+    private static void sgmg_weight_test(int dim_num, int level_max_min,
             int level_max_max, int[] rule, int[] growth, int[] np, double[] p,
             Func<int, int, double[], double[], double[]>[] gw_compute_points,
+            Func<int, int, double[], double[], double[]>[] gw_compute_weights,
             double tol)
 
         //***************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMG_UNIQUE_INDEX_TEST tests SGMG_UNIQUE_INDEX.
+        //    SGMG_WEIGHT_TEST checks the sum of the quadrature weights.
+        //
+        //  Discussion:
+        //
+        //    If any component rule is of Golub-Welsch type, we cannot compute
+        //    the exact weight sum, which we set, instead, to zero.
         //
         //  Licensing:
         //
@@ -420,26 +413,33 @@ internal static class Program
         //    associated with each spatial dimension for which a Golub Welsch rule 
         //    is used.
         //
+        //    Input, void ( *GW_COMPUTE_WEIGHTS[] ) ( int order, int np, double p[], double w[] ),
+        //    an array of pointers to functions which return the 1D quadrature weights 
+        //    associated with each spatial dimension for which a Golub Welsch rule 
+        //    is used.
+        //
         //    Input, double TOL, a tolerance for point equality.
         //
     {
+        double alpha;
+        double beta;
         int dim;
+        int i;
         int level_max;
 
         Console.WriteLine("");
-        Console.WriteLine("SGMG_UNIQUE_INDEX_TEST");
-        Console.WriteLine("  SGMG_UNIQUE_INDEX returns a mapping between");
-        Console.WriteLine("  the nonunique and unique points in a sparse grid.");
+        Console.WriteLine("SGMG_WEIGHT_TEST");
+        Console.WriteLine("  Compute the weights of a sparse grid.");
         Console.WriteLine("");
-        Console.WriteLine(" Dimension      Rule  Growth rate      Parameters");
+        Console.WriteLine("  Each sparse grid is of spatial dimension DIM_NUM,");
+        Console.WriteLine("  and is made up of product grids of levels up to LEVEL_MAX.");
+        Console.WriteLine("");
+        Console.WriteLine(" Dimension      Rule  Growth rate       Parameters");
         Console.WriteLine("");
 
         int p_index = 0;
-
         for (dim = 0; dim < dim_num; dim++)
         {
-            double alpha;
-            int i;
             switch (rule[dim])
             {
                 case 1:
@@ -475,7 +475,7 @@ internal static class Program
                 case 9:
                     alpha = p[p_index];
                     p_index += 1;
-                    double beta = p[p_index];
+                    beta = p[p_index];
                     p_index += 1;
                     Console.WriteLine("  " + dim.ToString().PadLeft(8)
                                            + "  " + rule[dim].ToString().PadLeft(8)
@@ -520,11 +520,109 @@ internal static class Program
                 }
                 default:
                     Console.WriteLine("");
-                    Console.WriteLine("SGMG_UNIQUE_INDEX_TEST - Fatal error!");
+                    Console.WriteLine("SPARSE_GRID_MIXED_WEIGHT_TEST - Fatal error!");
                     Console.WriteLine("  Unexpected value of RULE = " + rule[dim] + "");
                     return;
             }
         }
+
+        double weight_sum_exact = 1.0;
+
+        p_index = 0;
+        for (dim = 0; dim < dim_num; dim++)
+        {
+            switch (rule[dim])
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    weight_sum_exact *= 2.0;
+                    break;
+                case 5:
+                    weight_sum_exact *= Math.Sqrt(Math.PI);
+                    break;
+                case 6:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    weight_sum_exact *= typeMethods.r8_gamma(0.5 * (alpha + 1.0));
+                    break;
+                case 7:
+                    weight_sum_exact *= 1.0;
+                    break;
+                case 8:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    weight_sum_exact *= typeMethods.r8_gamma(alpha + 1.0);
+                    break;
+                case 9:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    beta = p[p_index];
+                    p_index += 1;
+                    double arg1 = -alpha;
+                    double arg2 = 1.0;
+                    double arg3 = beta + 2.0;
+                    double arg4 = -1.0;
+                    double value1 = typeMethods.r8_hyper_2f1(arg1, arg2, arg3, arg4);
+                    arg1 = -beta;
+                    arg2 = 1.0;
+                    arg3 = alpha + 2.0;
+                    arg4 = -1.0;
+                    double value2 = typeMethods.r8_hyper_2f1(arg1, arg2, arg3, arg4);
+                    weight_sum_exact *= value1 / (beta + 1.0) + value2 / (alpha + 1.0);
+                    break;
+                case 10:
+                    weight_sum_exact *= Math.Sqrt(Math.PI);
+                    break;
+                case 11:
+                {
+                    for (i = 0; i < np[dim]; i++)
+                    {
+                        alpha = p[p_index];
+                        p_index += 1;
+                    }
+
+                    weight_sum_exact = 0.0;
+                    break;
+                }
+                case 12:
+                {
+                    for (i = 0; i < np[dim]; i++)
+                    {
+                        alpha = p[p_index];
+                        p_index += 1;
+                    }
+
+                    weight_sum_exact = 0.0;
+                    break;
+                }
+                default:
+                    Console.WriteLine("");
+                    Console.WriteLine("SPARSE_GRID_MIXED_WEIGHT_TEST - Fatal error!");
+                    Console.WriteLine("  Unexpected value of RULE[" + dim + "] = "
+                                      + rule[dim] + ".");
+                    return;
+            }
+        }
+
+        switch (weight_sum_exact)
+        {
+            case 0.0:
+                Console.WriteLine("");
+                Console.WriteLine("  Because this rule includes Golub-Welsch components,");
+                Console.WriteLine("  we do not try to compute the exact weight sum.");
+                break;
+            default:
+                Console.WriteLine("");
+                Console.WriteLine("  As a simple test, sum these weights.");
+                Console.WriteLine("  They should sum to exactly " + weight_sum_exact + "");
+                break;
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("     Level      Weight sum  Expected sum    Di fference");
+        Console.WriteLine("");
 
         for (level_max = level_max_min; level_max <= level_max_max; level_max++)
         {
@@ -534,33 +632,28 @@ internal static class Program
             int point_num = SGMG.sgmg_size(dim_num, level_max,
                 rule, np, p, gw_compute_points, tol, growth);
 
-            Console.WriteLine("");
-            Console.WriteLine(" LEVEL_MIN LEVEL_MAX POINT_NUM POINT_NUM");
-            Console.WriteLine("                        Unique     Total");
-
-            int level_min = Math.Max(0, level_max + 1 - dim_num);
-
-            Console.WriteLine("");
-            Console.WriteLine("  " + level_min.ToString().PadLeft(8)
-                                   + "  " + level_max.ToString().PadLeft(8)
-                                   + "  " + point_num.ToString().PadLeft(8)
-                                   + "  " + point_total_num.ToString().PadLeft(8) + "");
-
             int[] sparse_unique_index = new int[point_total_num];
 
             SGMG.sgmg_unique_index(dim_num, level_max, rule,
                 np, p, gw_compute_points, tol, point_num, point_total_num,
                 growth, ref sparse_unique_index);
 
-            Console.WriteLine("");
-            Console.WriteLine("     POINT    UNIQUE");
-            Console.WriteLine("");
-            int point;
-            for (point = 0; point < point_total_num; point++)
-            {
-                Console.WriteLine("  " + point.ToString().PadLeft(8)
-                                       + "  " + sparse_unique_index[point].ToString().PadLeft(8) + "");
-            }
+            double[] sparse_weight = new double[point_num];
+
+            SGMG.sgmg_weight(dim_num, level_max, rule, np,
+                p, gw_compute_weights, point_num, point_total_num, sparse_unique_index,
+                growth, ref sparse_weight);
+
+            double weight_sum = typeMethods.r8vec_sum(point_num, sparse_weight);
+
+            double weight_sum_error = typeMethods.r8_abs(weight_sum - weight_sum_exact);
+
+            Console.WriteLine("  " + level_max.ToString().PadLeft(8)
+                                   + "  " + weight_sum.ToString(CultureInfo.InvariantCulture).PadLeft(14)
+                                   + "  " + weight_sum_exact.ToString(CultureInfo.InvariantCulture).PadLeft(14)
+                                   + "  " + weight_sum_error.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
+
         }
     }
+    
 }

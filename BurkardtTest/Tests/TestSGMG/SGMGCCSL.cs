@@ -1,59 +1,13 @@
-﻿using System;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMG_CC_SL_Test;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class SGMGCCSLTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMG_CC_SL.
-        //
-        //  Discussion:
-        //
-        //    SGMG_CC_SL tests SGMG with Clenshaw-Curtis rules with slow linear growth.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    02 July 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Fabio Nobile, Raul Tempone, Clayton Webster,
-        //    A Sparse Grid Stochastic Collocation Method for Partial Differential
-        //    Equations with Random Input Data,
-        //    SIAM Journal on Numerical Analysis,
-        //    Volume 46, Number 5, 2008, pages 2309-2345.
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_CC_SL");
-        //
-        //  Generate sparse grid rules and write them to files.
-        //
-        sgmg_cc_sl_tests();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMG_CC_SL");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmg_cc_sl_tests()
+    [Test]
+    public static void sgmg_cc_sl_tests()
 
         //****************************************************************************80
         //
@@ -231,4 +185,5 @@ internal static class Program
             point_num, sparse_weight, sparse_point, file_name);
 
     }
+    
 }

@@ -1,81 +1,35 @@
-﻿using System;
 using Burkardt.Composition;
 
-namespace CompNextTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class CompNextTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for COMP_NEXT_TEST.
-        //
-        //  Discussion:
-        //
-        //     COMP_NEXT_TEST tests COMP_NEXT.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 December 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Fabio Nobile, Raul Tempone, Clayton Webster,
-        //    A Sparse Grid Stochastic Collocation Method for Partial Differential
-        //    Equations with Random Input Data,
-        //    SIAM Journal on Numerical Analysis,
-        //    Volume 46, Number 5, 2008, pages 2309-2345.
-        //
+    static int[] dim_num_array =
     {
-        int[] dim_num_array =
-        {
-            2, 2, 2, 2, 2,
-            3, 3, 3, 3, 3,
-            4, 4
-        };
-        int[] level_max_array =
-        {
-            0, 1, 2, 3, 4,
-            0, 1, 2, 3, 4,
-            2, 3
-        };
-        int test;
-        const int test_num = 12;
+        2, 2, 2, 2, 2,
+        3, 3, 3, 3, 3,
+        4, 4
+    };
+    static int[] level_max_array =
+    {
+        0, 1, 2, 3, 4,
+        0, 1, 2, 3, 4,
+        2, 3
+    };
+    const int test_num = 12;
 
-        Console.WriteLine("");
-        Console.WriteLine(" COMP_NEXT_TEST");
-        Console.WriteLine("");
-        Console.WriteLine("  Test COMP_NEXT.");
-        //
-        //  Check that COMP_NEXT generates compositions correctly.
-        //
-        for (test = 0; test < test_num; test++)
+    [Test]
+    public static void test()
+    {
+        for (int test = 0; test < test_num; test++)
         {
             int dim_num = dim_num_array[test];
             int level_max = level_max_array[test];
             comp_next_test(dim_num, level_max);
         }
-
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine(" COMP_NEXT_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
+        
     }
-
+    
     private static void comp_next_test(int dim_num, int level_max)
 
         //****************************************************************************80

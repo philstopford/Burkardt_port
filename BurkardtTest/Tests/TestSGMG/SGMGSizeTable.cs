@@ -1,14 +1,14 @@
-﻿using System;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGSizeTableTest;
+namespace Burkardt_Tests.TestSGMG;
 
-internal static class Program
+public class SGMGSizeTableTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -437,4 +437,5 @@ internal static class Program
             Console.WriteLine(cout);
         }
     }
+    
 }
