@@ -1128,6 +1128,15 @@
       <None Update="Triangulation\TriangleNeighbors\lake_coarse_nodes.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="TestCompressedColumn\TestStorage\simple_acc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestCompressedColumn\TestStorage\simple_ccc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestCompressedColumn\TestStorage\simple_icc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
