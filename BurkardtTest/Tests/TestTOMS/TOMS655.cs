@@ -1,154 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Quadrature;
 using Burkardt.Weight;
 
-namespace TOMS655Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS655
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS655_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS655_TEST tests the TOMS655 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    20 November 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        double a = 0;
-        double alpha = 0;
-        double b = 0;
-        double beta = 0;
-        int kind;
-        int nt;
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS655_TEST");
-        Console.WriteLine("  Test the TOMS655 library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-        //
-        //  Compute 15 points of an example of each rule.
-        //
-        for (kind = 1; kind <= 9; kind++)
-        {
-            nt = 15;
-            switch (kind)
-            {
-                case 8:
-                    alpha = 1.0;
-                    beta = -alpha - 2 * nt - 2;
-                    break;
-                default:
-                    alpha = 0.0;
-                    beta = 0.0;
-                    break;
-            }
-
-            test10(nt, kind, alpha, beta);
-        }
-
-        //
-        //  Compute 15 points of an example of each rule using nondefault A, B.
-        //
-        for (kind = 1; kind <= 9; kind++)
-        {
-            nt = 15;
-
-            switch (kind)
-            {
-                case 1:
-                    alpha = 0.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 2:
-                    alpha = 0.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 3:
-                    alpha = 1.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 4:
-                    alpha = 1.5;
-                    beta = 0.5;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 5:
-                    alpha = 1.0;
-                    beta = 0.0;
-                    a = 1.0;
-                    b = 1.0;
-                    break;
-                case 6:
-                    alpha = 1.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 0.5;
-                    break;
-                case 7:
-                    alpha = 1.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 8:
-                    alpha = 1.0;
-                    beta = -alpha - 2 * nt - 2;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-                case 9:
-                    alpha = 0.0;
-                    beta = 0.0;
-                    a = 0.0;
-                    b = 1.0;
-                    break;
-            }
-
-            cgqf_test(nt, kind, alpha, beta, a, b);
-        }
-
-        wm_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS655_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -238,7 +97,8 @@ internal static class Program
         CIQFS.ciqfs(nt, t, mlt, nwts, ref ndx, key, kind, alpha, beta, lu);
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -357,7 +217,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test] 
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -432,7 +293,8 @@ internal static class Program
         Console.WriteLine("  Error             :" + Math.Abs(qfsum - qfsx) + "");
     }
 
-    private static void test04()
+    [Test] 
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -522,7 +384,8 @@ internal static class Program
 
     }
 
-    private static void test05()
+    [Test] 
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -585,7 +448,8 @@ internal static class Program
         CLIQFS.cliqfs(nt, t, kind, alpha, beta, lu);
     }
 
-    private static void test06()
+    [Test] 
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -673,7 +537,8 @@ internal static class Program
         Console.WriteLine("  Error             :" + Math.Abs(qfsum - qfsx) + "");
     }
 
-    private static void test07()
+    [Test] 
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -734,7 +599,8 @@ internal static class Program
         Console.WriteLine("  Error             :" + Math.Abs(qfsum - qfsx) + "");
     }
 
-    private static void test08()
+    [Test] 
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -789,7 +655,8 @@ internal static class Program
         Console.WriteLine("  Error             :" + Math.Abs(qfsum - qfsx) + "");
     }
 
-    private static void test09()
+    [Test] 
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -829,13 +696,26 @@ internal static class Program
         CGQFS.cgqfs(nt, kind, alpha, beta, io, ref t, ref wts);
     }
 
-    private static void test10(int nt, int kind, double alpha, double beta)
+    private static double f(double x, int i)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST10 calls CDGQF to compute a quadrature formula.
+        //    F returns values of the integrand or its derivatives.
+        //
+        //  Discussion:
+        //
+        //    This function is an example of an integrand function.
+        //
+        //    The package can generate quadrature formulas that use derivative
+        //    information as well as function values.  Therefore, this routine is
+        //    set up to provide derivatives of any order as well as the function
+        //    value.  In an actual application, the highest derivative needed
+        //    is of order one less than the highest knot multiplicity.
+        //
+        //    In other words, in the usual case where knots are not repeated,
+        //    this routine only needs to return function values, not any derivatives.
         //
         //  Licensing:
         //
@@ -847,36 +727,110 @@ internal static class Program
         //
         //  Author:
         //
-        //    John Burkardt
+        //    Original FORTRAN77 version by Sylvan Elhay, Jaroslav Kautsky.
+        //    C++ version by John Burkardt.
+        //
+        //  Parameters:
+        //
+        //    Input, double X, the evaluation point.
+        //
+        //    Input, int I, the order of the derivative of F to
+        //    be evaluated.
+        //
+        //    Output, double F, the value of the I-th derivative of F at X.
         //
     {
-        int i;
+        double value = 0;
 
-        Console.WriteLine("");
-        Console.WriteLine("TEST10");
-        Console.WriteLine("  Call CDGQF to compute a quadrature formula.");
-        Console.WriteLine("");
-        Console.WriteLine("  KIND = " + kind + "");
-        Console.WriteLine("  ALPHA = " + alpha + "");
-        Console.WriteLine("  BETA  = " + beta + "");
+        int l = i % 4;
 
-        double[] t = new double[nt];
-        double[] wts = new double[nt];
-
-        CDGQF.cdgqf(nt, kind, alpha, beta, ref t, ref wts);
-
-        Console.WriteLine("");
-        Console.WriteLine(" Index     Abscissas                 Weights");
-        Console.WriteLine("");
-        for (i = 0; i < nt; i++)
+        value = l switch
         {
-            Console.WriteLine("  " + i.ToString(CultureInfo.InvariantCulture).PadLeft(4)
-                                   + "  " + t[i].ToString("0.################").PadLeft(24)
-                                   + "  " + wts[i].ToString("0.################").PadLeft(24) + "");
+            0 => Math.Sin(x),
+            1 => Math.Cos(x),
+            2 => -Math.Sin(x),
+            3 => -Math.Cos(x),
+            _ => value
+        };
+
+        return value;
+    }
+
+    [Test]
+    public static void cgqf_test()
+    {
+        //
+        //  Compute 15 points of an example of each rule using nondefault A, B.
+        //
+        int kind = 0, nt = 0;
+        double alpha = 0, beta = 0, a = 0, b = 0;
+        for (kind = 1; kind <= 9; kind++)
+        {
+            nt = 15;
+
+            switch (kind)
+            {
+                case 1:
+                    alpha = 0.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 2:
+                    alpha = 0.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 3:
+                    alpha = 1.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 4:
+                    alpha = 1.5;
+                    beta = 0.5;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 5:
+                    alpha = 1.0;
+                    beta = 0.0;
+                    a = 1.0;
+                    b = 1.0;
+                    break;
+                case 6:
+                    alpha = 1.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 0.5;
+                    break;
+                case 7:
+                    alpha = 1.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 8:
+                    alpha = 1.0;
+                    beta = -alpha - 2 * nt - 2;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+                case 9:
+                    alpha = 0.0;
+                    beta = 0.0;
+                    a = 0.0;
+                    b = 1.0;
+                    break;
+            }
+
+            do_cgqf_test(nt, kind, alpha, beta, a, b);
         }
     }
 
-    private static void cgqf_test(int nt, int kind, double alpha, double beta, double a, double b)
+    private static void do_cgqf_test(int nt, int kind, double alpha, double beta, double a, double b)
 
         //****************************************************************************80
         //
@@ -927,7 +881,82 @@ internal static class Program
         }
     }
 
-    private static void wm_test()
+    [Test]
+    public static void test10()
+    {
+        //
+        //  Compute 15 points of an example of each rule.
+        //
+        int kind = 0, nt = 0;
+        double alpha = 0, beta = 0;
+        for (kind = 1; kind <= 9; kind++)
+        {
+            nt = 15;
+            switch (kind)
+            {
+                case 8:
+                    alpha = 1.0;
+                    beta = -alpha - 2 * nt - 2;
+                    break;
+                default:
+                    alpha = 0.0;
+                    beta = 0.0;
+                    break;
+            }
+
+            do_test10(nt, kind, alpha, beta);
+        }
+    }
+    
+    private static void do_test10(int nt, int kind, double alpha, double beta)
+
+        //****************************************************************************80
+        //
+        //  Purpose:
+        //
+        //    TEST10 calls CDGQF to compute a quadrature formula.
+        //
+        //  Licensing:
+        //
+        //    This code is distributed under the GNU LGPL license.
+        //
+        //  Modified:
+        //
+        //    08 January 2010
+        //
+        //  Author:
+        //
+        //    John Burkardt
+        //
+    {
+        int i;
+
+        Console.WriteLine("");
+        Console.WriteLine("TEST10");
+        Console.WriteLine("  Call CDGQF to compute a quadrature formula.");
+        Console.WriteLine("");
+        Console.WriteLine("  KIND = " + kind + "");
+        Console.WriteLine("  ALPHA = " + alpha + "");
+        Console.WriteLine("  BETA  = " + beta + "");
+
+        double[] t = new double[nt];
+        double[] wts = new double[nt];
+
+        CDGQF.cdgqf(nt, kind, alpha, beta, ref t, ref wts);
+
+        Console.WriteLine("");
+        Console.WriteLine(" Index     Abscissas                 Weights");
+        Console.WriteLine("");
+        for (i = 0; i < nt; i++)
+        {
+            Console.WriteLine("  " + i.ToString(CultureInfo.InvariantCulture).PadLeft(4)
+                                   + "  " + t[i].ToString("0.################").PadLeft(24)
+                                   + "  " + wts[i].ToString("0.################").PadLeft(24) + "");
+        }
+    }
+
+    [Test]
+        public static void wm_test()
 
         //****************************************************************************80
         //
@@ -1074,63 +1103,4 @@ internal static class Program
         }
     }
 
-    private static double f(double x, int i)
-
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    F returns values of the integrand or its derivatives.
-        //
-        //  Discussion:
-        //
-        //    This function is an example of an integrand function.
-        //
-        //    The package can generate quadrature formulas that use derivative
-        //    information as well as function values.  Therefore, this routine is
-        //    set up to provide derivatives of any order as well as the function
-        //    value.  In an actual application, the highest derivative needed
-        //    is of order one less than the highest knot multiplicity.
-        //
-        //    In other words, in the usual case where knots are not repeated,
-        //    this routine only needs to return function values, not any derivatives.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    08 January 2010
-        //
-        //  Author:
-        //
-        //    Original FORTRAN77 version by Sylvan Elhay, Jaroslav Kautsky.
-        //    C++ version by John Burkardt.
-        //
-        //  Parameters:
-        //
-        //    Input, double X, the evaluation point.
-        //
-        //    Input, int I, the order of the derivative of F to
-        //    be evaluated.
-        //
-        //    Output, double F, the value of the I-th derivative of F at X.
-        //
-    {
-        double value = 0;
-
-        int l = i % 4;
-
-        value = l switch
-        {
-            0 => Math.Sin(x),
-            1 => Math.Cos(x),
-            2 => -Math.Sin(x),
-            3 => -Math.Cos(x),
-            _ => value
-        };
-
-        return value;
-    }
 }

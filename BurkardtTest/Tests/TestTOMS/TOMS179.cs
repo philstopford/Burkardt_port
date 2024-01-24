@@ -1,50 +1,13 @@
-﻿using System;
 using Burkardt.AppliedStatistics;
-using Burkardt.Probability;
 using Burkardt.TOMSNS;
+using Burkardt.Values;
 
-namespace TOMS179Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS179
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS179_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS179_TEST tests the TOMS179 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    30 January 2008
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS179_TEST:");
-        Console.WriteLine("  Test the TOMS179 library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS179_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -101,7 +64,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -161,4 +125,5 @@ internal static class Program
         }
 
     }
+
 }

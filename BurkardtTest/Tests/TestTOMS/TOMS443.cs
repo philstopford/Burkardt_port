@@ -1,49 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.WFunction;
 
-namespace TOMS443Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS443
 {
-    private static void Main()
-            
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS443_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS443_TEST tests the TOMS443 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    11 June 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS443_TEST");
-        Console.WriteLine("  Test the TOMS443 library.");
-
-        test01();
-        test02();
-        Console.WriteLine("");
-        Console.WriteLine("TOMS433_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -101,7 +64,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -158,8 +122,5 @@ internal static class Program
         }
 
     }
-}
 
-internal class TestValues
-{
 }

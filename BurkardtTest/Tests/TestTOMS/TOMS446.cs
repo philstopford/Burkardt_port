@@ -1,54 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Chebyshev;
 using Burkardt.ChebyshevNS;
 
-namespace TOMS446Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS446
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS446_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS446_TEST tests the TOMS446 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    24 September 2011
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS446_TEST");
-        Console.WriteLine("  Test the TOMS446 library.");
-
-        cheby_test();
-        dfrnt_test();
-        echeb_test();
-        edcheb_test();
-        mltply_test();
-        ntgrt_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS446_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void cheby_test()
+        [Test] 
+    public static void cheby_test()
 
         //****************************************************************************80
         //
@@ -96,7 +55,8 @@ internal static class Program
         }
     }
 
-    private static void dfrnt_test()
+    [Test] 
+    public static void dfrnt_test()
 
         //****************************************************************************80
         //
@@ -162,7 +122,8 @@ internal static class Program
         }
     }
 
-    private static void echeb_test()
+    [Test] 
+    public static void echeb_test()
 
         //****************************************************************************80
         //
@@ -242,7 +203,8 @@ internal static class Program
         }
     }
 
-    private static void edcheb_test()
+    [Test] 
+    public static void edcheb_test()
 
         //****************************************************************************80
         //
@@ -322,7 +284,8 @@ internal static class Program
         }
     }
 
-    private static void mltply_test()
+    [Test] 
+    public static void mltply_test()
 
         //****************************************************************************80
         //
@@ -381,7 +344,8 @@ internal static class Program
         }
     }
 
-    private static void ntgrt_test()
+    [Test] 
+    public static void ntgrt_test()
 
         //****************************************************************************80
         //
@@ -522,4 +486,5 @@ internal static class Program
 
         return fxj;
     }
+
 }

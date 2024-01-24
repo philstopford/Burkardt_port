@@ -1,54 +1,14 @@
-﻿using System;
 using Burkardt.FullertonFnLib;
 using Burkardt.SubsetNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace TOMS515Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS515
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS515_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS515_TEST tests the TOMS515 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    01 April 2016
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS515_TEST");
-        Console.WriteLine("  Test the TOMS515 library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS515_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -108,7 +68,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -171,7 +132,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test] 
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -234,7 +196,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test] 
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -297,7 +260,8 @@ internal static class Program
         }
     }
 
-    private static void test05()
+    [Test] 
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -367,4 +331,5 @@ internal static class Program
             Console.WriteLine(cout);
         }
     }
+
 }

@@ -1,35 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.Function;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 
-namespace TOMS886Test;
+namespace Burkhardt_Tests.TOMSTest.TOMS886;
 
-internal static class EllipseTest
+public class Rectangle
 {
-    public static void ellipse()
+    [Test]
+        public static void rectangle()
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for ELLIPSE.
+        //    MAIN is the main program for RECTANGLE.
         //
         //  Discussion:
         //
         //    This driver computes the interpolation of the Franke function
-        //    on the ellipse E((C1,C2),ALPHA,BETA) = E((0.5,0.5),0.5,0.5)  
-        //    at the first family of Padua points. 
+        //    on the rectangle R(A,B) = [A1,B1] x [A2,B2] with A=(A1,A2)=(0,0) 
+        //    and B=(B1,B2)=(1,1) (unit square) at the FAMILY = 1 of Padua points. 
         //
-        //    The ellipse has the equation:
+        //    The degree of interpolation is DEG = 60 and the number of target 
+        //    points is NTG = NTG1^2, NTG1 = 100. 
         //
-        //      ( ( X - C1 ) / ALPHA )^2 + ( ( Y - C2 ) / BETA )^2 = 1
-        //
-        //    The degree of interpolation DEG = 60 and the number of target 
-        //    points is NTG = NTG1 ^ 2 - 2 * NTG1 + 2, NTG1 = 100.  
-        //
-        //    The maps from the reference square [-1,1]^2 to the current domain 
+        //    The maps from the reference square [-1,1]^2 to the rectangle
         //    are SIGMA1 and SIGMA2 with inverses ISIGM1 and ISIGM2.
         //
         //  Licensing:
@@ -54,7 +48,7 @@ internal static class EllipseTest
         //    ACM Transactions on Mathematical Software,
         //    Volume 35, Number 3, October 2008, Article 21, 11 pages.
         //
-        //  Local Parameters:
+        //  Parameters:
         //
         //    Local, int DEGMAX, the maximum degree of interpolation.
         //
@@ -67,9 +61,12 @@ internal static class EllipseTest
         //    Local, int NTGMAX, the maximum number of target points,
         //    dependent on NTG1MX.
         //
-        //    Local, int DEG, the degree of interpolation.
+        //    Local, int DEG, the degree of interpolation,
         //
-        //    Local, int NTG1, the parameter determining the number of target points.
+        //    Local, int NTG1, the parameter determining the number 
+        //    of target points.
+        //
+        //    Local, int FAMILY, specifies the desired family of Padua points.
         //
         //    Local, int NPD, the number of Padua points = (DEG + 1) * (DEG + 2) / 2.
         //
@@ -109,7 +106,7 @@ internal static class EllipseTest
         const int DEGMAX = 60;
         const int NTG1MX = 100;
         const int NPDMAX = (DEGMAX + 1) * (DEGMAX + 2) / 2;
-        const int NTGMAX = NTG1MX * NTG1MX - 2 * NTG1MX + 2;
+        const int NTGMAX = NTG1MX * NTG1MX;
 
         double[] c0 = new double[(DEGMAX + 2) * (DEGMAX + 2)];
         double esterr = 0;
@@ -130,21 +127,22 @@ internal static class EllipseTest
         double x;
         double y;
 
-        const double alpha = 0.5;
-        const double beta = 0.5;
-        const double c1 = 0.5;
-        const double c2 = 0.5;
+        const double a1 = 0.0;
+        const double a2 = 0.0;
+        const double b1 = 1.0;
+        const double b2 = 1.0;
+        const int family = 1;
         const int deg = 60;
         const int ntg1 = 100;
 
         Console.WriteLine("");
-        Console.WriteLine("ELLIPSE:");
+        Console.WriteLine("RECTANGLE:");
         Console.WriteLine("  Interpolation of the Franke function");
-        Console.WriteLine("  on the disk with center = (0.5,0.5) and radius = 0.5");
+        Console.WriteLine("  on the unit square [0,1] x [0,1]");
         Console.WriteLine("  of degree = " + deg + "");
 
-        //   
-        //  Build the first family of Padua points in the square [-1,1]^2.
+        //
+        //  Build the first family of Padua points in the square [-1,1]^2
         //
         Padua.pdpts(deg, ref pd1, ref pd2, ref wpd, ref npd);
         //    
@@ -152,19 +150,20 @@ internal static class EllipseTest
         //
         for (i = 0; i < npd; i++)
         {
-            x = sigma1(pd1[i], pd2[i], c1, c2, alpha, beta);
-            y = sigma2(pd1[i], pd2[i], c1, c2, alpha, beta);
+            x = sigma1(pd1[i], pd2[i], a1, a2, b1, b2, family, deg);
+            y = sigma2(pd1[i], pd2[i], a1, a2, b1, b2, family, deg);
             fpd[i] = Franke.franke(x, y);
         }
 
         //
         //  Write X, Y, F(X,Y) to a file.
         //
-        string filename = "ellipse_fpd.txt";
+        string filename = "rectangle_fpd.txt";
+        output.Clear();
         for (i = 0; i < npd; i++)
         {
-            x = sigma1(pd1[i], pd2[i], c1, c2, alpha, beta);
-            y = sigma2(pd1[i], pd2[i], c1, c2, alpha, beta);
+            x = sigma1(pd1[i], pd2[i], a1, a2, b1, b2, family, deg);
+            y = sigma2(pd1[i], pd2[i], a1, a2, b1, b2, family, deg);
             output.Add(x
                        + "  " + y
                        + "  " + fpd[i] + "");
@@ -173,30 +172,31 @@ internal static class EllipseTest
         File.WriteAllLines(filename, output);
         Console.WriteLine("");
         Console.WriteLine("  Wrote F(x,y) at Padua points in '" + filename + "'");
-        //
+        //     
         //  Compute the matrix C0 of the coefficients in the bivariate
-        //  orthonormal Chebyshev basis.
+        //  orthonormal Chebyshev basis
         //
         Padua.padua2(deg, DEGMAX, npd, wpd, fpd, raux1, raux2, ref c0, ref esterr);
         //    
         //  Evaluate the target points in the region.
         //
-        target(c1, c2, alpha, beta, ntg1, NTGMAX, ref tg1, ref tg2, ref ntg);
-        //
+        target(a1, b1, a2, b2, ntg1, NTGMAX, ref tg1, ref tg2, ref ntg);
+        //    
         //  Evaluate the interpolant at the target points.
         //
         for (i = 0; i < ntg; i++)
         {
-            x = isigm1(tg1[i], tg2[i], c1, c2, alpha, beta);
-            y = isigm2(tg1[i], tg2[i], c1, c2, alpha, beta);
+            x = isigm1(tg1[i], tg2[i], a1, a2, b1, b2, family, deg);
+            y = isigm2(tg1[i], tg2[i], a1, a2, b1, b2, family, deg);
             intftg[i] = Padua.pd2val(deg, DEGMAX, c0, x, y);
         }
 
         //
         //  Write the function value at target points to a file.
         //
+        filename = "rectangle_ftg.txt";
+
         output.Clear();
-        filename = "ellipse_ftg.txt";
         for (i = 0; i < ntg; i++)
         {
             output.Add(tg1[i]
@@ -209,8 +209,9 @@ internal static class EllipseTest
         //
         //  Write the interpolated function value at target points to a file.
         //
-        output.Clear();
         filename = "ellipse_itg.txt";
+
+        output.Clear();
         for (i = 0; i < ntg; i++)
         {
             output.Add(tg1[i]
@@ -222,7 +223,7 @@ internal static class EllipseTest
         Console.WriteLine("  Wrote I(F)(x,y) at target points in '" + filename + "'");
         //
         //  Compute the error relative to the max deviation from the mean.
-        //   
+        //
         double maxerr = 0.0;
         double mean = 0.0;
         double fmax = -typeMethods.r8_huge();
@@ -254,29 +255,29 @@ internal static class EllipseTest
         Console.WriteLine("");
         Console.WriteLine("  Estimated error:  " + esterr / maxdev + "");
         Console.WriteLine("  Actual error:     " + maxerr / maxdev + "");
-        Console.WriteLine("  Expected error:   " + 0.1769E-09 + "");
-        //
-        //  Terminate.
-        //
+        Console.WriteLine("  Expected error:   " + 0.2468E-10 + "");
+
         Console.WriteLine("");
-        Console.WriteLine("ELLIPSE:");
+        Console.WriteLine("RECTANGLE:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
 
-    private static double sigma1(double t1, double t2, double c1, double c2, double alpha,
-            double beta)
+    private static double sigma1(double t1, double t2, double a1, double a2, double b1,
+            double b2, int family, int deg)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SIGMA1 maps first coordinate from square to ellipse.
+        //    SIGMA1 maps first coordinate from square to the rectangle.
         //
         //  Discussion:
         //
         //    This function returns the first component of the map 
-        //    from the square [-1,1]^2 to the ellipse E((C1,C2),ALPHA,BETA).
+        //    from the square [-1,1]^2 to the rectangle [A1,B1] x [A2,B2]. 
+        //    FAMILY and DEG select the rotation in order to get 
+        //    the corresponding FAMILY of Padua points at degree DEG.
         //
         //  Licensing:
         //
@@ -304,33 +305,39 @@ internal static class EllipseTest
         //
         //    Input, double T1, T2, the coordinates of a point in the square.
         //
-        //    Input, double C1, C2, ALPHA, BETA, the center and scale
-        //    parameters of the ellipse.
+        //    Input, double A1, B1, A2, B2, the coordinates of the extreme
+        //    corners of the rectangle.
+        //
+        //    Input, int FAMILY, DEG, select the family of Padua points at 
+        //    degree DEG.
         //
         //    Output, double SIGMA1, the X coordinate of the corresponding
-        //    point in the ellipse.
+        //    point in the rectangle.
         //
     {
-        double value = 0;
-
-        value = c1 - alpha * t2 * Math.Sin(phi(t1));
+        double theta = (2 * (deg % 2) - 1)
+            * (double) (family - 1) * Math.PI / 2.0;
+        double value = t1 * Math.Cos(theta) - t2 * Math.Sin(theta);
+        value = ((b1 - a1) * value + (b1 + a1)) / 2.0;
 
         return value;
     }
 
-    private static double isigm1(double sigma1, double sigma2, double c1, double c2,
-            double alpha, double beta)
+    private static double isigm1(double sigma1, double sigma2, double a1, double a2, double b1,
+            double b2, int family, int deg)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    ISIGM1 maps the first coordinate from the ellipse to the square.
+        //    ISIGM1 maps first coordinate from the rectangle to the square.
         //
         //  Discussion:
         //
         //    This function returns the first component of the map 
-        //    from the ellipse E((C1,C2),ALPHA,BETA) to the square [-1,1]^2. 
+        //    from the rectangle [A1,B1] x [A2,B2] to the square [-1,1]^2. 
+        //    FAMILY and DEG select the rotation in order to get 
+        //    the corresponding FAMILY of Padua points at degree DEG.
         //
         //  Licensing:
         //
@@ -338,7 +345,7 @@ internal static class EllipseTest
         //  
         //  Modified:
         //
-        //    09 February 2014
+        //    16 February 2014
         //
         //  Author:
         //
@@ -357,43 +364,42 @@ internal static class EllipseTest
         //  Parameters:
         //
         //    Input, double SIGMA1, SIGMA2, the coordinates of a point 
-        //    in the ellipse.
+        //    in the rectangle.
         //
-        //    Input, double C1, C2, ALPHA, BETA, the center and scale
-        //    parameters of the ellipse.
+        //    Input, double A1, B1, A2, B2, the coordinates of the extreme
+        //    corners of the rectangle.
+        //
+        //    Input, int FAMILY, DEG, select the family of Padua points at 
+        //    degree DEG.
         //
         //    Output, double ISIGM1, the X coordinate of the corresponding
         //    point in the square.
         //
     {
-        double value;
-
-        if (Math.Abs(sigma2 - c2) <= typeMethods.r8_epsilon())
-        {
-            value = 1.0;
-        }
-        else
-        {
-            value = iphi(Math.Atan(beta * (c1 - sigma1) /
-                                   (alpha * (sigma2 - c2))));
-        }
+        double theta = (2 * (deg % 2) - 1)
+            * (double) (family - 1) * Math.PI / 2.0;
+        double value = (2.0 * sigma1 - (b1 + a1)) / (b1 - a1);
+        double isigm2 = (2.0 * sigma2 - (b2 + a2)) / (b2 - a2);
+        value = value * Math.Cos(theta) + isigm2 * Math.Sin(theta);
 
         return value;
     }
 
-    private static double sigma2(double t1, double t2, double c1, double c2, double alpha,
-            double beta)
+    private static double sigma2(double t1, double t2, double a1, double a2, double b1,
+            double b2, int family, int deg)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SIGMA2 maps the second coordinate from square to ellipse.
+        //    SIGMA2 maps second coordinate from square to the rectangle.
         //
         //  Discussion:
         //
         //    This function returns the second component of the map 
-        //    from the square [-1,1]^2 to the ellipse E((C1,C2),ALPHA,BETA).
+        //    from the square [-1,1]^2 to the rectangle [A1,B1] x [A2,B2]. 
+        //    FAMILY and DEG select the rotation in order to get 
+        //    the corresponding FAMILY of Padua points at degree DEG.
         //
         //  Licensing:
         //
@@ -421,33 +427,40 @@ internal static class EllipseTest
         //
         //    Input, double T1, T2, the coordinates of a point in the square.
         //
-        //    Input, double C1, C2, ALPHA, BETA, the center and scale
-        //    parameters of the ellipse.
+        //    Input, double A1, B1, A2, B2, the coordinates of the extreme
+        //    corners of the rectangle.
+        //
+        //    Input, int FAMILY, DEG, select the family of Padua points at 
+        //    degree DEG.
         //
         //    Output, double SIGMA2, the Y coordinate of the corresponding
-        //    point in the ellipse.
+        //    point in the rectangle.
         //
     {
-        double value = 0;
-
-        value = c2 + beta * t2 * Math.Cos(phi(t1));
+        double theta = (2 * (deg % 2) - 1)
+            * (double) (family - 1) * Math.PI / 2.0;
+        double value = t1 * Math.Sin(theta) + t2 * Math.Cos(theta);
+        value = ((b2 - a2) * value + (b2 + a2)) / 2.0;
 
         return value;
     }
 
-    private static double isigm2(double sigma1, double sigma2, double c1, double c2,
-            double alpha, double beta)
+    private static double isigm2(double sigma1, double sigma2, double a1, double a2, double b1,
+            double b2, int family, int deg)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    ISIGM2 maps second coordinate from ellipse to the square.
+        //    ISIGM2 maps the second coordinate from the rectangle to the square.
         //
         //  Discussion:
         //
         //    This function returns the second component of the map 
-        //    from the ellipse E((C1,C2),ALPHA,BETA) to the square [-1,1]^2. 
+        //    from the rectangle [A1,B1] x [A2,B2] to the square [-1,1]^2. 
+        //
+        //    FAMILY and DEG select the rotation in order to get 
+        //    the corresponding FAMILY of Padua points at degree DEG.
         //
         //  Licensing:
         //
@@ -476,132 +489,38 @@ internal static class EllipseTest
         //    Input, double SIGMA1, SIGMA2, the coordinates of a point 
         //    in the ellipse.
         //
-        //    Input, double C1, C2, ALPHA, BETA, the center and scale
-        //    parameters of the ellipse.
+        //    Input, double A1, B1, A2, B2, the coordinates of the extreme
+        //    corners of the rectangle.
+        //
+        //    Input, int FAMILY, DEG, select the family of Padua points at 
+        //    degree DEG.
         //
         //    Output, double ISIGM2, the Y coordinate of the corresponding
-        //    point in the square.
+        //    point in the rectangle.
         //
     {
-        double value;
-
-        if (Math.Abs(sigma2 - c2) <= typeMethods.r8_epsilon())
-        {
-            value = (c1 - sigma1) / alpha;
-        }
-        else
-        {
-            value = Math.Sqrt(beta * beta * Math.Pow(c1 - sigma1, 2) +
-                              alpha * alpha * Math.Pow(c2 - sigma2, 2))
-                / (alpha * beta) * typeMethods.r8_sign(sigma2 - c2);
-        }
+        double theta = (2 * (deg % 2) - 1)
+            * (double) (family - 1) * Math.PI / 2.0;
+        double isigm1 = (2.0 * sigma1 - (b1 + a1)) / (b1 - a1);
+        double value = (2.0 * sigma2 - (b2 + a2)) / (b2 - a2);
+        value = -isigm1 * Math.Sin(theta) + value * Math.Cos(theta);
 
         return value;
     }
 
-    private static double phi(double x)
+    private static void target(double a1, double b1, double a2, double b2, int ntg1, int ntgmax,
+            ref double[] tg1, ref double[] tg2, ref int ntg)
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    PHI maps from [-1,+1] to [-pi/2,+pi/2].
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //  
-        //  Modified:
-        //
-        //    16 February 2014
-        //
-        //  Author:
-        //
-        //    Original FORTRAN77 version by Marco Caliari, Stefano De Marchi, 
-        //    Marco Vianello.
-        //    C++ version by John Burkardt.
-        //
-        //  Reference:
-        //
-        //    Marco Caliari, Stefano de Marchi, Marco Vianello,
-        //    Algorithm 886:
-        //    Padua2D: Lagrange Interpolation at Padua Points on Bivariate Domains,
-        //    ACM Transactions on Mathematical Software,
-        //    Volume 35, Number 3, October 2008, Article 21, 11 pages.
-        //
-        //  Parameters:
-        //
-        //    Input, double X, a point in [-1,+1];
-        //
-        //    Output, double PHI, a corresponding point in [-pi/2,+pi/2].
-        //
-    {
-        const double pi = 3.1415926535897931;
-        double value = 0;
-
-        value = pi * x / 2.0;
-
-        return value;
-    }
-
-    private static double iphi(double x)
-
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    IPHI maps from [-pi/2,+pi/2] to [-1,+1].
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //  
-        //  Modified:
-        //
-        //    16 February 2014
-        //
-        //  Author:
-        //
-        //    Original FORTRAN77 version by Marco Caliari, Stefano De Marchi, 
-        //    Marco Vianello.
-        //    C++ version by John Burkardt.
-        //
-        //  Reference:
-        //
-        //    Marco Caliari, Stefano de Marchi, Marco Vianello,
-        //    Algorithm 886:
-        //    Padua2D: Lagrange Interpolation at Padua Points on Bivariate Domains,
-        //    ACM Transactions on Mathematical Software,
-        //    Volume 35, Number 3, October 2008, Article 21, 11 pages.
-        //
-        //  Parameters:
-        //
-        //    Input, double X, a point in [-pi/2,+pi/2].
-        //
-        //    Output, double IPHI, a corresponding point in [-1,+1].
-        //
-    {
-        const double pi = 3.1415926535897931;
-        double value = 0;
-
-        value = 2.0 * x / pi;
-
-        return value;
-    }
-
-    private static void target(double c1, double c2, double alpha, double beta, int ntg1,
-            int ntgmax, ref double[] tg1, ref double[] tg2, ref int ntg)
-
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    TARGET returns the target points on the ellipse.
+        //    TARGET returns the target points on the rectangle.
         //
         //  Discussion:
         //
-        //    Target points on the ellipse E((C1,C2),ALPHA,BETA).
-        //    The number of target points is NTG = NTG1^2 - 2 * NTG1 + 2.
+        //    Target points (uniform grid) on the rectangle [A1,B1] x [A2,B2].
+        //    The number of target points is NTG = NTG1^2.
         //
         //  Licensing:
         //
@@ -627,11 +546,11 @@ internal static class EllipseTest
         //
         //  Parameters:
         //
-        //    Input, double C1, C2, ALPHA, BETA, the center and scale
-        //    parameters of the ellipse.
+        //    Input, double A1, B1, A2, B2, the coordinates of the extreme
+        //    corners of the rectangle.
         //
         //    Input, int NTG1, a parameter determining the number 
-        //    of target points.  2 <= NTG1.
+        //    of target points
         //
         //    Input, int NTGMAX, the maximum number of target points.
         //
@@ -641,68 +560,43 @@ internal static class EllipseTest
         //    Output, int &NTG, the number of target points computed.
         //
     {
+        int i;
+
         switch (ntg1)
         {
             case < 2:
                 Console.WriteLine("");
                 Console.WriteLine("TARGET - Fatal error!");
-                Console.WriteLine("  NTG1 < 2");
+                Console.WriteLine("  NTG1 < 2.");
                 Console.WriteLine("  NTG1 = " + ntg1 + "");
                 return;
         }
 
-        if (ntgmax < ntg1 * ntg1 - 2 * ntg1 + 2)
+        if (ntgmax < ntg1 * ntg1)
         {
             Console.WriteLine("");
             Console.WriteLine("TARGET - Fatal error!");
-            Console.WriteLine("  NTGMAX < NTG1 * NTG1 - 2 * NTG1 + 2.");
+            Console.WriteLine("  NTGMAX < NTG1 * NTG1.");
             Console.WriteLine("  NTG1 = " + ntg1 + "");
             Console.WriteLine("  NTGMAX = " + ntgmax + "");
             return;
         }
 
-        int i = 1;
-        int j = 1;
         ntg = 0;
 
-        tg1[ntg] = alpha * (-1.0 + (i - 1) * 2.0
-            / (ntg1 - 1)) + c1;
-
-        double t = -1.0 + (i - 1) * 2.0 / (ntg1 - 1);
-
-        tg2[ntg] = beta * (-1.0 + (j - 1) * 2.0
-            / (ntg1 - 1)) * Math.Sqrt(1.0 - t * t) + c2;
-
-        ntg += 1;
-
-        for (i = 2; i <= ntg1 - 1; i++)
+        for (i = 1; i <= ntg1; i++)
         {
+            int j;
             for (j = 1; j <= ntg1; j++)
             {
-                tg1[ntg] = alpha * (-1.0 + (i - 1) * 2.0
-                    / (ntg1 - 1)) + c1;
-
-                t = -1.0 + (i - 1) * 2.0 / (ntg1 - 1);
-
-                tg2[ntg] = beta * (-1.0 + (j - 1) * 2.0
-                    / (ntg1 - 1)) * Math.Sqrt(1.0 - t * t) + c2;
-
+                tg1[ntg] = a1 + (j - 1) * (b1 - a1)
+                    / (ntg1 - 1);
+                tg2[ntg] = a2 + (i - 1) * (b2 - a2)
+                    / (ntg1 - 1);
                 ntg += 1;
             }
         }
 
-        i = ntg1;
-        j = 1;
-
-        tg1[ntg] = alpha * (-1.0 + (i - 1) * 2.0
-            / (ntg1 - 1)) + c1;
-
-        t = -1.0 + (i - 1) * 2.0 / (ntg1 - 1);
-
-        tg2[ntg] = beta * (-1.0 + (j - 1) * 2.0
-            / (ntg1 - 1)) * Math.Sqrt(1.0 - t * t) + c2;
-
-        ntg += 1;
-
     }
+
 }

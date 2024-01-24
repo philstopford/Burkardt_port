@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Numerics;
 using Burkardt;
 using Burkardt.Types;
 
-namespace TOMS917Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS917
 {
-    private static void Main()
+        [Test] 
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -178,7 +176,8 @@ internal static class Program
 
     }
 
-    private static void test_boundary()
+    [Test] 
+    public static void test_boundary()
 
         //****************************************************************************80
         //
@@ -834,4 +833,5 @@ internal static class Program
         Console.WriteLine("  Results saved in file '" + filename + "'");
 
     }
+
 }

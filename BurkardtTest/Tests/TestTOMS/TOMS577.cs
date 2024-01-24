@@ -1,53 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Elliptic;
 
-namespace TOMS577Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS577
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS577_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS577_TEST tests TOMS577.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    02 June 2018
-        //
-        //  Author:
-        //
-        //    Original FORTRAN77 version by Bille Carlson, Elaine Notis.
-        //    C++ version by John Burkardt.
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS577_TEST");
-        Console.WriteLine("  TOMS577 evaluates Carlson's elliptic functions.");
-
-        rc_test();
-        rc_test2();
-        rd_test();
-        rf_test();
-        rj_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS577_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void rc_test()
+        [Test] 
+    public static void rc_test()
 
         //****************************************************************************80
         //
@@ -206,7 +165,8 @@ internal static class Program
 
     }
 
-    private static void rc_test2()
+    [Test] 
+    public static void rc_test2()
 
         //****************************************************************************80
         //
@@ -332,7 +292,8 @@ internal static class Program
 
     }
 
-    private static void rd_test()
+    [Test] 
+    public static void rd_test()
 
         //****************************************************************************80
         //
@@ -495,7 +456,8 @@ internal static class Program
 
     }
 
-    private static void rf_test()
+    [Test] 
+    public static void rf_test()
 
         //****************************************************************************80
         //
@@ -740,7 +702,8 @@ internal static class Program
         }
     }
 
-    private static void rj_test()
+    [Test] 
+    public static void rj_test()
 
         //****************************************************************************80
         //
@@ -997,4 +960,5 @@ internal static class Program
         }
 
     }
+
 }

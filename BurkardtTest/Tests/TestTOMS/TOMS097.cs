@@ -1,50 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Types;
 
-namespace TOMS097Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS097Test
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS097_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS097_TEST tests the TOMS097 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    01 March 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS097_TEST");
-        Console.WriteLine("  Test the TOMS097 library.");
-
-        i4mat_shortest_path_test();
-        r8mat_shortest_path_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS097_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void i4mat_shortest_path_test()
+        [Test] 
+    public static void i4mat_shortest_path_test()
 
         //****************************************************************************80
         //
@@ -159,7 +121,8 @@ internal static class Program
         }
     }
 
-    private static void r8mat_shortest_path_test()
+    [Test] 
+    public static void r8mat_shortest_path_test()
 
         //****************************************************************************80
         //
@@ -272,4 +235,5 @@ internal static class Program
         }
 
     }
+
 }

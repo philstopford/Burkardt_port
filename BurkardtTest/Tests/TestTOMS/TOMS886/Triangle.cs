@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.Function;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 
-namespace TOMS886Test;
+namespace Burkhardt_Tests.TOMSTest.TOMS886;
 
-public static class TriangleTest
+public class Triangle
 {
-    public static void triangle()
+    [Test]
+        public static void triangle()
 
         //****************************************************************************80
         //
@@ -608,4 +606,5 @@ public static class TriangleTest
         ntg += 1;
 
     }
+
 }

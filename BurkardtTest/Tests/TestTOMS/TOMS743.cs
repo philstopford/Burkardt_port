@@ -1,68 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Function;
 using Burkardt.Types;
 using Burkardt.WFunction;
 
-namespace TOMS743Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS743
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS743_TEST.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    17 June 2014
-        //
-        //  Author:
-        //
-        //    Original FORTRAN77 version by Andrew Barry, S. J. Barry, 
-        //    Patricia Culligan-Hensley.
-        //    C++ version by John Burkardt.
-        //
-        //  Reference:
-        //
-        //    Andrew Barry, S. J. Barry, Patricia Culligan-Hensley,
-        //    Algorithm 743: WAPR - A Fortran routine for calculating real 
-        //    values of the W-function,
-        //    ACM Transactions on Mathematical Software,
-        //    Volume 21, Number 2, June 1995, pages 172-181.
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS743_TEST");
-        Console.WriteLine("  Test the TOMS743 library.");
-
-        int nbits = NBITS.nbits_compute();
-        Console.WriteLine("");
-        Console.WriteLine("  Number of bits in mantissa - 1 = " + nbits + "");
-
-        test01(nbits);
-
-        const double dx = +1.0E-09;
-        int n = 10;
-        test02(nbits, dx, n);
-
-        const double xmin = 0.0;
-        const double xmax = 1.0E+20;
-        n = 20;
-        test03(nbits, xmin, xmax, n);
-        Console.WriteLine("");
-        Console.WriteLine("TOMS743_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01(int nbits)
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -89,6 +35,8 @@ internal static class Program
         //    Input, int NBITS, the number of bits in the mantissa.
         //
     {
+        int nbits = NBITS.nbits_compute();
+
         double[] dx1 =
         {
             1E-40, 2E-40, 3E-40, 4E-40, 5E-40, 6E-40, 7E-40, 8E-40,
@@ -566,8 +514,9 @@ internal static class Program
             }
         }
     }
-
-    private static void test02(int nbits, double dx, int n)
+    
+        [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -598,6 +547,10 @@ internal static class Program
         //    Input, int N, the number of offset arguments to generate.
         //
     {
+        int nbits = NBITS.nbits_compute();
+        const double dx = +1.0E-09;
+        int n = 10;
+
         int i;
         int iw;
         int nd;
@@ -760,7 +713,8 @@ internal static class Program
 
     }
 
-    private static void test03(int nbits, double xmin, double xmax, int n)
+    [Test] 
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -792,6 +746,11 @@ internal static class Program
         //    in the range at which arguments are to be chosen.
         //
     {
+        int nbits = NBITS.nbits_compute();
+        double xmin = 0.0;
+        double xmax = 1.0E+20;
+        int n = 20;
+
         int i;
         int iw;
         int nd;
@@ -957,4 +916,6 @@ internal static class Program
             }
         }
     }
+
+    
 }

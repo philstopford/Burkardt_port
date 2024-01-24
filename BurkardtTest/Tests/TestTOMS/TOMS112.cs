@@ -1,13 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.TOMSNS;
 using Burkardt.Types;
 
-namespace TOMS112Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS112
 {
-    private static void Main()
+    [Test] 
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -68,4 +68,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+
 }

@@ -1,50 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.CDFLib;
 using Burkardt.Values;
 
-namespace TOMS462Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS462
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS462_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS462_TEST tests the TOMS462 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    13 April 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS462_TEST");
-        Console.WriteLine("  Test the TOMS462 library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS462_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************807
         //
@@ -144,7 +107,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -207,4 +171,5 @@ internal static class Program
                                    + "  " + Math.Abs(fxy1 - fxy2).ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+
 }

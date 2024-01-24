@@ -1,47 +1,11 @@
-﻿using System;
 using Burkardt.AppliedStatistics;
 
-namespace TOMS291Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS291
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS291_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS291_TEST tests the TOMS291 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    22 January 2008
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS291_TEST:");
-        Console.WriteLine("  Test the TOMS291 library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS291_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -98,4 +62,5 @@ internal static class Program
         }
 
     }
+
 }

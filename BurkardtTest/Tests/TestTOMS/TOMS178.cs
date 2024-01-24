@@ -1,49 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.TOMSNS;
 
-namespace TOMS178Test;
+namespace Burkhardt_Tests.TOMSTest;
 
-internal static class Program
+public class TOMS178
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TOMS178_TEST.
-        //
-        //  Discussion:
-        //
-        //    TOMS178_TEST tests the TOMS178 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    12 February 2008
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("TOMS178_TEST:");
-        Console.WriteLine("  Test the TOMS178 library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("TOMS178_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test] 
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -121,7 +84,8 @@ internal static class Program
         Console.WriteLine("  F(X*) = " + value + "");
     }
 
-    private static void test02()
+    [Test] 
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -297,4 +261,5 @@ internal static class Program
 
         return value;
     }
+
 }
