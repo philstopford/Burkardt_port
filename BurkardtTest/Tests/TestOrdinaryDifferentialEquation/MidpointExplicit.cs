@@ -1,62 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.ODENS;
 using Burkardt.Types;
 
-namespace MidpointExplicitTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class MidpointExplicitTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    midpoint_explicit_test() tests midpoint_explicit.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    06 April 2021
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
+    [Test]
+    public static void ppmet_test()
     {
         double[] tspan = new double[2];
         double[] y0 = new double[2];
-
-        Console.WriteLine("");
-        Console.WriteLine("midpoint_explicit_test:");
-        Console.WriteLine("  Test midpoint_explicit() on several ODE's.");
 
         tspan[0] = 0.0;
         tspan[1] = 5.0;
         y0[0] = 5000.0;
         y0[1] = 100.0;
         int n = 200;
+
         predator_prey_midpoint_explicit_test(tspan, y0, n);
+    }
+    [Test]
+    public static void smet_test()
+    {
+        double[] tspan = new double[2];
+        double[] y0 = new double[2];
 
         tspan[0] = 0.0;
-        tspan[1] = 1.0;
-        y0[0] = 0.0;
-        n = 27;
-        stiff_midpoint_explicit_test(tspan, y0, n);
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("midpoint_explicit_test:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
+        tspan[1] = 5.0;
+        y0[0] = 5000.0;
+        y0[1] = 100.0;
+        int n = 200;
 
-    private static double[] predator_prey_deriv(double t, double[] rf, int rfIndex)
+        stiff_midpoint_explicit_test(tspan, y0, n);
+    }
+        private static double[] predator_prey_deriv(double t, double[] rf, int rfIndex)
 
         //****************************************************************************80
         //
@@ -458,4 +435,5 @@ internal static class Program
 
         Console.WriteLine("  plot2: plot commands stored in '" + command_filename + "'.");
     }
+
 }

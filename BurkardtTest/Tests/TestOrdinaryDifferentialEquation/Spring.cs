@@ -1,10 +1,9 @@
-﻿using System;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-namespace SpringODE;
-
-internal static class Program
+public class SpringTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -138,4 +137,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

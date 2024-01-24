@@ -1,58 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ODENS.RungeKuttaFehlberg;
 using Burkardt.Types;
 
-namespace RungeKuttaFehlbergTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class RungeKuttaFehlbergTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for RKF45_TEST.
-        //
-        //  Discussion:
-        //
-        //    RKF45_TEST tests the RKF45 library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    17 June 2006
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("RKF45_TEST");
-            
-        Console.WriteLine("  Test the RKF45 library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("RKF45_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -135,7 +90,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -221,7 +177,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -310,7 +267,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -393,7 +351,8 @@ internal static class Program
 
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -474,7 +433,8 @@ internal static class Program
         }
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -762,4 +722,5 @@ internal static class Program
 
         return yp;
     }
+    
 }

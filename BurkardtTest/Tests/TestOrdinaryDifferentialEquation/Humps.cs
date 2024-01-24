@@ -1,50 +1,11 @@
-﻿using System;
 using Burkardt.ODENS;
 
-namespace HumpsTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class HumpsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for humps_test.
-        //
-        //  Discussion:
-        //
-        //    humps_test tests humps.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    05 August 2019
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("humps_test");
-        Console.WriteLine("  Test humps.");
-
-        humps_antideriv_test();
-        humps_fun_test();
-        humps_deriv_test();
-        humps_deriv2_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("humps_test");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void humps_antideriv_test()
+    [Test]
+    public static void humps_antideriv_test()
 
         //****************************************************************************80
         //
@@ -85,7 +46,8 @@ internal static class Program
         Humps.plot_xy(n, x, y, "humps_antideriv");
     }
 
-    private static void humps_fun_test()
+    [Test]
+    public static void humps_fun_test()
 
         //****************************************************************************80
         //
@@ -126,7 +88,8 @@ internal static class Program
         Humps.plot_xy(n, x, y, "humps_fun");
     }
 
-    private static void humps_deriv_test()
+    [Test]
+    public static void humps_deriv_test()
 
         //****************************************************************************80
         //
@@ -167,7 +130,8 @@ internal static class Program
         Humps.plot_xy(n, x, y, "humps_deriv");
     }
 
-    private static void humps_deriv2_test()
+    [Test]
+    public static void humps_deriv2_test()
 
         //****************************************************************************80
         //
@@ -207,4 +171,5 @@ internal static class Program
 
         Humps.plot_xy(n, x, y, "humps_deriv2");
     }
+    
 }

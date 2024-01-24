@@ -1,39 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.ODENS;
 using Burkardt.Types;
 
-namespace MidpointFixedTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class MidpointFixedTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    midpoint_fixed_test tests midpoint_fixed().
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    29 April 2020
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
+    [Test]
+    public static void ppmft()
     {
         double[] tspan = new double[2];
         double[] y0 = new double[2];
-
-        Console.WriteLine("");
-        Console.WriteLine("midpoint_fixed_test:");
-        Console.WriteLine("  Test midpoint_fixed() on several ODE's.");
 
         tspan[0] = 0.0;
         tspan[1] = 5.0;
@@ -41,19 +17,19 @@ internal static class Program
         y0[1] = 100.0;
         int n = 200;
         predator_prey_midpoint_fixed_test(tspan, y0, n);
+    }
+
+    [Test]
+    public static void smft()
+    {
+        double[] tspan = new double[2];
+        double[] y0 = new double[2];
 
         tspan[0] = 0.0;
         tspan[1] = 1.0;
         y0[0] = 0.0;
-        n = 27;
+        int n = 27;
         stiff_midpoint_fixed_test(tspan, y0, n);
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("midpoint_fixed_test:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
     }
 
     private static double[] predator_prey_deriv(double t, double[] rf, int rfIndex)
@@ -459,4 +435,5 @@ internal static class Program
         Console.WriteLine("  plot2: plot commands stored in '" + command_filename + "'.");
 
     }
+    
 }

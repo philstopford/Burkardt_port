@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.ODENS;
 
-namespace PredatorPreyTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class PredatorPreyTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -58,4 +58,5 @@ internal static class Program
         Console.WriteLine("predator_prey_ode_test:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
-    }    }
+    }    
+}

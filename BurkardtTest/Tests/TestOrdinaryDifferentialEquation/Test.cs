@@ -1,50 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ODENS;
 
-namespace ODETest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class Test
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for ODE_TEST.
-        //
-        //  Discussion:
-        //
-        //    ODE_TEST tests the ODE library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    15 January 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("ODE_TEST");
-            
-        Console.WriteLine("  Test the ODE library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("ODE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -114,7 +76,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -222,4 +185,5 @@ internal static class Program
 
         return yp;
     }
+
 }

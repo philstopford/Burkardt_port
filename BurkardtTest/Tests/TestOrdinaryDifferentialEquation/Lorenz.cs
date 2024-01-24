@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using Burkardt.ODENS;
 using Burkardt.Types;
 
-namespace LorenzODETest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class LorenzTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -125,4 +123,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

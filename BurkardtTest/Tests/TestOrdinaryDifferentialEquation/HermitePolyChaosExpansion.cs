@@ -1,49 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ODENS;
 
-namespace HermitePolyChaosExpansionTest;
+namespace Burkardt_Tests.TestOrdinaryDifferentialEquation;
 
-internal static class Program
+public class HermitePolyChaosExpansionTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for PCE_ODE_HERMITE_TEST.
-        //
-        //  Discussion:
-        //
-        //    PCE_ODE_HERMITE_TEST tests the PCE_ODE_HERMITE library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    18 March 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("PCE_ODE_HERMITE_TEST:");
-        Console.WriteLine("  Test PCE_ODE_HERMITE.");
-
-        pce_ode_hermite_test01();
-        pce_ode_hermite_test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("PCE_ODE_HERMITE_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void pce_ode_hermite_test01()
+        [Test]
+    public static void pce_ode_hermite_test01()
 
         //****************************************************************************80
         //
@@ -120,7 +83,8 @@ internal static class Program
         }
     }
 
-    private static void pce_ode_hermite_test02()
+    [Test]
+    public static void pce_ode_hermite_test02()
 
         //****************************************************************************80
         //
@@ -193,4 +157,5 @@ internal static class Program
                                    + "  " + Math.Log(ep[np]).ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
         }
     }
+
 }
