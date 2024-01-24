@@ -1,56 +1,15 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoProductWeightTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoProductWeightTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_PRODUCT_WEIGHT_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMGA_PRODUCT_WEIGHT_TEST tests the SGMGA_PRODUCT_WEIGHT function.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    10 September 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_PRODUCT_WEIGHT_TEST");
-        Console.WriteLine("  Test the SGMGA_PRODUCT_WEIGHT function.");
-        //
-        //  Make sure the individual product rule weights are computed correctly.
-        //
-        sgmga_product_weight_tests();
-        //
-        //  That's all.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_PRODUCT_WEIGHT_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_product_weight_tests()
+    [Test]
+    public static void sgmga_product_weight_tests()
 
         //****************************************************************************80
         //
@@ -545,4 +504,5 @@ internal static class Program
             Console.WriteLine("  " + weight_sum.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
         }
     }
+    
 }

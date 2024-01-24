@@ -1,14 +1,14 @@
-﻿using System;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoSizeTableTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoSizeTableTest
 {
-    private static void Main()
+        [Test]
+        public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -350,4 +350,5 @@ internal static class Program
             Console.WriteLine(cout);
         }
     }
+
 }

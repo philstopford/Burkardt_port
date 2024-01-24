@@ -1,54 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoVCNTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoVCNTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_VCN_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMGA_VCN_TEST tests SGMGA_VCN.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    21 May 2010
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_VCN_TEST");
-        Console.WriteLine("  Test the SGMGA_VCN and SGMGA_VCN_ORDERED functions.");
-
-        sgmga_vcn_tests();
-
-        sgmga_vcn_timing_tests();
-
-        sgmga_vcn_ordered_tests();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_VCN_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_vcn_tests()
+    [Test]
+    public static void sgmga_vcn_tests()
 
         //****************************************************************************80
         //
@@ -338,7 +297,8 @@ internal static class Program
         Console.WriteLine(cout);
     }
 
-    private static void sgmga_vcn_timing_tests()
+    [Test]
+    public static void sgmga_vcn_timing_tests()
 
         //****************************************************************************80
         //
@@ -574,7 +534,8 @@ internal static class Program
 
     }
 
-    private static void sgmga_vcn_ordered_tests()
+    [Test]
+    public static void sgmga_vcn_ordered_tests()
 
         //****************************************************************************80
         //
@@ -836,4 +797,5 @@ internal static class Program
 
         Console.WriteLine(cout);
     }
+    
 }

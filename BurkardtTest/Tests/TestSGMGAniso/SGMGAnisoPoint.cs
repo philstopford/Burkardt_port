@@ -1,64 +1,21 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoUniqueIndexTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoPointTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_UNIQUE_INDEX_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMGA_UNIQUE_INDEX_TEST tests the SGMGA_UNIQUE_INDEX routines.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    27 November 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_UNIQUE_INDEX_TEST");
-        Console.WriteLine("  Test the routines in the SGMGA library.");
-        //
-        //  Check that we can determine a UNIQUE_INDEX mapping, so that we can
-        //  generate all the points, and then select unique representatives, and
-        //  then match each point to its representative.
-        //
-        sgmga_unique_index_tests();
-        //
-        //  That's all.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_UNIQUE_INDEX_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_unique_index_tests()
+    [Test]
+    public static void sgmga_point_tests()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMGA_UNIQUE_INDEX_TESTS calls SGMGA_UNIQUE_INDEX_TEST.
+        //    SGMGA_POINT_TESTS calls SGMGA_POINT_TEST.
         //
         //  Licensing:
         //
@@ -72,9 +29,9 @@ internal static class Program
         //
         //    John Burkardt
         //
-        //  Local Parameters:
+        //  Parameters:
         //
-        //    Local, double TOL, a tolerance for point equality.
+        //    Input, double TOL, a tolerance for point equality.
         //    A value of sqrt ( eps ) is reasonable, and will allow the code to
         //    consolidate points which are equal, or very nearly so.  A value of
         //    -1.0, on the other hand, will force the code to use every point, 
@@ -84,8 +41,8 @@ internal static class Program
         int dim;
 
         Console.WriteLine("");
-        Console.WriteLine("SGMGA_UNIQUE_INDEX_TESTS");
-        Console.WriteLine("  Call SGMGA_UNIQUE_INDEX_TEST with various arguments");
+        Console.WriteLine("SGMGA_POINT_TESTS");
+        Console.WriteLine("  Call SGMGA_POINT_TEST with various arguments.");
         //
         //  Set the point equality tolerance.
         //
@@ -118,7 +75,7 @@ internal static class Program
         Func<int, int, double[], double[], double[]>[] gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -146,7 +103,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 3;
@@ -177,7 +134,8 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 3;
@@ -208,7 +166,8 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -236,7 +195,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -264,7 +223,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -292,7 +251,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -321,7 +280,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -351,7 +310,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = Fejer2.fejer2_compute_points_np;
         gw_compute_points[1] = JacobiQuadrature.jacobi_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 2;
@@ -380,7 +339,7 @@ internal static class Program
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = HermiteQuadrature.gen_hermite_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
         dim_num = 3;
@@ -412,10 +371,10 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
         //
-        //  Repeat, treating  rules #2 and #3 as Golub Welsch rules.
+        //  Repeat, treating rules #2 and #3 as Golub Welsch rules.
         //
         dim_num = 3;
         importance = new double[dim_num];
@@ -446,10 +405,40 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
         //
-        //  Try a case which includes a dimension of "0 importance".
+        //  Look at a case of interest to Mike.
+        //
+        dim_num = 2;
+        importance = new double[dim_num];
+        for (dim = 0; dim < dim_num; dim++)
+        {
+            importance[dim] = dim_num - dim;
+        }
+
+        level_weight = new double[dim_num];
+        SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
+        level_max_min = 0;
+        level_max_max = 5;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
+        rule = new int[dim_num];
+        rule[0] = 5;
+        rule[1] = 5;
+        growth = new int[dim_num];
+        growth[0] = 3;
+        growth[1] = 3;
+        gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_points[0] = HermiteQuadrature.hermite_compute_points_np;
+        gw_compute_points[1] = HermiteQuadrature.hermite_compute_points_np;
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        //
+        //  Look at a case that includes a "0" importance dimension.
         //
         dim_num = 3;
         importance = new double[dim_num];
@@ -478,12 +467,12 @@ internal static class Program
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_unique_index_test(dim_num, importance, level_weight, level_max_min,
+        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
             level_max_max, rule, growth, np, p, gw_compute_points, tol);
 
     }
 
-    private static void sgmga_unique_index_test(int dim_num, double[] importance,
+    private static void sgmga_point_test(int dim_num, double[] importance,
             double[] level_weight, int level_max_min, int level_max_max, int[] rule,
             int[] growth, int[] np, double[] p,
             Func<int, int, double[], double[], double[]>[] gw_compute_points,
@@ -493,7 +482,7 @@ internal static class Program
         //
         //  Purpose:
         //
-        //    SGMGA_UNIQUE_INDEX_TEST tests SGMGA_UNIQUE_INDEX.
+        //    SGMGA_POINT_TEST tests SGMGA_POINT.
         //
         //  Licensing:
         //
@@ -511,7 +500,7 @@ internal static class Program
         //
         //    Input, int DIM_NUM, the spatial dimension.
         //
-        //    Input, double IMPORTANCE[DIM_NUM], the importance for each dimension.
+        //    Input, double IMPORTANCE[DIM_NUM], the importamce for each dimension.
         //
         //    Input, double LEVEL_WEIGHT[DIM_NUM], the weights for each dimension.
         //
@@ -557,9 +546,12 @@ internal static class Program
         int level_max;
 
         Console.WriteLine("");
-        Console.WriteLine("SGMGA_UNIQUE_INDEX_TEST");
-        Console.WriteLine("  SGMGA_UNIQUE_INDEX returns a mapping between");
-        Console.WriteLine("  the nonunique and unique points in a sparse grid.");
+        Console.WriteLine("SGMGA_POINT_TEST");
+        Console.WriteLine("  SGMGA_POINT returns an array of the points");
+        Console.WriteLine("  forming a multidimensional sparse grid with mixed factors.");
+        Console.WriteLine("");
+        Console.WriteLine("  Each sparse grid is of spatial dimension DIM_NUM,");
+        Console.WriteLine("  and is made up of product grids of levels up to LEVEL_MAX.");
         Console.WriteLine("");
         string cout = "  IMPORTANCE:  ";
         for (dim = 0; dim < dim_num; dim++)
@@ -576,15 +568,15 @@ internal static class Program
 
         Console.WriteLine(cout);
         Console.WriteLine("");
-        Console.WriteLine(" Dimension      Rule  Growth rate      Parameters");
+        Console.WriteLine(" Dimension      Rule  Growth rate       Parameters");
         Console.WriteLine("");
 
         int p_index = 0;
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            double alpha;
             int i;
+            double alpha;
             switch (rule[dim])
             {
                 case 1:
@@ -665,7 +657,7 @@ internal static class Program
                 }
                 default:
                     Console.WriteLine("");
-                    Console.WriteLine("SGMGA_UNIQUE_INDEX_TEST - Fatal error!");
+                    Console.WriteLine("SGMGA_POINT_TEST - Fatal error!");
                     Console.WriteLine("  Unexpected value of RULE = " + rule[dim] + "");
                     return;
             }
@@ -679,30 +671,40 @@ internal static class Program
             int point_num = SGMGAniso.sgmga_size(dim_num, level_weight, level_max,
                 rule, np, p, gw_compute_points, tol, growth);
 
-            Console.WriteLine("");
-            Console.WriteLine(" LEVEL_MAX POINT_NUM POINT_NUM");
-            Console.WriteLine("              Unique     Total");
-
-            Console.WriteLine("");
-            Console.WriteLine("  " + level_max.ToString().PadLeft(8)
-                                   + "  " + point_num.ToString().PadLeft(8)
-                                   + "  " + point_total_num.ToString().PadLeft(8) + "");
-
             int[] sparse_unique_index = new int[point_total_num];
 
             SGMGAniso.sgmga_unique_index(dim_num, level_weight, level_max, rule,
                 np, p, gw_compute_points, tol, point_num, point_total_num,
                 growth, ref sparse_unique_index);
 
+            int[] sparse_order = new int[dim_num * point_num];
+            int[] sparse_index = new int[dim_num * point_num];
+
+            SGMGAniso.sgmga_index(dim_num, level_weight, level_max, rule,
+                point_num, point_total_num, sparse_unique_index,
+                growth, ref sparse_order, ref sparse_index);
+
+            double[] sparse_point = new double [dim_num * point_num];
+
+            SGMGAniso.sgmga_point(dim_num, level_weight, level_max, rule, np,
+                p, gw_compute_points, point_num, sparse_order, sparse_index,
+                growth, ref sparse_point);
+
             Console.WriteLine("");
-            Console.WriteLine("     POINT    UNIQUE");
+            Console.WriteLine("  For LEVEL_MAX = " + level_max + "");
             Console.WriteLine("");
             int point;
-            for (point = 0; point < point_total_num; point++)
+            for (point = 0; point < point_num; point++)
             {
-                Console.WriteLine("  " + point.ToString().PadLeft(8)
-                                       + "  " + sparse_unique_index[point].ToString().PadLeft(8) + "");
+                cout = "  " + point.ToString().PadLeft(4) + "  ";
+                for (dim = 0; dim < dim_num; dim++)
+                {
+                    cout += "  " + sparse_point[dim + point * dim_num].ToString(CultureInfo.InvariantCulture).PadLeft(10);
+                }
+
+                Console.WriteLine(cout);
             }
         }
     }
+    
 }

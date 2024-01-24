@@ -1,52 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Sparse;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace SGMGAnisoNormalizeTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoNormalizeTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_ANISO_NORMALIZE_TEST.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    03 February 2010
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_ANISO_NORMALIZE_TEST:");
-        Console.WriteLine("  Test the SGMGA_ANISO_NORMALIZE and");
-        Console.WriteLine("  SGMGA_IMPORTANCE_TO_ANISO functions.");
-
-        sgmga_aniso_balance_tests();
-
-        sgmga_aniso_normalize_tests();
-
-        sgmga_importance_to_aniso_tests();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_ANISO_NORMALIZE_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_aniso_balance_tests()
+    [Test]
+    public static void sgmga_aniso_balance_tests()
 
         //****************************************************************************80
         //
@@ -156,7 +118,8 @@ internal static class Program
 
     }
 
-    private static void sgmga_aniso_normalize_tests()
+    [Test]
+    public static void sgmga_aniso_normalize_tests()
 
         //****************************************************************************80
         //
@@ -284,7 +247,8 @@ internal static class Program
         }
     }
 
-    private static void sgmga_importance_to_aniso_tests()
+    [Test]
+    public static void sgmga_importance_to_aniso_tests()
 
         //****************************************************************************80
         //
@@ -411,4 +375,5 @@ internal static class Program
 
         Console.WriteLine(cout);
     }
+    
 }

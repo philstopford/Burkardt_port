@@ -1,58 +1,21 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ClenshawCurtisNS;
 using Burkardt.Quadrature;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoPointTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoWeightTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_POINT_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMGA_POINT_TEST tests the SGMGA_POINT routines.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    27 November 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_POINT_TEST");
-        Console.WriteLine("  Test the SGMGA_POINT function.");
-
-        sgmga_point_tests();
-
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_point_tests()
+    [Test]
+    public static void sgmga_weight_tests()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMGA_POINT_TESTS calls SGMGA_POINT_TEST.
+        //    SGMGA_WEIGHT_TESTS calls SGMGA_WEIGHT_TEST.
         //
         //  Licensing:
         //
@@ -66,9 +29,9 @@ internal static class Program
         //
         //    John Burkardt
         //
-        //  Parameters:
+        //  Local Parameters:
         //
-        //    Input, double TOL, a tolerance for point equality.
+        //    Local, double TOL, a tolerance for point equality.
         //    A value of sqrt ( eps ) is reasonable, and will allow the code to
         //    consolidate points which are equal, or very nearly so.  A value of
         //    -1.0, on the other hand, will force the code to use every point, 
@@ -78,8 +41,8 @@ internal static class Program
         int dim;
 
         Console.WriteLine("");
-        Console.WriteLine("SGMGA_POINT_TESTS");
-        Console.WriteLine("  Call SGMGA_POINT_TEST with various arguments.");
+        Console.WriteLine("SGMGA_WEIGHT_TESTS");
+        Console.WriteLine("  Call SGMGA_WEIGHT_TEST with various arguments.");
         //
         //  Set the point equality tolerance.
         //
@@ -98,22 +61,25 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         int level_max_min = 0;
         int level_max_max = 2;
-        int[] np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        int np_sum = typeMethods.i4vec_sum(dim_num, np);
-        double[] p = new double[np_sum];
         int[] rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 1;
         int[] growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 6;
+        int[] np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        int np_sum = typeMethods.i4vec_sum(dim_num, np);
+        double[] p = new double[np_sum];
         Func<int, int, double[], double[], double[]>[] gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        Func<int, int, double[], double[], double[]>[] gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -126,22 +92,25 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 1;
         growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 3;
         importance = new double[dim_num];
@@ -154,12 +123,6 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np[2] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 1;
@@ -168,12 +131,20 @@ internal static class Program
         growth[0] = 6;
         growth[1] = 6;
         growth[2] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np[2] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 3;
         importance = new double[dim_num];
@@ -186,12 +157,6 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np[2] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 1;
@@ -200,12 +165,20 @@ internal static class Program
         growth[0] = 6;
         growth[1] = 6;
         growth[2] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np[2] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -218,22 +191,25 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 3;
         growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = PattersonQuadrature.patterson_lookup_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = PattersonQuadrature.patterson_lookup_points_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -246,22 +222,25 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 4;
         growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 3;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -274,22 +253,25 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 7;
         growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 3;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Laguerre.QuadratureRule.laguerre_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -302,23 +284,26 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 1;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
-        p[0] = 1.5;
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 8;
         growth = new int[dim_num];
         growth[0] = 6;
         growth[1] = 3;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 1;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
+        p[0] = 1.5;
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Laguerre.QuadratureRule.gen_laguerre_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -331,6 +316,12 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
+        rule = new int[dim_num];
+        rule[0] = 2;
+        rule[1] = 9;
+        growth = new int[dim_num];
+        growth[0] = 6;
+        growth[1] = 3;
         np = new int[dim_num];
         np[0] = 0;
         np[1] = 2;
@@ -338,17 +329,14 @@ internal static class Program
         p = new double[np_sum];
         p[0] = 0.5;
         p[1] = 1.5;
-        rule = new int[dim_num];
-        rule[0] = 2;
-        rule[1] = 9;
-        growth = new int[dim_num];
-        growth[0] = 6;
-        growth[1] = 3;
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = Fejer2.fejer2_compute_points_np;
         gw_compute_points[1] = JacobiQuadrature.jacobi_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = Fejer2.fejer2_compute_weights_np;
+        gw_compute_weights[1] = JacobiQuadrature.jacobi_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
 
         dim_num = 2;
         importance = new double[dim_num];
@@ -361,24 +349,62 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 1;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
-        p[0] = 2.0;
         rule = new int[dim_num];
         rule[0] = 6;
         rule[1] = 10;
         growth = new int[dim_num];
         growth[0] = 3;
         growth[1] = 4;
+        np = new int[dim_num];
+        np[0] = 1;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
+        p[0] = 2.0;
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = HermiteQuadrature.gen_hermite_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = HermiteQuadrature.gen_hermite_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
+        //
+        //  LEVEL_MAX 0 to 5
+        //
+        dim_num = 2;
+        importance = new double[dim_num];
+        for (dim = 0; dim < dim_num; dim++)
+        {
+            importance[dim] = dim + 1;
+        }
 
+        level_weight = new double[dim_num];
+        SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
+        level_max_min = 0;
+        level_max_max = 5;
+        rule = new int[dim_num];
+        rule[0] = 1;
+        rule[1] = 1;
+        growth = new int[dim_num];
+        growth[0] = 6;
+        growth[1] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
+        gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
+        gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
+        //
+        //  Dimension 3
+        //
         dim_num = 3;
         importance = new double[dim_num];
         for (dim = 0; dim < dim_num; dim++)
@@ -390,12 +416,6 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np[2] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 4;
@@ -404,14 +424,24 @@ internal static class Program
         growth[0] = 6;
         growth[1] = 3;
         growth[2] = 3;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np[2] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        gw_compute_weights[2] = HermiteQuadrature.hermite_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
-        //  Repeat, treating rules #2 and #3 as Golub Welsch rules.
+        //  Repeat, treating  rules #2 and #3 as Golub Welsch rules.
         //
         dim_num = 3;
         importance = new double[dim_num];
@@ -424,12 +454,6 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 2;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np[2] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 11;
@@ -438,44 +462,24 @@ internal static class Program
         growth[0] = 6;
         growth[1] = 3;
         growth[2] = 3;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np[2] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_points_np;
         gw_compute_points[2] = HermiteQuadrature.hermite_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = Burkardt.Legendre.QuadratureRule.legendre_compute_weights_np;
+        gw_compute_weights[2] = HermiteQuadrature.hermite_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
         //
-        //  Look at a case of interest to Mike.
-        //
-        dim_num = 2;
-        importance = new double[dim_num];
-        for (dim = 0; dim < dim_num; dim++)
-        {
-            importance[dim] = dim_num - dim;
-        }
-
-        level_weight = new double[dim_num];
-        SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
-        level_max_min = 0;
-        level_max_max = 5;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
-        rule = new int[dim_num];
-        rule[0] = 5;
-        rule[1] = 5;
-        growth = new int[dim_num];
-        growth[0] = 3;
-        growth[1] = 3;
-        gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
-        gw_compute_points[0] = HermiteQuadrature.hermite_compute_points_np;
-        gw_compute_points[1] = HermiteQuadrature.hermite_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
-        //
-        //  Look at a case that includes a "0" importance dimension.
+        //  Try a case with a dimension of "0 importance".
         //
         dim_num = 3;
         importance = new double[dim_num];
@@ -486,12 +490,6 @@ internal static class Program
         SGMGAniso.sgmga_importance_to_aniso(dim_num, importance, ref level_weight);
         level_max_min = 0;
         level_max_max = 3;
-        np = new int[dim_num];
-        np[0] = 0;
-        np[1] = 0;
-        np[2] = 0;
-        np_sum = typeMethods.i4vec_sum(dim_num, np);
-        p = new double[np_sum];
         rule = new int[dim_num];
         rule[0] = 1;
         rule[1] = 1;
@@ -500,26 +498,41 @@ internal static class Program
         growth[0] = 6;
         growth[1] = 6;
         growth[2] = 6;
+        np = new int[dim_num];
+        np[0] = 0;
+        np[1] = 0;
+        np[2] = 0;
+        np_sum = typeMethods.i4vec_sum(dim_num, np);
+        p = new double[np_sum];
         gw_compute_points = new Func<int, int, double[], double[], double[]>[dim_num];
         gw_compute_points[0] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[1] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
         gw_compute_points[2] = ClenshawCurtis.clenshaw_curtis_compute_points_np;
-        sgmga_point_test(dim_num, importance, level_weight, level_max_min,
-            level_max_max, rule, growth, np, p, gw_compute_points, tol);
-
+        gw_compute_weights = new Func<int, int, double[], double[], double[]>[dim_num];
+        gw_compute_weights[0] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[1] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        gw_compute_weights[2] = ClenshawCurtis.clenshaw_curtis_compute_weights_np;
+        sgmga_weight_test(dim_num, importance, level_weight, level_max_min,
+            level_max_max, rule, growth, np, p, gw_compute_points, gw_compute_weights, tol);
     }
 
-    private static void sgmga_point_test(int dim_num, double[] importance,
+    private static void sgmga_weight_test(int dim_num, double[] importance,
             double[] level_weight, int level_max_min, int level_max_max, int[] rule,
             int[] growth, int[] np, double[] p,
             Func<int, int, double[], double[], double[]>[] gw_compute_points,
+            Func<int, int, double[], double[], double[]>[] gw_compute_weights,
             double tol)
 
         //***************************************************************************80
         //
         //  Purpose:
         //
-        //    SGMGA_POINT_TEST tests SGMGA_POINT.
+        //    SGMGA_WEIGHT_TEST checks the sum of the quadrature weights.
+        //
+        //  Discussion:
+        //
+        //    If any component rule is of Golub-Welsch type, we cannot compute
+        //    the exact weight sum, which we set, instead, to zero.
         //
         //  Licensing:
         //
@@ -537,9 +550,9 @@ internal static class Program
         //
         //    Input, int DIM_NUM, the spatial dimension.
         //
-        //    Input, double IMPORTANCE[DIM_NUM], the importamce for each dimension.
+        //    Input, double IMPORTANCE[DIM_NUM], the anisotropic importance.
         //
-        //    Input, double LEVEL_WEIGHT[DIM_NUM], the weights for each dimension.
+        //    Input, double LEVEL_WEIGHT[DIM_NUM], the anisotropic weights.
         //
         //    Input, int LEVEL_MAX_MIN, LEVEL_MAX_MAX, the minimum and
         //    maximum values of LEVEL_MAX.
@@ -576,21 +589,29 @@ internal static class Program
         //    associated with each spatial dimension for which a Golub Welsch rule 
         //    is used.
         //
+        //    Input, void ( *GW_COMPUTE_WEIGHTS[] ) ( int order, int np, double p[], double w[] ),
+        //    an array of pointers to functions which return the 1D quadrature weights 
+        //    associated with each spatial dimension for which a Golub Welsch rule 
+        //    is used.
+        //
         //    Input, double TOL, a tolerance for point equality.
         //
     {
+        double alpha;
+        double beta;
         int dim;
+        int i;
         int level_max;
+        string cout = "";
 
         Console.WriteLine("");
-        Console.WriteLine("SGMGA_POINT_TEST");
-        Console.WriteLine("  SGMGA_POINT returns an array of the points");
-        Console.WriteLine("  forming a multidimensional sparse grid with mixed factors.");
+        Console.WriteLine("SGMGA_WEIGHT_TEST");
+        Console.WriteLine("  Compute the weights of a sparse grid.");
         Console.WriteLine("");
         Console.WriteLine("  Each sparse grid is of spatial dimension DIM_NUM,");
         Console.WriteLine("  and is made up of product grids of levels up to LEVEL_MAX.");
         Console.WriteLine("");
-        string cout = "  IMPORTANCE:  ";
+        cout = "  IMPORTANCE:  ";
         for (dim = 0; dim < dim_num; dim++)
         {
             cout += "  " + importance[dim].ToString(CultureInfo.InvariantCulture).PadLeft(14);
@@ -612,8 +633,6 @@ internal static class Program
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            int i;
-            double alpha;
             switch (rule[dim])
             {
                 case 1:
@@ -649,7 +668,7 @@ internal static class Program
                 case 9:
                     alpha = p[p_index];
                     p_index += 1;
-                    double beta = p[p_index];
+                    beta = p[p_index];
                     p_index += 1;
                     Console.WriteLine("  " + dim.ToString().PadLeft(8)
                                            + "  " + rule[dim].ToString().PadLeft(8)
@@ -694,11 +713,109 @@ internal static class Program
                 }
                 default:
                     Console.WriteLine("");
-                    Console.WriteLine("SGMGA_POINT_TEST - Fatal error!");
+                    Console.WriteLine("SGMGA_WEIGHT_TEST - Fatal error!");
                     Console.WriteLine("  Unexpected value of RULE = " + rule[dim] + "");
                     return;
             }
         }
+
+        double weight_sum_exact = 1.0;
+
+        p_index = 0;
+        for (dim = 0; dim < dim_num; dim++)
+        {
+            switch (rule[dim])
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    weight_sum_exact *= 2.0;
+                    break;
+                case 5:
+                    weight_sum_exact *= Math.Sqrt(Math.PI);
+                    break;
+                case 6:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    weight_sum_exact *= typeMethods.r8_gamma(0.5 * (alpha + 1.0));
+                    break;
+                case 7:
+                    weight_sum_exact *= 1.0;
+                    break;
+                case 8:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    weight_sum_exact *= typeMethods.r8_gamma(alpha + 1.0);
+                    break;
+                case 9:
+                    alpha = p[p_index];
+                    p_index += 1;
+                    beta = p[p_index];
+                    p_index += 1;
+                    double arg1 = -alpha;
+                    double arg2 = 1.0;
+                    double arg3 = beta + 2.0;
+                    double arg4 = -1.0;
+                    double value1 = typeMethods.r8_hyper_2f1(arg1, arg2, arg3, arg4);
+                    arg1 = -beta;
+                    arg2 = 1.0;
+                    arg3 = alpha + 2.0;
+                    arg4 = -1.0;
+                    double value2 = typeMethods.r8_hyper_2f1(arg1, arg2, arg3, arg4);
+                    weight_sum_exact *= value1 / (beta + 1.0) + value2 / (alpha + 1.0);
+                    break;
+                case 10:
+                    weight_sum_exact *= Math.Sqrt(Math.PI);
+                    break;
+                case 11:
+                {
+                    for (i = 0; i < np[dim]; i++)
+                    {
+                        alpha = p[p_index];
+                        p_index += 1;
+                    }
+
+                    weight_sum_exact = 0.0;
+                    break;
+                }
+                case 12:
+                {
+                    for (i = 0; i < np[dim]; i++)
+                    {
+                        alpha = p[p_index];
+                        p_index += 1;
+                    }
+
+                    weight_sum_exact = 0.0;
+                    break;
+                }
+                default:
+                    Console.WriteLine("");
+                    Console.WriteLine("SGMGA_WEIGHT_TEST - Fatal error!");
+                    Console.WriteLine("  Unexpected value of RULE[" + dim + "] = "
+                                      + rule[dim] + ".");
+                    return;
+            }
+        }
+
+        switch (weight_sum_exact)
+        {
+            case 0.0:
+                Console.WriteLine("");
+                Console.WriteLine("  Because this rule includes Golub-Welsch components,");
+                Console.WriteLine("  we do not try to compute the exact weight sum.");
+                break;
+            default:
+                Console.WriteLine("");
+                Console.WriteLine("  As a simple test, sum these weights.");
+                Console.WriteLine("  They should sum to exactly " + weight_sum_exact + "");
+                break;
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("     Level      Weight sum  Expected sum    Difference");
+        Console.WriteLine("");
 
         for (level_max = level_max_min; level_max <= level_max_max; level_max++)
         {
@@ -714,33 +831,22 @@ internal static class Program
                 np, p, gw_compute_points, tol, point_num, point_total_num,
                 growth, ref sparse_unique_index);
 
-            int[] sparse_order = new int[dim_num * point_num];
-            int[] sparse_index = new int[dim_num * point_num];
+            double[] sparse_weight = new double[point_num];
 
-            SGMGAniso.sgmga_index(dim_num, level_weight, level_max, rule,
-                point_num, point_total_num, sparse_unique_index,
-                growth, ref sparse_order, ref sparse_index);
+            SGMGAniso.sgmga_weight(dim_num, level_weight, level_max, rule, np,
+                p, gw_compute_weights, point_num, point_total_num, sparse_unique_index,
+                growth, sparse_weight);
 
-            double[] sparse_point = new double [dim_num * point_num];
+            double weight_sum = typeMethods.r8vec_sum(point_num, sparse_weight);
 
-            SGMGAniso.sgmga_point(dim_num, level_weight, level_max, rule, np,
-                p, gw_compute_points, point_num, sparse_order, sparse_index,
-                growth, ref sparse_point);
+            double weight_sum_error = typeMethods.r8_abs(weight_sum - weight_sum_exact);
 
-            Console.WriteLine("");
-            Console.WriteLine("  For LEVEL_MAX = " + level_max + "");
-            Console.WriteLine("");
-            int point;
-            for (point = 0; point < point_num; point++)
-            {
-                cout = "  " + point.ToString().PadLeft(4) + "  ";
-                for (dim = 0; dim < dim_num; dim++)
-                {
-                    cout += "  " + sparse_point[dim + point * dim_num].ToString(CultureInfo.InvariantCulture).PadLeft(10);
-                }
+            Console.WriteLine("  " + level_max.ToString().PadLeft(8)
+                                   + "  " + weight_sum.ToString(CultureInfo.InvariantCulture).PadLeft(14)
+                                   + "  " + weight_sum_exact.ToString(CultureInfo.InvariantCulture).PadLeft(14)
+                                   + "  " + weight_sum_error.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
 
-                Console.WriteLine(cout);
-            }
         }
     }
+    
 }

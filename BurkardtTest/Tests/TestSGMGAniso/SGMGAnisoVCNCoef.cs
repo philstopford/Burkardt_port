@@ -1,54 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SGMGAnisoVCNCoefTest;
+namespace Burkardt_Tests.TestSGMGAniso;
 
-internal static class Program
+public class SGMGAnisoVCNCoefTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SGMGA_VCN_COEF_TEST.
-        //
-        //  Discussion:
-        //
-        //    SGMGA_VCN_COEF_TEST tests the SGMGA_VCN_COEF function.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    11 September 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_VCN_COEF_TEST");
-        Console.WriteLine("  Test the SGMGA_VCN_COEF function.");
-        //
-        //  Compute examples of the combinatorial coefficent.
-        //
-        sgmga_vcn_coef_tests();
-        //
-        //  That's all.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("SGMGA_VCN_COEF_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sgmga_vcn_coef_tests()
+    [Test]
+    public static void sgmga_vcn_coef_tests()
 
         //****************************************************************************80
         //
@@ -329,4 +288,5 @@ internal static class Program
                               + "  " + coef2_sum.ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+    
 }
