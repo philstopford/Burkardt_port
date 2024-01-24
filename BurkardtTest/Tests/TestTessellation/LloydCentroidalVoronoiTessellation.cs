@@ -1,51 +1,13 @@
-﻿using System;
 using Burkardt.Tessellation;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace LloydCVT_LineTest;
+namespace Burkardt_Tests.TestTessellation;
 
-internal static class Program
+public class LloydCentroidalVoronoiTessellationTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    LINE_CVT_LLOYD_TEST tests the LINE_CVT_LLOYD library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    30 July 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINE_CVT_LLOYD_TEST");
-        Console.WriteLine("  Test the LINE_CVT_LLOYD library.");
-
-        test01();
-        test02();
-        //
-        //  Repeat, using sorted initial points.
-        //
-        test03();
-        test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("LINE_CVT_LLOYD_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -93,7 +55,8 @@ internal static class Program
         typeMethods.r8vec_print(n, x, "  Final generators:");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -141,7 +104,8 @@ internal static class Program
         typeMethods.r8vec_print(n, x, "  Final generators:");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -191,7 +155,8 @@ internal static class Program
         typeMethods.r8vec_print(n, x, "  Final generators:");
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -240,4 +205,5 @@ internal static class Program
 
         typeMethods.r8vec_print(n, x, "  Final generators:");
     }
+    
 }

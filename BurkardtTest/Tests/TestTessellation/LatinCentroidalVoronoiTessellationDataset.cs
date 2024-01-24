@@ -1,15 +1,15 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Sampling;
 using Burkardt.SolveNS;
 using Burkardt.Tessellation;
 using Burkardt.Types;
 
-namespace LatinCentroidalVoronoiTessellationDatasetTest;
+namespace Burkardt_Tests.TestTessellation;
 
-internal static class Program
+public class LatinCentroidalVoronoiTessellationDatasetTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -689,4 +689,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+    
 }

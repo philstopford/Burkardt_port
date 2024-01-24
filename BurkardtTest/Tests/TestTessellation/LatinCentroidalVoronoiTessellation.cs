@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Tessellation;
 using Burkardt.Types;
 
-namespace LatinCentroidalVoronoiTessellationTest;
+namespace Burkardt_Tests.TestTessellation;
 
-internal static class Program
+public class LatinCentroidalVoronoiTessellationTest
 {
-    private static void Main()
+        [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -155,7 +155,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -277,4 +278,5 @@ internal static class Program
 
         }
     }
+
 }

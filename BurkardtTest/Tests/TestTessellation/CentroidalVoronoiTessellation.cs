@@ -1,63 +1,12 @@
-﻿using System;
 using Burkardt.Tessellation;
 using Burkardt.Types;
 
-namespace CentroidalVoronoiTessellationTest;
+namespace Burkardt_Tests.TestTessellation;
 
-internal static class Program
+public class CentroidalVoronoiTessellationTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CVT_TEST.
-        //
-        //  Discussion:
-        //
-        //    CVT_TEST tests the CVT library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    17 February 2007
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CVT_TEST");
-            
-        Console.WriteLine("  Test the CVT library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-
-        test10();
-        test11();
-        test12();
-        test13();
-        test14();
-
-        Console.WriteLine("");
-        Console.WriteLine("CVT_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -126,7 +75,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -196,7 +146,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -266,7 +217,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -336,7 +288,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -406,7 +359,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -476,7 +430,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -546,7 +501,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -616,7 +572,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -685,7 +642,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************80
         //
@@ -757,7 +715,8 @@ internal static class Program
 
     }
 
-    private static void test11()
+    [Test]
+    public static void test11()
 
         //****************************************************************************80
         //
@@ -863,7 +822,8 @@ internal static class Program
 
     }
 
-    private static void test12()
+    [Test]
+    public static void test12()
 
         //****************************************************************************80
         //
@@ -1047,7 +1007,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
 
-    private static void test13()
+    [Test]
+    public static void test13()
 
         //****************************************************************************80
         //
@@ -1120,7 +1081,8 @@ internal static class Program
         typeMethods.r8mat_write(file_out_name, DIM_NUM, N, r);
     }
 
-    private static void test14()
+    [Test]
+    public static void test14()
 
         //****************************************************************************80
         //
@@ -1188,4 +1150,5 @@ internal static class Program
 
         typeMethods.r8mat_transpose_print(DIM_NUM, N, r, "  Generators (rows):");
     }
+    
 }
