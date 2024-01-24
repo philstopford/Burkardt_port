@@ -1,54 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace RBFInterpnDTest;
+namespace Burkardt_Tests.TestInterpolation.RadialBasisFunction;
 
-internal static class Program
+public class InterpnDTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for RBF_INTERP_ND_TEST.
-        //
-        //  Discussion:
-        //
-        //    RBF_INTERP_ND_TEST tests the RBF_INTERP_ND library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    05 October 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("RBF_INTERP_ND_TEST:");
-        Console.WriteLine("  Test the RBF_INTERP_ND library.");
-        Console.WriteLine("  The R8LIB library is also needed.");
-
-        rbf_interp_nd_test01();
-        rbf_interp_nd_test02();
-        rbf_interp_nd_test03();
-        rbf_interp_nd_test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("RBF_INTERP_ND_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-
-    }
-
-    private static void rbf_interp_nd_test01()
+    [Test]
+    public static void rbf_interp_nd_test01()
 
         //****************************************************************************80
         //
@@ -147,7 +106,8 @@ internal static class Program
 
     }
 
-    private static void rbf_interp_nd_test02()
+    [Test]
+    public static void rbf_interp_nd_test02()
 
         //****************************************************************************80
         //
@@ -246,7 +206,8 @@ internal static class Program
 
     }
 
-    private static void rbf_interp_nd_test03()
+    [Test]
+    public static void rbf_interp_nd_test03()
 
         //****************************************************************************80
         //
@@ -346,7 +307,8 @@ internal static class Program
 
     }
 
-    private static void rbf_interp_nd_test04()
+    [Test]
+    public static void rbf_interp_nd_test04()
 
         //****************************************************************************80
         //
@@ -444,4 +406,5 @@ internal static class Program
         Console.WriteLine("  L2 approximation error averaged per 1000 samples = " + app_error + "");
 
     }
+    
 }

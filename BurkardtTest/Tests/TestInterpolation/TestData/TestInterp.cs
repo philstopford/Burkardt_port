@@ -1,8 +1,6 @@
-﻿using System;
+namespace Burkardt_Tests.TestInterpolation.TestData;
 
-namespace InterpTest;
-
-public static class TestInterp
+public class TestInterp
 {
     public static double[] data_copy_new(int m, int n, double[] a1)
 

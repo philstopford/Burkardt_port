@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Interpolation;
 using Burkardt.Types;
-using InterpTest;
 
-namespace Newton1DTest;
+namespace Burkardt_Tests.TestInterpolation;
 
-internal static class Program
+public class Newton1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -37,10 +35,6 @@ internal static class Program
         Console.WriteLine("  The R8LIB library is needed.");
         Console.WriteLine("  This test needs the TEST_INTERP library as well.");
 
-        newton_coef_1d_test();
-
-        newton_value_1d_test();
-
         int prob_num = Data_1D.p00_prob_num();
 
         for (prob = 1; prob <= prob_num; prob++)
@@ -54,7 +48,8 @@ internal static class Program
         Console.WriteLine("");
     }
 
-    private static void newton_coef_1d_test()
+    [Test]
+    public static void newton_coef_1d_test()
 
         //****************************************************************************80
         //
@@ -90,7 +85,8 @@ internal static class Program
         typeMethods.r8vec_print(nd, cd, "  Newton interpolant coefficients:");
     }
 
-    private static void newton_value_1d_test()
+    [Test]
+    public static void newton_value_1d_test()
 
         //****************************************************************************80
         //

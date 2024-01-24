@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using InterpTest;
 
-namespace BarycentricInterp1DTest;
+namespace Burkardt_Tests.TestInterpolation;
 
-internal static class Program
+public class BarycentricInterp1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -261,4 +261,5 @@ internal static class Program
         Console.WriteLine("  L2 interpolation error averaged per interpolant node = " + int_error + "");
 
     }
+    
 }

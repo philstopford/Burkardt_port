@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Interpolation;
 using Burkardt.Types;
-using InterpTest;
 
-namespace Nearest1DTest;
+namespace Burkardt_Tests.TestInterpolation;
 
-internal static class Program
+public class Nearest1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -241,4 +239,5 @@ internal static class Program
         File.WriteAllLines(command_filename, command_unit);
         Console.WriteLine("  Created graphics command file \"" + command_filename + "\".");
     }
+    
 }

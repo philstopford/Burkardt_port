@@ -1,12 +1,11 @@
-﻿using System;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace InterpTest;
+namespace Burkardt_Tests.TestInterpolation.TestData;
 
-public static class Data_nD
+public class Data_nD
 {
-    public static double csevl(double x, double[] a, int n )
+        public static double csevl(double x, double[] a, int n )
 //****************************************************************************80
 //
 //  Purpose:
@@ -2189,4 +2188,5 @@ public static class Data_nD
             }
         }
     }
+
 }

@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using InterpTest;
 
-namespace RBFInterp2DTest;
+namespace Burkardt_Tests.TestInterpolation.RadialBasisFunction;
 
-internal static class Program
+public class Interp2DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -153,4 +153,5 @@ internal static class Program
                           + int_error + "");
 
     }
+    
 }

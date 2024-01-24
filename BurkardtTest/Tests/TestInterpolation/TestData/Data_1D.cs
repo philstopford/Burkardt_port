@@ -1,10 +1,8 @@
-﻿using System;
+namespace Burkardt_Tests.TestInterpolation.TestData;
 
-namespace InterpTest;
-
-public static class Data_1D
+public class Data_1D
 {
-    public static double[] p00_f(int prob, int n, double[] x)
+        public static double[] p00_f(int prob, int n, double[] x)
 
 //****************************************************************************80
 //
@@ -778,4 +776,5 @@ public static class Data_1D
 
         return title;
     }
+
 }

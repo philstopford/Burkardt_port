@@ -1,11 +1,10 @@
-﻿using System;
 using Burkardt.Types;
 
-namespace InterpTest;
+namespace Burkardt_Tests.TestInterpolation.TestData;
 
-public static class Data_2D
+public class Data_2D
 {
-    public static void f00_f0(int fi, int n, double[] x, double[] y, ref double[] f)
+        public static void f00_f0(int fi, int n, double[] x, double[] y, ref double[] f)
         //****************************************************************************80
         //
         //  Purpose:
@@ -3257,4 +3256,5 @@ public static class Data_2D
         typeMethods.r8vec_copy(gn, x, ref gx);
         typeMethods.r8vec_copy(gn, y, ref gy);
     }
+
 }

@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using InterpTest;
 
-namespace Shepard2DTest;
+namespace Burkardt_Tests.TestInterpolation.ShepardTest;
 
-internal static class Program
+public class Shepard2DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -133,4 +133,5 @@ internal static class Program
         Console.WriteLine("  L2 interpolation error averaged per interpolant node = " + int_error + "");
 
     }
+    
 }

@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using InterpTest;
 
-namespace RBFInterp1DTest;
+namespace Burkardt_Tests.TestInterpolation.RadialBasisFunction;
 
-internal static class Program
+public class Interp1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -182,4 +182,5 @@ internal static class Program
         Console.WriteLine("  Normalized length of polynomial interpolant       = " + li + "");
 
     }
+    
 }

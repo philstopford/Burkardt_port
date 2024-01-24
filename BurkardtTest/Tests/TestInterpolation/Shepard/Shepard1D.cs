@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using InterpTest;
 
-namespace Shepard1DTest;
+namespace Burkardt_Tests.TestInterpolation.ShepardTest;
 
-internal static class Program
+public class Shepard1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
 /******************************************************************************/
 //
 //  Purpose:
@@ -64,7 +64,8 @@ internal static class Program
         Console.WriteLine("");
     }
 
-    private static void shepard_basis_1d_test()
+    [Test]
+    public static void shepard_basis_1d_test()
 //****************************************************************************80
 //
 //  Purpose:
@@ -109,7 +110,8 @@ internal static class Program
 
     }
 
-    private static void shepard_value_1d_test()
+    [Test]
+    public static void shepard_value_1d_test()
 
 //****************************************************************************80
 //
@@ -264,4 +266,5 @@ internal static class Program
         Console.WriteLine("  Normalized length of Shepard interpolant          = " + li + "");
 
     }
+    
 }

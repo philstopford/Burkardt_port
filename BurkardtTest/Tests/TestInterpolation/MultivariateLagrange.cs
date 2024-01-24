@@ -1,67 +1,14 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.MonomialNS;
-using Burkardt.Types;
 using Burkardt.PolynomialNS;
+using Burkardt.Types;
 
-namespace MultivariateLagrangeTest;
+namespace Burkardt_Tests.TestInterpolation;
 
-internal static class Program
+public class MultivariateLagrangeTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LAGRANGE_ND_TEST.
-        //
-        //  Discussion:
-        //
-        //    LAGRANGE_ND_TEST tests the LAGRANGE_ND library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    28 October 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LAGRANGE_ND_TEST");
-        Console.WriteLine("  Test the LAGRANGE_ND library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-        test10();
-
-        int option = 0;
-        test11(option);
-
-        option = 1;
-        test11(option);
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("LAGRANGE_ND_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -115,7 +62,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -166,7 +114,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -217,7 +166,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -286,7 +236,8 @@ internal static class Program
         }
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -394,7 +345,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of Lagrange matrix error = " + error + "");
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -507,7 +459,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of Lagrange matrix error = " + error + "");
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -624,7 +577,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of Lagrange matrix error = " + error + "");
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -741,7 +695,8 @@ internal static class Program
     }
     //****************************************************************************80
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -877,7 +832,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of Lagrange matrix error = " + error + "");
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************80
         //
@@ -1045,7 +1001,8 @@ internal static class Program
         Console.WriteLine("  Maximum absolute interpolant error on 11x11 grid = " + error + "");
     }
 
-    private static void test11(int option)
+    [Test]
+    public static void test11()
 
         //****************************************************************************80
         //
@@ -1072,6 +1029,247 @@ internal static class Program
         //    1, use Legendre products, 1, y, x, (3y^2-1)/2, xy, (3^x^2-1), (5y^3-3)/2,...
         //
     {
+        int option = 0;
+        int i;
+        int j;
+        int n2 = 0;
+        int o;
+        double[] pc = new double[1];
+        int[] pe = new int[1];
+        double[] xd =  {
+                0.0000000000000000, 0.0000000000000000,
+                -1.0000000000000000, 0.0000000000000000,
+                1.0000000000000000, 0.0000000000000000,
+                0.0000000000000000, -1.0000000000000000,
+                0.0000000000000000, 1.0000000000000000,
+                -0.7071067811865475, 0.0000000000000000,
+                0.7071067811865476, 0.0000000000000000,
+                -1.0000000000000000, -1.0000000000000000,
+                1.0000000000000000, -1.0000000000000000,
+                -1.0000000000000000, 1.0000000000000000,
+                1.0000000000000000, 1.0000000000000000,
+                0.0000000000000000, -0.7071067811865475,
+                0.0000000000000000, 0.7071067811865476,
+                -0.9238795325112867, 0.0000000000000000,
+                -0.3826834323650897, 0.0000000000000000,
+                0.3826834323650898, 0.0000000000000000,
+                0.9238795325112867, 0.0000000000000000,
+                -0.7071067811865475, -1.0000000000000000,
+                0.7071067811865476, -1.0000000000000000,
+                -0.7071067811865475, 1.0000000000000000,
+                0.7071067811865476, 1.0000000000000000,
+                -1.0000000000000000, -0.7071067811865475,
+                1.0000000000000000, -0.7071067811865475,
+                -1.0000000000000000, 0.7071067811865476,
+                1.0000000000000000, 0.7071067811865476,
+                0.0000000000000000, -0.9238795325112867,
+                0.0000000000000000, -0.3826834323650897,
+                0.0000000000000000, 0.3826834323650898,
+                0.0000000000000000, 0.9238795325112867,
+                -0.9807852804032304, 0.0000000000000000,
+                -0.8314696123025453, 0.0000000000000000,
+                -0.5555702330196020, 0.0000000000000000,
+                -0.1950903220161282, 0.0000000000000000,
+                0.1950903220161283, 0.0000000000000000,
+                0.5555702330196023, 0.0000000000000000,
+                0.8314696123025452, 0.0000000000000000,
+                0.9807852804032304, 0.0000000000000000,
+                -0.9238795325112867, -1.0000000000000000,
+                -0.3826834323650897, -1.0000000000000000,
+                0.3826834323650898, -1.0000000000000000,
+                0.9238795325112867, -1.0000000000000000,
+                -0.9238795325112867, 1.0000000000000000,
+                -0.3826834323650897, 1.0000000000000000,
+                0.3826834323650898, 1.0000000000000000,
+                0.9238795325112867, 1.0000000000000000,
+                -0.7071067811865475, -0.7071067811865475,
+                0.7071067811865476, -0.7071067811865475,
+                -0.7071067811865475, 0.7071067811865476,
+                0.7071067811865476, 0.7071067811865476,
+                -1.0000000000000000, -0.9238795325112867,
+                1.0000000000000000, -0.9238795325112867,
+                -1.0000000000000000, -0.3826834323650897,
+                1.0000000000000000, -0.3826834323650897,
+                -1.0000000000000000, 0.3826834323650898,
+                1.0000000000000000, 0.3826834323650898,
+                -1.0000000000000000, 0.9238795325112867,
+                1.0000000000000000, 0.9238795325112867,
+                0.0000000000000000, -0.9807852804032304,
+                0.0000000000000000, -0.8314696123025453,
+                0.0000000000000000, -0.5555702330196020,
+                0.0000000000000000, -0.1950903220161282,
+                0.0000000000000000, 0.1950903220161283,
+                0.0000000000000000, 0.5555702330196023,
+                0.0000000000000000, 0.8314696123025452,
+                0.0000000000000000, 0.9807852804032304
+            }
+            ;
+
+        Console.WriteLine("");
+        Console.WriteLine("LAGRANGE_ND_TEST11");
+        Console.WriteLine("  LAGRANGE_PARTIAL3 determines");
+        Console.WriteLine("  the Lagrange interpolating polynomials L(x)");
+        Console.WriteLine("  for ND points in D dimensions, assuming that");
+        Console.WriteLine("  the number of points is less than or equal to");
+        Console.WriteLine("  R = Pi(D,N), the number of monomials of degree N or less");
+        Console.WriteLine("");
+        Console.WriteLine("  If LAGRANGE_PARTIAL3 determines that the problem is not");
+        Console.WriteLine("  well-posed for the given value of N, it increases N");
+        Console.WriteLine("  until a suitable value is found.");
+        Console.WriteLine("");
+        Console.WriteLine("  For this example, the data points are the same as those");
+        Console.WriteLine("  used by the level 2 Clenshaw Curtis sparse grid in 2D.");
+
+        int nd = 65;
+        int ni = 11 * 11;
+
+        int d = 2;
+        int n = 10;
+        int[] po = new int[nd];
+
+        Console.WriteLine("");
+        Console.WriteLine("  Spatial dimension D = " + d + "");
+        Console.WriteLine("  Maximum degree N = " + n + "");
+        Console.WriteLine("  Number of data points ND = " + nd + "");
+        Console.WriteLine("  Monomial/Legendre option OPTION = " + option + "");
+
+        typeMethods.r8mat_transpose_print(d, nd, xd, "  Data points XD:");
+
+        MultivariateLagrange.lagrange_partial3(d, n, nd, xd, option, ref po, ref pc, ref pe, ref n2);
+
+        if (n < n2)
+        {
+            Console.WriteLine("");
+            Console.WriteLine("  LAGRANGE_PARTIAL3 increased N to " + n2 + "");
+        }
+
+        int r = Monomial.mono_upto_enum(d, n2);
+        Console.WriteLine("  Number of monomials R = " + r + "");
+        double[] c = new double[r];
+        int[] e = new int[r];
+        //
+        //  Print the polynomials.
+        //
+        Console.WriteLine("");
+        Console.WriteLine("  (First 2) Lagrange polynomials for XD data points:");
+        Console.WriteLine("");
+
+        //for ( i = 0; i < nd; i++ )
+        for (i = 0; i < 2; i++)
+        {
+            o = po[i];
+            for (j = 0; j < o; j++)
+            {
+                c[j] = pc[i + j * nd];
+                e[j] = pe[i + j * nd];
+            }
+
+            string label = "  P(" + i + ")(x) =";
+            Polynomial.polynomial_print(d, o, c, e, label);
+        }
+
+        //
+        //  Evaluate the polynomials at XD.
+        //
+        double[] value = new double[nd * nd];
+
+        for (i = 0; i < nd; i++)
+        {
+            o = po[i];
+            for (j = 0; j < o; j++)
+            {
+                c[j] = pc[i + j * nd];
+                e[j] = pe[i + j * nd];
+            }
+
+            double[] v = Polynomial.polynomial_value(d, o, c, e, nd, xd);
+
+            for (j = 0; j < nd; j++)
+            {
+                value[i + j * nd] = v[j];
+            }
+
+                
+        }
+
+        double error = typeMethods.r8mat_is_identity(nd, value);
+        Console.WriteLine("");
+        Console.WriteLine("  Frobenius norm of Lagrange matrix error = " + error + "");
+        //
+        //  Evaluate a function at the data points.
+        //
+        double[] pd = new double[nd];
+        for (i = 0; i < nd; i++)
+        {
+            pd[i] = Math.Exp(xd[0 + i * 2] * xd[1 + i * 2]);
+        }
+
+        //
+        //  Compare exact function and interpolant at a grid of points.
+        //
+        double[] xyi = new double[2 * ni];
+
+        int k = 0;
+        for (j = 1; j <= 11; j++)
+        {
+            for (i = 1; i <= 11; i++)
+            {
+                xyi[0 + k * 2] = ((11 - i) * -1.0
+                                  + (i - 1) * +1.0)
+                                 / (11 - 1);
+                xyi[1 + k * 2] = ((11 - j) * -1.0
+                                  + (j - 1) * +1.0)
+                                 / (11 - 1);
+                k += 1;
+            }
+        }
+
+        int pn = nd;
+        double[] zi = MultivariateLagrange.interpolant_value(d, r, pn, po, pc, pe, pd, ni, xyi);
+
+        error = 0.0;
+        for (k = 0; k < ni; k++)
+        {
+            double f = Math.Exp(xyi[0 + k * 2] * xyi[1 + k * 2]);
+            if (error < Math.Abs(zi[k] - f))
+            {
+                error = Math.Abs(zi[k] - f);
+            }
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("  Maximum absolute interpolant error on 11x11 grid = " + error + "");
+    }
+    
+    [Test]
+    public static void test12()
+
+        //****************************************************************************80
+        //
+        //  Purpose:
+        //
+        //    LAGRANGE_ND_TEST11 tests LAGRANGE_PARTIAL3 in 2D.
+        //
+        //  Licensing:
+        //
+        //    This code is distributed under the GNU LGPL license.
+        //
+        //  Modified:
+        //
+        //    25 February 2014
+        //
+        //  Author:
+        //
+        //    John Burkardt
+        //
+        //  Parameters:
+        //
+        //    Input, int OPTION, determines the initial basis:
+        //    0, use monomials, 1, x, y, x^2, xy, y^2, x^3, ...
+        //    1, use Legendre products, 1, y, x, (3y^2-1)/2, xy, (3^x^2-1), (5y^3-3)/2,...
+        //
+    {
+        int option = 1;
         int i;
         int j;
         int n2 = 0;

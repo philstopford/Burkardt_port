@@ -1,58 +1,15 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.PolynomialNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 using Hermite = Burkardt.Interpolation.Hermite;
 
-namespace HermiteInterpolantTest;
+namespace Burkardt_Tests.TestInterpolation;
 
-internal static class Program
+public class HermiteInterpolantTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for hermite_interpolant_test.
-        //
-        //  Discussion:
-        //
-        //    hermite_interpolant_test tests hermite_interpolant.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    01 November 2011
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("hermite_interpolant_test");
-        Console.WriteLine("  Test hermite_interpolant.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-
-        Console.WriteLine("");
-        Console.WriteLine("hermite_interpolant_test");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -89,7 +46,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -144,7 +102,8 @@ internal static class Program
 
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -206,7 +165,8 @@ internal static class Program
         Hermite.hermite_demo(N, x, y, yp);
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -288,7 +248,8 @@ internal static class Program
 
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -369,7 +330,8 @@ internal static class Program
         }
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //***************************************************************************80
         //
@@ -449,7 +411,8 @@ internal static class Program
         }
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -799,7 +762,8 @@ internal static class Program
         Console.WriteLine("  Estimate integral of SIN(X) = " + q + "");
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -880,4 +844,5 @@ internal static class Program
         }
 
     }
+    
 }

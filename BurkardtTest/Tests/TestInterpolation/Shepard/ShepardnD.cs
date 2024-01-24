@@ -1,14 +1,14 @@
-﻿using System;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 using Burkardt.Uniform;
 using InterpTest;
 
-namespace ShepardnDTest;
+namespace Burkardt_Tests.TestInterpolation.ShepardTest;
 
-internal static class Program
+public class ShepardnDTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -253,4 +253,5 @@ internal static class Program
         Console.WriteLine("  L2 approximation error averaged per 1000 samples =     " + app_error + "");
 
     }
+    
 }
