@@ -1,8 +1,8 @@
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Interpolation;
 using Burkardt.MatrixNS;
 using Burkardt.SolveNS;
 using Burkardt.Types;
-using InterpTest;
 
 namespace Burkardt_Tests.TestVandermonde;
 

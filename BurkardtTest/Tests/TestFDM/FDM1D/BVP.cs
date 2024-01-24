@@ -1,53 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.FDM;
 using Burkardt.Types;
 
-namespace FDM1DBVPTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class BVPTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for FD1D_BVP_TEST.
-        //
-        //  Discussion:
-        //
-        //    FD1D_BVP_TEST tests the FD1D_BVP library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    17 May 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_BVP_TEST");
-        Console.WriteLine("  Test the FD1D_BVP library.");
-
-        fd1d_bvp_test01();
-        fd1d_bvp_test02();
-        fd1d_bvp_test03();
-        fd1d_bvp_test04();
-        fd1d_bvp_test05();
-
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_BVP_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void fd1d_bvp_test01()
+    [Test]
+    public static void fd1d_bvp_test01()
 
         //****************************************************************************80
         //
@@ -158,7 +118,8 @@ internal static class Program
         typeMethods.r8mat_write(filename, n, 2, u2);
     }
 
-    private static void fd1d_bvp_test02()
+    [Test]
+    public static void fd1d_bvp_test02()
 
         //****************************************************************************80
         //
@@ -240,7 +201,8 @@ internal static class Program
         typeMethods.r8mat_write(filename, n, 2, u2);
     }
 
-    private static void fd1d_bvp_test03()
+    [Test]
+    public static void fd1d_bvp_test03()
 
         //****************************************************************************80
         //
@@ -323,7 +285,8 @@ internal static class Program
 
     }
 
-    private static void fd1d_bvp_test04()
+    [Test]
+    public static void fd1d_bvp_test04()
 
         //****************************************************************************80
         //
@@ -406,7 +369,8 @@ internal static class Program
 
     }
 
-    private static void fd1d_bvp_test05()
+    [Test]
+    public static void fd1d_bvp_test05()
 
         //****************************************************************************80
         //
@@ -1063,4 +1027,5 @@ internal static class Program
 
         return uexact;
     }
+    
 }

@@ -1,49 +1,12 @@
-﻿using System;
 using Burkardt.FDM;
 using Burkardt.Types;
 
-namespace FD1DHeatExplicitTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class HeatExplicitTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for FD1D_HEAT_EXPLICIT_TEST.
-        //
-        //  Discussion:
-        //
-        //    FD1D_HEAT_EXPLICIT_TEST tests the FD1D_HEAT_EXPLICIT library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    26 January 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_HEAT_EXPLICIT_TEST:");
-            
-        Console.WriteLine("  Test the FD1D_HEAT_EXPLICIT library.");
-
-        fd1d_heat_explicit_test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_HEAT_EXPLICIT_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void fd1d_heat_explicit_test01()
+    [Test]
+    public static void fd1d_heat_explicit_test01()
 
         //****************************************************************************80
         //
@@ -256,4 +219,5 @@ internal static class Program
 
         return value;
     }
+    
 }

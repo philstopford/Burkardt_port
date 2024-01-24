@@ -1,12 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Types;
 
-namespace FD1DBurgersLeapfrogTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class BurgersLeapfrogTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //
         //  Purpose:
         //
@@ -327,5 +327,5 @@ internal static class Program
                                   / (x[n - 1] - x[0])) + r;
         }
     }
-
+    
 }

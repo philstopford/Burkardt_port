@@ -1,51 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using Burkardt.FDM;
 using Burkardt.Types;
 
-namespace FD2DHeatSteadyTest;
+namespace Burkardt_Tests.TestFDM;
 
-internal static class Program
+public class FDM2DHeatSteadyTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for FD2D_HEAT_STEADY_TEST.
-        //
-        //  Discussion:
-        //
-        //    FD2D_HEAT_STEADY_TEST tests the FD2D_HEAT_STEADY library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    29 August 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("FD2D_HEAT_STEADY_TEST:");
-            
-        Console.WriteLine("  Test the FD2D_HEAT_STEADY library.");
-
-        test01();
-        Console.WriteLine("");
-        Console.WriteLine("FD2D_HEAT_STEADY_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //

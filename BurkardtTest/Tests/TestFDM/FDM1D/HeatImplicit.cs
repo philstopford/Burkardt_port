@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.IO;
 using Burkardt.Types;
 
-namespace FD1DHeatImplicitTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class HeatImplicitTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -364,4 +364,5 @@ internal static class Program
 
         return value;
     }
+    
 }

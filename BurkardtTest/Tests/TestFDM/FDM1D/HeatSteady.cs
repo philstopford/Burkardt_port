@@ -1,20 +1,12 @@
-﻿using System;
 using Burkardt.FDM;
 using Burkardt.Types;
 
-namespace FD1DHeatSteadyTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class HeatSteadyTest
 {
-    private static void Main()
-    {
-        problem1();
-        problem2();
-        problem3();
-        problem4();
-    }
-
-    private static void problem1()
+    [Test]
+    public static void problem1()
         //****************************************************************************80
         //
         //  Purpose:
@@ -133,7 +125,8 @@ internal static class Program
         return value;
     }
 
-    private static void problem2()
+    [Test]
+    public static void problem2()
         //****************************************************************************80
         //
         //  Purpose:
@@ -259,7 +252,8 @@ internal static class Program
         return value;
     }
 
-    private static void problem3()
+    [Test]
+    public static void problem3()
         //****************************************************************************80
         //
         //  Purpose:
@@ -385,7 +379,8 @@ internal static class Program
         return value;
     }
 
-    private static void problem4()
+    [Test]
+    public static void problem4()
         //****************************************************************************80
         //
         //  Purpose:
@@ -511,4 +506,5 @@ internal static class Program
 
         return value;
     }
+    
 }

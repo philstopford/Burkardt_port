@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.FDM;
 using Burkardt.Types;
 
-namespace FD1DAdvectionLAXTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class AdvectionLAXTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -155,4 +153,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

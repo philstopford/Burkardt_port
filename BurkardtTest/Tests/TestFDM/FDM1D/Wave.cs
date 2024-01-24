@@ -1,51 +1,13 @@
-﻿using System;
 using Burkardt.FDM;
 using Burkardt.Function;
 using Burkardt.Types;
 
-namespace FD1DWaveTest;
+namespace Burkardt_Tests.TestFDM.FDM1D;
 
-internal static class Program
+public class WaveTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for FD1D_WAVE_TEST.
-        //
-        //  Discussion:
-        //
-        //    FD1D_WAVE_TEST tests the FD1D_WAVE library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    24 January 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_WAVE_TEST");
-            
-        Console.WriteLine("  Test the FD1D_WAVE library.");
-
-        fd1d_wave_test01();
-        fd1d_wave_test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("FD1D_WAVE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void fd1d_wave_test01()
+    [Test]
+    public static void fd1d_wave_test01()
 
         //****************************************************************************80
         //
@@ -297,7 +259,8 @@ internal static class Program
         return ut;
     }
 
-    private static void fd1d_wave_test02()
+    [Test]
+    public static void fd1d_wave_test02()
 
         //****************************************************************************80
         //
@@ -538,4 +501,5 @@ internal static class Program
 
         return ut;
     }
+    
 }
