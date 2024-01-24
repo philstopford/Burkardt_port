@@ -2,7 +2,7 @@ using Burkardt.FEM;
 using Burkardt.IO;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.ToFEM;
+namespace Burkardt_Tests.TestTriangle.ToFEM;
 
 public class ToFEMTest
 {

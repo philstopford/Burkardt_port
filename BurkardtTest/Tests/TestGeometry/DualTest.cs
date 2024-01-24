@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class DualTest
 {

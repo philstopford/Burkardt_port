@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.RandomNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class r8Test
 {

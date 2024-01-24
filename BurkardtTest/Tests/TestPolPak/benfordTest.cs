@@ -2,7 +2,7 @@
 using System.Globalization;
 using Burkardt.Probability;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class benfordTest
 {

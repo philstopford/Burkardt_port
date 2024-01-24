@@ -4,7 +4,7 @@ using Burkardt.IO;
 using Burkardt.TriangleNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class FeketeRuleTest
 {

@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt;
 using Burkardt.AnnulusNS;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class AnnulusTest
 {

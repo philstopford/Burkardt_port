@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.Analyze;
+namespace Burkardt_Tests.TestTriangle.Analyze;
 
 public class TriangleTest
 {

@@ -1,7 +1,7 @@
 using Burkardt;
 using Burkardt.AppliedStatistics;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class BetaNCTest
 {

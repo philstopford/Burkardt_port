@@ -5,7 +5,7 @@ using Burkardt.Table;
 using Burkardt.TriangulationNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestQuality;
+namespace Burkardt_Tests.TestQuality;
 
 public class QualityTest
 {

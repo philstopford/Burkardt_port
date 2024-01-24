@@ -2,7 +2,7 @@
 using Burkardt.Sequence;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class delannoyTest
 {

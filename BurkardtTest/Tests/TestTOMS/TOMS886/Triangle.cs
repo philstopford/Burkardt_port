@@ -2,7 +2,7 @@ using Burkardt.Function;
 using Burkardt.Interpolation;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TOMSTest.TOMS886;
+namespace Burkardt_Tests.TestTOMS.TOMS886;
 
 public class Triangle
 {

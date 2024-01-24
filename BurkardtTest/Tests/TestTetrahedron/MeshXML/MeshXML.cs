@@ -3,7 +3,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshXML;
+namespace Burkardt_Tests.TestTetrahedron.MeshXML;
 
 public class MeshXMLTest
 {

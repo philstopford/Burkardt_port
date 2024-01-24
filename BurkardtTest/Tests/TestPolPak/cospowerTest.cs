@@ -2,7 +2,7 @@
 using System.Globalization;
 using Burkardt.IntegralNS;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class cospowerTest
 {

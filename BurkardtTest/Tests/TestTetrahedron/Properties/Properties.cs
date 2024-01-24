@@ -3,7 +3,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.PropertiesTest;
+namespace Burkardt_Tests.TestTetrahedron.PropertiesTest;
 
 public class PropertiesTest
 {

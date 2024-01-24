@@ -3,7 +3,7 @@ using Burkardt.SubsetNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS515
 {

@@ -3,7 +3,7 @@ using Burkardt;
 using Burkardt.CDFLib;
 using Burkardt.Values;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class CDFTest
 {

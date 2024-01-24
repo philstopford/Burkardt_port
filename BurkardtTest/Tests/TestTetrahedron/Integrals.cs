@@ -3,7 +3,7 @@ using Burkardt.MonomialNS;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron;
+namespace Burkardt_Tests.TestTetrahedron;
 
 public class IntegralsTest
 {

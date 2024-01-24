@@ -2,7 +2,7 @@ using Burkardt.MeshNS;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestMeshBandWidth;
+namespace Burkardt_Tests.TestMeshBandWidth;
 
 public class MeshBandWidthTest
 {

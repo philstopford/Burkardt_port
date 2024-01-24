@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.ProbabilityTest;
+namespace Burkardt_Tests.TestProbability;
 
 internal static partial class TestProbability
 {

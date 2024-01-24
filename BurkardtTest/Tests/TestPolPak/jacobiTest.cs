@@ -2,7 +2,7 @@
 using System.Globalization;
 using Burkardt.PolynomialNS;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 using Symbol = Burkardt.Symbol.Jacobi;
 

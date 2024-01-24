@@ -2,7 +2,7 @@ using Burkardt.MeshNS;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshQuad;
+namespace Burkardt_Tests.TestTetrahedron.MeshQuad;
 
 public class MeshQuadTest
 {

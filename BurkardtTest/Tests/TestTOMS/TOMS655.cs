@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.Quadrature;
 using Burkardt.Weight;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS655
 {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using Burkardt.Probability;
 
-namespace Burkhardt_Tests.ProbabilityTest;
+namespace Burkardt_Tests.TestProbability;
 
 internal static partial class TestProbability
 {

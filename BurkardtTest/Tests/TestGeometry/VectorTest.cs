@@ -4,7 +4,7 @@ using System.Linq;
 using Burkardt;
 using Burkardt.Vector;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class VectorTest
 {

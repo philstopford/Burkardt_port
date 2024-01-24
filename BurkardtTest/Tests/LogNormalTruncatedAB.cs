@@ -3,7 +3,7 @@ using Burkardt.CDFLib;
 using Burkardt.PDFLib;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class LogNormalTruncatedABTest
 {

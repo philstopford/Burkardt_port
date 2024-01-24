@@ -1,7 +1,7 @@
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.HistogramTest;
+namespace Burkardt_Tests.TestTriangle.HistogramTest;
 
 public class HistogramTest
 {

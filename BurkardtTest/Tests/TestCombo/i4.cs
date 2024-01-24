@@ -2,7 +2,7 @@
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.ComboTest;
+namespace Burkardt_Tests.TestCombo;
 
 internal static partial class Program
 {

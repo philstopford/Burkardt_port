@@ -2,7 +2,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshVolume;
+namespace Burkardt_Tests.TestTetrahedron.MeshVolume;
 
 public class MeshVolumeTest
 {

@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.TetrahedronNS;
 
-namespace Burkhardt_Tests.TestTetrahedron;
+namespace Burkardt_Tests.TestTetrahedron;
 
 public class NewtonCotesOpenTest
 {

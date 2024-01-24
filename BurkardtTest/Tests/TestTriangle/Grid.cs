@@ -1,7 +1,7 @@
 using System.Globalization;
 using Grid = Burkardt.TriangleNS.Grid;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class GridTest
 {

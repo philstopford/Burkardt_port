@@ -4,7 +4,7 @@ using Burkardt.Polyhedron;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class PolyhedronTest
 {

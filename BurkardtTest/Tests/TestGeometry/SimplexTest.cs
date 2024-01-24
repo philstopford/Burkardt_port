@@ -2,7 +2,7 @@
 using Burkardt.SimplexNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class SimplexTest
 {

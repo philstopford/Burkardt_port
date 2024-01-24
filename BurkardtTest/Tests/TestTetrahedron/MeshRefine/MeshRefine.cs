@@ -2,7 +2,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshRefine;
+namespace Burkardt_Tests.TestTetrahedron.MeshRefine;
 
 public class MeshRefineTest
 {

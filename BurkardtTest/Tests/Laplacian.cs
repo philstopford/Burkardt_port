@@ -3,7 +3,7 @@ using Burkardt.Error;
 using Burkardt.Laplacian;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class LaplacianTest
 {

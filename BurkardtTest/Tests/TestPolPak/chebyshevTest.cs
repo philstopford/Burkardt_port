@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 using TestValues = Burkardt.Values.Chebyshev;
 using Polynomial = Burkardt.PolynomialNS.Chebyshev;

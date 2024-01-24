@@ -2,7 +2,7 @@
 using Burkardt.Types;
 using Burkardt.Voxels;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class VoxelTest
 {

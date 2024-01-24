@@ -1,7 +1,7 @@
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.GridTest;
+namespace Burkardt_Tests.TestTetrahedron.GridTest;
 
 public class GridTest
 {

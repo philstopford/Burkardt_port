@@ -5,7 +5,7 @@ using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests.TestnIntExactness;
 
 public static class nIntExactnessTest
 {

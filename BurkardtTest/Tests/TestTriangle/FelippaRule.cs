@@ -4,7 +4,7 @@ using Burkardt.TriangleNS;
 using Burkardt.Types;
 using Monomial = Burkardt.MonomialNS.Monomial;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class FelippaRuleTest
 {

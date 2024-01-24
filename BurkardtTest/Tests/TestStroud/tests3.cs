@@ -5,7 +5,7 @@ using Burkardt.Stroud;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 using Polygon = Burkardt.Stroud.Polygon;
 using Simplex = Burkardt.Stroud.Simplex;
 

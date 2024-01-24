@@ -3,7 +3,7 @@ using Burkardt.TriangleNS;
 using Burkardt.Types;
 using TriMonomial = Burkardt.TriangleNS.Monomial;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class TWBRuleTest
 {

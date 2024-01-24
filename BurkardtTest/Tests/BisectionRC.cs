@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt;
 using Burkardt.Bisection;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class BisectionRCTest
 {

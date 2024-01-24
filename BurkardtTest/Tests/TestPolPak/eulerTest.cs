@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 using Sequence = Burkardt.Sequence.Euler;
 using Polynomial = Burkardt.PolynomialNS.Euler;

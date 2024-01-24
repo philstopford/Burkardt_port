@@ -4,7 +4,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshRCM;
+namespace Burkardt_Tests.TestTetrahedron.MeshRCM;
 
 public class MeshRCMTest
 {

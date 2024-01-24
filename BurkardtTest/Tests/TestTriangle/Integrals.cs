@@ -4,7 +4,7 @@ using Burkardt.Types;
 using static System.Globalization.CultureInfo;
 using Integrals = Burkardt.TriangleNS.Integrals;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class IntegralsTest
 {

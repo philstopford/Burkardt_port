@@ -10,7 +10,7 @@ using Triangle = Burkardt.Uniform.Triangle;
 using Sphere = Burkardt.Uniform.Sphere;
 using Tetrahedron = Burkardt.Uniform.Tetrahedron;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class RandomData
 {

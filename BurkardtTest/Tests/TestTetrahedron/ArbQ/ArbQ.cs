@@ -3,7 +3,7 @@ using Burkardt.PolynomialNS;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.ArbQ;
+namespace Burkardt_Tests.TestTetrahedron.ArbQ;
 
 public class ArbQTest
 {

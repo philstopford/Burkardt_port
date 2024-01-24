@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 public static class functions
 {
     public static double function_1d(int function_1d_index, double x)

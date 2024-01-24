@@ -1,6 +1,6 @@
 using Burkardt.AppliedStatistics;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS291
 {

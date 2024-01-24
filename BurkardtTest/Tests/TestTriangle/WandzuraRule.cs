@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.FEM;
 using Burkardt.TriangleNS;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class WandzuraRuleTest
 {

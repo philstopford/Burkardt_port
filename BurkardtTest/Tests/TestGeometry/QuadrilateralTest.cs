@@ -4,7 +4,7 @@ using System.Linq;
 using Burkardt.Quadrilateral;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class QuadrilateralTest
 {

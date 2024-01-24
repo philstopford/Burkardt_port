@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.Ziggurat;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class Ziggurat
 {

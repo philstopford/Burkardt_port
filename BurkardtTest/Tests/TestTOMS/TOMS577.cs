@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.Elliptic;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS577
 {

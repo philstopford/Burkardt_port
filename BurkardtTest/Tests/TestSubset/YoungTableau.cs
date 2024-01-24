@@ -1,7 +1,7 @@
 ﻿using System;
 using Burkardt.MatrixNS;
 
-namespace Burkhardt_Tests.SubsetTest;
+namespace Burkardt_Tests.TestSubset;
 
 public static class YoungTableauTest
 {

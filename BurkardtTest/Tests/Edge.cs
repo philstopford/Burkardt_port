@@ -1,7 +1,7 @@
 using Burkardt.Edge;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class EdgeTest
 {

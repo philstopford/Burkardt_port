@@ -1,6 +1,6 @@
 using Burkardt.IntegralNS;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class ClausenTest
 {

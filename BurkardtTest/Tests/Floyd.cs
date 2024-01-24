@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.MinDist;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class FloydTest
 {

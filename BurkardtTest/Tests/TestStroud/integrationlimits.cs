@@ -1,4 +1,4 @@
-﻿namespace Burkhardt_Tests.StroudTest;
+﻿namespace Burkardt_Tests.TestStroud;
 public static class integrationlimits
 {
     public static double fu18 ( double x )

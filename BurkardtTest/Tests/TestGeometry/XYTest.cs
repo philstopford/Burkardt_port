@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Geometry;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class XYTest
 {

@@ -2,7 +2,7 @@
 using Burkardt.Cube;
 using Burkardt.Geometry;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class CubeTest
 {

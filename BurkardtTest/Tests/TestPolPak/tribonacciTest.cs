@@ -2,7 +2,7 @@
 using System.Numerics;
 using Burkardt.Sequence;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class tribonacciTest
 {

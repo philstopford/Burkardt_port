@@ -3,7 +3,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshQuality;
+namespace Burkardt_Tests.TestTetrahedron.MeshQuality;
 
 public class MeshQualityTest
 {

@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.CDFLib;
 using Burkardt.Values;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS462
 {

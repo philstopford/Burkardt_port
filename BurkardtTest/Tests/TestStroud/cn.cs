@@ -5,7 +5,7 @@ using Burkardt.Quadrature;
 using Burkardt.Types;
 using Monomial = Burkardt.MonomialNS.Monomial;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 
 using StroudIntegral = Burkardt.IntegralNS.Stroud;
 using StroudQuadrature = Burkardt.Quadrature.Stroud;

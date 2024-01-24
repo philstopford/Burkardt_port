@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.Types;
 using Burkardt.Grid;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class MultiGridPoisson1DTest
 {

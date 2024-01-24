@@ -1,4 +1,4 @@
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 using Index = Burkardt.IndexNS.Index;
 
 public class IndexTest

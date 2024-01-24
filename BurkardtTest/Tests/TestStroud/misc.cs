@@ -1,4 +1,4 @@
-﻿namespace Burkhardt_Tests.StroudTest;
+﻿namespace Burkardt_Tests.TestStroud;
 public static class misc
 {
     public static double[] setsim ( int n )

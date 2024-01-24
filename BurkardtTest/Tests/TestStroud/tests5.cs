@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Stroud;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 public static class tests5
 {
     [Test]

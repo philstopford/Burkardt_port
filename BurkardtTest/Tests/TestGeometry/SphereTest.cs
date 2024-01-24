@@ -5,7 +5,7 @@ using Burkardt;
 using Burkardt.SphereNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class SphereTest
 {

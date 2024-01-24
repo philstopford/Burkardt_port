@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Burkhardt_Tests.BlendTest;
+namespace Burkardt_Tests.TestBlend;
 
 public partial class BlendTest
 {

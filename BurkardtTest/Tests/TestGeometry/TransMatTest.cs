@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Geometry;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class TransMatTest
 {

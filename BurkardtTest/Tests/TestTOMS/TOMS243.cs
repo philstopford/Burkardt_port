@@ -2,7 +2,7 @@ using System.Numerics;
 using Burkardt.TOMSNS;
 using Burkardt.Values;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS243
 {

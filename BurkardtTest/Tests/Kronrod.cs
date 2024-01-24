@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.Kronrod;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class KronrodTest
 {

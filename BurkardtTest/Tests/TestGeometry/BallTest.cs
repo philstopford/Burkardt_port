@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Ball;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class BallTest
 {

@@ -2,7 +2,7 @@
 using Burkardt.RankingNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.SubsetTest;
+namespace Burkardt_Tests.TestSubset;
 
 public static class GrayTest
 {

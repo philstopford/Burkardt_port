@@ -4,7 +4,7 @@ using Burkardt.IntegralNS;
 using Burkardt.Stroud;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 public static class tests2
 {
     [Test]

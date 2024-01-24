@@ -1,7 +1,7 @@
 ﻿using System;
 using Burkardt.ParabolaNS;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class ParabolaTest
 {

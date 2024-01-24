@@ -2,7 +2,7 @@
 using Burkardt.SolveNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.SubsetTest;
+namespace Burkardt_Tests.TestSubset;
 
 public static class PellTest
 {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using Burkardt.Geometry;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class DirectionTest
 {

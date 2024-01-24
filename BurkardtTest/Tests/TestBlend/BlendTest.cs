@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.Blend;
 
-namespace Burkhardt_Tests.BlendTest;
+namespace Burkardt_Tests.TestBlend;
 
 public partial class BlendTest
 {

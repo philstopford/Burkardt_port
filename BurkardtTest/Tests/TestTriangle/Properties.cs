@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.TriangleNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class PropertiesTest
 {

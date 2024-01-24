@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Hexagon;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class HexagonTest
 {

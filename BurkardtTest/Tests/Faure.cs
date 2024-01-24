@@ -3,7 +3,7 @@ using Burkardt.Function;
 using Burkardt.PolynomialNS;
 using Burkardt.RandomNS;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class FaureTest
 {

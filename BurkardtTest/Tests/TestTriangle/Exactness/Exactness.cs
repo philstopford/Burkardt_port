@@ -5,7 +5,7 @@ using Burkardt.TriangleNS;
 using Burkardt.TriangulationNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.Exactness;
+namespace Burkardt_Tests.TestTriangle.Exactness;
 
 public class ExactnessTest
 {
@@ -195,7 +195,7 @@ public class ExactnessTest
         //
         double[] x_ref = new double[2 * point_num];
 
-        Triangulation.triangle_order3_physical_to_reference(r, point_num, x, ref x_ref);
+        Burkardt.TriangulationNS.Triangulation.triangle_order3_physical_to_reference(r, point_num, x, ref x_ref);
         //
         //  Explore the monomials.
         //

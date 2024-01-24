@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.TOMSNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS112
 {

@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.FullertonFnLib;
 using Burkardt.Values;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class FullertonTest
 {

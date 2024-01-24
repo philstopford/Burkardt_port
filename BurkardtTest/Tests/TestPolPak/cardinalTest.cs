@@ -3,7 +3,7 @@ using System.Globalization;
 using Burkardt.Function;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class cardinalTest
 {

@@ -1,6 +1,6 @@
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.IOTest;
+namespace Burkardt_Tests.TestTriangle.IOTest;
 
 public class IOTest
 {

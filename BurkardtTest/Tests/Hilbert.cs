@@ -1,6 +1,6 @@
 using Burkardt.Function;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class HilbertTest
 {

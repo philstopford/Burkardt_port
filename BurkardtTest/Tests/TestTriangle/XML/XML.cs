@@ -1,7 +1,7 @@
 using Burkardt.IO;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTriangle.XMLTest;
+namespace Burkardt_Tests.TestTriangle.XMLTest;
 
 public class XMLTest
 {

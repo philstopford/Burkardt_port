@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 using Polynomial = Burkardt.PolynomialNS.Legendre;
 using Function = Burkardt.Function.Legendre;

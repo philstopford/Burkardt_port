@@ -4,7 +4,7 @@ using Burkardt.MatrixNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 using Polynomial = Burkardt.PolynomialNS;
 using Burkardt.Spline;

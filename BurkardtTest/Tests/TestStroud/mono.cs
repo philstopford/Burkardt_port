@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 public static class mono
 {
     public static double mono_000_3d(int unused, int n, double[] x)

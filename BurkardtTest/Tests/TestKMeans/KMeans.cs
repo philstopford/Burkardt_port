@@ -3,7 +3,7 @@ using Burkardt.SolveNS;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestKMeans;
+namespace Burkardt_Tests.TestKMeans;
 
 public class KMeansTest
 {

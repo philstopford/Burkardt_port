@@ -1,7 +1,7 @@
 using System.Globalization;
 using Burkardt.TriangleNS;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class InterpolationTest
 {

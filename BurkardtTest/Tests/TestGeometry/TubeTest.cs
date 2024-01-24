@@ -3,7 +3,7 @@ using System.Linq;
 using Burkardt.Tube;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.GeometryTest;
+namespace Burkardt_Tests.TestGeometry;
 
 public static class TubeTest
 {

@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.Chebyshev;
 using Burkardt.ChebyshevNS;
 
-namespace Burkhardt_Tests.TOMSTest;
+namespace Burkardt_Tests.TestTOMS;
 
 public class TOMS446
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Burkardt.SimplexNS;
 
-namespace Burkhardt_Tests.PolPakTest;
+namespace Burkardt_Tests.TestPolPak;
 
 public static class simplexTest
 {

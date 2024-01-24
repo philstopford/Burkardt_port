@@ -1,7 +1,7 @@
 using System.Numerics;
 using Burkardt.Values;
 
-namespace Burkhardt_Tests.TestValues;
+namespace Burkardt_Tests.TestValues;
 
 public class WrightOmegaTestValues
 {

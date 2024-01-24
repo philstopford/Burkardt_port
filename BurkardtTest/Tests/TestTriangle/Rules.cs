@@ -4,7 +4,7 @@ using Burkardt.MonomialNS;
 using Burkardt.Types;
 using QuadratureRule = Burkardt.TriangleNS.QuadratureRule;
 
-namespace Burkhardt_Tests.TestTriangle;
+namespace Burkardt_Tests.TestTriangle;
 
 public class RulesTest
 {

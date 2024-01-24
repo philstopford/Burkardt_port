@@ -4,7 +4,7 @@ using Burkardt.MonomialNS;
 using Burkardt.Quadrature;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.StroudTest;
+namespace Burkardt_Tests.TestStroud;
 
 using StroudQuadrature = Stroud;
 using StroudIntegral = Burkardt.IntegralNS.Stroud;

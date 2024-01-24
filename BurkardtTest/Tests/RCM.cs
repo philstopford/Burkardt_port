@@ -3,7 +3,7 @@ using Burkardt.TriangulationNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Burkhardt_Tests;
+namespace Burkardt_Tests;
 
 public class RCM
 {

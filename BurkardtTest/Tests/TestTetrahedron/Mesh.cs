@@ -4,7 +4,7 @@ using Burkardt.Types;
 using Burkardt.Uniform;
 using Tetrahedron = Burkardt.TetrahedronNS.Tetrahedron;
 
-namespace Burkhardt_Tests.TestTetrahedron;
+namespace Burkardt_Tests.TestTetrahedron;
 
 public class MeshTest
 {

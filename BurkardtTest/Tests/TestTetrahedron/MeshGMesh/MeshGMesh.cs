@@ -2,7 +2,7 @@ using Burkardt.Table;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron.MeshGMesh;
+namespace Burkardt_Tests.TestTetrahedron.MeshGMesh;
 
 public class MeshGMeshTest
 {

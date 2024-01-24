@@ -2,7 +2,7 @@ using System.Globalization;
 using Burkardt.TetrahedronNS;
 using Burkardt.Types;
 
-namespace Burkhardt_Tests.TestTetrahedron;
+namespace Burkardt_Tests.TestTetrahedron;
 
 public class MonteCarloTest
 {
