@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Burkardt\Burkardt.csproj" />
+      <ProjectReference Include="..\Interpolation\InterpTestData\InterpTestData.csproj" />
     </ItemGroup>
 
     <ItemGroup>

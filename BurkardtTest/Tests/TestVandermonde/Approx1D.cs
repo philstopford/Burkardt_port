@@ -1,15 +1,15 @@
-﻿using System;
 using Burkardt.MatrixNS;
 using Burkardt.PolynomialNS;
 using Burkardt.SolveNS;
 using Burkardt.Types;
 using InterpTest;
 
-namespace VandermondeApprox1DTest;
+namespace Burkardt_Tests.TestVandermonde;
 
-internal static class Program
+public class Approx1DTest
 {
-    private static void Main()
+        [Test]
+        public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -170,4 +170,5 @@ internal static class Program
         Console.WriteLine("  Normalized length of piecewise linear interpolant = " + ld + "");
         Console.WriteLine("  Normalized length of polynomial interpolant       = " + li + "");
     }
+
 }

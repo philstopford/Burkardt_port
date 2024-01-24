@@ -1,4 +1,3 @@
-﻿using System;
 using Burkardt.PolynomialNS;
 using Burkardt.SolveNS;
 using Burkardt.Types;
@@ -6,11 +5,12 @@ using Burkardt.Uniform;
 using InterpTest;
 using Vandermonde = Burkardt.Interpolation.Vandermonde;
 
-namespace VandermondeInterp2D;
+namespace Burkardt_Tests.TestVandermonde;
 
-internal static class Program
+public class Interp2DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -135,5 +135,5 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("  L2 data interpolation error = " + app_error + "");
-    }
+    }    
 }

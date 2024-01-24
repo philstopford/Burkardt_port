@@ -1,56 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.Interpolation;
 using Burkardt.MatrixNS;
 using Burkardt.SolveNS;
 using Burkardt.Types;
 using InterpTest;
 
-namespace VandermondeInterp1D;
+namespace Burkardt_Tests.TestVandermonde;
 
-internal static class Program
+public class Interp1DTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for VANDERMONDE_INTERP_1D_TEST.
-        //
-        //  Discussion:
-        //
-        //    VANDERMONDE_INTERP_1D_TEST tests the VANDERMONDE_INTERP_1D library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    03 July 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
+    [Test]
+    public static void test()
     {
         int prob;
-
-        Console.WriteLine("");
-        Console.WriteLine("VANDERMONDE_INTERP_1D_TEST:");
-        Console.WriteLine("  Test the VANDERMONDE_INTERP_1D library.");
-        Console.WriteLine("  The QR_SOLVE library is needed.");
-        Console.WriteLine("  The R8LIB library is needed.");
-        Console.WriteLine("  This test needs the CONDITION library.");
-        Console.WriteLine("  This test needs the TEST_INTERP library.");
-
-        vandermonde_coef_1d_test();
-
-        vandermonde_matrix_1d_test();
-
-        vandermonde_value_1d_test();
-
         int prob_num = TestInterp.p00_prob_num();
 
         for (prob = 1; prob <= prob_num; prob++)
@@ -62,14 +23,11 @@ internal static class Program
         {
             test02(prob);
         }
-
-        Console.WriteLine("");
-        Console.WriteLine("VANDERMONDE_INTERP_1D_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
+        
     }
-
-    private static void vandermonde_coef_1d_test()
+    
+        [Test]
+    public static void vandermonde_coef_1d_test()
 
         //****************************************************************************80
         //
@@ -108,7 +66,8 @@ internal static class Program
 
     }
 
-    private static void vandermonde_matrix_1d_test()
+    [Test]
+    public static void vandermonde_matrix_1d_test()
 
         //****************************************************************************80
         //
@@ -141,7 +100,8 @@ internal static class Program
         typeMethods.r8mat_print(nd, nd, ad, "  Vandermonde matrix:");
     }
 
-    private static void vandermonde_value_1d_test()
+    [Test]
+    public static void vandermonde_value_1d_test()
 
         //****************************************************************************80
         //
