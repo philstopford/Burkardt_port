@@ -933,7 +933,7 @@ public static partial class Algorithms
 
         for (int i = 0; i < n; i++)
         {
-            x[i] = gamma_sample(a[i], 1.0, ref data, ref seed);
+            x[i % x.Length] = gamma_sample(a[i % a.Length], 1.0, ref data, ref seed);
         }
 
         //
@@ -943,7 +943,7 @@ public static partial class Algorithms
 
         for (int i = 0; i < n; i++)
         {
-            x[i] /= x_sum;
+            x[i % x.Length] /= x_sum;
         }
 
         return x;
@@ -986,7 +986,7 @@ public static partial class Algorithms
 
         for (int i = 0; i < n; i++)
         {
-            variance[i] = a[i] * (a_sum - a[i]) / (a_sum * a_sum * (a_sum + 1.0));
+            variance[i % variance.Length] = a[i % a.Length] * (a_sum - a[i % a.Length]) / (a_sum * a_sum * (a_sum + 1.0));
         }
 
         return variance;

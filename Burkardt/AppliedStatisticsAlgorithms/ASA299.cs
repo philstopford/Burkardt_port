@@ -126,7 +126,7 @@ public static partial class Algorithms
                 x[0] = t;
                 for (int i = 1; i < n; i++)
                 {
-                    x[i] = 0;
+                    x[i % x.Length] = 0;
                 }
 
                 more = n switch
@@ -153,7 +153,7 @@ public static partial class Algorithms
 
                 for (int i = n - 2; 0 <= i; i--)
                 {
-                    if (0 >= x[i])
+                    if (0 >= x[i % x.Length])
                     {
                         continue;
                     }
@@ -176,22 +176,22 @@ public static partial class Algorithms
                     return;
                 }
 
-                x[j] -= 1;
-                x[j + 1] = t;
+                x[j % x.Length] -= 1;
+                x[(j + 1) % x.Length] = t;
                 for (int i = 0; i <= j; i++)
                 {
-                    x[j + 1] -= x[i];
+                    x[(j + 1) % x.Length] -= x[i % x.Length];
                 }
 
                 for (int i = j + 2; i < n; i++)
                 {
-                    x[i] = 0;
+                    x[i % x.Length] = 0;
                 }
 
                 //
                 //  Is this the last point?
                 //
-                if (x[n - 1] == t)
+                if (x[(n - 1) % x.Length] == t)
                 {
                     more = false;
                 }

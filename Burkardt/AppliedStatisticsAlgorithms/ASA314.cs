@@ -65,13 +65,13 @@ public static partial class Algorithms
             {
                 n += 1;
 
-                if (rmod[i - 1] != cmod[j - 1] && 0 < mat[n - 1])
+                if (rmod[(i - 1) % rmod.Length] != cmod[(j - 1) % cmod.Length] && 0 < mat[(n - 1) % mat.Length])
                 {
                     ifault = 2;
                     return;
                 }
 
-                if (rmod[i - 1] >= mat[n - 1] && mat[n - 1] >= 0)
+                if (rmod[(i - 1) % rmod.Length] >= mat[(n - 1) % mat.Length] && mat[(n - 1) % mat.Length] >= 0)
                 {
                     continue;
                 }
@@ -87,7 +87,7 @@ public static partial class Algorithms
             for (int j = 1; j <= nrow; j++)
             {
                 n += 1;
-                imat[n - 1] = 0;
+                imat[(n - 1) % imat.Length] = 0;
             }
         }
 
@@ -103,7 +103,7 @@ public static partial class Algorithms
 //
         for (n = 1; n <= nrow * nrow; n = n + nrow + 1)
         {
-            imat[n - 1] = 1;
+            imat[(n - 1) % imat.Length] = 1;
         }
 
 //
@@ -115,7 +115,7 @@ public static partial class Algorithms
 
             int k;
             int kjr;
-            switch (mat[kir + ir - 1])
+            switch (mat[(kir + ir - 1) % mat.Length])
             {
                 case 0:
                 {
@@ -126,7 +126,7 @@ public static partial class Algorithms
 
                     for (kjr = kir + nrow + ir; kjr <= nrow * nrow; kjr += nrow)
                     {
-                        if (0 >= mat[kjr - 1])
+                        if (0 >= mat[(kjr - 1) % mat.Length])
                         {
                             continue;
                         }
@@ -147,14 +147,14 @@ public static partial class Algorithms
                         {
                             for (kjr = ir; kjr <= kir; kjr += nrow)
                             {
-                                if (0 >= mat[kjr - 1])
+                                if (0 >= mat[(kjr - 1) % mat.Length])
                                 {
                                     continue;
                                 }
 
                                 for (int i = kjr - ir + 1; i < kjr; i++)
                                 {
-                                    switch (mat[i - 1])
+                                    switch (mat[(i - 1) % mat.Length])
                                     {
                                         case > 0:
                                             ifault = 3;
@@ -187,13 +187,13 @@ public static partial class Algorithms
 
                     for (int i = 1; i <= nrow; i++)
                     {
-                        k = mat[kir + i - 1];
-                        mat[kir + i - 1] = mat[kjr + i - 1];
-                        mat[kjr + i - 1] = k;
+                        k = mat[(kir + i - 1) % mat.Length];
+                        mat[(kir + i - 1) % mat.Length] = mat[(kjr + i - 1) % mat.Length];
+                        mat[(kjr + i - 1) % mat.Length] = k;
 
-                        k = imat[kir + i - 1];
-                        imat[kir + i - 1] = imat[kjr + i - 1];
-                        imat[kjr + i - 1] = k;
+                        k = imat[(kir + i - 1) % imat.Length];
+                        imat[(kir + i - 1) % imat.Length] = imat[(kjr + i - 1) % imat.Length];
+                        imat[(kjr + i - 1) % imat.Length] = k;
                     }
 
                     break;
@@ -203,10 +203,10 @@ public static partial class Algorithms
             //
             //  Find a multiplier N such that N*MAT(IR,IR)=1 mod(P{IR})
             //
-            k = mat[kir + ir - 1];
-            for (n = 1; n < rmod[ir - 1]; n++)
+            k = mat[(kir + ir - 1) % mat.Length];
+            for (n = 1; n < rmod[(ir - 1) % rmod.Length]; n++)
             {
-                if (n * k % rmod[ir - 1] == 1)
+                if (n * k % rmod[(ir - 1) % rmod.Length] == 1)
                 {
                     break;
                 }
@@ -221,8 +221,8 @@ public static partial class Algorithms
                 {
                     for (int i = kir + 1; i <= ir * nrow; i++)
                     {
-                        mat[i - 1] *= n;
-                        imat[i - 1] *= n;
+                        mat[(i - 1) % mat.Length] *= n;
+                        imat[(i - 1) % imat.Length] *= n;
                     }
 
                     break;
@@ -234,7 +234,7 @@ public static partial class Algorithms
             //
             for (kjr = 0; kjr < nrow * nrow; kjr += nrow)
             {
-                n = rmod[ir - 1] - mat[kjr + ir - 1];
+                n = rmod[(ir - 1) % rmod.Length] - mat[(kjr + ir - 1) % mat.Length];
                 if (kjr == kir || n == 0)
                 {
                     continue;
@@ -242,8 +242,8 @@ public static partial class Algorithms
 
                 for (int i = 1; i <= nrow; i++)
                 {
-                    mat[kjr + i - 1] = (mat[kjr + i - 1] + n * mat[kir + i - 1]) % cmod[i - 1];
-                    imat[kjr + i - 1] = (imat[kjr + i - 1] + n * imat[kir + i - 1]) % cmod[i - 1];
+                    mat[(kjr + i - 1) % mat.Length] = (mat[(kjr + i - 1) % mat.Length] + n * mat[(kir + i - 1) % mat.Length]) % cmod[(i - 1) % cmod.Length];
+                    imat[(kjr + i - 1) % imat.Length] = (imat[(kjr + i - 1) % imat.Length] + n * imat[(kir + i - 1) % imat.Length]) % cmod[(i - 1) % cmod.Length];
                 }
             }
 
@@ -260,18 +260,18 @@ public static partial class Algorithms
         //
         for (n = 1; n <= nrow * nrow; n = n + nrow + 1)
         {
-            ifault = mat[n - 1] switch
+            ifault = mat[(n - 1) % mat.Length] switch
             {
                 0 => -1,
                 _ => ifault
             };
 
-            mat[n - 1] = -mat[n - 1];
+            mat[(n - 1) % mat.Length] = -mat[(n - 1) % mat.Length];
         }
 
         for (n = 1; n <= nrow * nrow; n++)
         {
-            switch (mat[n - 1])
+            switch (mat[(n - 1) % mat.Length])
             {
                 case > 0:
                     ifault = 3;
@@ -281,7 +281,7 @@ public static partial class Algorithms
 
         for (n = 1; n <= nrow * nrow; n = n + nrow + 1)
         {
-            mat[n - 1] = -mat[n - 1];
+            mat[(n - 1) % mat.Length] = -mat[(n - 1) % mat.Length];
         }
 
         //
@@ -352,8 +352,8 @@ public static partial class Algorithms
 //
         for (i = 1; i <= nrow; i++)
         {
-            rsort[i - 1] = i;
-            csort[i - 1] = i;
+            rsort[(i - 1) % rsort.Length] = i;
+            csort[(i - 1) % csort.Length] = i;
         }
 
 //
@@ -365,16 +365,16 @@ public static partial class Algorithms
 //  Find the next row.
 //
             jrc = irc;
-            p = rmod[irc - 1];
+            p = rmod[(irc - 1) % rmod.Length];
 
             for (i = irc + 1; i <= nrow; i++)
             {
-                if (rmod[i - 1] >= p)
+                if (rmod[(i - 1) % rmod.Length] >= p)
                 {
                     continue;
                 }
 
-                p = rmod[i - 1];
+                p = rmod[(i - 1) % rmod.Length];
                 jrc = i;
             }
 
@@ -383,13 +383,13 @@ public static partial class Algorithms
                 continue;
             }
 
-            i = rmod[irc - 1];
-            rmod[irc - 1] = rmod[jrc - 1];
-            rmod[jrc - 1] = i;
+            i = rmod[(irc - 1) % rmod.Length];
+            rmod[(irc - 1) % rmod.Length] = rmod[(jrc - 1) % rmod.Length];
+            rmod[(jrc - 1) % rmod.Length] = i;
 
-            i = rsort[irc - 1];
-            rsort[irc - 1] = rsort[jrc - 1];
-            rsort[jrc - 1] = i;
+            i = rsort[(irc - 1) % rsort.Length];
+            rsort[(irc - 1) % rsort.Length] = rsort[(jrc - 1) % rsort.Length];
+            rsort[(jrc - 1) % rsort.Length] = i;
 //
 //  Switch the rows.
 //
@@ -398,9 +398,9 @@ public static partial class Algorithms
 
             for (j = 1; j <= nrow; j++)
             {
-                i = mat[kirc + j - 1];
-                mat[kirc + j - 1] = mat[kjrc + j - 1];
-                mat[kjrc + j - 1] = i;
+                i = mat[(kirc + j - 1) % mat.Length];
+                mat[(kirc + j - 1) % mat.Length] = mat[(kjrc + j - 1) % mat.Length];
+                mat[(kjrc + j - 1) % mat.Length] = i;
             }
         }
 
@@ -413,16 +413,16 @@ public static partial class Algorithms
 //  Find the next column.
 //
             jrc = irc;
-            p = cmod[irc - 1];
+            p = cmod[(irc - 1) % cmod.Length];
 
             for (i = irc + 1; i <= nrow; i++)
             {
-                if (cmod[i - 1] >= p)
+                if (cmod[(i - 1) % cmod.Length] >= p)
                 {
                     continue;
                 }
 
-                p = cmod[i - 1];
+                p = cmod[(i - 1) % cmod.Length];
                 jrc = i;
             }
 
@@ -431,21 +431,21 @@ public static partial class Algorithms
                 continue;
             }
 
-            i = cmod[irc - 1];
-            cmod[irc - 1] = cmod[jrc - 1];
-            cmod[jrc - 1] = i;
+            i = cmod[(irc - 1) % cmod.Length];
+            cmod[(irc - 1) % cmod.Length] = cmod[(jrc - 1) % cmod.Length];
+            cmod[(jrc - 1) % cmod.Length] = i;
 
-            i = csort[irc - 1];
-            csort[irc - 1] = csort[jrc - 1];
-            csort[jrc - 1] = i;
+            i = csort[(irc - 1) % csort.Length];
+            csort[(irc - 1) % csort.Length] = csort[(jrc - 1) % csort.Length];
+            csort[(jrc - 1) % csort.Length] = i;
 //
 //  Switch the columns.
 //
             for (j = 0; j < nrow * nrow; j += nrow)
             {
-                i = mat[irc + j - 1];
-                mat[irc + j - 1] = mat[jrc + j - 1];
-                mat[jrc + j - 1] = i;
+                i = mat[(irc + j - 1) % mat.Length];
+                mat[(irc + j - 1) % mat.Length] = mat[(jrc + j - 1) % mat.Length];
+                mat[(jrc + j - 1) % mat.Length] = i;
             }
         }
     }
@@ -515,26 +515,26 @@ public static partial class Algorithms
 //
 //  Find next row.
 //
-            if (csort[irc - 1] == irc)
+            if (csort[(irc - 1) % csort.Length] == irc)
             {
                 continue;
             }
 
             for (jrc = irc + 1; jrc <= nrow; jrc++)
             {
-                if (csort[jrc - 1] == irc)
+                if (csort[(jrc - 1) % csort.Length] == irc)
                 {
                     break;
                 }
             }
 
-            i = cmod[irc - 1];
-            cmod[irc - 1] = cmod[jrc - 1];
-            cmod[jrc - 1] = i;
+            i = cmod[(irc - 1) % cmod.Length];
+            cmod[(irc - 1) % cmod.Length] = cmod[(jrc - 1) % cmod.Length];
+            cmod[(jrc - 1) % cmod.Length] = i;
 
-            i = csort[irc - 1];
-            csort[irc - 1] = csort[jrc - 1];
-            csort[jrc - 1] = i;
+            i = csort[(irc - 1) % csort.Length];
+            csort[(irc - 1) % csort.Length] = csort[(jrc - 1) % csort.Length];
+            csort[(jrc - 1) % csort.Length] = i;
 //
 //  Switch rows.
 //
@@ -543,9 +543,9 @@ public static partial class Algorithms
 
             for (j = 1; j <= nrow; j++)
             {
-                i = imat[kirc + j - 1];
-                imat[kirc + j - 1] = imat[kjrc + j - 1];
-                imat[kjrc + j - 1] = i;
+                i = imat[(kirc + j - 1) % imat.Length];
+                imat[(kirc + j - 1) % imat.Length] = imat[(kjrc + j - 1) % imat.Length];
+                imat[(kjrc + j - 1) % imat.Length] = i;
             }
         }
 
@@ -557,34 +557,34 @@ public static partial class Algorithms
 //
 //  Find the next column.
 //
-            if (rsort[irc - 1] == irc)
+            if (rsort[(irc - 1) % rsort.Length] == irc)
             {
                 continue;
             }
 
             for (jrc = irc + 1; jrc <= nrow; jrc++)
             {
-                if (rsort[jrc - 1] == irc)
+                if (rsort[(jrc - 1) % rsort.Length] == irc)
                 {
                     break;
                 }
             }
 
-            i = rmod[irc - 1];
-            rmod[irc - 1] = rmod[jrc - 1];
-            rmod[jrc - 1] = i;
+            i = rmod[(irc - 1) % rmod.Length];
+            rmod[(irc - 1) % rmod.Length] = rmod[(jrc - 1) % rmod.Length];
+            rmod[(jrc - 1) % rmod.Length] = i;
 
-            i = rsort[irc - 1];
-            rsort[irc - 1] = rsort[jrc - 1];
-            rsort[jrc - 1] = i;
+            i = rsort[(irc - 1) % rsort.Length];
+            rsort[(irc - 1) % rsort.Length] = rsort[(jrc - 1) % rsort.Length];
+            rsort[(jrc - 1) % rsort.Length] = i;
 //
 //  Switch the columns of IMAT.
 //
             for (j = 0; j < nrow * nrow; j += nrow)
             {
-                i = imat[irc + j - 1];
-                imat[irc + j - 1] = imat[jrc + j - 1];
-                imat[jrc + j - 1] = i;
+                i = imat[(irc + j - 1) % imat.Length];
+                imat[(irc + j - 1) % imat.Length] = imat[(jrc + j - 1) % imat.Length];
+                imat[(jrc + j - 1) % imat.Length] = i;
             }
 
 //
@@ -593,9 +593,9 @@ public static partial class Algorithms
             kirc = (irc - 1) * nrow + irc;
             kjrc = (jrc - 1) * nrow + jrc;
 
-            i = mat[kirc - 1];
-            mat[kirc - 1] = mat[kjrc - 1];
-            mat[kjrc - 1] = i;
+            i = mat[(kirc - 1) % mat.Length];
+            mat[(kirc - 1) % mat.Length] = mat[(kjrc - 1) % mat.Length];
+            mat[(kjrc - 1) % mat.Length] = i;
         }
     }
 }
