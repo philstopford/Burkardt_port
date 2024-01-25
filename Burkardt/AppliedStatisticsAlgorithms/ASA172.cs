@@ -41,7 +41,7 @@ public static partial class Algorithms
     {
         for (int i = 0; i < kdim / 2; i++)
         {
-            (ivec[i], ivec[kdim - 1 - i]) = (ivec[kdim - 1 - i], ivec[i]);
+            (ivec[i % ivec.Length], ivec[(kdim - 1 - i) % ivec.Length]) = (ivec[(kdim - 1 - i) % ivec.Length], ivec[i % ivec.Length]);
         }
     }
 
@@ -136,7 +136,7 @@ public static partial class Algorithms
             //
             //  Index subscript to subscript vector conversion.
             //
-            case true when iprod[kdim - 1] < jsub:
+            case true when iprod[(kdim - 1) % iprod.Length] < jsub:
                 ifault = 1;
                 Console.WriteLine("");
                 Console.WriteLine("SIMDO - Fatal error!");
@@ -149,12 +149,12 @@ public static partial class Algorithms
                 for (i = 0; i < kdim - 1; i++)
                 {
                     int ik = kdim - 2 - i;
-                    ivec[i] = itempv / iprod[ik];
-                    itempv -= iprod[ik] * ivec[i];
-                    ivec[i] += 1;
+                    ivec[i % ivec.Length] = itempv / iprod[ik % iprod.Length];
+                    itempv -= iprod[ik % iprod.Length] * ivec[i % ivec.Length];
+                    ivec[i % ivec.Length] += 1;
                 }
 
-                ivec[kdim - 1] = itempv + 1;
+                ivec[(kdim - 1) % ivec.Length] = itempv + 1;
                 switch (qfor)
                 {
                     case true:
@@ -185,7 +185,7 @@ public static partial class Algorithms
 
                 for (i = 1; i < kdim; i++)
                 {
-                    if (iprod[i] / iprod[i - 1] >= ivec[i])
+                    if (iprod[i % iprod.Length] / iprod[(i - 1) % iprod.Length] >= ivec[i % ivec.Length])
                     {
                         continue;
                     }
@@ -200,7 +200,7 @@ public static partial class Algorithms
                 jsub = ivec[0];
                 for (i = 1; i < kdim; i++)
                 {
-                    jsub += (ivec[i] - 1) * iprod[i - 1];
+                    jsub += (ivec[i % ivec.Length] - 1) * iprod[(i - 1) % iprod.Length];
                 }
 
                 switch (qfor)

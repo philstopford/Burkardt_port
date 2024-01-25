@@ -213,14 +213,14 @@ public static partial class Algorithms
 
         for (i = 0; i < n; i++)
         {
-            switch (a[i])
+            switch (a[i % a.Length])
             {
                 case < 0.0:
                     Console.WriteLine("");
                     Console.WriteLine("DIRICHLET_CHECK - Fatal error!");
                     Console.WriteLine("  A(I) < 0.");
                     Console.WriteLine("  For I = " + i + "");
-                    Console.WriteLine("  A[I] = " + a[i] + "");
+                    Console.WriteLine("  A[I] = " + a[i % a.Length] + "");
                     break;
                 case > 0.0:
                     positive = 1;
@@ -378,7 +378,7 @@ public static partial class Algorithms
         {
             for (int j = 0; j < k; j++)
             {
-                switch (x[i + j * ix])
+                switch (x[(i + j * ix) % x.Length])
                 {
                     case <= 0.0:
                         niter = i;
@@ -393,7 +393,7 @@ public static partial class Algorithms
             sum2 = 0.0;
             for (int j = 0; j < k; j++)
             {
-                sum2 += x[i + j * ix];
+                sum2 += x[(i + j * ix) % x.Length];
             }
 
             if (!(gamma <= Math.Abs(sum2 - 1.0)))
@@ -426,19 +426,19 @@ public static partial class Algorithms
                     sum1 = 0.0;
                     for (int i = 0; i < n; i++)
                     {
-                        sum1 += x[i + j * ix];
+                        sum1 += x[(i + j * ix) % x.Length];
                     }
 
-                    alpha[j] = sum1 / an;
-                    sum2 += alpha[j];
+                    alpha[j % alpha.Length] = sum1 / an;
+                    sum2 += alpha[j % alpha.Length];
                 }
 
-                alpha[k - 1] = 1.0 - sum2;
+                alpha[(k - 1) % alpha.Length] = 1.0 - sum2;
 
                 double x12 = 0.0;
                 for (int i = 0; i < n; i++)
                 {
-                    x12 += Math.Pow(x[i + 0 * ix], 2);
+                    x12 += Math.Pow(x[(i + 0 * ix) % x.Length], 2);
                 }
 
                 x12 /= an;
@@ -447,7 +447,7 @@ public static partial class Algorithms
                 double x11 = (alpha[0] - x12) / varp1;
                 for (int j = 0; j < k; j++)
                 {
-                    alpha[j] = x11 * alpha[j];
+                    alpha[j % alpha.Length] = x11 * alpha[j % alpha.Length];
                 }
 
                 break;
@@ -457,12 +457,12 @@ public static partial class Algorithms
             //
             case 2:
             {
-                double x_min = x[0 + 0 * ix];
+                double x_min = x[(0 + 0 * ix) % x.Length];
                 for (int j = 0; j < k; j++)
                 {
                     for (int i = 0; i < n; i++)
                     {
-                        x_min = Math.Min(x_min, x[i + j * ix]);
+                        x_min = Math.Min(x_min, x[(i + j * ix) % x.Length]);
                     }
                 }
 
@@ -470,7 +470,7 @@ public static partial class Algorithms
 
                 for (int j = 0; j < k; j++)
                 {
-                    alpha[j] = x_min;
+                    alpha[j % alpha.Length] = x_min;
                 }
 
                 break;
@@ -482,14 +482,14 @@ public static partial class Algorithms
         //
         for (int j = 0; j < k; j++)
         {
-            switch (alpha[j])
+            switch (alpha[j % alpha.Length])
             {
                 case <= 0.0:
                     ifault = 6;
                     Console.WriteLine("");
                     Console.WriteLine("DIRICHLET_ESTIMATE - Fatal error!");
                     Console.WriteLine("  For J = " + j + "");
-                    Console.WriteLine("  ALPHA(J) = " + alpha[j] + "");
+                    Console.WriteLine("  ALPHA(J) = " + alpha[j % alpha.Length] + "");
                     Console.WriteLine("  but ALPHA(J) must be positive.");
                     break;
             }
@@ -505,7 +505,7 @@ public static partial class Algorithms
             work[j] = 0.0;
             for (int i = 0; i < n; i++)
             {
-                work[j] += Math.Log(x[i + j * ix]);
+                work[j] += Math.Log(x[(i + j * ix) % x.Length]);
             }
         }
 
@@ -536,8 +536,8 @@ public static partial class Algorithms
             sum1 = 0.0;
             for (int j = 0; j < k; j++)
             {
-                work2[j] = trigamma(alpha[j], ref ifault2);
-                sum1 += 1.0 / work2[j];
+                work2[j % work2.Length] = trigamma(alpha[j % alpha.Length], ref ifault2);
+                sum1 += 1.0 / work2[j % work2.Length];
             }
 
             double beta = trigamma(sum2, ref ifault2);
@@ -547,7 +547,7 @@ public static partial class Algorithms
 
             for (int j = 0; j < k; j++)
             {
-                g[j] = an * (temp - digamma(alpha[j])) + work[j];
+                g[j % g.Length] = an * (temp - digamma(alpha[j % alpha.Length])) + work[j % work.Length];
             }
 
             //
@@ -558,10 +558,10 @@ public static partial class Algorithms
             {
                 for (int j = 0; j < k; j++)
                 {
-                    v[i + j * k] = sum2 / (work2[i] * work2[j]);
+                    v[(i + j * k) % v.Length] = sum2 / (work2[i % work2.Length] * work2[j % work2.Length]);
                     if (i == j)
                     {
-                        v[i + j * k] += 1.0 / (an * work2[j]);
+                        v[(i + j * k) % v.Length] += 1.0 / (an * work2[j % work2.Length]);
                     }
                 }
             }
@@ -577,13 +577,13 @@ public static partial class Algorithms
 
             for (int j = 0; j < k; j++)
             {
-                alpha[j] += work2[j];
-                alpha[j] = Math.Max(alpha[j], alpha_min);
+                alpha[j % alpha.Length] += work2[j % work2.Length];
+                alpha[j % alpha.Length] = Math.Max(alpha[j % alpha.Length], alpha_min);
             }
 
             for (int j = 0; j < k; j++)
             {
-                switch (alpha[j])
+                switch (alpha[j % alpha.Length])
                 {
                     case <= 0.0:
                         ifault = 6;
@@ -592,7 +592,7 @@ public static partial class Algorithms
                         Console.WriteLine("  Newton iteration " + it_num + "");
                         Console.WriteLine("  Computed ALPHA[J] <= 0.");
                         Console.WriteLine("  J = " + j + "");
-                        Console.WriteLine("  ALPHA[J] = " + alpha[j] + "");
+                        Console.WriteLine("  ALPHA[J] = " + alpha[j % alpha.Length] + "");
                         break;
                 }
             }
@@ -615,8 +615,8 @@ public static partial class Algorithms
                 rlogl = 0.0;
                 for (int j = 0; j < k; j++)
                 {
-                    rlogl = rlogl + (alpha[j] - 1.0) * work[j] - an *
-                        Helpers.LogGamma(alpha[j]);
+                    rlogl = rlogl + (alpha[j % alpha.Length] - 1.0) * work[j % work.Length] - an *
+                        Helpers.LogGamma(alpha[j % alpha.Length]);
                 }
 
                 rlogl += an * Helpers.LogGamma(sum2);
@@ -669,7 +669,7 @@ public static partial class Algorithms
 
         for (int i = 0; i < n; i++)
         {
-            mean[i] = a[i] / a_sum;
+            mean[i] = a[i % a.Length] / a_sum;
         }
 
         return mean;
@@ -727,7 +727,7 @@ public static partial class Algorithms
         {
             for (int elem_i = 0; elem_i < elem_num; elem_i++)
             {
-                switch (a[comp_i + elem_i * comp_max])
+                switch (a[(comp_i + elem_i * comp_max) % a.Length])
                 {
                     case < 0.0:
                         Console.WriteLine("");
@@ -735,7 +735,7 @@ public static partial class Algorithms
                         Console.WriteLine("  A(COMP,ELEM) < 0.");
                         Console.WriteLine("  COMP = " + comp_i + "");
                         Console.WriteLine("  ELEM = " + elem_i + "");
-                        Console.WriteLine("  A[COMP,ELEM] = " + a[comp_i + elem_i * comp_max] + "");
+                        Console.WriteLine("  A[COMP,ELEM] = " + a[(comp_i + elem_i * comp_max) % a.Length] + "");
                         break;
                 }
             }
@@ -747,10 +747,10 @@ public static partial class Algorithms
 
         for (int comp_i = 0; comp_i < comp_num; comp_i++)
         {
-            a_sum[comp_i] = 0.0;
+            a_sum[comp_i % a_sum.Length] = 0.0;
             for (int elem_i = 0; elem_i < elem_num; elem_i++)
             {
-                a_sum[comp_i] += a[comp_i + elem_i * comp_max];
+                a_sum[comp_i % a_sum.Length] += a[(comp_i + elem_i * comp_max) % a.Length];
             }
         }
 
@@ -758,13 +758,13 @@ public static partial class Algorithms
 
         for (int elem_i = 0; elem_i < elem_num; elem_i++)
         {
-            mean[elem_i] = 0.0;
+            mean[elem_i % mean.Length] = 0.0;
             for (int comp_i = 0; comp_i < comp_num; comp_i++)
             {
-                mean[elem_i] += comp_weight[comp_i] * a[comp_i + elem_i * comp_max] / a_sum[comp_i];
+                mean[elem_i % mean.Length] += comp_weight[comp_i % comp_weight.Length] * a[(comp_i + elem_i * comp_max) % a.Length] / a_sum[comp_i % a_sum.Length];
             }
 
-            mean[elem_i] /= comp_weight_sum;
+            mean[elem_i % mean.Length] /= comp_weight_sum;
         }
 
         return mean;
@@ -828,7 +828,7 @@ public static partial class Algorithms
         {
             for (int elem_i = 0; elem_i < elem_num; elem_i++)
             {
-                switch (a[comp_i + elem_i * comp_max])
+                switch (a[(comp_i + elem_i * comp_max) % a.Length])
                 {
                     case < 0.0:
                         Console.WriteLine("");
@@ -836,7 +836,7 @@ public static partial class Algorithms
                         Console.WriteLine("  A(COMP,ELEM) < 0.'");
                         Console.WriteLine("  COMP = " + comp_i + "");
                         Console.WriteLine("  ELEM = " + elem_i + "");
-                        Console.WriteLine("  A(COMP,ELEM) = " + a[comp_i + elem_i * comp_max] + "");
+                        Console.WriteLine("  A(COMP,ELEM) = " + a[(comp_i + elem_i * comp_max) % a.Length] + "");
                         break;
                 }
             }
@@ -871,7 +871,7 @@ public static partial class Algorithms
 
         for (int elem_i = 0; elem_i < elem_num; elem_i++)
         {
-            x[elem_i] = gamma_sample(a[comp + elem_i * comp_max], 1.0, ref data, ref seed);
+            x[elem_i % x.Length] = gamma_sample(a[(comp + elem_i * comp_max) % a.Length], 1.0, ref data, ref seed);
         }
 
         //
@@ -881,7 +881,7 @@ public static partial class Algorithms
 
         for (int elem_i = 0; elem_i < elem_num; elem_i++)
         {
-            x[elem_i] /= x_sum;
+            x[elem_i % x.Length] /= x_sum;
         }
 
         return x;
