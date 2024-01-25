@@ -1429,4 +1429,334 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="TestFEM\FEM1D\Project\sample_powers_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Project\sample_powers_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Project\fem_powers_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Project\fem_powers_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Project\fem_powers_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Project\fem_powers_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Project\fem_powers_elements.txt" />
+      <Resource Include="TestFEM\FEM1D\Project\fem_powers_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p1_fem_elements.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p1_fem_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p1_fem_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p1_fem_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p1_fem_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p1_fem_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p1_sample_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p1_sample_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p1_sample_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p1_sample_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p2_fem_elements.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p2_fem_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p2_fem_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p2_fem_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p2_fem_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p2_fem_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p2_sample_nodes.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p2_sample_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM1D\Sample\p2_sample_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Sample\p2_sample_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r1x1_t3_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r1x1_t3_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r1x1_t3_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r2x2_t3_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r2x2_t3_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r2x2_t3_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r4x4_t3_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r4x4_t3_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r4x4_t3_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r8x8_t3_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r8x8_t3_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\r8x8_t3_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Sample\fem_sq_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Sample\fem_sq_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Sample\fem_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Sample\fem_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Sample\fem_sq_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Sample\fem_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Sample\sample_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Sample\sample_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Sample\sample_sq_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Sample\sample_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\cheby9_elements.txt" />
+      <Resource Include="TestFEM\GMesh\cheby9_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\cheby9_nodes.txt" />
+      <Resource Include="TestFEM\GMesh\cheby9_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\mesh3d_elements.txt" />
+      <Resource Include="TestFEM\GMesh\mesh3d_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\mesh3d_nodes.txt" />
+      <Resource Include="TestFEM\GMesh\mesh3d_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\rectangle.png" />
+      <Resource Include="TestFEM\GMesh\rectangle.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\rectangle_elements.txt" />
+      <Resource Include="TestFEM\GMesh\rectangle_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\GMesh\rectangle_nodes.txt" />
+      <Resource Include="TestFEM\GMesh\rectangle_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\ell_nodes.txt" />
+      <Resource Include="TestFEM\IO\ell_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\tiny_elements.txt" />
+      <Resource Include="TestFEM\IO\tiny_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\ell_values.txt" />
+      <Resource Include="TestFEM\IO\ell_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\tiny_nodes.txt" />
+      <Resource Include="TestFEM\IO\tiny_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\p01_nodes.txt" />
+      <Resource Include="TestFEM\IO\p01_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\tiny_values.txt" />
+      <Resource Include="TestFEM\IO\tiny_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\ell_elements.txt" />
+      <Resource Include="TestFEM\IO\ell_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\p01_values.txt" />
+      <Resource Include="TestFEM\IO\p01_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\IO\p01_elements.txt" />
+      <Resource Include="TestFEM\IO\p01_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\ToTriangle\ell_elements.txt" />
+      <Resource Include="TestFEM\ToTriangle\ell_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\ToTriangle\ell_nodes.txt" />
+      <Resource Include="TestFEM\ToTriangle\ell_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\cheby9_elements.txt" />
+      <Resource Include="TestFEM\XML\cheby9_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\channel.xml" />
+      <Resource Include="TestFEM\XML\channel.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\cheby9_nodes.txt" />
+      <Resource Include="TestFEM\XML\cheby9_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\rectangle.png" />
+      <Resource Include="TestFEM\XML\rectangle.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\circle_nodes.txt" />
+      <Resource Include="TestFEM\XML\circle_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\rectangle_elements.txt" />
+      <Resource Include="TestFEM\XML\rectangle_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\battery.png" />
+      <Resource Include="TestFEM\XML\battery.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\circle_elements.txt" />
+      <Resource Include="TestFEM\XML\circle_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\battery_elements.txt" />
+      <Resource Include="TestFEM\XML\battery_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\rectangle.xml" />
+      <Resource Include="TestFEM\XML\rectangle.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\cheby9.xml" />
+      <Resource Include="TestFEM\XML\cheby9.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\channel_elements.txt" />
+      <Resource Include="TestFEM\XML\channel_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\rectangle_nodes.txt" />
+      <Resource Include="TestFEM\XML\rectangle_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\battery_nodes.txt" />
+      <Resource Include="TestFEM\XML\battery_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\circle.png" />
+      <Resource Include="TestFEM\XML\circle.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\circle.xml" />
+      <Resource Include="TestFEM\XML\circle.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\channel_nodes.txt" />
+      <Resource Include="TestFEM\XML\channel_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\XML\battery.xml" />
+      <Resource Include="TestFEM\XML\battery.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestAppliedStatisticsAlgorithms\points_100.txt" />
+      <Resource Include="TestAppliedStatisticsAlgorithms\points_100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestFEM\FEM1D\Project\sample_powers_values.txt" />
+      <Resource Include="TestFEM\FEM1D\Project\sample_powers_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
 </Project>
