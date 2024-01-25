@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace IntExactnessChebyshev1;
+namespace Burkardt_Tests.TestQuadrature;
 
-internal static class Program
+public class IntExactnessChebyshev1Test
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -51,6 +51,8 @@ internal static class Program
         //
         //  Get the quadrature file rootname.
         //
+        quad_filename = "input.txt";
+        /*
         try
         {
             quad_filename = args[0];
@@ -61,6 +63,7 @@ internal static class Program
             Console.WriteLine("  Enter the quadrature file rootname:");
             quad_filename = Console.ReadLine();
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The quadrature file rootname is \"" + quad_filename + "\".");
@@ -76,6 +79,8 @@ internal static class Program
         //
         //  Get the maximum degree:
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[1]);
@@ -87,6 +92,7 @@ internal static class Program
             Console.WriteLine("  Enter DEGREE_MAX, the maximum monomial degree to check.");
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested maximum monomial degree is = " + degree_max + "");
@@ -236,4 +242,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

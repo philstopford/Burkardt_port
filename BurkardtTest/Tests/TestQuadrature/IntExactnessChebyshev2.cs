@@ -1,30 +1,27 @@
-﻿using System;
 using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace IntExactnessGenHermite;
+namespace Burkardt_Tests.TestQuadrature;
 
-internal static class Program
+public class IntExactnessChebyshev2
 {
-    private static void Main(string[] args)
+    private static void test()
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for INT_GEN_EXACTNESS_HERMITE.
+        //    MAIN is the main program for INT_EXACTNESS_CHEBYSHEV2.
         //
         //  Discussion:
         //
-        //    This program investigates a generalized Gauss-Hermite quadrature rule
-        //    by using it to integrate monomials over (-oo,+oo), and comparing the
+        //    This program investigates a standard Gauss-Chebyshev type 2 quadrature rule
+        //    by using it to integrate monomials over [-1,1], and comparing the
         //    approximate result to the known exact value.
         //
         //    The user specifies:
         //    * the "root" name of the R, W and X files that specify the rule;
         //    * DEGREE_MAX, the maximum monomial degree to be checked.
-        //    * ALPHA, the power of X used in the weight.
-        //    * OPTION, whether the rule is for |x|^alpha*exp(-x*x)*f(x) or f(x).
         //
         //  Licensing:
         //
@@ -39,22 +36,22 @@ internal static class Program
         //    John Burkardt
         //
     {
-        double alpha;
         int degree;
         int degree_max;
         int i;
-        int option;
         string quad_filename;
 
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_GEN_HERMITE");
+        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2");
         Console.WriteLine("");
-        Console.WriteLine("  Investigate the polynomial exactness of a generalized Gauss-Hermite");
-        Console.WriteLine("  quadrature rule by integrating exponentially weighted");
-        Console.WriteLine("  monomials up to a given degree over the (-oo,+oo) interval.");
+        Console.WriteLine("  Investigate the polynomial exactness of a Gauss-Chebyshev");
+        Console.WriteLine("  type 2 quadrature rule by integrating weighted");
+        Console.WriteLine("  monomials up to a given degree over the [-1,+1] interval.");
         //
         //  Get the quadrature file rootname.
         //
+        quad_filename = "in.txt";
+        /*
         try
         {
             quad_filename = args[0];
@@ -65,6 +62,7 @@ internal static class Program
             Console.WriteLine("  Enter the quadrature file rootname:");
             quad_filename = Console.ReadLine();
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The quadrature file rootname is \"" + quad_filename + "\".");
@@ -80,6 +78,8 @@ internal static class Program
         //
         //  Get the maximum degree:
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[1]);
@@ -91,67 +91,19 @@ internal static class Program
             Console.WriteLine("  Enter DEGREE_MAX, the maximum monomial degree to check.");
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested maximum monomial degree is = " + degree_max + "");
         //
-        //  Get the power of X:
-        //
-        try
-        {
-            alpha = Convert.ToDouble(args[2]);
-        }
-        catch
-        {
-            Console.WriteLine("");
-            Console.WriteLine("  ALPHA is the power of |X| in the weighting function");
-            Console.WriteLine("");
-            Console.WriteLine("  ALPHA is a real number greater than -1.0.");
-            Console.WriteLine("");
-            Console.WriteLine("  Please enter ALPHA.");
-            alpha = Convert.ToDouble(Console.ReadLine());
-        }
-
-        Console.WriteLine("");
-        Console.WriteLine("  The requested power of |X| is = " + alpha + "");
-        //
-        //  The fourth command line argument is OPTION.
-        //  0 for the standard rule for integrating |x|^alpha*exp(-x*x)*f(x),
-        //  1 for a rule for integrating f(x).
-        //
-        try
-        {
-            option = Convert.ToInt32(args[3]);
-        }
-        catch
-        {
-            Console.WriteLine("");
-            Console.WriteLine("OPTION chooses the standard or modified rule.");
-            Console.WriteLine("0: standard rule for integrating |x|^alpha*exp(-x*x)*f(x)");
-            Console.WriteLine("1: modified rule for integrating                     f(x)");
-            option = Convert.ToInt32(Console.ReadLine());
-        }
-
-        //
         //  Summarize the input.
         //
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_GEN_HERMITE: User input:");
+        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2: User input:");
         Console.WriteLine("  Quadrature rule X file = \"" + quad_x_filename + "\".");
         Console.WriteLine("  Quadrature rule W file = \"" + quad_w_filename + "\".");
         Console.WriteLine("  Quadrature rule R file = \"" + quad_r_filename + "\".");
         Console.WriteLine("  Maximum degree to check = " + degree_max + "");
-        Console.WriteLine("  Power of |X|, ALPHA = " + alpha + "");
-        switch (option)
-        {
-            case 0:
-                Console.WriteLine("  OPTION = 0, integrate |x|^alpha*exp(-x*x)*f(x)");
-                break;
-            default:
-                Console.WriteLine("  OPTION = 1, integrate                     f(x)");
-                break;
-        }
-
         //
         //  Read the X file.
         //
@@ -162,7 +114,7 @@ internal static class Program
         if (dim_num != 1)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_GEN_HERMITE - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
             Console.WriteLine("  The spatial dimension of X should be 1.");
             Console.WriteLine(" The implicit input dimension was DIM_NUM = " + dim_num + "");
             return;
@@ -183,7 +135,7 @@ internal static class Program
         if (dim_num2 != 1)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_GEN_HERMITE - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
             Console.WriteLine("  The quadrature weight file should have exactly");
             Console.WriteLine("  one value on each line.");
             return;
@@ -192,7 +144,7 @@ internal static class Program
         if (point_num != order)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_GEN_HERMITE - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
             Console.WriteLine("  The quadrature weight file should have exactly");
             Console.WriteLine("  the same number of lines as the abscissa file.");
             return;
@@ -209,7 +161,7 @@ internal static class Program
         if (dim_num2 != dim_num)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_GEN_HERMITE - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
             Console.WriteLine("  The quadrature region file should have the");
             Console.WriteLine("  same number of values on each line as the");
             Console.WriteLine("  abscissa file does.");
@@ -219,7 +171,7 @@ internal static class Program
         if (point_num2 != 2)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_GEN_HERMITE - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
             Console.WriteLine("  The quadrature region file should have two lines.");
             return;
         }
@@ -230,26 +182,13 @@ internal static class Program
         //
         Console.WriteLine("");
         Console.WriteLine("  The quadrature rule to be tested is");
-        Console.WriteLine("  a generalized Gauss-Hermite rule");
+        Console.WriteLine("  a Gauss-Legendre rule");
         Console.WriteLine("  ORDER = " + order + "");
-        Console.WriteLine("  ALPHA = " + alpha + "");
         Console.WriteLine("");
-        switch (option)
-        {
-            case 0:
-                Console.WriteLine("  OPTION = 0: Standard rule:");
-                Console.WriteLine("    Integral ( -oo < x < +oo ) |x|^alpha exp(-x*x) f(x) dx");
-                Console.WriteLine("    is to be approximated by");
-                Console.WriteLine("    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).");
-                break;
-            default:
-                Console.WriteLine("  OPTION = 1: Modified rule:");
-                Console.WriteLine("    Integral ( -oo < x < +oo ) f(x) dx");
-                Console.WriteLine("    is to be approximated by");
-                Console.WriteLine("    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).");
-                break;
-        }
-
+        Console.WriteLine("  Standard rule:");
+        Console.WriteLine("    Integral ( -1 <= x <= +1 ) f(x) dx");
+        Console.WriteLine("    is to be approximated by");
+        Console.WriteLine("    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).");
         Console.WriteLine("");
         Console.WriteLine("  Weights W:");
         Console.WriteLine("");
@@ -282,7 +221,7 @@ internal static class Program
         //  Explore the monomials.
         //
         Console.WriteLine("");
-        Console.WriteLine("  A generalized Gauss-Hermite rule would be able to exactly");
+        Console.WriteLine("  A Gauss-Chebyshev type 2 rule would be able to exactly");
         Console.WriteLine("  integrate monomials up to and including degree = " +
                           (2 * order - 1) + "");
         Console.WriteLine("");
@@ -291,16 +230,16 @@ internal static class Program
 
         for (degree = 0; degree <= degree_max; degree++)
         {
-            double quad_error = HermiteQuadrature.monomial_quadrature_gen_hermite(degree, alpha, order,
-                option, w, x);
+            double quad_error = MonomialQuadrature.monomial_quadrature_chebyshev2(degree, order, w, x);
 
             Console.WriteLine("  " + quad_error.ToString("0.################").PadLeft(24)
                                    + "  " + degree.ToString().PadLeft(2) + "");
         }
 
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_GEN_HERMITE:");
+        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

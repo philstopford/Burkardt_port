@@ -1238,6 +1238,15 @@
       <None Update="TestSingleValueDecomposition\Basis\data05.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="TestQuadrature\PowerRule\cc3_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestQuadrature\PowerRule\cc3_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestQuadrature\PowerRule\cc3_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

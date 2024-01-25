@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace PowerRuleTest;
+namespace Burkardt_Tests.TestQuadrature.PowerRule;
 
-internal static class Program
+public class PowerRuleTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -40,6 +40,8 @@ internal static class Program
         //
         //  Get the quadrature file root name:
         //
+        quad_1d_filename = "cc3";
+        /*
         try
         {
             quad_1d_filename = args[0];
@@ -52,6 +54,7 @@ internal static class Program
 
             quad_1d_filename = Console.ReadLine();
         }
+        */
 
         //
         //  Create the names of:
@@ -65,6 +68,8 @@ internal static class Program
         //
         //  The second command line argument is the spatial dimension.
         //
+        dim_num = 2;
+        /*
         try
         {
             dim_num = typeMethods.s_to_i4(args[1], ref last, ref error);
@@ -77,6 +82,7 @@ internal static class Program
 
             dim_num = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Summarize the input.
@@ -207,4 +213,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

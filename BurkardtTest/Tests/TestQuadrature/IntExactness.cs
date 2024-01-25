@@ -1,24 +1,24 @@
-﻿using System;
 using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace IntExactnessChebyshev2;
+namespace Burkardt_Tests.TestQuadrature;
 
-internal static class Program
+public class IntExactnessTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for INT_EXACTNESS_CHEBYSHEV2.
+        //    MAIN is the main program for INT_EXACTNESS.
         //
         //  Discussion:
         //
-        //    This program investigates a standard Gauss-Chebyshev type 2 quadrature rule
-        //    by using it to integrate monomials over [-1,1], and comparing the
-        //    approximate result to the known exact value.
+        //    This is an interactive program which allows a user to
+        //    specify a quadrature rule to be checked for exactness by computing
+        //    approximate integrals of all polynomials up to a given degree.
         //
         //    The user specifies:
         //    * the "root" name of the R, W and X files that specify the rule;
@@ -30,7 +30,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    05 August 2009
+        //    23 January 2008
         //
         //  Author:
         //
@@ -43,14 +43,18 @@ internal static class Program
         string quad_filename;
 
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2");
+        Console.WriteLine("INT_EXACTNESS");
         Console.WriteLine("");
-        Console.WriteLine("  Investigate the polynomial exactness of a Gauss-Chebyshev");
-        Console.WriteLine("  type 2 quadrature rule by integrating weighted");
-        Console.WriteLine("  monomials up to a given degree over the [-1,+1] interval.");
+        Console.WriteLine("  Investigate the polynomial exactness of a");
+        Console.WriteLine("  quadrature rule by integrating all");
+        Console.WriteLine("  monomials up to a given degree over the [0,+1] interval.");
+        Console.WriteLine("");
+        Console.WriteLine("  If necessary, the rule is adjusted to the [0,1] interval.");
         //
         //  Get the quadrature file rootname.
         //
+        quad_filename = "in.txt";
+        /*
         try
         {
             quad_filename = args[0];
@@ -61,6 +65,7 @@ internal static class Program
             Console.WriteLine("  Enter the quadrature file rootname:");
             quad_filename = Console.ReadLine();
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The quadrature file rootname is \"" + quad_filename + "\".");
@@ -76,6 +81,8 @@ internal static class Program
         //
         //  Get the maximum degree:
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[1]);
@@ -87,6 +94,7 @@ internal static class Program
             Console.WriteLine("  Enter DEGREE_MAX, the maximum monomial degree to check.");
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested maximum monomial degree is = " + degree_max + "");
@@ -94,7 +102,7 @@ internal static class Program
         //  Summarize the input.
         //
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2: User input:");
+        Console.WriteLine("INT_EXACTNESS: User input:");
         Console.WriteLine("  Quadrature rule X file = \"" + quad_x_filename + "\".");
         Console.WriteLine("  Quadrature rule W file = \"" + quad_w_filename + "\".");
         Console.WriteLine("  Quadrature rule R file = \"" + quad_r_filename + "\".");
@@ -103,13 +111,14 @@ internal static class Program
         //  Read the X file.
         //
         TableHeader h = typeMethods.r8mat_header_read(quad_x_filename);
+
         int dim_num = h.m;
         int order = h.n;
 
         if (dim_num != 1)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS - Fatal error!");
             Console.WriteLine("  The spatial dimension of X should be 1.");
             Console.WriteLine(" The implicit input dimension was DIM_NUM = " + dim_num + "");
             return;
@@ -127,10 +136,11 @@ internal static class Program
         int dim_num2 = h.m;
         int point_num = h.n;
 
+
         if (dim_num2 != 1)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS - Fatal error!");
             Console.WriteLine("  The quadrature weight file should have exactly");
             Console.WriteLine("  one value on each line.");
             return;
@@ -139,7 +149,7 @@ internal static class Program
         if (point_num != order)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS - Fatal error!");
             Console.WriteLine("  The quadrature weight file should have exactly");
             Console.WriteLine("  the same number of lines as the abscissa file.");
             return;
@@ -156,7 +166,7 @@ internal static class Program
         if (dim_num2 != dim_num)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS - Fatal error!");
             Console.WriteLine("  The quadrature region file should have the");
             Console.WriteLine("  same number of values on each line as the");
             Console.WriteLine("  abscissa file does.");
@@ -166,7 +176,7 @@ internal static class Program
         if (point_num2 != 2)
         {
             Console.WriteLine("");
-            Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2 - Fatal error!");
+            Console.WriteLine("INT_EXACTNESS - Fatal error!");
             Console.WriteLine("  The quadrature region file should have two lines.");
             return;
         }
@@ -176,12 +186,11 @@ internal static class Program
         //  Print the input quadrature rule.
         //
         Console.WriteLine("");
-        Console.WriteLine("  The quadrature rule to be tested is");
-        Console.WriteLine("  a Gauss-Legendre rule");
+        Console.WriteLine("  The quadrature rule to be tested:");
         Console.WriteLine("  ORDER = " + order + "");
         Console.WriteLine("");
         Console.WriteLine("  Standard rule:");
-        Console.WriteLine("    Integral ( -1 <= x <= +1 ) f(x) dx");
+        Console.WriteLine("    Integral ( R[0] <= x <= R[1] ) f(x) dx");
         Console.WriteLine("    is to be approximated by");
         Console.WriteLine("    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).");
         Console.WriteLine("");
@@ -213,10 +222,24 @@ internal static class Program
         }
 
         //
+        //  Rescale the weights, and translate the abscissas.
+        //
+        double volume = Math.Abs(r[1] - r[0]);
+        for (i = 0; i < order; i++)
+        {
+            w[i] /= volume;
+        }
+
+        for (i = 0; i < order; i++)
+        {
+            x[i] = (x[i] - r[0]) / (r[1] - r[0]);
+        }
+
+        //
         //  Explore the monomials.
         //
         Console.WriteLine("");
-        Console.WriteLine("  A Gauss-Chebyshev type 2 rule would be able to exactly");
+        Console.WriteLine("  A Gauss-Legendre rule would be able to exactly");
         Console.WriteLine("  integrate monomials up to and including degree = " +
                           (2 * order - 1) + "");
         Console.WriteLine("");
@@ -225,15 +248,16 @@ internal static class Program
 
         for (degree = 0; degree <= degree_max; degree++)
         {
-            double quad_error = MonomialQuadrature.monomial_quadrature_chebyshev2(degree, order, w, x);
+            double quad_error = MonomialQuadrature.monomial_quadrature(degree, order, w, x);
 
             Console.WriteLine("  " + quad_error.ToString("0.################").PadLeft(24)
                                    + "  " + degree.ToString().PadLeft(2) + "");
         }
 
         Console.WriteLine("");
-        Console.WriteLine("INT_EXACTNESS_CHEBYSHEV2:");
+        Console.WriteLine("INT_EXACTNESS:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }
