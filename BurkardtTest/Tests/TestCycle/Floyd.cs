@@ -1,58 +1,17 @@
-﻿using System;
 using Burkardt.Cycle;
 
-namespace CycleBrentTest;
+namespace Burkardt_Tests.TestCycle;
 
-internal static class Program
+public class FloydTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CYCLE_BRENT_TEST.
-        //
-        //  Discussion:
-        //
-        //    CYCLE_BRENT_TEST tests the CYCLE_BRENT library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    17 June 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CYCLE_BRENT_TEST");
-            
-        Console.WriteLine("  Test the CYCLE_BRENT library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-
-        Console.WriteLine("");
-        Console.WriteLine("CYCLE_BRENT_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST01 tests CYCLE_BRENT for a tiny example.
+        //    TEST01 tests CYCLE_FLOYD for a tiny example.
         //
         //  Licensing:
         //
@@ -72,7 +31,7 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST01");
-        Console.WriteLine("  Test CYCLE_BRENT on F1().");
+        Console.WriteLine("  Test CYCLE_FLOYD on F1().");
         Console.WriteLine("  f1(0) = 6.");
         Console.WriteLine("  f1(1) = 6.");
         Console.WriteLine("  f1(2) = 0.");
@@ -87,7 +46,7 @@ internal static class Program
         Console.WriteLine("");
         Console.WriteLine("  Starting argument X0 = " + x0 + "");
 
-        Brent.cycle_brent(f1, x0, ref lam, ref mu);
+        Floyd.cycle_floyd(f1, x0, ref lam, ref mu);
 
         Console.WriteLine("");
         Console.WriteLine("  Reported cycle length is " + lam + "");
@@ -141,13 +100,14 @@ internal static class Program
         return value;
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST02 tests CYCLE_BRENT for F2.
+        //    TEST02 tests CYCLE_FLOYD for F2.
         //
         //  Licensing:
         //
@@ -167,14 +127,14 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST02");
-        Console.WriteLine("  Test CYCLE_BRENT for F2().");
+        Console.WriteLine("  Test CYCLE_FLOYD for F2().");
         Console.WriteLine("  f2(i) = mod ( 22 * i + 1, 72 ).");
 
         const int x0 = 0;
         Console.WriteLine("");
         Console.WriteLine("  Starting argument X0 = " + x0 + "");
 
-        Brent.cycle_brent(f2, x0, ref lam, ref mu);
+        Floyd.cycle_floyd(f2, x0, ref lam, ref mu);
 
         Console.WriteLine("");
         Console.WriteLine("  Reported cycle length is " + lam + "");
@@ -222,13 +182,14 @@ internal static class Program
         return value;
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST03 tests CYCLE_BRENT for F3.
+        //    TEST03 tests CYCLE_FLOYD for F3.
         //
         //  Licensing:
         //
@@ -248,14 +209,14 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST03");
-        Console.WriteLine("  Test CYCLE_BRENT for F3().");
+        Console.WriteLine("  Test CYCLE_FLOYD for F3().");
         Console.WriteLine("  f3(i) = mod ( 123 * i + 456, 100000 ).");
 
         const int x0 = 789;
         Console.WriteLine("");
         Console.WriteLine("  Starting argument X0 = " + x0 + "");
 
-        Brent.cycle_brent(f3, x0, ref lam, ref mu);
+        Floyd.cycle_floyd(f3, x0, ref lam, ref mu);
 
         Console.WriteLine("");
         Console.WriteLine("  Reported cycle length is " + lam + "");
@@ -301,13 +262,14 @@ internal static class Program
         return value;
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST04 tests CYCLE_BRENT for F4.
+        //    TEST04 tests CYCLE_FLOYD for F4.
         //
         //  Licensing:
         //
@@ -327,14 +289,14 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST04");
-        Console.WriteLine("  Test CYCLE_BRENT for F4().");
+        Console.WriteLine("  Test CYCLE_FLOYD for F4().");
         Console.WriteLine("  f4(i) = mod ( 31421 * i + 6927, 65536 ).");
 
         const int x0 = 1;
         Console.WriteLine("");
         Console.WriteLine("  Starting argument X0 = " + x0 + "");
 
-        Brent.cycle_brent(f4, x0, ref lam, ref mu);
+        Floyd.cycle_floyd(f4, x0, ref lam, ref mu);
 
         Console.WriteLine("");
         Console.WriteLine("  Reported cycle length is " + lam + "");
@@ -376,13 +338,14 @@ internal static class Program
         return value;
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST05 tests CYCLE_BRENT for F5.
+        //    TEST05 tests CYCLE_FLOYD for F5.
         //
         //  Licensing:
         //
@@ -402,14 +365,14 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST05");
-        Console.WriteLine("  Test CYCLE_BRENT for F5().");
+        Console.WriteLine("  Test CYCLE_FLOYD for F5().");
         Console.WriteLine("  f5(i) = mod ( 16383 * i + 1, 65536 ).");
 
         int x0 = 1;
         Console.WriteLine("");
         Console.WriteLine("  Starting argument X0 = " + x0 + "");
 
-        Brent.cycle_brent(f5, x0, ref lam, ref mu);
+        Floyd.cycle_floyd(f5, x0, ref lam, ref mu);
 
         Console.WriteLine("");
         Console.WriteLine("  Reported cycle length is " + lam + "");
@@ -459,4 +422,5 @@ internal static class Program
 
         return value;
     }
+    
 }

@@ -1,12 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.FourierTransform;
 
-namespace FFTSerialTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class FFTSerialTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:

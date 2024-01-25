@@ -1,51 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Transform;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace HaarTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class HaarTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HAAR_TEST.
-        //
-        //  Discussion:
-        //
-        //    HAAR_TEST tests the HAAR library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    17 March 2011
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HAAR_TEST");
-        Console.WriteLine("  Test the HAAR library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("HAAR_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -192,7 +155,8 @@ internal static class Program
                                        + ", ||u-Haar.haar_1d_inverse(Haar.haar_1d(u))|| = " + err + "");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -261,4 +225,5 @@ internal static class Program
                                    + ", N = " + n
                                    + ", ||Haar.haar_2d_inverse(Haar.haar_2d(u))-u|| = " + err + "");
     }
+    
 }

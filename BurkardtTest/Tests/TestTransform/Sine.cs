@@ -1,53 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Transform;
 using Burkardt.Uniform;
 
-namespace SineTransformTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class SineTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SINE_TRANSFORM_TEST.
-        //
-        //  Discussion:
-        //
-        //    SINE_TRANSFORM_TEST tests SINE_TRANSFORM.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 February 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SINE_TRANSFORM_TEST");
-        Console.WriteLine("  Test the SINE_TRANSFORM library.");
-
-        sine_transform_test01();
-        sine_transform_test02();
-        sine_transform_test03();
-        sine_transform_test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("SINE_TRANSFORM_TEST");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void sine_transform_test01()
+    [Test]
+    public static void sine_transform_test01()
 
         //****************************************************************************80
         //
@@ -101,7 +61,8 @@ internal static class Program
         }
     }
 
-    private static void sine_transform_test02()
+    [Test]
+    public static void sine_transform_test02()
 
         //****************************************************************************80
         //
@@ -200,7 +161,8 @@ internal static class Program
                                + "  " + fb.ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
     }
 
-    private static void sine_transform_test03()
+    [Test]
+    public static void sine_transform_test03()
 
         //****************************************************************************80
         //
@@ -306,7 +268,8 @@ internal static class Program
         }
     }
 
-    private static void sine_transform_test04()
+    [Test]
+    public static void sine_transform_test04()
 
         //****************************************************************************80
         //
@@ -470,4 +433,5 @@ internal static class Program
 
         return value;
     }
+    
 }

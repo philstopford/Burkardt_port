@@ -1,66 +1,15 @@
-﻿using System;
 using System.Globalization;
 using System.Numerics;
 using Burkardt.FourierTransform;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace SlowFourierTransformTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class SlowFTTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SFTPACK_TEST.
-        //
-        //  Discussion:
-        //
-        //    SFTPACK_TEST tests the SFTPACK library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //   27 June 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SFTPACK_TEST");
-
-        Console.WriteLine("  Test the SFTPACK library.");
-
-        c4mat_sft_test();
-        c4vec_sft_test();
-
-        c8mat_sft_test();
-        c8vec_sft_test();
-
-        r4vec_sft_test();
-
-        r8vec_sct_test();
-        r8vec_sft_test();
-        r8vec_sht_test();
-        r8vec_sqct_test();
-        r8vec_sqst_test();
-        r8vec_sst_test();
-        r8vec_swt_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("SFTPACK_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void c4mat_sft_test()
+    [Test]
+    public static void c4mat_sft_test()
 
         //****************************************************************************80
         //
@@ -110,7 +59,8 @@ internal static class Program
         typeMethods.c4mat_print_some(n1, n2, x2, 1, 1, 10, 10, "  The retrieved data:");
     }
 
-    private static void c4vec_sft_test()
+    [Test]
+    public static void c4vec_sft_test()
 
         //****************************************************************************80
         //
@@ -159,7 +109,8 @@ internal static class Program
         typeMethods.c4vec_print_part(n, x2, 10, "  The retrieved data:");
     }
 
-    private static void c8mat_sft_test()
+    [Test]
+    public static void c8mat_sft_test()
 
         //****************************************************************************80
         //
@@ -209,7 +160,8 @@ internal static class Program
         typeMethods.c8mat_print_some(n1, n2, x2, 1, 1, 10, 10, "  The retrieved data:");
     }
 
-    private static void c8vec_sft_test()
+    [Test]
+    public static void c8vec_sft_test()
 
         //****************************************************************************80
         //
@@ -258,7 +210,8 @@ internal static class Program
         typeMethods.c8vec_print_part(n, x2, 10, "  The retrieved data:");
     }
 
-    private static void r4vec_sft_test()
+    [Test]
+    public static void r4vec_sft_test()
 
         //****************************************************************************80
         //
@@ -336,7 +289,8 @@ internal static class Program
         typeMethods.r4vec_print_part(n, z, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sct_test()
+    [Test]
+    public static void r8vec_sct_test()
 
         //****************************************************************************80
         //
@@ -395,7 +349,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, e, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sft_test()
+    [Test]
+    public static void r8vec_sft_test()
 
         //****************************************************************************80
         //
@@ -473,7 +428,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, z, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sht_test()
+    [Test]
+    public static void r8vec_sht_test()
 
         //****************************************************************************80
         //
@@ -526,7 +482,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, e, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sqct_test()
+    [Test]
+    public static void r8vec_sqct_test()
 
         //****************************************************************************80
         //
@@ -580,7 +537,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, z, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sqst_test()
+    [Test]
+    public static void r8vec_sqst_test()
 
         //****************************************************************************80
         //
@@ -634,7 +592,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, z, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_sst_test()
+    [Test]
+    public static void r8vec_sst_test()
 
         //****************************************************************************80
         //
@@ -693,7 +652,8 @@ internal static class Program
         typeMethods.r8vec_print_part(n, e, 10, "  The retrieved data:");
     }
 
-    private static void r8vec_swt_test()
+    [Test]
+    public static void r8vec_swt_test()
 
         //****************************************************************************80
         //
@@ -759,4 +719,5 @@ internal static class Program
 
         typeMethods.r8vec_print_part(n, x, 10, "  The retrieved data:");
     }
+    
 }

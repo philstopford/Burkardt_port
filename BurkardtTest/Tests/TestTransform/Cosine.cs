@@ -1,49 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Transform;
 using Burkardt.Uniform;
 
-namespace CosineTransformTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class CosineTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for COSINE_TRANSFORM_TEST.
-        //
-        //  Discussion:
-        //
-        //    COSINE_TRANSFORM_TEST tests the COSINE_TRANSFORM library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    27 August 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("COSINE_TRANSFORM_TEST");
-        Console.WriteLine("  Test the COSINE_TRANSFORM library.");
-
-        cosine_transform_test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("COSINE_TRANSFORM_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void cosine_transform_test01()
+    [Test]
+    public static void cosine_transform_test01()
 
         //****************************************************************************80
         //
@@ -96,4 +60,5 @@ internal static class Program
                                    + "  " + t[i].ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+    
 }

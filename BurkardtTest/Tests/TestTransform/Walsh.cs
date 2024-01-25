@@ -1,53 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Transform;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace WalshTest;
+namespace Burkardt_Tests.TestTransform;
 
-internal static class Program
+public class WalshTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for WALSH_TEST.
-        //
-        //  Discussion:
-        //
-        //    WALSH_TEST tests the WALSH library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    16 March 2011
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("WALSH_TEST");
-        Console.WriteLine("  Test the WALSH library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("WALSH_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -126,7 +87,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -204,7 +166,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -282,7 +245,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -359,4 +323,5 @@ internal static class Program
             }
         }
     }
+    
 }
