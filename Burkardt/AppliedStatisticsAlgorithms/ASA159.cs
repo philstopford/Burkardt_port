@@ -1,4 +1,5 @@
 ﻿using System;
+using Burkardt.Elliptic;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
@@ -153,7 +154,7 @@ public static partial class Algorithms
                 for (i = 1; i <= data.ntotal; i++)
                 {
                     x += Math.Log(i);
-                    data.fact[i] = x;
+                    data.fact[i % data.fact.Length] = x;
                 }
 
                 break;
@@ -167,14 +168,14 @@ public static partial class Algorithms
 
         for (i = 0; i < ncol - 1; i++)
         {
-            jwork[i] = ncolt[i];
+            jwork[i] = ncolt[i % ncolt.Length];
         }
 
         int jc = data.ntotal;
 
         for (l = 0; l < nrow - 1; l++)
         {
-            int nrowtl = nrowt[l];
+            int nrowtl = nrowt[l % nrowt.Length];
             int ia = nrowtl;
             int ic = jc;
             jc -= nrowtl;
@@ -182,7 +183,7 @@ public static partial class Algorithms
             int m;
             for (m = 0; m < ncol - 1; m++)
             {
-                int id = jwork[m];
+                int id = jwork[m % jwork.Length];
                 int ie = ic;
                 ic -= id;
                 ib = ie - ia;
@@ -195,7 +196,7 @@ public static partial class Algorithms
                     ia = 0;
                     for (j = m; j < ncol; j++)
                     {
-                        matrix[l + j * nrow] = 0;
+                        matrix[(l + j * nrow) % matrix.Length] = 0;
                     }
 
                     break;
@@ -224,9 +225,9 @@ public static partial class Algorithms
                     int ihp = iap - nlm;
                     int nlmp = nlm + 1;
                     int iip = ii + nlmp;
-                    x = Math.Exp(data.fact[iap - 1] + data.fact[ib] + data.fact[ic] + data.fact[idp - 1] -
-                                 data.fact[ie] - data.fact[nlmp - 1] - data.fact[igp - 1] - data.fact[ihp - 1] -
-                                 data.fact[iip - 1]);
+                    x = Math.Exp(data.fact[(iap - 1) % data.fact.Length] + data.fact[ib % data.fact.Length] + data.fact[ic % data.fact.Length] +
+                                 data.fact[(idp - 1) % data.fact.Length] - data.fact[ie % data.fact.Length] - data.fact[(nlmp - 1) % data.fact.Length] -
+                                 data.fact[(igp - 1) % data.fact.Length] - data.fact[(ihp - 1) % data.fact.Length] - data.fact[(iip - 1) % data.fact.Length]);
 
                     if (r <= x)
                     {
@@ -317,13 +318,13 @@ public static partial class Algorithms
 
                 }
 
-                matrix[l + m * nrow] = nlm;
+                matrix[(l + m * nrow) % matrix.Length] = nlm;
                 ia -= nlm;
-                jwork[m] -= nlm;
+                jwork[m % jwork.Length] -= nlm;
 
             }
 
-            matrix[l + (ncol - 1) * nrow] = ia;
+            matrix[(l + (ncol - 1) * nrow) % matrix.Length] = ia;
         }
 
         //
@@ -331,10 +332,10 @@ public static partial class Algorithms
         //
         for (j = 0; j < ncol - 1; j++)
         {
-            matrix[nrow - 1 + j * nrow] = jwork[j];
+            matrix[(nrow - 1 + j * nrow) % matrix.Length] = jwork[j % jwork.Length];
         }
 
-        matrix[nrow - 1 + (ncol - 1) * nrow] = ib - matrix[nrow - 1 + (ncol - 2) * nrow];
+        matrix[(nrow - 1 + (ncol - 1) * nrow) % matrix.Length] = ib - matrix[(nrow - 1 + (ncol - 2) * nrow) % matrix.Length];
 
     }
 

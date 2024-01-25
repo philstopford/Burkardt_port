@@ -107,7 +107,7 @@ public static partial class Algorithms
 
                 for (int i = 0; i < nrow; i++)
                 {
-                    switch (nrowt[i])
+                    switch (nrowt[i % nrowt.Length])
                     {
                         case <= 0:
                             ifault = 3;
@@ -126,18 +126,18 @@ public static partial class Algorithms
 
                 for (int j = 1; j < ncol; j++)
                 {
-                    switch (ncolt[j])
+                    switch (ncolt[j % ncolt.Length])
                     {
                         case <= 0:
                             ifault = 4;
                             return;
                         default:
-                            nsubt[j] = nsubt[j - 1] + ncolt[j];
+                            nsubt[j % nsubt.Length] = nsubt[(j - 1) % nsubt.Length] + ncolt[j % ncolt.Length];
                             break;
                     }
                 }
 
-                data.ntotal = nsubt[ncol - 1];
+                data.ntotal = nsubt[(ncol - 1) % nsubt.Length];
 
                 data.nvect = new int[data.ntotal];
                 //
@@ -170,8 +170,8 @@ public static partial class Algorithms
         for (int i = 0; i < data.ntotal; i++)
         {
             int noct = (int) (UniformRNG.r8_uniform_01(ref data.seed) * ntemp + 1.0);
-            data.nvect[i] = nnvect[noct - 1];
-            nnvect[noct - 1] = nnvect[ntemp - 1];
+            data.nvect[i % data.nvect.Length] = nnvect[(noct - 1) % nnvect.Length];
+            nnvect[(noct - 1) % nnvect.Length] = nnvect[(ntemp - 1) % nnvect.Length];
             ntemp -= 1;
         }
 
@@ -182,7 +182,7 @@ public static partial class Algorithms
         {
             for (int i = 0; i < nrow; i++)
             {
-                matrix[i + j * nrow] = 0;
+                matrix[(i + j * nrow) % matrix.Length] = 0;
             }
         }
 
@@ -196,13 +196,13 @@ public static partial class Algorithms
             {
                 for (int j = 0; j < ncol; j++)
                 {
-                    if (data.nvect[ii] > nsubt[j])
+                    if (data.nvect[ii % data.nvect.Length] > nsubt[j % nsubt.Length])
                     {
                         continue;
                     }
 
                     ii += 1;
-                    matrix[i + j * nrow] += 1;
+                    matrix[(i + j * nrow) & matrix.Length] += 1;
                     break;
                 }
             }
