@@ -1,50 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.LineNS;
 using Burkardt.Types;
 using Monomial = Burkardt.MonomialNS.Monomial;
 
-namespace LineIntegralsTest;
+namespace Burkardt_Tests.TestLine;
 
-internal static class Program
+public class IntegralsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LINE_INTEGRALS_TEST.
-        //
-        //  Discussion:
-        //
-        //    LINE_INTEGRALS_TEST tests the LINE_INTEGRALS library.
-        //    
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    18 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINE_INTEGRALS_TEST");
-        Console.WriteLine("  Test the LINE_INTEGRALS library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("LINE_INTEGRALS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -102,4 +66,5 @@ internal static class Program
 
         }
     }
+
 }

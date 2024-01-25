@@ -1,22 +1,18 @@
-﻿using System;
 using System.Globalization;
+using Burkardt.LineNS;
 
-namespace LineNewtonCotesQuadratureTest;
+namespace Burkardt_Tests.TestLine;
 
-using NewtonCotesQuadrature = Burkardt.LineNS.NewtonCotesQuadrature;
-
-internal static class Program
+public class NewtonCotesOpenQuadratureTest
 {
-    private static void Main()
+    [Test]
+    public static void test01()
+
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for LINE_NCC_RULE_TEST.
-        //
-        //  Discussion:
-        //
-        //    LINE_NCC_RULE_TEST tests the LINE_NCC_RULE library.
+        //    TEST01 computes and prints NCO rules.
         //
         //  Licensing:
         //
@@ -24,41 +20,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    11 April 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINE_NCC_RULE_TEST");
-        Console.WriteLine("  Test the LINE_NCC_RULE library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("LINE_NCC_RULE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
-
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    TEST01 computes and prints NCC rules.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    11 April 2014
+        //    28 July 2014
         //
         //  Author:
         //
@@ -72,7 +34,7 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST01");
-        Console.WriteLine("  LINE_NCC_RULE computes the Newton-Cotes (closed) rule");
+        Console.WriteLine("  LINE_NCO_RULE computes the Newton-Cotes Open (NCO) rule");
         Console.WriteLine("  using N equally spaced points for an interval [A,B].");
 
         for (n = 1; n <= 12; n++)
@@ -80,9 +42,9 @@ internal static class Program
             double[] x = new double[n];
             double[] w = new double[n];
 
-            NewtonCotesQuadrature.line_ncc_rule(n, a, b, x, ref w);
+            NewtonCotesQuadrature.line_nco_rule(n, a, b, x, ref w);
             Console.WriteLine("");
-            Console.WriteLine("  Newton-Cotes (Closed) Rule #" + n + "");
+            Console.WriteLine("  Newton-Cotes Open (NCO) Rule #" + n + "");
             Console.WriteLine("   I       X(I)            W(I)");
             Console.WriteLine("");
             double w_sum = 0.0;
@@ -99,13 +61,14 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST02 uses NCC rules to estimate the integral of exp(x) from 0 to 1.
+        //    TEST02 uses NCO rules to estimate the integral of exp(x) from 0 to 1.
         //
         //  Licensing:
         //
@@ -113,7 +76,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    11 April 2014
+        //    28 July 2014
         //
         //  Author:
         //
@@ -128,7 +91,7 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST02");
-        Console.WriteLine("  Use a sequence of NCC rules to compute an estimate Q");
+        Console.WriteLine("  Use a sequence of NCO rules to compute an estimate Q");
         Console.WriteLine("  of the integral:");
         Console.WriteLine("    I = integral ( 0 <= x <= 1 ) exp(x) dx.");
         Console.WriteLine("  The exact value is:");
@@ -143,7 +106,7 @@ internal static class Program
             double[] x = new double[n];
             double[] w = new double[n];
 
-            NewtonCotesQuadrature.line_ncc_rule(n, a, b, x, ref w);
+            NewtonCotesQuadrature.line_nco_rule(n, a, b, x, ref w);
 
             double q = 0.0;
             int i;
@@ -158,4 +121,5 @@ internal static class Program
                                    + "  " + error.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
         }
     }
+    
 }

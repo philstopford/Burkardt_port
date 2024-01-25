@@ -1,52 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
-
-namespace LineMonteCarloTest;
-
 using MonteCarlo = Burkardt.LineNS.MonteCarlo;
 
-internal static class Program
+namespace Burkardt_Tests.TestLine;
+
+public class MonteCarloTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LINE_MONTE_CARLO_TEST.
-        //
-        //  Discussion:
-        //
-        //    LINE_MONTE_CARLO_TEST tests the LINE_MONTE_CARLO library.
-        //    
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    07 June 2017
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINE_MONTE_CARLO_TEST");
-        Console.WriteLine("  Test the LINE_MONTE_CARLO library.");
-
-        line01_sample_random_test();
-        line01_sample_ergodic_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("LINE_MONTE_CARLO_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void line01_sample_random_test()
+    [Test]
+    public static void line01_sample_random_test()
 
         //****************************************************************************80
         //
@@ -105,7 +67,8 @@ internal static class Program
 
     }
 
-    private static void line01_sample_ergodic_test()
+    [Test]
+    public static void line01_sample_ergodic_test()
 
         //****************************************************************************80
         //
@@ -164,4 +127,5 @@ internal static class Program
         }
 
     }
+    
 }

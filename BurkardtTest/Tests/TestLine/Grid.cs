@@ -1,48 +1,13 @@
-﻿using System;
 using System.Globalization;
+using Burkardt.LineNS;
 using Burkardt.Types;
 
-namespace LineGridTest;
+namespace Burkardt_Tests.TestLine;
 
-using Grid = Burkardt.LineNS.Grid;
-
-internal static class Program
+public class GridTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LINE_GRID_TEST.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    02 September 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINE_GRID_TEST:");
-        Console.WriteLine("  Test the LINE_GRID library.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("LINE_GRID_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -84,7 +49,8 @@ internal static class Program
         typeMethods.r8vec_print(n, x, "  Grid points:");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -134,7 +100,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -180,4 +147,5 @@ internal static class Program
             typeMethods.r8vec_print(n, x, "  Grid points:");
         }
     }
+    
 }

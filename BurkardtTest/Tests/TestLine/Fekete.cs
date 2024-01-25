@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.LineNS;
 using Burkardt.Types;
 
-namespace LineFeketeTest;
+namespace Burkardt_Tests.TestLine;
 
-internal static class Program
+public class FeketeTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -236,4 +236,5 @@ internal static class Program
         Console.WriteLine("");
         Console.WriteLine("  Sum(WF) = " + wf_sum + "");
     }
+    
 }
