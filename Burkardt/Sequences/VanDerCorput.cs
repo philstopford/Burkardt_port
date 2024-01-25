@@ -248,6 +248,7 @@ public static class VanDerCorput
         //
     {
         int i;
+        r = new double [n];
 
         switch (base_)
         {
