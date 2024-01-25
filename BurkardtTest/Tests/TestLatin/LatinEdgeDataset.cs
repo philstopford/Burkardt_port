@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Latin;
 using Burkardt.Types;
 
-namespace LatinEdgeDatasetTest;
+namespace Burkardt_Tests.TestLatin;
 
-internal static class Program
+public class LatinEdgeDatasetTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -56,6 +56,8 @@ internal static class Program
         //
         //  Get the spatial dimension.
         //
+        m = 2;
+        /*
         try
         {
             m = Convert.ToInt32(args[0]);
@@ -66,12 +68,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of M");
             m = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  Spatial dimension M = " + m + "");
         //
         //  Get the number of points.
         //
+        n = 128;
+        /*
         try
         {
             n = Convert.ToInt32(args[1]);
@@ -82,11 +87,14 @@ internal static class Program
             Console.WriteLine("  Enter the number of points N");
             n = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  Number of points N = " + n + "");
         //
         //  Get the seed.
         //
+        seed = 1234;
+        /*
         try
         {
             seed = Convert.ToInt32(args[2]);
@@ -97,6 +105,7 @@ internal static class Program
             Console.WriteLine("  Enter the value of SEED");
             seed = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  The seed is = " + seed + "");
         //
@@ -123,4 +132,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

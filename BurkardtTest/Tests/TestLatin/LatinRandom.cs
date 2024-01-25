@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Types;
 using Random = Burkardt.Latin.Random;
 
-namespace LatinRandomTest;
+namespace Burkardt_Tests.TestLatin;
 
-internal static class Program
+public class LatinRandomTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:

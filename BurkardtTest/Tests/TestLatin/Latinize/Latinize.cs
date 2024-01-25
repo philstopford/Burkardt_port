@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Latinizer;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace LatinizeTest;
+namespace Burkardt_Tests.TestLatin.LatinizeTest;
 
-internal static class Program
+public class LatinizeTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
     {
         //****************************************************************************80
         //
@@ -125,4 +125,5 @@ internal static class Program
         Console.WriteLine();
         Console.WriteLine("  Wrote the latinized data to \"" + output_filename + "\".");
     }        
+    
 }

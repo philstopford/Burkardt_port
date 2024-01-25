@@ -1,28 +1,12 @@
-﻿using System;
 using Burkardt.Latin;
 using Burkardt.Types;
 
-namespace LatinCoverTest;
+namespace Burkardt_Tests.TestLatin;
 
-internal static class Program
+public class LatinCoverTest
 {
-    private static void Main()
-    {
-        Console.WriteLine();
-        Console.WriteLine("LATIN_COVER_TEST:");
-        Console.WriteLine("  Test the LATIN_COVER library.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine();
-        Console.WriteLine("LATIN_COVER_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine();
-    }
-
-    private static void test01 ( )
+    [Test]
+    public static void test01 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -63,7 +47,8 @@ internal static class Program
         }
     }
 
-    private static void test02 ( )
+    [Test]
+    public static void test02 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -104,7 +89,8 @@ internal static class Program
         }
     }
 
-    private static void test03 ( )
+    [Test]
+    public static void test03 ( )
 
 //****************************************************************************80
 //
@@ -149,4 +135,5 @@ internal static class Program
             }
         }
     }
+    
 }
