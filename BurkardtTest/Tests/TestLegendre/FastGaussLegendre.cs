@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.Quadrature;
 
-namespace FastGaussLegendreTest;
+namespace Burkardt_Tests.TestLegendre;
 
-internal static class Program
+public class FastGaussLegendreTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -127,4 +127,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

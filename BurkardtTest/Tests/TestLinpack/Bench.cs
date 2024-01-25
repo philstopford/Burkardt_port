@@ -1,13 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Linpack;
 using Burkardt.Types;
 
-namespace LinpackBench;
+namespace Burkardt_Tests.TestLinpack;
 
-internal static class Program
+public class BenchTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -180,4 +180,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

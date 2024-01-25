@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.SolveNS;
 
-namespace LocalMinimumRCTest;
+namespace Burkardt_Tests.TestLocalMinimum;
 
-internal static class Program
+public class LocalMinimumRCTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -396,4 +396,5 @@ internal static class Program
 
         return value;
     }
+    
 }

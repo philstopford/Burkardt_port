@@ -1,93 +1,15 @@
-﻿using System;
 using System.Globalization;
 using System.Numerics;
 using Burkardt.BLAS;
 using Burkardt.Linpack;
 using Burkardt.Uniform;
 
-namespace LinpackZTest;
+namespace Burkardt_Tests.TestLinpack;
 
-internal static class Program
+public class PackZTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LINPACK_Z_TEST.
-        //
-        //  Discussion:
-        //
-        //    LINPACK_Z_TEST tests the LINPACK_Z library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    11 October 2010
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LINPACK_Z_TEST");
-        Console.WriteLine("  Test the LINPACK_Z library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-
-        test10();
-        test11();
-        test12();
-        test13();
-        test14();
-        test15();
-        test16();
-        test17();
-        test18();
-        test19();
-
-        test20();
-        test21();
-        test22();
-        test23();
-        test24();
-        test25();
-        test26();
-        zqrdc_test();
-        test28();
-        test29();
-
-        test30();
-        test31();
-        test32();
-        test33();
-        test34();
-        test345();
-        test35();
-        test36();
-        test37();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("LINPACK_Z_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -238,7 +160,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -469,7 +392,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -589,7 +513,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -682,7 +607,8 @@ internal static class Program
         Console.WriteLine("  Estimated reciprocal condition RCOND = " + rcond + "");
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -820,7 +746,8 @@ internal static class Program
         }
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -926,7 +853,8 @@ internal static class Program
                                              + "  * 10^ " + det[1] + "");
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -991,7 +919,8 @@ internal static class Program
         Console.WriteLine("  Estimated reciprocal condition RCOND = " + rcond + "");
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -1101,7 +1030,8 @@ internal static class Program
         }
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -1225,7 +1155,8 @@ internal static class Program
         }
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************80
         //
@@ -1320,7 +1251,8 @@ internal static class Program
         }
     }
 
-    private static void test11()
+    [Test]
+    public static void test11()
 
         //****************************************************************************80
         //
@@ -1395,7 +1327,8 @@ internal static class Program
 
     }
 
-    private static void test12()
+    [Test]
+    public static void test12()
 
         //****************************************************************************80
         //
@@ -1512,7 +1445,8 @@ internal static class Program
         }
     }
 
-    private static void test13()
+    [Test]
+    public static void test13()
 
         //****************************************************************************80
         //
@@ -1673,7 +1607,8 @@ internal static class Program
         }
     }
 
-    private static void test14()
+    [Test]
+    public static void test14()
 
         //****************************************************************************80
         //
@@ -1756,7 +1691,8 @@ internal static class Program
 
     }
 
-    private static void test15()
+    [Test]
+    public static void test15()
 
         //****************************************************************************80
         //
@@ -1881,7 +1817,8 @@ internal static class Program
         }
     }
 
-    private static void test16()
+    [Test]
+    public static void test16()
 
         //****************************************************************************80
         //
@@ -2047,7 +1984,8 @@ internal static class Program
         }
     }
 
-    private static void test17()
+    [Test]
+    public static void test17()
 
         //****************************************************************************80
         //
@@ -2111,7 +2049,8 @@ internal static class Program
         Console.WriteLine("  Reciprocal condition  = " + rcond + "");
     }
 
-    private static void test18()
+    [Test]
+    public static void test18()
 
         //****************************************************************************80
         //
@@ -2172,7 +2111,8 @@ internal static class Program
                                              + " * 10^ " + det[1] + "");
     }
 
-    private static void test19()
+    [Test]
+    public static void test19()
 
         //****************************************************************************80
         //
@@ -2259,7 +2199,8 @@ internal static class Program
         }
     }
 
-    private static void test20()
+    [Test]
+    public static void test20()
 
         //****************************************************************************80
         //
@@ -2317,7 +2258,8 @@ internal static class Program
 
     }
 
-    private static void test21()
+    [Test]
+    public static void test21()
 
         //****************************************************************************80
         //
@@ -2417,7 +2359,8 @@ internal static class Program
 
     }
 
-    private static void test22()
+    [Test]
+    public static void test22()
 
         //****************************************************************************80
         //
@@ -2525,7 +2468,8 @@ internal static class Program
 
     }
 
-    private static void test23()
+    [Test]
+    public static void test23()
 
         //****************************************************************************80
         //
@@ -2581,7 +2525,8 @@ internal static class Program
 
     }
 
-    private static void test24()
+    [Test]
+    public static void test24()
 
         //****************************************************************************80
         //
@@ -2694,7 +2639,8 @@ internal static class Program
 
     }
 
-    private static void test25()
+    [Test]
+    public static void test25()
 
         //****************************************************************************80
         //
@@ -2785,7 +2731,8 @@ internal static class Program
 
     }
 
-    private static void test26()
+    [Test]
+    public static void test26()
 
         //****************************************************************************80
         //
@@ -2862,7 +2809,8 @@ internal static class Program
 
     }
 
-    private static void zqrdc_test()
+    [Test]
+    public static void zqrdc_test()
 
         //****************************************************************************80
         //
@@ -3102,7 +3050,8 @@ internal static class Program
         }
     }
 
-    private static void test28()
+    [Test]
+    public static void test28()
 
         //****************************************************************************80
         //
@@ -3177,7 +3126,8 @@ internal static class Program
 
     }
 
-    private static void test29()
+    [Test]
+    public static void test29()
 
         //****************************************************************************80
         //
@@ -3300,7 +3250,8 @@ internal static class Program
 
     }
 
-    private static void test30()
+    [Test]
+    public static void test30()
 
         //****************************************************************************80
         //
@@ -3445,7 +3396,8 @@ internal static class Program
 
     }
 
-    private static void test31()
+    [Test]
+    public static void test31()
 
         //****************************************************************************80
         //
@@ -3546,7 +3498,8 @@ internal static class Program
 
     }
 
-    private static void test32()
+    [Test]
+    public static void test32()
 
         //****************************************************************************80
         //
@@ -3690,7 +3643,8 @@ internal static class Program
         }
     }
 
-    private static void test33()
+    [Test]
+    public static void test33()
 
         //****************************************************************************80
         //
@@ -3861,7 +3815,8 @@ internal static class Program
 
     }
 
-    private static void test34()
+    [Test]
+    public static void test34()
 
         //**********************************************************************
         //
@@ -4025,7 +3980,8 @@ internal static class Program
         }
     }
 
-    private static void test345()
+    [Test]
+    public static void test345()
 
         //****************************************************************************80
         //
@@ -4211,7 +4167,8 @@ internal static class Program
         }
     }
 
-    private static void test35()
+    [Test]
+    public static void test35()
 
         //****************************************************************************80
         //
@@ -4273,7 +4230,8 @@ internal static class Program
 
     }
 
-    private static void test36()
+    [Test]
+    public static void test36()
 
         //****************************************************************************80
         //
@@ -4380,7 +4338,8 @@ internal static class Program
 
     }
 
-    private static void test37()
+    [Test]
+    public static void test37()
 
         //****************************************************************************80
         //
@@ -4470,5 +4429,5 @@ internal static class Program
         }
 
     }
-
+    
 }

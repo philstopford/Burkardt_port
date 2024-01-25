@@ -1,13 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.SolveNS;
 using Burkardt.Types;
 
-namespace LocalMinimumTest;
+namespace Burkardt_Tests.TestLocalMinimum;
 
-internal static class Program
+public class LocalMinimumTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -382,4 +382,5 @@ internal static class Program
 
         return value;
     }
+    
 }

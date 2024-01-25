@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.Legendre;
 
-namespace LegendreRuleFastTest;
+namespace Burkardt_Tests.TestLegendre;
 
-internal static class Program
+public class RuleFastTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -61,6 +61,8 @@ internal static class Program
         //
         //  Get N.
         //
+        n = 128;
+        /*
         try
         {
             n = Convert.ToInt32(args[0]);
@@ -71,12 +73,15 @@ internal static class Program
             Console.WriteLine("  Enter N:");
             n = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  N = " + n + "");
         //
         //  Get A:
         //
+        a = 0.5;
+        /*
         try
         {
             a = Convert.ToDouble(args[1]);
@@ -87,12 +92,15 @@ internal static class Program
             Console.WriteLine("  Enter A.");
             a = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  A = " + a + "");
         //
         //  Get B:
         //
+        b = 3.0;
+        /*
         try
         {
             b = Convert.ToDouble(args[2]);
@@ -103,6 +111,7 @@ internal static class Program
             Console.WriteLine("  Enter B.");
             b = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  B = " + b + "");
@@ -117,4 +126,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+    
 }

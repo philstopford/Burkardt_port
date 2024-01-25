@@ -1,52 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Laguerre;
 
-namespace LaguerreIntegrandsTest;
+namespace Burkardt_Tests.TestLaguerre;
 
-internal static class Program
+public class IntegrationSemiInfiniteIntervalsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for laguerre_integrands_test.
-        //
-        //  Discussion:
-        //
-        //    laguerre_integrands_test tests the laguerre_integrands library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    30 July 2007
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("laguerre_integrands_test");
-        Console.WriteLine("  Test laguerre_integrands.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-
-        Console.WriteLine("");
-        Console.WriteLine("laguerre_integrands_test");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -86,12 +46,13 @@ internal static class Program
         {
             string title = Integrands.p00_title(problem);
 
-            Console.WriteLine("  " + problem.ToString().PadLeft(8)
+            Console.WriteLine("  " + problem.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                    + "  \"" + title + "\".");
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -113,7 +74,6 @@ internal static class Program
         //
     {
         int problem;
-
         Integrands.p00Data data = new();
 
         Console.WriteLine("");
@@ -133,13 +93,14 @@ internal static class Program
 
             double exact = Integrands.p00_exact(ref data, problem);
 
-            Console.WriteLine("  " + problem.ToString().PadLeft(8)
+            Console.WriteLine("  " + problem.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                    + "  " + alpha.ToString(CultureInfo.InvariantCulture).PadLeft(14)
                                    + "  " + exact.ToString("0.################").PadLeft(24) + "");
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -181,7 +142,7 @@ internal static class Program
             int order = 1;
 
             Console.WriteLine("");
-            Console.WriteLine("  " + problem.ToString().PadLeft(8)
+            Console.WriteLine("  " + problem.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                    + "  " + "        "
                                    + "  " + exact.ToString("0.######").PadLeft(14) + "");
 
@@ -193,7 +154,7 @@ internal static class Program
                 double error = Math.Abs(exact - estimate);
 
                 Console.WriteLine("  " + "        "
-                                       + "  " + order.ToString().PadLeft(8)
+                                       + "  " + order.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                        + "  " + estimate.ToString("0.######").PadLeft(14)
                                        + "  " + error.ToString("0.######").PadLeft(14) + "");
 
@@ -202,7 +163,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -246,7 +208,7 @@ internal static class Program
             int order = 1;
 
             Console.WriteLine("");
-            Console.WriteLine("  " + problem.ToString().PadLeft(8)
+            Console.WriteLine("  " + problem.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                    + "  " + "        "
                                    + "  " + exact.ToString("0.######").PadLeft(14) + "");
 
@@ -258,7 +220,7 @@ internal static class Program
                 double error = Math.Abs(exact - estimate);
 
                 Console.WriteLine("  " + "        "
-                                       + "  " + order.ToString().PadLeft(8)
+                                       + "  " + order.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                        + "  " + estimate.ToString("0.######").PadLeft(14)
                                        + "  " + error.ToString("0.######").PadLeft(14) + "");
 
@@ -267,7 +229,8 @@ internal static class Program
         }
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -311,7 +274,7 @@ internal static class Program
             int order = 1;
 
             Console.WriteLine("");
-            Console.WriteLine("  " + problem.ToString().PadLeft(8)
+            Console.WriteLine("  " + problem.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                    + "  " + "        "
                                    + "  " + exact.ToString("0.######").PadLeft(14) + "");
 
@@ -323,7 +286,7 @@ internal static class Program
                 double error = Math.Abs(exact - estimate);
 
                 Console.WriteLine("  " + "        "
-                                       + "  " + order.ToString().PadLeft(8)
+                                       + "  " + order.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                        + "  " + estimate.ToString("0.######").PadLeft(14)
                                        + "  " + error.ToString("0.######").PadLeft(14) + "");
 
@@ -331,4 +294,5 @@ internal static class Program
             }
         }
     }
+    
 }
