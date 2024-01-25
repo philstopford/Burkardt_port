@@ -1388,6 +1388,12 @@
       <None Update="TestPolygon\Triangulate\i18_nodes.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="TestNiederreiter\Niederreiter\gfarit.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestNiederreiter\Niederreiter\gfplys.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
