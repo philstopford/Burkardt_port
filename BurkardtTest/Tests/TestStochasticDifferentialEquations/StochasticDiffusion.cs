@@ -1,55 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using Burkardt.StochasticDifferentialEquations;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace StochasticDiffusionTest;
+namespace Burkardt_Tests.TestStochasticDifferentialEquations;
 
-internal static class Program
+public class StochasticDiffusionTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for STOCHASTIC_DIFFUSION_TEST.
-        //
-        //  Discussion:
-        //
-        //    STOCHASTIC_DIFFUSION_TEST tests the STOCHASTIC_DIFFUSION library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    07 August 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_DIFFUSION_TEST");
-        Console.WriteLine("  Test the STOCHASTIC_DIFFUSION library.");
-
-        bnt_contour();
-        elman_contour();
-        ntw_contour();
-        xk_contour();
-
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_DIFFUSION_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void bnt_contour()
+    [Test]
+    public static void bnt_contour()
 
         //****************************************************************************80
         //
@@ -161,7 +120,8 @@ internal static class Program
         Console.WriteLine("  Created graphics command file '" + command_filename + "'");
     }
 
-    private static void elman_contour()
+    [Test]
+    public static void elman_contour()
 
         //****************************************************************************80
         //
@@ -271,7 +231,8 @@ internal static class Program
         Console.WriteLine("  Created graphics command file '" + command_filename + "'");
     }
 
-    private static void ntw_contour()
+    [Test]
+    public static void ntw_contour()
 
         //****************************************************************************80
         //
@@ -388,7 +349,8 @@ internal static class Program
         Console.WriteLine("  Created graphics command file '" + command_filename + "'.");
     }
 
-    private static void xk_contour()
+    [Test]
+    public static void xk_contour()
 
         //****************************************************************************80
         //
@@ -485,4 +447,5 @@ internal static class Program
 
         Console.WriteLine("  Created graphics command file '" + command_filename + "'");
     }
+    
 }

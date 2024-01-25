@@ -1,48 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.ODENS;
 
-namespace StochasticRungeKuttaTest;
+namespace Burkardt_Tests.TestStochasticDifferentialEquations;
 
-internal static class Program
+public class StochasticRungeKuttaTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for STOCHASTIC_RK_TEST.
-        //
-        //  Discussion:
-        //
-        //    STOCHASTIC_RK_TEST tests the STOCHASTIC_RK library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    06 July 2010
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_RK_TEST");
-        Console.WriteLine("  Test the STOCHASTIC_RK library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_RK_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -166,4 +130,5 @@ internal static class Program
 
         return value;
     }
+    
 }

@@ -1,36 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Sobol;
 using Burkardt.Uniform;
 
-namespace SobolTest;
+namespace Burkardt_Tests.TestSampling;
 
-internal static class Program
+public class SobolTest
 {
-    private static void Main()
-    {
-        Console.WriteLine();
-        Console.WriteLine("SOBOL_TEST");
-        Console.WriteLine("  Test the SOBOL library.");
- 
-        or_test ( );
-        i4_bit_hi1_test ( );
-        i4_bit_lo0_test ( );
-        test04 ( );
-        test05 ( );
-        test055 ( );
-        i8_bit_hi1_test ( );
-        i8_bit_lo0_test ( );
-        test08 ( );
-        test09 ( );
-
-        Console.WriteLine();
-        Console.WriteLine("SOBOL_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine();
-    }
-
-    private static void or_test ( )
+    [Test]
+    public static void or_test ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -78,7 +55,8 @@ internal static class Program
     }
 
 
-    private static void i4_bit_hi1_test ( )
+    [Test]
+    public static void i4_bit_hi1_test ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -122,7 +100,8 @@ internal static class Program
     }
 
 
-    private static void i4_bit_lo0_test ( )
+    [Test]
+    public static void i4_bit_lo0_test ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -166,7 +145,8 @@ internal static class Program
     }
 
 
-    private static void test04 ( )
+    [Test]
+    public static void test04 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -240,7 +220,8 @@ internal static class Program
     }
 
 
-    private static void test05 ( )
+    [Test]
+    public static void test05 ( )
 
         //****************************************************************************80
         //
@@ -386,7 +367,8 @@ internal static class Program
     }
 
 
-    private static void test055 ( )
+    [Test]
+    public static void test055 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -434,7 +416,8 @@ internal static class Program
     }
 
 
-    private static void i8_bit_hi1_test ( )
+    [Test]
+    public static void i8_bit_hi1_test ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -477,7 +460,8 @@ internal static class Program
     }
 
 
-    private static void i8_bit_lo0_test ( )
+    [Test]
+    public static void i8_bit_lo0_test ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -521,7 +505,8 @@ internal static class Program
     }
 
 
-    private static void test08 ( )
+    [Test]
+    public static void test08 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -592,7 +577,8 @@ internal static class Program
         }
     }
 
-    private static void test09 ( )
+    [Test]
+    public static void test09 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -726,5 +712,5 @@ internal static class Program
             Console.WriteLine(cout);
         }
     }
-
+    
 }

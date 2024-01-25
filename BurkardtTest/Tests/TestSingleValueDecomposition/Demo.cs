@@ -1,15 +1,15 @@
-﻿using System;
 using Burkardt;
 using Burkardt.RankingNS;
 using Burkardt.SolveNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace SVDDemo;
+namespace Burkardt_Tests.TestSingleValueDecomposition;
 
-internal static class Program
+public class DemoTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -82,6 +82,7 @@ internal static class Program
         //
         //  If M was not on the command line, get it now.
         //
+        /*
         try
         {
             string_ = args[0];
@@ -98,12 +99,15 @@ internal static class Program
         }
 
         int m = Convert.ToInt32(string_);
+        */
+        int m = 5;
         Console.WriteLine("");
         Console.WriteLine("  Matrix row order    M = " + m + "");
 
         //
         //  If N was not on the command line, get it now.
         //
+        /*
         try
         {
             string_ = args[1];
@@ -120,11 +124,15 @@ internal static class Program
         }
 
         int n = Convert.ToInt32(string_);
+        */
+        int n = 5;
         Console.WriteLine("  Matrix column order N = " + n + "");
 
         //
         //  If SEED was not on the command line, use GET_SEED.
         //
+        seed = 1234;
+        /*
         try
         {
             seed = Convert.ToInt32(args[2]);
@@ -137,6 +145,7 @@ internal static class Program
             Console.WriteLine("  Random number SEED    = " + seed + "");
             Console.WriteLine("  (Chosen by the program.)");
         }
+        */
 
         //
         //  Set aside space for the arrays.
@@ -209,4 +218,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+    
 }

@@ -1,52 +1,13 @@
-﻿using System;
 using Burkardt.Storage;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace SparseTripletToCompressedColumnTest;
+namespace Burkardt_Tests.TestSparseTriplet.SparseTripletToCompressedColumn;
 
-internal static class Program
+public class SparseTripletToCompressedColumnTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for ST_TO_ccs_TEST.
-        //
-        //  Discussion:
-        //
-        //    ST_TO_ccs_TEST tests st_to_ccs.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    15 July 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("ST_TO_ccs_TEST");
-        Console.WriteLine("  Test st_to_ccs.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("ST_TO_ccs_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -195,7 +156,8 @@ internal static class Program
         CompressedColumnStorage.ccs_print(m, n, ncc, icc, ccc, acc, "  CCS Matrix:");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -284,7 +246,8 @@ internal static class Program
         CompressedColumnStorage.ccs_print(m, n, ncc, icc, ccc, acc, "  CCS Matrix:");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -378,7 +341,8 @@ internal static class Program
         typeMethods.r8vec_write(filename_acc, ncc, acc);
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -476,4 +440,5 @@ internal static class Program
         double r = typeMethods.r8vec_diff_norm(m, b1, b2);
         Console.WriteLine("  || ACC*X - AST*X|| = " + r + "");
     }
+    
 }

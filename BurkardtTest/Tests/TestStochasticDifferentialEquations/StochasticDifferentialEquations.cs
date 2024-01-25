@@ -1,59 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.StochasticDifferentialEquations;
 using Burkardt.Types;
 
-namespace StochasticDifferentialEquationsTest;
+namespace Burkardt_Tests.TestStochasticDifferentialEquations;
 
-internal static class Program
+public class StochasticDifferentialEquationsTest
 {
-    private static void Main()
-        //****************************************************************************
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SDE_TEST.
-        //
-        //  Discussion:
-        //
-        //    SDE_TEST tests the SDE library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    28 September 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SDE_TEST");
-        Console.WriteLine("  Test the SDE library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        test05();
-        test06();
-        test07();
-        test08();
-        test09();
-        test10();
-        test11();
-
-        Console.WriteLine("");
-        Console.WriteLine("SDE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************
         //
@@ -88,7 +42,8 @@ internal static class Program
         BrownianPath.bpath_gnuplot(n, w);
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************
         //
@@ -128,7 +83,8 @@ internal static class Program
         BrownianPath.bpath_average_gnuplot(m, n, u, umean);
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************
         //
@@ -172,7 +128,8 @@ internal static class Program
         ChainRule.chain_gnuplot(n, xem, vem);
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************
         //
@@ -217,7 +174,8 @@ internal static class Program
         EulerMaruyama.em_gnuplot(n, t, xtrue, t2, xem);
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************
         //
@@ -258,7 +216,8 @@ internal static class Program
         EulerMaruyamaStrong.emstrong_gnuplot(p_max, dtvals, xerr);
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************
         //
@@ -306,7 +265,8 @@ internal static class Program
         EulerMaruyamaWeak.emweak_gnuplot(p_max, dtvals, xerr, method);
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************
         //
@@ -345,7 +305,8 @@ internal static class Program
         MilsteinStrong.milstrong_gnuplot(p_max, dtvals, xerr);
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************
         //
@@ -384,7 +345,8 @@ internal static class Program
         Stability.stab_asymptotic(ref vdata, ref data, ref seed, n, p_max);
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************
         //
@@ -420,7 +382,8 @@ internal static class Program
 
     }
 
-    private static void test10()
+    [Test]
+    public static void test10()
 
         //****************************************************************************
         //
@@ -472,7 +435,8 @@ internal static class Program
         }
     }
 
-    private static void test11()
+    [Test]
+    public static void test11()
 
         //****************************************************************************
         //
@@ -523,4 +487,5 @@ internal static class Program
             n *= 4;
         }
     }
+    
 }

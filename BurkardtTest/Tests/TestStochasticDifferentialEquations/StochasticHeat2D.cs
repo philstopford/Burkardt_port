@@ -1,51 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.StochasticDifferentialEquations;
 using Burkardt.Types;
 
-namespace StochasticHeat2DTest;
+namespace Burkardt_Tests.TestStochasticDifferentialEquations;
 
-internal static class Program
+public class StochasticHeat2DTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for STOCHASTIC_HEAT2D_TEST.
-        //
-        //  Discussion:
-        //
-        //    STOCHASTIC_HEAT2D_TEST tests the STOCHASTIC_HEAT2D library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    04 September 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_HEAT2D_TEST:");
-        Console.WriteLine("  Test the STOCHASTIC_HEAT2D library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("STOCHASTIC_HEAT2D_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -167,7 +128,8 @@ internal static class Program
         Console.WriteLine("  Mean value of U is " + u_mean + "");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -345,4 +307,5 @@ internal static class Program
 
         return value;
     }
+    
 }

@@ -1,52 +1,11 @@
-﻿using System;
 using Burkardt.Types;
 
-namespace SparseTripletTest;
+namespace Burkardt_Tests.TestSparseTriplet.SparseTripletTest;
 
-internal static class Program
+public class SparseTripletTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for ST_IO_TEST.
-        //
-        //  Discussion:
-        //
-        //    ST_IO_TEST tests the ST_IO library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    26 September 2018
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("ST_IO_TEST:");
-        Console.WriteLine("  Test the ST_IO library.");
-        //
-        //  Real double precision tests.
-        //
-        r8st_write_test();
-        r8st_read_test();
-        r8st_sort_a_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("ST_IO_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-
-    }
-
-    private static void r8st_write_test()
+    [Test]
+    public static void r8st_write_test()
 
         //****************************************************************************80
         //
@@ -122,7 +81,8 @@ internal static class Program
 
     }
 
-    private static void r8st_read_test()
+    [Test]
+    public static void r8st_read_test()
 
         //****************************************************************************80
         //
@@ -174,7 +134,8 @@ internal static class Program
 
     }
 
-    private static void r8st_sort_a_test()
+    [Test]
+    public static void r8st_sort_a_test()
 
         //****************************************************************************80
         //
@@ -243,4 +204,5 @@ internal static class Program
 
         typeMethods.r8st_print(m, n, nst, ist, jst, ast, "  Matrix data sorted by column:");
     }
+    
 }

@@ -1196,6 +1196,48 @@
       <None Update="TestSparse\Display\before_data.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="TestSparseTriplet\Test\a5by5_r8.st">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSparseTriplet\Test\kershaw_r8.st">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSparseTriplet\SparseTripletToCompressedColumnTest\west_acc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSparseTriplet\SparseTripletToCompressedColumnTest\west_ccc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSparseTriplet\SparseTripletToCompressedColumnTest\west_icc.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSparseTriplet\SparseTripletToCompressedColumnTest\west_st.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\data01.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\data04.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\data02.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\svd_003.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\svd_002.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\svd_001.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="TestSingleValueDecomposition\Basis\data05.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

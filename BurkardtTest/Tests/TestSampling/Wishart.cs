@@ -1,57 +1,13 @@
-﻿using System;
 using Burkardt.Sampling;
 using Burkardt.Sequence;
 using Burkardt.Types;
 
-namespace WishartTest;
+namespace Burkardt_Tests.TestSampling;
 
-internal static class Program
+public class WishartTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for WISHART_TEST.
-        //
-        //  Discussion:
-        //
-        //    WISHART_TEST tests the WISHART library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    11 October 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("WISHART_TEST");
-        Console.WriteLine("  Test the WISHART library.");
-
-        wishart_unit_sample_test();
-        bartlett_unit_sample_test();
-        wishart_test03();
-        wishart_test04();
-        wishart_test05();
-        wishart_test06();
-        wishart_test07();
-        wishart_test08();
-        wishart_test09();
-
-        Console.WriteLine("");
-        Console.WriteLine("WISHART_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void wishart_unit_sample_test()
+    [Test]
+    public static void wishart_unit_sample_test()
 
         //****************************************************************************80
         //
@@ -117,7 +73,8 @@ internal static class Program
         typeMethods.r8vec_print(n, lambda, "  Eigenvalues of previous matrix:");
     }
 
-    private static void bartlett_unit_sample_test()
+    [Test]
+    public static void bartlett_unit_sample_test()
 
         //****************************************************************************80
         //
@@ -185,7 +142,8 @@ internal static class Program
         typeMethods.r8vec_print(n, lambda, "  Eigenvalues of previous matrix:");
     }
 
-    private static void wishart_test03()
+    [Test]
+    public static void wishart_test03()
 
         //****************************************************************************80
         //
@@ -232,7 +190,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of error is " + diff + "");
     }
 
-    private static void wishart_test04()
+    [Test]
+    public static void wishart_test04()
 
         //****************************************************************************80
         //
@@ -314,7 +273,8 @@ internal static class Program
         typeMethods.r8vec_print(n, lambda, "  Eigenvalues of previous matrix:");
     }
 
-    private static void wishart_test05()
+    [Test]
+    public static void wishart_test05()
 
         //****************************************************************************80
         //
@@ -397,7 +357,8 @@ internal static class Program
         typeMethods.r8vec_print(n, lambda, "  Eigenvalues of previous matrix:");
     }
 
-    private static void wishart_test06()
+    [Test]
+    public static void wishart_test06()
 
         //****************************************************************************80
         //
@@ -463,7 +424,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of error is " + diff + "");
     }
 
-    private static void wishart_test07()
+    [Test]
+    public static void wishart_test07()
 
         //****************************************************************************80
         //
@@ -537,7 +499,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of SIGMA-W_average/DF = " + diff + "");
     }
 
-    private static void wishart_test08()
+    [Test]
+    public static void wishart_test08()
 
         //****************************************************************************80
         //
@@ -585,7 +548,8 @@ internal static class Program
         Console.WriteLine("  Frobenius norm of error is " + diff + "");
     }
 
-    private static void wishart_test09()
+    [Test]
+    public static void wishart_test09()
 
         //****************************************************************************80
         //
@@ -647,4 +611,5 @@ internal static class Program
         Console.WriteLine("");
         Console.WriteLine("  Frobenius norm of error is " + diff + "");
     }
+    
 }

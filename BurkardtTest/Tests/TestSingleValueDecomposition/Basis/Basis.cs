@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using Burkardt;
 using Burkardt.IO;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace SVDBasisTest;
+namespace Burkardt_Tests.TestSingleValueDecomposition.Basis;
 
-internal static class Program
+public class BasisTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -439,4 +437,5 @@ internal static class Program
         }
 
     }
+    
 }

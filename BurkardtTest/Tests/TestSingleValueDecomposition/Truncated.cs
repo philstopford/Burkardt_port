@@ -1,54 +1,13 @@
-﻿using System;
 using Burkardt;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace SVDTruncatedTest;
+namespace Burkardt_Tests.TestSingleValueDecomposition;
 
-internal static class Program
+public class TruncatedTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SVD_TRUNCATED.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 March 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("SVD_TRUNCATED");
-        Console.WriteLine("  Demonstrate the use of the truncated or economy-size");
-        Console.WriteLine("  Singular Value Decomposition (SVD) for cases where");
-        Console.WriteLine("  the sizes of M and N are very different.");
-
-        int m = 4;
-        int n = 3;
-        svd_truncated_u_test(m, n);
-
-        m = 3;
-        n = 4;
-        svd_truncated_v_test(m, n);
-
-        Console.WriteLine("");
-        Console.WriteLine("SVD_TRUNCATED");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-
-    private static void svd_truncated_u_test(int m, int n)
+    [Test]
+    public static void svd_truncated_u_test()
 
         //****************************************************************************80
         //
@@ -69,6 +28,8 @@ internal static class Program
         //    John Burkardt
         //
     {
+        int m = 4;
+        int n = 3;
         int i;
         int j;
 
@@ -133,7 +94,8 @@ internal static class Program
     }
 
 
-    private static void svd_truncated_v_test(int m, int n)
+    [Test]
+    public static void svd_truncated_v_test()
 
         //****************************************************************************80
         //
@@ -154,6 +116,8 @@ internal static class Program
         //    John Burkardt
         //
     {
+        int m = 3;
+        int n = 4;
         int i;
         int j;
 
@@ -217,4 +181,5 @@ internal static class Program
         typeMethods.r8mat_print(m, n, a, "  Recomputed A = U * S * V':");
 
     }
+    
 }

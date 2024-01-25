@@ -1,32 +1,12 @@
-﻿using System;
 using Burkardt.IHSNS;
 using Burkardt.Types;
 
-namespace IHSTest;
+namespace Burkardt_Tests.TestSampling;
 
-internal static class Program
+public class IHSTest
 {
-    private static void Main()
-    {
-        Console.WriteLine();
-            
-        Console.WriteLine("IHS_TEST");
-        Console.WriteLine("  C# version");
-        Console.WriteLine("  Test the IHS library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-
-        Console.WriteLine();
-        Console.WriteLine("IHS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine();
-            
-    }
-
-    private static void test01( )
+    [Test]
+    public static void test01( )
 
         //****************************************************************************80
         //
@@ -92,7 +72,8 @@ internal static class Program
 
     }
 
-    private static void test02 ()
+    [Test]
+    public static void test02 ()
 
         //****************************************************************************80
         //
@@ -158,7 +139,8 @@ internal static class Program
         }
     }
 
-    private static void test03 ( )
+    [Test]
+    public static void test03 ( )
 
         //****************************************************************************80
         //
@@ -253,7 +235,8 @@ internal static class Program
         }
     }
 
-    private static void test04 ( )
+    [Test]
+    public static void test04 ( )
 
         //****************************************************************************80
         //
@@ -321,4 +304,5 @@ internal static class Program
             typeMethods.i4mat_transpose_print ( dim_num, point_num, x, "  X:" );
         }
     }
+    
 }
