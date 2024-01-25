@@ -1,13 +1,13 @@
-﻿using System;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Lagrange;
 using Burkardt.Types;
-using InterpTest;
 
-namespace LagrangeInterp1DTest;
+namespace Burkardt_Tests.TestLagrange;
 
-internal static class Program
+public class Interp1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -259,4 +259,5 @@ internal static class Program
         Console.WriteLine("  Normalized length of piecewise linear interpolant = " + ld + "");
         Console.WriteLine("  Normalized length of polynomial interpolant       = " + li + "");
     }
+    
 }

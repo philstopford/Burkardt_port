@@ -1,71 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Lagrange;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace LagrangeInterpnDTest;
+namespace Burkardt_Tests.TestLagrange;
 
-internal static class Program
+public class InterpnDTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for LAGRANGE_INTERP_ND_TEST.
-        //
-        //  Discussion:
-        //
-        //    LAGRANGE_INTERP_ND_TEST tests the LAGRANGE_INTERP_ND library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    30 September 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("LAGRANGE_INTERP_ND_TEST:");
-            
-        Console.WriteLine("  Test the LAGRANGE_INTERP_ND library.");
-        //
-        //  Use the interface that passes in the orders directly.
-        //
-        test01();
-        test02();
-        test03();
-        test04();
-        //
-        //  Repeat tests 1, 2, 3, and 4,
-        //  using the interface that passes in the orders indirectly,
-        //  based on the "level".
-        //
-        test05();
-        test06();
-        test07();
-        test08();
-        //
-        //  Experiment with anisotropic orders.
-        //
-        test09();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("LAGRANGE_INTERP_ND_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -135,7 +78,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -205,7 +149,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -275,7 +220,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -354,7 +300,8 @@ internal static class Program
         }
     }
 
-    private static void test05()
+    [Test]
+    public static void test05()
 
         //****************************************************************************80
         //
@@ -424,7 +371,8 @@ internal static class Program
         }
     }
 
-    private static void test06()
+    [Test]
+    public static void test06()
 
         //****************************************************************************80
         //
@@ -494,7 +442,8 @@ internal static class Program
         }
     }
 
-    private static void test07()
+    [Test]
+    public static void test07()
 
         //****************************************************************************80
         //
@@ -564,7 +513,8 @@ internal static class Program
         }
     }
 
-    private static void test08()
+    [Test]
+    public static void test08()
 
         //****************************************************************************80
         //
@@ -638,7 +588,8 @@ internal static class Program
         }
     }
 
-    private static void test09()
+    [Test]
+    public static void test09()
 
         //****************************************************************************80
         //
@@ -867,4 +818,5 @@ internal static class Program
 
         return z;
     }
+    
 }

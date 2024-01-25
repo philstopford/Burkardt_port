@@ -1,13 +1,13 @@
-﻿using System;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Lagrange;
 using Burkardt.Types;
-using InterpTest;
 
-namespace LagrangeInterp2DTest;
+namespace Burkardt_Tests.TestLagrange;
 
-internal static class Program
+public class Interp2DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -209,4 +209,5 @@ internal static class Program
             }
         }
     }
+    
 }
