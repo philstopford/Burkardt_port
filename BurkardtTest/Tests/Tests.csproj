@@ -1154,36 +1154,6 @@
       <None Update="TestIO\PGMA\glassware_noisy.ascii.pgm">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="TestIO\TestPGMB\pgmb_io_test01.pgm">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestPGMB\pgmb_io_test02.pgm">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestPPMA\test01.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestPPMA\test01.ascii.ppm">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestPPMA\test02.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestPPMA\test02.ascii.ppm">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestTriSurface\sphere_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestTriSurface\sphere_triangles.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestTriSurface\cube_triangles.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestIO\TestTriSurface\cube_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
       <None Update="TestSparse\Display\after_commands.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
@@ -1283,15 +1253,6 @@
       <None Update="TestTable\Quality\halton_02_00100.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="TestJacobi\Exactness\jac_o2_a0.5_b1.5_r.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestJacobi\Exactness\jac_o2_a0.5_b1.5_w.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestJacobi\Exactness\jac_o2_a0.5_b1.5_x.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
       <None Update="TestJacobi\Rule\jac_o4_a0.5_b1.5_r.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
@@ -1299,12 +1260,6 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="TestJacobi\Rule\jac_o4_a0.5_b1.5_x.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPyramid\Exactness\pyramid_l3x3_j3_w.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPyramid\Exactness\pyramid_l3x3_j3_x.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="TestPyramid\Grid\pyramid_unit.png">
@@ -1328,73 +1283,10 @@
       <None Update="TestPyramid\Rule\pyramid_l2x2_j4_x.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="TestQuadMesh\ReverseCuthillMcKee\hole_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestQuadMesh\ReverseCuthillMcKee\hole_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestQuadMesh\ReverseCuthillMcKee\hole_output.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\comb.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\comb_diagonals.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\comb_edges.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\comb_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\comb_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\hand.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\hand_diagonals.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\hand_edges.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\hand_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\hand_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\i18.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\i18_diagonals.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\i18_edges.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\i18_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestPolygon\Triangulate\i18_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
       <None Update="TestNiederreiter\Niederreiter\gfarit.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="TestNiederreiter\Niederreiter\gfplys.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="TestImage\Components\indices.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="TestImage\Denoise\balloons_noisy.png">
@@ -1487,53 +1379,17 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <None Remove="TestFEM\FEM2D\Project\r1x1_t3_elements.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r1x1_t3_nodes.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r1x1_t3_values.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r1x1_t3_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r2x2_t3_elements.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r2x2_t3_nodes.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r2x2_t3_values.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r2x2_t3_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r4x4_t3_elements.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r4x4_t3_nodes.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r4x4_t3_values.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r4x4_t3_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r8x8_t3_elements.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r8x8_t3_nodes.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Project\r8x8_t3_values.txt" />
-      <Resource Include="TestFEM\FEM2D\Project\r8x8_t3_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM2D\Sample\fem_sq_elements.txt" />
       <Resource Include="TestFEM\FEM2D\Sample\fem_sq_elements.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1555,53 +1411,17 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
       <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_elements.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_nodes.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r1x1x1_t4_values.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r1x1x1_t4_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_elements.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_nodes.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r2x2x2_t4_values.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r2x2x2_t4_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_elements.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_nodes.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r4x4x4_t4_values.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r4x4x4_t4_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_elements.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_elements.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_nodes.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_nodes.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\FEM3D\Project\r8x8x8_t4_values.txt" />
-      <Resource Include="TestFEM\FEM3D\Project\r8x8x8_t4_values.txt">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
       <None Remove="TestFEM\GMesh\cheby9_elements.txt" />
       <Resource Include="TestFEM\GMesh\cheby9_elements.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1748,6 +1568,806 @@
       </Resource>
       <None Remove="TestAppliedStatisticsAlgorithms\points_100.txt" />
       <Resource Include="TestAppliedStatisticsAlgorithms\points_100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestImage\Components\indices.txt" />
+      <Resource Include="TestImage\Components\indices.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestGMeshToFEM\example_2d.msh" />
+      <Resource Include="TestGMeshToFEM\example_2d.msh">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestGMeshToFEM\example_2d_elements.txt" />
+      <Resource Include="TestGMeshToFEM\example_2d_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestGMeshToFEM\example_2d_nodes.txt" />
+      <Resource Include="TestGMeshToFEM\example_2d_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\ell_elements.png" />
+      <Resource Include="TestFEM\FEM2D\Poisson\ell_elements.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\ell_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\ell_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\ell_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\Poisson\ell_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\ell_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\ell_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\ell_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\ell_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\lake_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\lake_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\lake_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\Poisson\lake_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\lake_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\lake_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\lake_output.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\lake_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Poisson\lake_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\Poisson\lake_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_elements.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_elements.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_output.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\baffle_values.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\baffle_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\ell_elements.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\ell_elements.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\ell_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\ell_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\ell_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\ell_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\ell_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\ell_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\ell_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\ell_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\lake_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\lake_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\lake_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\lake_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\lake_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\lake_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\lake_output.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\lake_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonCG\lake_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonCG\lake_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\lake_output.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\lake_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\ell_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\ell_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\ell_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\ell_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\lake_nodes.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\lake_nodes.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\ell_elements.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\ell_elements.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_elements.png" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_elements.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\lake_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\lake_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_values.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\lake_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\lake_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\lake_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\lake_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\ell_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\ell_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\ell_solution.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\ell_solution.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\PoissonSparse\baffle_output.txt" />
+      <Resource Include="TestFEM\FEM2D\PoissonSparse\baffle_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\fem_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\fem_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\sample_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\sample_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\fem_sq_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\fem_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\fem_sq_elements.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\fem_sq_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM2D\Project\sample_sq_values.txt" />
+      <Resource Include="TestFEM\FEM2D\Project\sample_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\sample_sq_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\sample_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\sample_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\sample_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\fem_sq_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\fem_sq_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\sample_sq_values_exact.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\sample_sq_values_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\fem_sq_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\fem_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Project\fem_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Project\fem_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\fem_sq_elements.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\fem_sq_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\fem_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\fem_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\fem_sq_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\fem_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\sample_sq_nodes.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\sample_sq_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\sample_sq_values.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\sample_sq_values.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestFEM\FEM3D\Sample\sample_sq_values_exact.txt" />
+      <Resource Include="TestFEM\FEM3D\Sample\sample_sq_values_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\balloons_noisy.png" />
+      <Resource Include="TestIO\TestPGMA\balloons_noisy.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\balloons_noisy.ascii.pgm" />
+      <Resource Include="TestIO\TestPGMA\balloons_noisy.ascii.pgm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\glassware_median_news.png" />
+      <Resource Include="TestIO\TestPGMA\glassware_median_news.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\glassware_median_news.ascii.pgm" />
+      <Resource Include="TestIO\TestPGMA\glassware_median_news.ascii.pgm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\glassware_noisy.png" />
+      <Resource Include="TestIO\TestPGMA\glassware_noisy.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMA\glassware_noisy.ascii.pgm" />
+      <Resource Include="TestIO\TestPGMA\glassware_noisy.ascii.pgm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMB\pgmb_io_test01.pgm" />
+      <Resource Include="TestIO\TestPGMB\pgmb_io_test01.pgm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPGMB\pgmb_io_test02.pgm" />
+      <Resource Include="TestIO\TestPGMB\pgmb_io_test02.pgm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPPMA\test01.png" />
+      <Resource Include="TestIO\TestPPMA\test01.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPPMA\test01.ascii.ppm" />
+      <Resource Include="TestIO\TestPPMA\test01.ascii.ppm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPPMA\test02.png" />
+      <Resource Include="TestIO\TestPPMA\test02.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestPPMA\test02.ascii.ppm" />
+      <Resource Include="TestIO\TestPPMA\test02.ascii.ppm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestTriSurface\cube_nodes.txt" />
+      <Resource Include="TestIO\TestTriSurface\cube_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestTriSurface\cube_triangles.txt" />
+      <Resource Include="TestIO\TestTriSurface\cube_triangles.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestTriSurface\sphere_nodes.txt" />
+      <Resource Include="TestIO\TestTriSurface\sphere_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestTriSurface\sphere_triangles.txt" />
+      <Resource Include="TestIO\TestTriSurface\sphere_triangles.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestWavefront\cube_no_normals.html" />
+      <Resource Include="TestIO\TestWavefront\cube_no_normals.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestWavefront\cube_normals.html" />
+      <Resource Include="TestIO\TestWavefront\cube_normals.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestWavefront\obj_io.html" />
+      <Resource Include="TestIO\TestWavefront\obj_io.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestWavefront\obj_io_test.txt" />
+      <Resource Include="TestIO\TestWavefront\obj_io_test.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestSTL\cube_new.html" />
+      <Resource Include="TestIO\TestSTL\cube_new.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestSTL\stla_io.html" />
+      <Resource Include="TestIO\TestSTL\stla_io.html">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestIO\TestSTL\stla_io_test.txt" />
+      <Resource Include="TestIO\TestSTL\stla_io_test.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o1_a0.5_b1.5_exact.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o1_a0.5_b1.5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o2_a0.5_b1.5_exact.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o2_a0.5_b1.5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o2_a0.5_b1.5_r.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o2_a0.5_b1.5_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o2_a0.5_b1.5_w.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o2_a0.5_b1.5_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o2_a0.5_b1.5_x.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o2_a0.5_b1.5_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o4_a0.5_b1.5_exact.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o4_a0.5_b1.5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o8_a0.5_b1.5_exact.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o8_a0.5_b1.5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestJacobi\Exactness\jac_o16_a0.5_b1.5_exact.txt" />
+      <Resource Include="TestJacobi\Exactness\jac_o16_a0.5_b1.5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_a.txt" />
+      <Resource Include="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_a.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_b.txt" />
+      <Resource Include="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_b.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_r.txt" />
+      <Resource Include="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_w.txt" />
+      <Resource Include="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_x.txt" />
+      <Resource Include="TestnIntExactness\sparse_grid_mixed_d2_l2_ccxcc_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestnIntExactness\nint_exactness_mixed_test.txt" />
+      <Resource Include="TestnIntExactness\nint_exactness_mixed_test.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\comb.png" />
+      <Resource Include="TestPolygon\Triangulate\comb.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\comb_diagonals.txt" />
+      <Resource Include="TestPolygon\Triangulate\comb_diagonals.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\comb_edges.txt" />
+      <Resource Include="TestPolygon\Triangulate\comb_edges.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\comb_elements.txt" />
+      <Resource Include="TestPolygon\Triangulate\comb_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\comb_nodes.txt" />
+      <Resource Include="TestPolygon\Triangulate\comb_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\hand.png" />
+      <Resource Include="TestPolygon\Triangulate\hand.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\hand_diagonals.txt" />
+      <Resource Include="TestPolygon\Triangulate\hand_diagonals.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\hand_edges.txt" />
+      <Resource Include="TestPolygon\Triangulate\hand_edges.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\hand_elements.txt" />
+      <Resource Include="TestPolygon\Triangulate\hand_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\hand_nodes.txt" />
+      <Resource Include="TestPolygon\Triangulate\hand_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\i18.png" />
+      <Resource Include="TestPolygon\Triangulate\i18.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\i18_diagonals.txt" />
+      <Resource Include="TestPolygon\Triangulate\i18_diagonals.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\i18_edges.txt" />
+      <Resource Include="TestPolygon\Triangulate\i18_edges.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\i18_elements.txt" />
+      <Resource Include="TestPolygon\Triangulate\i18_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPolygon\Triangulate\i18_nodes.txt" />
+      <Resource Include="TestPolygon\Triangulate\i18_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPyramid\Exactness\pyramid_l3x3_j3_w.txt" />
+      <Resource Include="TestPyramid\Exactness\pyramid_l3x3_j3_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestPyramid\Exactness\pyramid_l3x3_j3_x.txt" />
+      <Resource Include="TestPyramid\Exactness\pyramid_l3x3_j3_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadMesh\ReverseCuthillMcKee\hole_elements.txt" />
+      <Resource Include="TestQuadMesh\ReverseCuthillMcKee\hole_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadMesh\ReverseCuthillMcKee\hole_nodes.txt" />
+      <Resource Include="TestQuadMesh\ReverseCuthillMcKee\hole_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadMesh\ReverseCuthillMcKee\hole_output.txt" />
+      <Resource Include="TestQuadMesh\ReverseCuthillMcKee\hole_output.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_elements.txt" />
+      <Resource Include="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_elements.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_nodes.txt" />
+      <Resource Include="TestQuadMesh\ReverseCuthillMcKee\hole_rcm_nodes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o1_exact.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o1_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o2_exact.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o2_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o4_exact.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o4_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o8_exact.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o8_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o16_exact.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o16_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o1_r.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o1_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o1_w.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o1_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o1_x.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o1_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o2_r.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o2_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o2_w.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o2_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o2_x.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o2_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o4_r.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o4_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o4_w.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o4_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o4_x.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o4_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o8_r.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o8_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o8_w.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o8_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o8_x.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o8_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o16_r.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o16_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o16_w.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o16_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\Chebyshev1\cheby1_o16_x.txt" />
+      <Resource Include="TestQuadrature\Chebyshev1\cheby1_o16_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_modified_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o1_a1.0_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o1_a1.0_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_modified_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o2_a1.0_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o2_a1.0_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_modified_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o4_a1.0_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o4_a1.0_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_modified_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o8_a1.0_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o8_a1.0_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_exact.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_modified_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_r.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_w.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\GenHermite\gen_herm_o16_a1.0_x.txt" />
+      <Resource Include="TestQuadrature\GenHermite\gen_herm_o16_a1.0_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o2_r.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o2_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o3_exact.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o3_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\gl_d1_o3_x.txt" />
+      <Resource Include="TestQuadrature\IntExactness\gl_d1_o3_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o3_x.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o3_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\ncc_d1_o5_x.txt" />
+      <Resource Include="TestQuadrature\IntExactness\ncc_d1_o5_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o2_w.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o2_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\gl_d1_o3_exact.txt" />
+      <Resource Include="TestQuadrature\IntExactness\gl_d1_o3_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o2_x.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o2_x.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\ncc_d1_o5_exact.txt" />
+      <Resource Include="TestQuadrature\IntExactness\ncc_d1_o5_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o3_w.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o3_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o3_r.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o3_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\ncc_d1_o5_w.txt" />
+      <Resource Include="TestQuadrature\IntExactness\ncc_d1_o5_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\gl_d1_o3_r.txt" />
+      <Resource Include="TestQuadrature\IntExactness\gl_d1_o3_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\ncc_d1_o5_r.txt" />
+      <Resource Include="TestQuadrature\IntExactness\ncc_d1_o5_r.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\gl_d1_o3_w.txt" />
+      <Resource Include="TestQuadrature\IntExactness\gl_d1_o3_w.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuadrature\IntExactness\cc_d1_o2_exact.txt" />
+      <Resource Include="TestQuadrature\IntExactness\cc_d1_o2_exact.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuality\cvt_02_00100.txt" />
+      <Resource Include="TestQuality\cvt_02_00100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuality\halton_02_00100.txt" />
+      <Resource Include="TestQuality\halton_02_00100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestQuality\sphere_02_00100.txt" />
+      <Resource Include="TestQuality\sphere_02_00100.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
