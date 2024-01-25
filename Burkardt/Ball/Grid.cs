@@ -71,17 +71,17 @@ public static class Grid
                     }
 
 
-                    bg[0 + p * 3] = x;
-                    bg[1 + p * 3] = y;
-                    bg[2 + p * 3] = z;
+                    bg[(0 + p * 3) % bg.Length] = x;
+                    bg[(1 + p * 3) % bg.Length] = y;
+                    bg[(2 + p * 3) % bg.Length] = z;
                     p += 1;
 
                     switch (i)
                     {
                         case > 0:
-                            bg[0 + p * 3] = 2.0 * c[0] - x;
-                            bg[1 + p * 3] = y;
-                            bg[2 + p * 3] = z;
+                            bg[(0 + p * 3) % bg.Length] = 2.0 * c[0] - x;
+                            bg[(1 + p * 3) % bg.Length] = y;
+                            bg[(2 + p * 3) % bg.Length] = z;
                             p += 1;
                             break;
                     }
@@ -89,9 +89,9 @@ public static class Grid
                     switch (j)
                     {
                         case > 0:
-                            bg[0 + p * 3] = x;
-                            bg[1 + p * 3] = 2.0 * c[1] - y;
-                            bg[2 + p * 3] = z;
+                            bg[(0 + p * 3) % bg.Length] = x;
+                            bg[(1 + p * 3) % bg.Length] = 2.0 * c[1] - y;
+                            bg[(2 + p * 3) % bg.Length] = z;
                             p += 1;
                             break;
                     }
@@ -99,9 +99,9 @@ public static class Grid
                     switch (k)
                     {
                         case > 0:
-                            bg[0 + p * 3] = x;
-                            bg[1 + p * 3] = y;
-                            bg[2 + p * 3] = 2.0 * c[2] - z;
+                            bg[(0 + p * 3) % bg.Length] = x;
+                            bg[(1 + p * 3) % bg.Length] = y;
+                            bg[(2 + p * 3) % bg.Length] = 2.0 * c[2] - z;
                             p += 1;
                             break;
                     }
@@ -109,9 +109,9 @@ public static class Grid
                     switch (i)
                     {
                         case > 0 when 0 < j:
-                            bg[0 + p * 3] = 2.0 * c[0] - x;
-                            bg[1 + p * 3] = 2.0 * c[1] - y;
-                            bg[2 + p * 3] = z;
+                            bg[(0 + p * 3) % bg.Length] = 2.0 * c[0] - x;
+                            bg[(1 + p * 3) % bg.Length] = 2.0 * c[1] - y;
+                            bg[(2 + p * 3) % bg.Length] = z;
                             p += 1;
                             break;
                     }
@@ -119,9 +119,9 @@ public static class Grid
                     switch (i)
                     {
                         case > 0 when 0 < k:
-                            bg[0 + p * 3] = 2.0 * c[0] - x;
-                            bg[1 + p * 3] = y;
-                            bg[2 + p * 3] = 2.0 * c[2] - z;
+                            bg[(0 + p * 3) % bg.Length] = 2.0 * c[0] - x;
+                            bg[(1 + p * 3) % bg.Length] = y;
+                            bg[(2 + p * 3) % bg.Length] = 2.0 * c[2] - z;
                             p += 1;
                             break;
                     }
@@ -129,9 +129,9 @@ public static class Grid
                     switch (j)
                     {
                         case > 0 when 0 < k:
-                            bg[0 + p * 3] = x;
-                            bg[1 + p * 3] = 2.0 * c[1] - y;
-                            bg[2 + p * 3] = 2.0 * c[2] - z;
+                            bg[(0 + p * 3) % bg.Length] = x;
+                            bg[(1 + p * 3) % bg.Length] = 2.0 * c[1] - y;
+                            bg[(2 + p * 3) % bg.Length] = 2.0 * c[2] - z;
                             p += 1;
                             break;
                     }
@@ -139,9 +139,9 @@ public static class Grid
                     switch (i)
                     {
                         case > 0 when 0 < j && 0 < k:
-                            bg[0 + p * 3] = 2.0 * c[0] - x;
-                            bg[1 + p * 3] = 2.0 * c[1] - y;
-                            bg[2 + p * 3] = 2.0 * c[2] - z;
+                            bg[(0 + p * 3) % bg.Length] = 2.0 * c[0] - x;
+                            bg[(1 + p * 3) % bg.Length] = 2.0 * c[1] - y;
+                            bg[(2 + p * 3) % bg.Length] = 2.0 * c[2] - z;
                             p += 1;
                             break;
                     }
