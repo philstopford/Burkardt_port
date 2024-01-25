@@ -2370,6 +2370,18 @@
       <Resource Include="TestQuality\sphere_02_00100.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
+      <None Remove="TestDiaphony\cvt_02_00100.txt" />
+      <Resource Include="TestDiaphony\cvt_02_00100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestDiaphony\halton_02_00100.txt" />
+      <Resource Include="TestDiaphony\halton_02_00100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="TestDiaphony\sphere_02_00100.txt" />
+      <Resource Include="TestDiaphony\sphere_02_00100.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
     <ItemGroup>

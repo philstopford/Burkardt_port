@@ -3,12 +3,29 @@ using Burkardt;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace Burkardt_Tests;
+namespace Burkardt_Tests.TestDiaphony;
 
 public class DiaphonyTest
 {
     [Test]
-    public static void test()
+    public static void test1()
+    {
+        do_test("halton_02_00100.txt");
+    }
+    
+    [Test]
+    public static void test2()
+    {
+        do_test("sphere_02_00100.txt");
+    }
+    
+    [Test]
+    public static void test3()
+    {
+        do_test("cvt_02_00100.txt");
+    }
+
+    private static void do_test(string input_filename)
         //****************************************************************************80
         //
         //  Purpose:
@@ -36,7 +53,6 @@ public class DiaphonyTest
         //    John Burkardt
         //
     {
-        string input_filename = "in.txt";
 
         /*
         //
