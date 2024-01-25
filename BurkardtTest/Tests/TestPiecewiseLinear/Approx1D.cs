@@ -1,14 +1,14 @@
-﻿using System;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.PiecewiseLinear;
 using Burkardt.Probability;
 using Burkardt.Types;
-using InterpTest;
 
-namespace PWLApprox1DTest;
+namespace Burkardt_Tests.TestPiecewiseLinear;
 
-internal static class Program
+public class Approx1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -132,4 +132,5 @@ internal static class Program
         Console.WriteLine("");
         Console.WriteLine("  L2 approximation error averaged per data node = " + app_error + "");
     }
+    
 }

@@ -1,14 +1,14 @@
-﻿using System;
 using System.Globalization;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.PiecewiseLinear;
 using Burkardt.TriangulationNS;
-using InterpTest;
 
-namespace PWLInterp2DScatteredTest;
+namespace Burkardt_Tests.TestPiecewiseLinear;
 
-internal static class Program
+public class Interp2DScatteredTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -40,8 +40,6 @@ internal static class Program
         Console.WriteLine("  The R8LIB library is needed.");
         Console.WriteLine("  This test also needs the TEST_INTERP_2D library.");
 
-        test01();
-        test02();
         //
         //  Numerical tests.
         //
@@ -58,7 +56,8 @@ internal static class Program
         Console.WriteLine("");
     }
 
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -109,7 +108,8 @@ internal static class Program
             triangle, element_neighbor);
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -351,4 +351,5 @@ internal static class Program
                                    + "  " + ze[k].ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+    
 }

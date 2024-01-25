@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.PiecewiseLinear;
 using Burkardt.Types;
-using InterpTest;
 
-namespace PWLInterp1DTest;
+namespace Burkardt_Tests.TestPiecewiseLinear;
 
-internal static class Program
+public class Interp1DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -57,7 +55,8 @@ internal static class Program
         Console.WriteLine("");
     }
 
-    private static void pwl_basis_1d_test()
+    [Test]
+    public static void pwl_basis_1d_test()
 
         //****************************************************************************80
         //
@@ -96,7 +95,8 @@ internal static class Program
         typeMethods.r8mat_print(ni, nd, lb, "  The piecewise linear basis functions:");
     }
 
-    private static void pwl_value_1d_test()
+    [Test]
+    public static void pwl_value_1d_test()
 
         //****************************************************************************80
         //
@@ -270,4 +270,5 @@ internal static class Program
 
         Console.WriteLine("  Created graphics command file \"" + command_filename + "\".");
     }
+    
 }

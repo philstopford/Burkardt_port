@@ -1,51 +1,12 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.PiecewiseLinear;
 
-namespace PWLProductIntegralTest;
+namespace Burkardt_Tests.TestPiecewiseLinear;
 
-internal static class Program
+public class ProductIntegralTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for pwl_PRODUCT_INTEGRAL_TEST.
-        //
-        //  Discussion:
-        //
-        //    pwl_PRODUCT_INTEGRAL_TEST tests pwl_PRODUCT_INTEGRAL.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    30 April 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("pwl_PRODUCT_INTEGRAL_TEST");
-        Console.WriteLine("  Test the pwl_PRODUCT_INTEGRAL_INTEGRAL library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-
-        Console.WriteLine("");
-        Console.WriteLine("pwl_PRODUCT_INTEGRAL_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -103,7 +64,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -161,7 +123,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -250,7 +213,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -310,4 +274,5 @@ internal static class Program
 
         Console.WriteLine("  Integral G(X) * G(X) dx = " + integral + "");
     }
+    
 }

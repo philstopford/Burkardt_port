@@ -1,13 +1,13 @@
-﻿using System;
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.PiecewiseLinear;
 using Burkardt.Types;
-using InterpTest;
 
-namespace PWLInterp2DTest;
+namespace Burkardt_Tests.TestPiecewiseLinear;
 
-internal static class Program
+public class Interp2DTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -198,4 +198,5 @@ internal static class Program
             }
         }
     }
+    
 }
