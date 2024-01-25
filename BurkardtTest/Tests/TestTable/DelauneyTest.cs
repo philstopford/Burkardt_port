@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Table;
 using Burkardt.TriangulationNS;
 using Burkardt.Types;
 
-namespace TableDelauneyTest;
+namespace Burkardt_Tests.TestTable;
 
-internal static class Program
+public class DelauneyTest
 {
-    private static void Main(string[] args)
+        [Test]
+        public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -66,6 +66,8 @@ internal static class Program
         //
         //  First argument is the file prefix.
         //
+        prefix = "prefix";
+        /*
         try
         {
             prefix = args[0];
@@ -78,6 +80,7 @@ internal static class Program
 
             prefix = Console.ReadLine();
         }
+        */
 
         //
         //  Create the filenames.
@@ -149,4 +152,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+
 }

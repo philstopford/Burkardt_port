@@ -1,14 +1,14 @@
-﻿using System;
 using Burkardt.Table;
 using Burkardt.TriangleNS;
 using Burkardt.TriangulationNS;
 using Burkardt.Types;
 
-namespace TableVoronoiTest;
+namespace Burkardt_Tests.TestTable.Voronoi;
 
-internal static class Program
+public class VoronoiTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -73,6 +73,7 @@ internal static class Program
         //
         //  If the input file was not specified, get it now.
         //
+        /*
         try
         {
             int i;
@@ -82,12 +83,16 @@ internal static class Program
             }
         }
         catch
+        
+        */
         {
+            /*
             Console.WriteLine("");
             Console.WriteLine("TABLE_VORONOI:");
             Console.WriteLine("  Please enter the name of a file to be analyzed.");
+            */
 
-            string file_name = Console.ReadLine();
+            string file_name = "in.txt"; //Console.ReadLine();
 
             handle_file(file_name);
 
@@ -635,4 +640,5 @@ internal static class Program
         }
     }
 
+    
 }

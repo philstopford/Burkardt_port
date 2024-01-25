@@ -1,77 +1,35 @@
-﻿using System;
 using Burkardt.IO;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace TableLatinizeTest;
+namespace Burkardt_Tests.TestTable.Latinize;
 
-internal static class Program
+public class LatinizeTest
 {
-    private static void Main(string[] args)
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TABLE_LATINIZE.
-        //
-        //  Discussion:
-        //
-        //    TABLE_LATINIZE is the main routine of a program to "latinize" a dataset.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    09 May 2005
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Usage:
-        //
-        //    table_latinize input_filename
-        //
+    [Test]
+    public static void test1()
     {
-        string input_filename;
-
-
-        Console.WriteLine("");
-        Console.WriteLine("LATINIZE");
-        Console.WriteLine("");
-        Console.WriteLine("  Read a dataset of N points in M dimensions,");
-        Console.WriteLine("  modify it into a Latin hypercube,");
-        Console.WriteLine("  write the modified dataset to a file.");
-
-        try
-        {
-            int i;
-            for (i = 1; i < args.Length; i++)
-            {
-                input_filename = args[i];
-                handle(input_filename);
-            }
-        }
-        catch
-        {
-            Console.WriteLine("");
-            Console.WriteLine("TABLE_LATINIZE:");
-            Console.WriteLine("  Please enter the name of a file to be analyzed.");
-
-            input_filename = Console.ReadLine();
-
-            handle(input_filename);
-
-        }
-
-        Console.WriteLine("");
-        Console.WriteLine("TABLE_LATINIZE");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
+        handle("cvt_02_00010.txt");
+    }
+    
+    [Test]
+    public static void test2()
+    {
+        handle("cvt_03_00007.txt");
     }
 
+    [Test]
+    public static void test3()
+    {
+        handle("cvt_03_00056.txt");
+    }
+
+    [Test]
+    public static void test4()
+    {
+        handle("cvt_07_00100.txt");
+    }
+    
     private static void handle(string input_filename)
 
         //****************************************************************************80
@@ -144,5 +102,5 @@ internal static class Program
         Console.WriteLine("  Wrote the latinized data to \"" + output_filename + "\".");
 
     }
-
+    
 }

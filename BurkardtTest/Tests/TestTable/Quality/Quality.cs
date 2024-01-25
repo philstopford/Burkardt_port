@@ -1,97 +1,37 @@
-﻿using System;
 using Burkardt.Pointset;
 using Burkardt.Sampling;
 using Burkardt.Table;
 using Burkardt.TriangulationNS;
 using Burkardt.Types;
 
-namespace TableQualityTest;
+namespace Burkardt_Tests.TestTable.QualityTest;
 
-internal static class Program
+public class QualityTest
 {
-    private static void Main(string[] args)
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TABLE_QUALITY.
-        //
-        //  Discussion:
-        //
-        //    TABLE_QUALITY determines quality measures for a given set of points.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    02 July 2005
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        //  Reference:
-        //
-        //    Max Gunzburger, John Burkardt,
-        //    Uniformity Measures for Point Samples in Hypercubes.
-        //
-        //  Local parameters:
-        //
-        //    Local, int DIM_NUM, the spatial dimension of the point set.
-        //
-        //    Local, int N, the number of points.
-        //
-        //    Local, double Z[DIM_NUM*N], the point set.
-        //
-        //    Local, int NS, the number of sample points.
-        //
+    [Test]
+    public static void test1()
     {
-        Console.WriteLine("");
-
-        Console.WriteLine("");
-        Console.WriteLine("TABLE_QUALITY");
-        Console.WriteLine("  Compute measures of uniform dispersion for a pointset.");
-        Console.WriteLine("");
-        Console.WriteLine("  Note: this routine assumes that the input pointset");
-        Console.WriteLine("  is contained in the unit hypercube.  If this is not");
-        Console.WriteLine("  the case, then you must rewrite the routine");
-        Console.WriteLine("    SAMPLE_ROUTINE");
-        Console.WriteLine("  so that it properly returns sample points in your");
-        Console.WriteLine("  region, with a uniform density, or a probability");
-        Console.WriteLine("  density of your choosing.");
-        //
-        //  If the input file was not specified, get it now.
-        //
-        try
-        {
-            int i;
-            for (i = 1; i < args.Length; i++)
-            {
-                handle(args[i], Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
-            }
-        }
-        catch
-        {
-            Console.WriteLine("");
-            Console.WriteLine("TABLE_QUALITY:");
-            Console.WriteLine("  Please enter the name of a file to be analyzed.");
-
-            string input_filename = Console.ReadLine();
-
-            handle(input_filename, Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
-
-        }
-
-        Console.WriteLine("");
-        Console.WriteLine("TABLE_QUALITY:");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
+        handle("cvt_02_00100.txt", Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
     }
-
-
+    
+    [Test]
+    public static void test2()
+    {
+        handle("cvt_07_00010.txt", Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
+    }
+    
+    [Test]
+    public static void test3()
+    {
+        handle("degen_02_00130.txt", Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
+    }
+    
+    [Test]
+    public static void test4()
+    {
+        handle("halton_02_00100.txt", Burkardt.HyperGeometry.Hypercube.Sample.sample_hypercube_uniform);
+    }
+    
     private static void handle(string input_filename,
             Func<int, int, int, GeometrySampleResult> sample_routine)
 

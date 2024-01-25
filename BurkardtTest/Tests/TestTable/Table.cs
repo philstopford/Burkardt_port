@@ -1,56 +1,13 @@
-﻿using System;
 using Burkardt.Table;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace TableTest;
+namespace Burkardt_Tests.TestTable;
 
-internal static class Program
+public class TableTest
 {
-    private static void Main()
-    {
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for TABLE_IO_TEST.
-        //
-        //  Discussion:
-        //
-        //    TABLE tests the TABLE_IO library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    09 August 2009
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-        {
-            Console.WriteLine();
-            Console.WriteLine("TABLE_IO_TEST");
-            Console.WriteLine("  Test the TABLE_IO library.");
-
-            test01();
-            test02();
-            test03();
-            test04();
-            test05();
-            test06();
-
-            Console.WriteLine();
-            Console.WriteLine("TABLE_IO_TEST");
-            Console.WriteLine("  Normal end of execution.");
-            Console.WriteLine();
-        }
-    }
-
-
-    private static void test01()
+    [Test]
+    public static void test01()
         //****************************************************************************80
         //
         //  Purpose:
@@ -108,7 +65,8 @@ internal static class Program
     }
 
 
-    private static void test02 ( )
+    [Test]
+    public static void test02 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -155,7 +113,8 @@ internal static class Program
     }
 
 
-    private static void test03 ( )
+    [Test]
+    public static void test03 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -208,7 +167,8 @@ internal static class Program
     }
 
 
-    private static void test04 ( )
+    [Test]
+    public static void test04 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -255,7 +215,8 @@ internal static class Program
     }
 
 
-    private static void test05 ( )
+    [Test]
+    public static void test05 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -295,7 +256,8 @@ internal static class Program
     }
 
 
-    private static void test06 ( )
+    [Test]
+    public static void test06 ( )
         //****************************************************************************80
         //
         //  Purpose:
@@ -338,4 +300,5 @@ internal static class Program
 
         typeMethods.i4mat_print ( m, n, table3, "  'Added' dataset:" );
     }
+    
 }
