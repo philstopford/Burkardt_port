@@ -1,52 +1,13 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Cube;
 using Burkardt.Types;
 
-namespace CubeGridTest;
+namespace Burkardt_Tests.TestCube;
 
-internal static class Program
+public class GridTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CUBE_GRID_TEST.
-        //
-        //  Discussion:
-        //
-        //    CUBE_GRID_TEST tests CUBE_GRID.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    31 August 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_GRID_TEST:");
-            
-        Console.WriteLine("  Test the CUBE_GRID library.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_GRID_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -109,7 +70,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(3, n, x, "  Grid points:");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -172,7 +134,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(3, n, x, "  Grid points:");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -234,4 +197,5 @@ internal static class Program
         double[] x = Grid.cube_grid(n, ns, a, b, c);
         typeMethods.r8mat_transpose_print(3, n, x, "  Grid points:");
     }
+
 }

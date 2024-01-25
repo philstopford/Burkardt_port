@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using Burkardt.Cube;
 using Burkardt.Types;
 
-namespace CubeRuleTest;
+namespace Burkardt_Tests.TestCube;
 
-internal static class Program
+public class Test
 {
-    private static void Main()
+        [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -357,4 +355,5 @@ internal static class Program
         Console.WriteLine("");
         Console.WriteLine("  RMS error = " + d + "");
     }
+
 }

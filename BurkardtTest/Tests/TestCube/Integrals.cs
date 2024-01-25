@@ -1,52 +1,15 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Cube;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace CubeIntegralsTest;
+namespace Burkardt_Tests.TestCube;
 
-internal static class Program
+public class IntegralsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CUBE_INTEGRALS_TEST.
-        //
-        //  Discussion:
-        //
-        //    CUBE_INTEGRALS_TEST tests the CUBE_INTEGRALS library.
-        //    
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_INTEGRALS_TEST");
-            
-        Console.WriteLine("  Test the CUBE_INTEGRALS library.");
-
-        test01();
-
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_INTEGRALS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -108,4 +71,5 @@ internal static class Program
                                    + "  " + error.ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
         }
     }
+    
 }

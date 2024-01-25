@@ -1,48 +1,11 @@
-﻿using System;
 using Burkardt.ExactnessNS;
 
-namespace CubeExactnessTest;
+namespace Burkardt_Tests.TestCube;
 
-internal static class Program
+public class ExactnessTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for CUBE_EXACTNESS_TEST.
-        //
-        //  Discussion:
-        //
-        //    CUBE_EXACTNESS_TEST tests the CUBE_EXACTNESS library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    16 August 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_EXACTNESS_TEST");
-        Console.WriteLine("  Test the CUBE_EXACTNESS library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("CUBE_EXACTNESS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -105,7 +68,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -510,4 +474,5 @@ internal static class Program
                 break;
         }
     }
+
 }
