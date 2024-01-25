@@ -1,59 +1,21 @@
-﻿using System;
 using System.Globalization;
+using Burkardt.HyperGeometry.Hypersphere;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace HypercubeIntegralsTest;
+namespace Burkardt_Tests.TestHyper;
 
-using Integrals = Burkardt.HyperGeometry.Hypercube.Integrals;
-
-internal static class Program
+public class HypersphereIntegralsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HYPERCUBE_INTEGRALS_TEST.
-        //
-        //  Discussion:
-        //
-        //    HYPERCUBE_INTEGRALS_TEST tests the HYPERCUBE_INTEGRALS library.
-        //    
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HYPERCUBE_INTEGRALS_TEST");
-        Console.WriteLine("  Test the HYPERCUBE_INTEGRALS library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("HYPERCUBE_INTEGRALS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST01 estimates integrals over the unit hypercube in 3D.
+        //    TEST01 uses HYPERSPHERE01_SAMPLE to estimate monomial integrands in 3D.
         //
         //  Licensing:
         //
@@ -61,7 +23,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    19 January 2014
+        //    07 January 2014
         //
         //  Author:
         //
@@ -75,18 +37,23 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST01");
-        Console.WriteLine("  Compare exact and estimated integrals");
-        Console.WriteLine("  over the interior of the unit hypercube in 3D.");
+        Console.WriteLine("  Estimate monomial integrals using Monte Carlo");
+        Console.WriteLine("  over the surface of the unit hypersphere in 3D.");
         //
         //  Get sample points.
         //
         int seed = 123456789;
-        double[] x = Integrals.hypercube01_sample(m, n, ref seed);
+        typeMethods.r8vecNormalData data = new();
+        double[] x = Integrals.hypersphere01_sample(m, n, ref data, ref seed);
+
         Console.WriteLine("");
-        Console.WriteLine("  Number of sample points is " + n + "");
+        Console.WriteLine("  Number of sample points used is " + n + "");
         //
-        //  Randomly choose exponents.
+        //  Randomly choose X,Y,Z exponents between 0 and 8.
         //
+        Console.WriteLine("");
+        Console.WriteLine("  If any exponent is odd, the integral is zero.");
+        Console.WriteLine("  We will restrict this test to randomly chosen even exponents.");
         Console.WriteLine("");
         Console.WriteLine("  Ex  Ey  Ez     MC-Estimate           Exact      Error");
         Console.WriteLine("");
@@ -95,28 +62,37 @@ internal static class Program
         {
             int[] e = UniformRNG.i4vec_uniform_ab_new(m, 0, 4, ref seed);
 
+            int i;
+            for (i = 0; i < m; i++)
+            {
+                e[i] *= 2;
+            }
+
             double[] value = Monomial.monomial_value(m, n, e, x);
 
-            double result = Integrals.hypercube01_volume(m) * typeMethods.r8vec_sum(n, value) / n;
-            double exact = Integrals.hypercube01_monomial_integral(m, e);
+            double result = Integrals.hypersphere01_area(m) * typeMethods.r8vec_sum(n, value)
+                            / n;
+            double exact = Integrals.hypersphere01_monomial_integral(m, e);
             double error = Math.Abs(result - exact);
 
-            Console.WriteLine("  " + e[0].ToString(CultureInfo.InvariantCulture).PadLeft(2)
-                                   + "  " + e[1].ToString(CultureInfo.InvariantCulture).PadLeft(2)
-                                   + "  " + e[2].ToString(CultureInfo.InvariantCulture).PadLeft(2)
-                                   + "  " + result.ToString(CultureInfo.InvariantCulture).PadLeft(14)
-                                   + "  " + exact.ToString(CultureInfo.InvariantCulture).PadLeft(14)
-                                   + "  " + error.ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
+            Console.WriteLine("  " + e[0]
+                                   + "  " + e[1]
+                                   + "  " + e[2]
+                                   + "  " + result
+                                   + "  " + exact
+                                   + "  " + error + "");
+
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    TEST02 estimates integrals over the unit hypercube in 6D.
+        //    TEST02 uses HYPERSPHERE01_SAMPLE to estimate monomial integrands in 6D.
         //
         //  Licensing:
         //
@@ -124,7 +100,7 @@ internal static class Program
         //
         //  Modified:
         //
-        //    19 January 2014
+        //    07 January 2014
         //
         //  Author:
         //
@@ -138,30 +114,42 @@ internal static class Program
 
         Console.WriteLine("");
         Console.WriteLine("TEST02");
-        Console.WriteLine("  Compare exact and estimated integrals");
-        Console.WriteLine("  over the interior of the unit hypercube in 6D.");
+        Console.WriteLine("  Estimate monomial integrals using Monte Carlo");
+        Console.WriteLine("  over the surface of the unit hypersphere in 6D.");
         //
         //  Get sample points.
         //
         int seed = 123456789;
-        double[] x = Integrals.hypercube01_sample(m, n, ref seed);
+        typeMethods.r8vecNormalData data = new();
+        double[] x = Integrals.hypersphere01_sample(m, n, ref data, ref seed);
+
         Console.WriteLine("");
-        Console.WriteLine("  Number of sample points is " + n + "");
+        Console.WriteLine("  Number of sample points used is " + n + "");
         //
-        //  Randomly choose exponents.
+        //  Randomly choose X,Y,Z exponents between 0 and 6.
         //
+        Console.WriteLine("");
+        Console.WriteLine("  If any exponent is odd, the integral is zero.");
+        Console.WriteLine("  We will restrict this test to randomly chosen even exponents.");
         Console.WriteLine("");
         Console.WriteLine("  E1  E2  E3  E4  E5  E6     MC-Estimate           Exact      Error");
         Console.WriteLine("");
 
         for (test = 1; test <= test_num; test++)
         {
-            int[] e = UniformRNG.i4vec_uniform_ab_new(m, 0, 4, ref seed);
+            int[] e = UniformRNG.i4vec_uniform_ab_new(m, 0, 3, ref seed);
+
+            int i;
+            for (i = 0; i < m; i++)
+            {
+                e[i] *= 2;
+            }
 
             double[] value = Monomial.monomial_value(m, n, e, x);
 
-            double result = Integrals.hypercube01_volume(m) * typeMethods.r8vec_sum(n, value) / n;
-            double exact = Integrals.hypercube01_monomial_integral(m, e);
+            double result = Integrals.hypersphere01_area(m) * typeMethods.r8vec_sum(n, value)
+                            / n;
+            double exact = Integrals.hypersphere01_monomial_integral(m, e);
             double error = Math.Abs(result - exact);
 
             Console.WriteLine("  " + e[0].ToString(CultureInfo.InvariantCulture).PadLeft(2)
@@ -175,4 +163,5 @@ internal static class Program
                                    + "  " + error.ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+
 }

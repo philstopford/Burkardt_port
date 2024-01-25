@@ -1,53 +1,16 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace HyperballIntegralsTest;
+namespace Burkardt_Tests.TestHyper;
 
 using Integral = Burkardt.HyperGeometry.Hyperball.Integrals;
 
-internal static class Program
+public class HyperballIntegralsTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HYPERBALL_INTEGRALS_TEST.
-        //
-        //  Discussion:
-        //
-        //    HYPERBALL_INTEGRALS_TEST tests the HYPERBALL_INTEGRALS library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    05 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HYPERBALL_INTEGRALS_TEST");
-        Console.WriteLine("  Test the HYPERBALL_INTEGRALS library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("HYPERBALL_INTEGRALS_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+        [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -127,7 +90,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -206,4 +170,5 @@ internal static class Program
                               + "  " + error.ToString(CultureInfo.InvariantCulture).PadLeft(10) + "");
         }
     }
+
 }

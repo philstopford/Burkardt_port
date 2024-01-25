@@ -1,52 +1,13 @@
-﻿using System;
 using System.Globalization;
+using Burkardt.HyperGeometry.Hypercube;
 using Burkardt.Types;
 
-namespace HypercubeGridTest;
+namespace Burkardt_Tests.TestHyper;
 
-using Grid = Burkardt.HyperGeometry.Hypercube.Grid;
-
-internal static class Program
+public class HypercubeGridTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HYPERCUBE_GRID_TEST.
-        //
-        //  Discussion:
-        //
-        //    HYPERCUBE_GRID_TEST tests HYPERCUBE_GRID.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    29 August 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HYPERCUBE_GRID_TEST:");
-        Console.WriteLine("  Test the HYPERCUBE_GRID library.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("HYPERCUBE_GRID_TEST:");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -98,7 +59,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(M, n, x, "  Grid points:");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -152,7 +114,8 @@ internal static class Program
         typeMethods.r8mat_transpose_print(M, n, x, "  Grid points:");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -204,4 +167,5 @@ internal static class Program
         double[] x = Grid.hypercube_grid(M, n, ns, a, b, c);
         typeMethods.r8mat_transpose_print(M, n, x, "  Grid points:");
     }
+    
 }

@@ -1,52 +1,14 @@
-﻿using System;
 using System.Globalization;
+using Burkardt.HyperGeometry.Hyperball;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
 
-namespace HyperballMonteCarloTest;
+namespace Burkardt_Tests.TestHyper;
 
-using MonteCarlo = Burkardt.HyperGeometry.Hyperball.MonteCarlo;
-
-internal static class Program
+public class HyperballMonteCarloTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HYPERBALL_MONTE_CARLO_TEST.
-        //
-        //  Discussion:
-        //
-        //    HYPERBALL_MONTE_CARLO_TEST tests the HYPERBALL_MONTE_CARLO library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    05 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HYPERBALL_MONTE_CARLO_TEST");
-        Console.WriteLine("  Test the HYPERBALL_MONTE_CARLO library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("HYPERBALL_MONTE_CARLO_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -143,7 +105,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -244,4 +207,5 @@ internal static class Program
 
         Console.WriteLine(cout);
     }
+    
 }

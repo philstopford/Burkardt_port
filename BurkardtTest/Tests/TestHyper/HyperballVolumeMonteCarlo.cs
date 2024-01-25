@@ -1,14 +1,13 @@
-﻿using System;
+using Burkardt.HyperGeometry.Hyperball;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace HyperballVolumeMonteCarloTest;
+namespace Burkardt_Tests.TestHyper;
 
-using Montecarlo = Burkardt.HyperGeometry.Hyperball.MonteCarlo;
-
-internal static class Program
+public class HyperballVolumeMonteCarloTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -52,6 +51,8 @@ internal static class Program
         //
         //  Get the quadrature file root name:
         //
+        dim_num = 2;
+        /*
         try
         {
             dim_num = Convert.ToInt32(args[0]);
@@ -64,10 +65,13 @@ internal static class Program
 
             dim_num = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get the random number seed, if supplied.
         //
+        seed = 1234;
+        /*
         try
         {
             seed = Convert.ToInt32(args[1]);
@@ -79,6 +83,7 @@ internal static class Program
             Console.WriteLine("HYPERBALL_VOLUME_MONTE_CARLO:");
             Console.WriteLine("  Using default seed for random number generator.");
         }
+        */
 
         //
         //  Report user input.
@@ -127,7 +132,7 @@ internal static class Program
                 }
             }
 
-            double[] fx = Montecarlo.hyperball01_indicator(dim_num, n_more, x);
+            double[] fx = MonteCarlo.hyperball01_indicator(dim_num, n_more, x);
 
             double quad_more = typeMethods.r8vec_sum(n_more, fx);
 
@@ -138,7 +143,7 @@ internal static class Program
             quad += quad_more;
 
             double estimate = volume * quad / n;
-            exact = Montecarlo.hyperball01_volume(dim_num);
+            exact = MonteCarlo.hyperball01_volume(dim_num);
             double error = Math.Abs(exact - estimate);
             Console.WriteLine("  " + n_log2.ToString().PadLeft(8)
                                    + "  " + n.ToString().PadLeft(8)
@@ -156,4 +161,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

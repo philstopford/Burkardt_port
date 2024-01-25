@@ -1,51 +1,13 @@
-﻿using System;
+using Burkardt.HyperGeometry.Hypersphere;
 using Burkardt.MonomialNS;
 using Burkardt.Types;
 
-namespace HypersphereMonteCarloTest;
+namespace Burkardt_Tests.TestHyper;
 
-using MonteCarlo = Burkardt.HyperGeometry.Hypersphere.MonteCarlo;
-
-internal static class Program
+public class HypersphereMonteCarloTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for HYPERSPHERE_MONTE_CARLO_TEST.
-        //
-        //  Discussion:
-        //
-        //    HYPERSPHERE_MONTE_CARLO_TEST tests the HYPERSPHERE_MONTE_CARLO library.
-        //    
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    04 January 2014
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("HYPERSPHERE_MONTE_CARLO_TEST");
-        Console.WriteLine("  Test the HYPERSPHERE_MONTE_CARLO library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("HYPERSPHERE_MONTE_CARLO_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -140,7 +102,8 @@ internal static class Program
 
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -238,4 +201,5 @@ internal static class Program
 
         Console.WriteLine(cout);
     }
+    
 }
