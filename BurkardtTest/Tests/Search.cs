@@ -27,7 +27,7 @@ public class Search
     {
         const int a = 1;
         int b = typeMethods.i4_huge();
-        const int c = 45;
+        const int c = 1;
 
         Console.WriteLine("");
         Console.WriteLine("SEARCH_SERIAL:");

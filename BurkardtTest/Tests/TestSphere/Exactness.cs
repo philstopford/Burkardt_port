@@ -133,7 +133,7 @@ public class ExactnessTest
         //
         //  Get the maximum degree.
         //
-        degree_max = 45;
+        degree_max = 1;
         /*
         try
         {

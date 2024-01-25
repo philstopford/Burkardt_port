@@ -1,6 +1,6 @@
+using Burkardt_Tests.TestInterpolation.TestData;
 using Burkardt.Interpolation;
 using Burkardt.Types;
-using InterpTest;
 
 namespace Burkardt_Tests.TestInterpolation.RadialBasisFunction;
 

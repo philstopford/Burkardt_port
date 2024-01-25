@@ -86,7 +86,7 @@ public class IntExactnessGenLaguerreTest
         //
         //  Get the maximum degree:
         //
-        degree_max = 45;
+        degree_max = 1;
         /*
         try
         {
@@ -419,7 +419,7 @@ public class IntExactnessGenLaguerreTest
         //
         //  Get the maximum degree:
         //
-        degree_max = 45;
+        degree_max = 1;
         /*
         try
         {

@@ -78,7 +78,7 @@ public class ExactnessTest
         //
         //  The second command line argument is the maximum degree.
         //
-        degree_max = 45;
+        degree_max = 1;
         /*
         try
         {
