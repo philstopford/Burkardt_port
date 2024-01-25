@@ -1,13 +1,13 @@
-﻿using System;
 using Burkardt.Quadrature;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace JacobiExactnessTest;
+namespace Burkardt_Tests.TestJacobi.Exactness;
 
-internal static class Program
+public class ExactnessTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -55,17 +55,7 @@ internal static class Program
         //
         //  Get the quadrature file rootname.
         //
-            
-        try
-        {
-            quad_filename = args[0];
-        }
-        catch (Exception)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("  Enter the quadrature file rootname:");
-            quad_filename = Console.ReadLine();
-        }
+        quad_filename = "jac_o2_a0.5_b1.5";
 
         Console.WriteLine("");
         Console.WriteLine("  The quadrature file rootname is \"" + quad_filename + "\".");
@@ -81,6 +71,8 @@ internal static class Program
         //
         //  Get the maximum degree:
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[1]);
@@ -91,12 +83,15 @@ internal static class Program
             Console.WriteLine("  Enter DEGREE_MAX, the maximum monomial degree to check.");
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested maximum monomial degree is = " + degree_max + "");
         //
         //  The third command line option is ALPHA.
         //
+        alpha = 0.5;
+        /*
         try
         {
             alpha = Convert.ToDouble(args[2]);
@@ -109,10 +104,13 @@ internal static class Program
             Console.WriteLine("ALPHA is a real number greater than -1.0.");
             alpha = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  The fourth command line option is BETA.
         //
+        beta = 1;
+        /*
         try
         {
             beta = Convert.ToDouble(args[3]);
@@ -125,6 +123,7 @@ internal static class Program
             Console.WriteLine("BETA is a real number greater than -1.0.");
             beta = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Summarize the input.
@@ -277,4 +276,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

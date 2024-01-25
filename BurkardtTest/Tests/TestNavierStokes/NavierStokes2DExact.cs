@@ -1,97 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.NavierStokesNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace NavierStokes2DExactTest;
+namespace Burkardt_Tests.TestNavierStokes;
 
-internal static class Program
+public class NavierStokes2DExactTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    navier_stokes_2d_exact_test tests navier_stokes_2d_exact().
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    26 July 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("navier_stokes_2d_exact_test");
-        Console.WriteLine("  Test navier_stokes_2d_exact().");
-        //
-        //  GMS Flow.
-        //
-        uvp_gms_test();
-        uvp_gms_test2();
-        rhs_gms_test();
-        resid_gms_test();
-        gnuplot_gms_test();
-        //
-        //  Lukas Bystricky Flow.
-        //
-        uvp_lukas_test();
-        uvp_lukas_test2();
-        rhs_lukas_test();
-        resid_lukas_test();
-        gnuplot_lukas_test();
-        //
-        //  Poiseuille Flow.
-        //
-        uvp_poiseuille_test();
-        uvp_poiseuille_test2();
-        rhs_poiseuille_test();
-        resid_poiseuille_test();
-        gnuplot_poiseuille_test();
-        parameter_poiseuille_test();
-        //
-        //  Spiral Flow.
-        //
-        uvp_spiral_test();
-        uvp_spiral_test2();
-        rhs_spiral_test();
-        resid_spiral_test();
-        gnuplot_spiral_test();
-        parameter_spiral_test();
-        //
-        //  Taylor Flow.
-        //
-        uvp_taylor_test();
-        uvp_taylor_test2();
-        rhs_taylor_test();
-        resid_taylor_test();
-        gnuplot_taylor_test();
-        parameter_taylor_test();
-        //
-        //  Vortex Flow.
-        //
-        uvp_vortex_test();
-        uvp_vortex_test2();
-        rhs_vortex_test();
-        resid_vortex_test();
-        gnuplot_vortex_test();
-        parameter_vortex_test();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("navier_stokes_2d_exact_test");
-        Console.WriteLine("  Normal end of execution.");
-    }
-
-    private static void uvp_gms_test()
+    [Test]
+    public static void uvp_gms_test()
 
         //****************************************************************************80
         //
@@ -155,7 +72,8 @@ internal static class Program
 
     }
 
-    private static void uvp_gms_test2()
+    [Test]
+    public static void uvp_gms_test2()
 
         //****************************************************************************80
         //
@@ -245,7 +163,8 @@ internal static class Program
 
     }
 
-    private static void rhs_gms_test()
+    [Test]
+    public static void rhs_gms_test()
 
         //****************************************************************************80
         //
@@ -309,7 +228,8 @@ internal static class Program
 
     }
 
-    private static void resid_gms_test()
+    [Test]
+    public static void resid_gms_test()
 
         //****************************************************************************80
         //
@@ -373,7 +293,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_gms_test()
+    [Test]
+    public static void gnuplot_gms_test()
 
         //****************************************************************************80
         //
@@ -432,7 +353,8 @@ internal static class Program
 
     }
 
-    private static void uvp_lukas_test()
+    [Test]
+    public static void uvp_lukas_test()
 
         //****************************************************************************80
         //
@@ -495,7 +417,8 @@ internal static class Program
 
     }
 
-    private static void uvp_lukas_test2()
+    [Test]
+    public static void uvp_lukas_test2()
 
         //****************************************************************************80
         //
@@ -585,7 +508,8 @@ internal static class Program
 
     }
 
-    private static void rhs_lukas_test()
+    [Test]
+    public static void rhs_lukas_test()
 
         //****************************************************************************80
         //
@@ -648,7 +572,8 @@ internal static class Program
 
     }
 
-    private static void resid_lukas_test()
+    [Test]
+    public static void resid_lukas_test()
 
         //****************************************************************************80
         //
@@ -711,7 +636,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_lukas_test()
+    [Test]
+    public static void gnuplot_lukas_test()
 
         //****************************************************************************80
         //
@@ -769,7 +695,8 @@ internal static class Program
 
     }
 
-    private static void uvp_poiseuille_test()
+    [Test]
+    public static void uvp_poiseuille_test()
 
         //****************************************************************************80
         //
@@ -834,7 +761,8 @@ internal static class Program
 
     }
 
-    private static void uvp_poiseuille_test2()
+    [Test]
+    public static void uvp_poiseuille_test2()
 
         //****************************************************************************80
         //
@@ -926,7 +854,8 @@ internal static class Program
 
     }
 
-    private static void rhs_poiseuille_test()
+    [Test]
+    public static void rhs_poiseuille_test()
 
         //****************************************************************************80
         //
@@ -991,7 +920,8 @@ internal static class Program
 
     }
 
-    private static void resid_poiseuille_test()
+    [Test]
+    public static void resid_poiseuille_test()
 
         //****************************************************************************80
         //
@@ -1056,7 +986,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_poiseuille_test()
+    [Test]
+    public static void gnuplot_poiseuille_test()
 
         //****************************************************************************80
         //
@@ -1114,7 +1045,8 @@ internal static class Program
 
     }
 
-    private static void parameter_poiseuille_test()
+    [Test]
+    public static void parameter_poiseuille_test()
 
         //****************************************************************************80
         //
@@ -1238,7 +1170,8 @@ internal static class Program
 
     }
 
-    private static void uvp_spiral_test()
+    [Test]
+    public static void uvp_spiral_test()
 
         //****************************************************************************80
         //
@@ -1301,7 +1234,8 @@ internal static class Program
 
     }
 
-    private static void uvp_spiral_test2()
+    [Test]
+    public static void uvp_spiral_test2()
 
         //****************************************************************************80
         //
@@ -1391,7 +1325,8 @@ internal static class Program
 
     }
 
-    private static void rhs_spiral_test()
+    [Test]
+    public static void rhs_spiral_test()
 
         //****************************************************************************80
         //
@@ -1454,7 +1389,8 @@ internal static class Program
 
     }
 
-    private static void resid_spiral_test()
+    [Test]
+    public static void resid_spiral_test()
 
         //****************************************************************************80
         //
@@ -1517,7 +1453,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_spiral_test()
+    [Test]
+    public static void gnuplot_spiral_test()
 
         //****************************************************************************80
         //
@@ -1575,7 +1512,8 @@ internal static class Program
 
     }
 
-    private static void parameter_spiral_test()
+    [Test]
+    public static void parameter_spiral_test()
 
         //****************************************************************************80
         //
@@ -1697,7 +1635,8 @@ internal static class Program
 
     }
 
-    private static void uvp_taylor_test()
+    [Test]
+    public static void uvp_taylor_test()
 
         //****************************************************************************80
         //
@@ -1761,7 +1700,8 @@ internal static class Program
 
     }
 
-    private static void uvp_taylor_test2()
+    [Test]
+    public static void uvp_taylor_test2()
 
         //****************************************************************************80
         //
@@ -1852,7 +1792,8 @@ internal static class Program
 
     }
 
-    private static void rhs_taylor_test()
+    [Test]
+    public static void rhs_taylor_test()
 
         //****************************************************************************80
         //
@@ -1916,7 +1857,8 @@ internal static class Program
 
     }
 
-    private static void resid_taylor_test()
+    [Test]
+    public static void resid_taylor_test()
 
         //****************************************************************************80
         //
@@ -1985,7 +1927,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_taylor_test()
+    [Test]
+    public static void gnuplot_taylor_test()
 
         //****************************************************************************80
         //
@@ -2043,7 +1986,8 @@ internal static class Program
 
     }
 
-    private static void parameter_taylor_test()
+    [Test]
+    public static void parameter_taylor_test()
 
         //****************************************************************************80
         //
@@ -2165,7 +2109,8 @@ internal static class Program
 
     }
 
-    private static void uvp_vortex_test()
+    [Test]
+    public static void uvp_vortex_test()
 
         //****************************************************************************80
         //
@@ -2229,7 +2174,8 @@ internal static class Program
 
     }
 
-    private static void uvp_vortex_test2()
+    [Test]
+    public static void uvp_vortex_test2()
 
         //****************************************************************************80
         //
@@ -2320,7 +2266,8 @@ internal static class Program
 
     }
 
-    private static void rhs_vortex_test()
+    [Test]
+    public static void rhs_vortex_test()
 
         //****************************************************************************80
         //
@@ -2384,7 +2331,8 @@ internal static class Program
 
     }
 
-    private static void resid_vortex_test()
+    [Test]
+    public static void resid_vortex_test()
 
         //****************************************************************************80
         //
@@ -2451,7 +2399,8 @@ internal static class Program
 
     }
 
-    private static void gnuplot_vortex_test()
+    [Test]
+    public static void gnuplot_vortex_test()
 
         //****************************************************************************80
         //
@@ -2509,7 +2458,8 @@ internal static class Program
 
     }
 
-    private static void parameter_vortex_test()
+    [Test]
+    public static void parameter_vortex_test()
 
         //****************************************************************************80
         //
@@ -2629,4 +2579,5 @@ internal static class Program
             nu /= 10.0;
         }
     }
+    
 }

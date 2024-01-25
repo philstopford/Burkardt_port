@@ -1,50 +1,12 @@
-﻿using System;
 using Burkardt.Sequence;
 using Burkardt.Types;
 
-namespace JacobiEigenValueTest;
+namespace Burkardt_Tests.TestJacobi;
 
-internal static class Program
+public class EigenValueTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for JACOBI_EIGENVALUE_TEST.
-        //
-        //  Discussion:
-        //
-        //    JACOBI_EIGENVALUE_TEST tests the JACOBI_EIGENVALUE library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license. 
-        //
-        //  Modified:
-        //
-        //    15 July 2013
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_EIGENVALUE_TEST");
-        Console.WriteLine("  Test the JACOBI_EIGENVALUE library.");
-
-        test01();
-        test02();
-        test03();
-
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_EIGENVALUE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -107,7 +69,8 @@ internal static class Program
                           + error_frobenius + "");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -172,7 +135,8 @@ internal static class Program
                           + error_frobenius + "");
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -251,4 +215,5 @@ internal static class Program
         Console.WriteLine("  Frobenius norm error in eigensystem A*V-D*V = "
                           + error_frobenius + "");
     }
+    
 }

@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.Quadrature;
 
-namespace JacobiRuleSSTest;
+namespace Burkardt_Tests.TestJacobi;
 
-internal static class Program
+public class RuleSSTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -69,6 +69,8 @@ internal static class Program
         //
         //  Get the order.
         //
+        order = 1;
+        /*
         try
         {
             order = Convert.ToInt32(args[0]);
@@ -79,12 +81,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of ORDER (1 or greater)");
             order = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested order of the rule is = " + order + "");
         //
         //  Get ALPHA.
         //
+        alpha = 0.5;
+        /*
         try
         {
             alpha = Convert.ToDouble(args[1]);
@@ -101,12 +106,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of ALPHA:");
             alpha = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested value of ALPHA = " + alpha + "");
         //
         //  Get BETA.
         //
+        beta = 0.1;
+        /*
         try
         {
             beta = Convert.ToDouble(args[2]);
@@ -123,12 +131,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of BETA:");
             beta = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  The requested value of BETA = " + beta + "");
         //
         //  Get the output option or quadrature file root name:
         //
+        output = "out.txt";
+        /*
         try
         {
             output = args[3];
@@ -140,6 +151,7 @@ internal static class Program
             Console.WriteLine("  or else the \"root name\" of the quadrature files).");
             output = Console.ReadLine();
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  OUTPUT option is \"" + output + "\".");

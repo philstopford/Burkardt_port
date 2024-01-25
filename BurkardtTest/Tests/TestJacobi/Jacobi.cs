@@ -1,53 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.MatrixNS;
 using Burkardt.Sequence;
 using Burkardt.Types;
 
-namespace JacobiTest;
+namespace Burkardt_Tests.TestJacobi;
 
-internal static class Program
+public class JacobiTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for JACOBI_TEST.
-        //
-        //  Discussion:
-        //
-        //    JACOBI_TEST tests the JACOBI library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    20 March 2020
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_TEST");
-        Console.WriteLine("  Test JACOBI.");
-
-        jacobi_test01();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void jacobi_test01()
+    [Test]
+    public static void jacobi_test01()
 
         //****************************************************************************80
         //
@@ -268,4 +228,5 @@ internal static class Program
         //xlabel ( "Generator positions" );
         //ylabel ( "Iterations" ); 
     }
+    
 }

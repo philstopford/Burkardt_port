@@ -1,11 +1,11 @@
-﻿using System;
 using Burkardt.Quadrature;
 
-namespace JacobiRuleTest;
+namespace Burkardt_Tests.TestJacobi.Rule;
 
-internal static class Program
+public class RuleTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -66,6 +66,8 @@ internal static class Program
         //
         //  Get ORDER.
         //
+        order = 4;
+        /*
         try
         {
             order = Convert.ToInt32(args[0]);
@@ -76,10 +78,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of ORDER (1 or greater)");
             order = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get ALPHA.
         //
+        alpha = 0.5;
+        /*
         try
         {
             alpha = Convert.ToDouble(args[1]);
@@ -92,10 +97,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of ALPHA:");
             alpha = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get BETA.
         //
+        beta = 1.5;
+        /*
         try
         {
             beta = Convert.ToDouble(args[2]);
@@ -108,10 +116,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of BETA:");
             beta = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get A.
         //
+        a = 0.1;
+        /*
         try
         {
             a = Convert.ToDouble(args[3]);
@@ -122,10 +133,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of A:");
             a = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get B.
         //
+        b = 1.5;
+        /*
         try
         {
             b = Convert.ToDouble(args[4]);
@@ -136,10 +150,13 @@ internal static class Program
             Console.WriteLine("  Enter the value of B:");
             b = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Get FILENAME.
         //
+        filename = "out.txt";
+        /*
         try
         {
             filename = args[5];
@@ -150,6 +167,7 @@ internal static class Program
             Console.WriteLine("  Enter FILENAME, the \"root name\" of the quadrature files).");
             filename = Console.ReadLine();
         }
+        */
 
         //
         //  Input summary.

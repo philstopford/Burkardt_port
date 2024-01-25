@@ -1,54 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.NavierStokesNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace NavierStokes3DExactTest;
+namespace Burkardt_Tests.TestNavierStokes;
 
-internal static class Program
+public class NavierStokes3DExactTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    NS3DE_TEST tests the NS3DE library.
-        //
-        //  Location:
-        //
-        //    http://people.sc.fsu.edu/~jburkardt/cpp_src/navier_stokes_3d_exact/ns3de_test.cpp
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    30 July 2015
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("NS3DE_TEST");
-        Console.WriteLine("  Test the NS3DE library.");
-
-        uvwp_burgers_test();
-        resid_burgers_test();
-
-        uvwp_ethier_test();
-        resid_ethier_test();
-
-        Console.WriteLine("");
-        Console.WriteLine("NS3DE_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void uvwp_burgers_test()
+    [Test]
+    public static void uvwp_burgers_test()
 
         //****************************************************************************80
         //
@@ -114,7 +74,8 @@ internal static class Program
                           + "  " + typeMethods.r8vec_amax(n, p).ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
     }
 
-    private static void resid_burgers_test()
+    [Test]
+    public static void resid_burgers_test()
 
         //****************************************************************************80
         //
@@ -180,7 +141,8 @@ internal static class Program
                           + "  " + typeMethods.r8vec_amax(n, pr).ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
     }
 
-    private static void uvwp_ethier_test()
+    [Test]
+    public static void uvwp_ethier_test()
 
         //****************************************************************************80
         //
@@ -248,7 +210,8 @@ internal static class Program
                           + "  " + typeMethods.r8vec_amax(n, p).ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
     }
 
-    private static void resid_ethier_test()
+    [Test]
+    public static void resid_ethier_test()
 
         //****************************************************************************80
         //
@@ -316,4 +279,5 @@ internal static class Program
                           + "  " + typeMethods.r8vec_amax(n, pr).ToString(CultureInfo.InvariantCulture).PadLeft(14) + "");
 
     }
+    
 }

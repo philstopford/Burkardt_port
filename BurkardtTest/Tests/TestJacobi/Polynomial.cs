@@ -1,57 +1,16 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.IntegralNS;
 using Burkardt.Types;
 
-namespace JacobiPolynomialTest;
+namespace Burkardt_Tests.TestJacobi;
 
 using Polynomial = Burkardt.PolynomialNS.Jacobi;
 using Quadrature = Burkardt.Quadrature.JacobiQuadrature;
 
-internal static class Program
+public class PolynomialTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for JACOBI_POLYNOMIAL_TEST.
-        //
-        //  Discussion:
-        //
-        //    JACOBI_POLYNOMIAL_TEST tests the JACOBI_POLYNOMIAL library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    19 April 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_POLYNOMIAL_TEST");
-        Console.WriteLine("  Test the JACOBI_POLYNOMIAL library.");
-
-        test01();
-        test02();
-        test03();
-        test04();
-        //
-        //  Terminate.
-        //
-        Console.WriteLine("");
-        Console.WriteLine("JACOBI_POLYNOMIAL_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -117,7 +76,8 @@ internal static class Program
         }
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -175,7 +135,8 @@ internal static class Program
         }
     }
 
-    private static void test03()
+    [Test]
+    public static void test03()
 
         //****************************************************************************80
         //
@@ -245,7 +206,8 @@ internal static class Program
         }
     }
 
-    private static void test04()
+    [Test]
+    public static void test04()
 
         //****************************************************************************80
         //
@@ -294,4 +256,5 @@ internal static class Program
             }
         }
     }
+    
 }
