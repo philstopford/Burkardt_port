@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Sequence;
 using Burkardt.Types;
 
-namespace VanderCorputDataset;
+namespace Burkardt_Tests.Dataset;
 
-internal static class Program
+public class VanderCorputDatasetTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -70,6 +70,8 @@ internal static class Program
         //
         //  Get the BASE.
         //
+        base_ = 2;
+        /*
         try
         {
             base_ = Convert.ToInt32(args[0]);
@@ -82,12 +84,15 @@ internal static class Program
             Console.WriteLine("  (Try '2' if you don't have a preference.)");
             base_ = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  BASE = " + base_ + "");
         //
         //  Get SEED.
         //
+        seed = 1;
+        /*
         try
         {
             seed = Convert.ToInt32(args[1]);
@@ -99,11 +104,14 @@ internal static class Program
             Console.WriteLine("  (Try '0' or '1' if you don't have a preference.)");
             seed = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  SEED = " + seed + "");
         //
         //  Get N.
         //
+        n = 128;
+        /*
         try
         {
             n = Convert.ToInt32(args[2]);
@@ -115,6 +123,7 @@ internal static class Program
             Console.WriteLine("  (Try '25' if you don't have a preference.)");
             n = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  N = " + n + "");
         //
@@ -138,5 +147,5 @@ internal static class Program
         Console.WriteLine("VAN_DER_CORPUT_DATASET:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
-    }
+    }    
 }

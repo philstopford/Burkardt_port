@@ -1,35 +1,37 @@
-﻿using System;
 using Burkardt.Types;
-using Burkardt.Uniform;
+using Burkardt.Values;
 
-namespace UniformDataset;
+namespace Burkardt_Tests.Dataset;
 
-internal static class Program
+public class NormalDatasetTest
 {
-    private static void Main(string[] args)
+        [Test]
+        public static void test()
         //****************************************************************************80
         //
         //  Purpose:
         //
-        //    MAIN is the main program for UNIFORM_DATASET.
+        //    MAIN is the main program for NORMAL_DATASET.
         //
         //  Discussion:
         //
-        //    UNIFORM_DATASET generates a uniform pseudorandom dataset 
+        //    NORMAL_DATASET generates a dataset of multivariate normal random values,
         //    and writes it to a file.
         //
         //  Usage:
         //
-        //    uniform_dataset m n seed
+        //    normal_dataset m n seed mu a
         //
         //    where
         //
         //    * M, the spatial dimension,
         //    * N, the number of points to generate,
         //    * SEED, the seed, a positive integer.
+        //    * MU, the mean vector.
+        //    * A, the MxM variance-covariance matrix.
         //
-        //    creates an M by N uniform random dataset and writes it to the
-        //    file "uniform_M_N.txt".
+        //    creates an M by N multivariate normal random dataset and writes it 
+        //    to the file "normal_M_N.txt"./
         //
         //  Licensing:
         //
@@ -37,37 +39,44 @@ internal static class Program
         //
         //  Modified:
         //
-        //    05 December 2009
+        //    09 December 2009
         //
         //  Author:
         //
         //    John Burkardt
         //
     {
+        int i;
+        int j;
         int m;
         int n;
         int seed;
 
+
         Console.WriteLine("");
-        Console.WriteLine("UNIFORM_DATASET");
+        Console.WriteLine("NORMAL_DATASET");
         Console.WriteLine("");
-        Console.WriteLine("  Generate a uniform pseudorandom dataset.");
+        Console.WriteLine("  Generate a multivariate normal random dataset.");
         Console.WriteLine("");
         Console.WriteLine("  The program requests input values from the user:");
         Console.WriteLine("");
         Console.WriteLine("  * M, the spatial dimension,");
         Console.WriteLine("  * N, the number of points to generate,");
         Console.WriteLine("  * SEED, a positive integer.");
+        Console.WriteLine("  * MU, the mean vector of length M.");
+        Console.WriteLine("  * A, the MxM variance-covariance matrix.");
         Console.WriteLine("");
         Console.WriteLine("  The program generates the data, writes it to the file");
         Console.WriteLine("");
-        Console.WriteLine("    uniform_M_N.txt");
+        Console.WriteLine("    normal_M_N.txt");
         Console.WriteLine("");
         Console.WriteLine("  where \"M\" and \"N\" are the numeric values specified");
         Console.WriteLine("  by the user.");
         //
         //  Get the spatial dimension.
         //
+        m = 1;
+        /*
         try
         {
             m = Convert.ToInt32(args[0]);
@@ -78,12 +87,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of M");
             m = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  Spatial dimension M = " + m + "");
         //
         //  Get the number of points.
         //
+        n = 128;
+        /*
         try
         {
             n = Convert.ToInt32(args[1]);
@@ -94,11 +106,15 @@ internal static class Program
             Console.WriteLine("  Enter the number of points N");
             n = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
+        Console.WriteLine("");
         Console.WriteLine("  Number of points N = " + n + "");
         //
         //  Get the seed.
         //
+        seed = 1234;
+        /*
         try
         {
             seed = Convert.ToInt32(args[2]);
@@ -109,29 +125,89 @@ internal static class Program
             Console.WriteLine("  Enter the value of SEED");
             seed = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
+        Console.WriteLine("");
         Console.WriteLine("  The seed is = " + seed + "");
+        //
+        //  Get the mean.
+        //
+        double[] mu = new double[m];
+
+        int k = 4;
+        double mean = 0.5; // args[k]
+
+        try
+        {
+            for (i = 0; i < m; i++)
+            {
+                mu[i] = Convert.ToDouble(mean);
+                k += 1;
+            }
+        }
+        catch
+        {
+            Console.WriteLine("");
+            Console.WriteLine("  Enter MU:");
+            for (i = 0; i < m; i++)
+            {
+                mu[i] = Convert.ToDouble(Console.ReadLine());
+            }
+        }
+
+        typeMethods.r8vec_print(m, mu, "  The mean vector M:");
+        //
+        //  Get the variance-covariance matrix.
+        //
+        double[] a = new double[m * m];
+        double covar = 0.1; // args[k]
+
+        try
+        {
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < m; j++)
+                {
+                    a[i + j * m] = Convert.ToDouble(covar);
+                    k += 1;
+                }
+            }
+        }
+        catch
+        {
+            Console.WriteLine("");
+            Console.WriteLine("  Enter A:");
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < m; j++)
+                {
+                    a[i + j * m] = Convert.ToDouble(Console.ReadLine());
+                }
+            }
+        }
+
+        typeMethods.r8mat_print(m, m, a, "  The variance-covariance matrix A:");
         //
         //  Compute the data.
         //
-        double[] r = UniformRNG.r8mat_uniform_01_new(m, n, ref seed);
+        double[] x = Normal.multinormal_sample(m, n, a, mu, ref seed);
         //
         //  Write it to a file.
         //
         string m_ostring = m.ToString();
         string n_ostring = n.ToString();
 
-        string output_filename = "uniform_" + m_ostring + "_"
+        string output_filename = "normal_" + m_ostring + "_"
                                  + n_ostring + ".txt";
 
-        typeMethods.r8mat_write(output_filename, m, n, r);
+        typeMethods.r8mat_write(output_filename, m, n, x);
 
         Console.WriteLine("");
         Console.WriteLine("  The data was written to the file \""
                           + output_filename + "\".");
 
         Console.WriteLine("");
-        Console.WriteLine("UNIFORM_DATASET:");
+        Console.WriteLine("NORMAL_DATASET:");
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }

@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Sparse;
 using Burkardt.Types;
 
-namespace SparseGridLaguerreDataset;
+namespace Burkardt_Tests.Dataset;
 
-internal static class Program
+public class SparseGridLaguerreDatasetTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -75,6 +75,8 @@ internal static class Program
         //
         //  Get the spatial dimension.
         //
+        dim_num = 1;
+        /*
         try
         {
             dim_num = Convert.ToInt32(args[0]);
@@ -85,12 +87,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of DIM_NUM (1 or greater)");
             dim_num = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  Spatial dimension requested is = " + dim_num + "");
         //
         //  Get the level.
         //
+        level_max = 1;
+        /*
         try
         {
             level_max = Convert.ToInt32(args[1]);
@@ -101,6 +106,7 @@ internal static class Program
             Console.WriteLine("  Enter the value of LEVEL_MAX (0 or greater).");
             level_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         int level_min = Math.Max(0, level_max + 1 - dim_num);
 
@@ -179,4 +185,5 @@ internal static class Program
 
         Console.WriteLine("");
     }
+    
 }

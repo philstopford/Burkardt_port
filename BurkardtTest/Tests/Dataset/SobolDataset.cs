@@ -1,12 +1,12 @@
-﻿using System;
 using Burkardt.Sobol;
 using Burkardt.Types;
 
-namespace SobolDataset;
+namespace Burkardt_Tests.Dataset;
 
-internal static class Program
+public class SobolDatasetTest
 {
-    private static void Main(string[] args)
+        [Test]
+        public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -55,6 +55,8 @@ internal static class Program
         //
         //  Get the spatial dimension.
         //
+        m = 1;
+        /*
         try
         {
             m = Convert.ToInt32(args[0]);
@@ -65,12 +67,15 @@ internal static class Program
             Console.WriteLine("  Enter the value of M");
             m = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("");
         Console.WriteLine("  Spatial dimension M = " + m + "");
         //
         //  Get the number of points.
         //
+        n = 128;
+        /*
         try
         {
             n = Convert.ToInt32(args[1]);
@@ -81,11 +86,14 @@ internal static class Program
             Console.WriteLine("  Enter the number of points N");
             n = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  Number of points N = " + n + "");
         //
         //  Get SKIP.
         //
+        skip = 64;
+        /*
         try
         {
             skip = Convert.ToInt32(args[2]);
@@ -96,6 +104,7 @@ internal static class Program
             Console.WriteLine("  Enter the value of SKIP");
             skip = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         Console.WriteLine("  SKIP is = " + skip + "");
         //
@@ -123,4 +132,5 @@ internal static class Program
         Console.WriteLine("");
 
     }
+
 }
