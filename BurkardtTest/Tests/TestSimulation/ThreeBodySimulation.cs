@@ -1,54 +1,12 @@
-﻿using System;
 using Burkardt.ODENS.RungeKuttaFehlberg;
 using Burkardt.Types;
 
-namespace ThreeBody;
+namespace Burkardt_Tests.TestSimulation;
 
-internal static class Program
+public class ThreeBodySimulationTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for SIMPLE_RKF45.
-        //
-        //  Discussion:
-        //
-        //    SIMPLE_RKF45 uses RKF45 as an integrator for the simple version
-        //    of the three-body problem.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    13 October 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-
-        Console.WriteLine("");
-        Console.WriteLine("SIMPLE_RKF45");
-        Console.WriteLine("  Simulate the behavior of three bodies which are");
-        Console.WriteLine("  constrained to lie in a plane, moving under the");
-        Console.WriteLine("  influence of gravity.");
-        Console.WriteLine(" ");
-        Console.WriteLine("  Use RKF45 for the ODE integrator.");
-
-        simple_rkf45_run();
-        Console.WriteLine("");
-        Console.WriteLine("SIMPLE_RKF45");
-        Console.WriteLine("  Normal end of execution.");
-
-        Console.WriteLine("");
-    }
-
-    private static void simple_rkf45_run()
+    [Test]
+    public static void simple_rkf45_run()
 
         //****************************************************************************80
         //
@@ -225,4 +183,5 @@ internal static class Program
 
         return yp;
     }
+    
 }

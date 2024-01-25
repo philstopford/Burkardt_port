@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+namespace Burkardt_Tests.TestSimulation;
 
-namespace StringSimulation;
-
-internal static class Program
+public class StringSimulationTest
 {
-    private static void Main()
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -308,4 +305,5 @@ internal static class Program
 
         return value;
     }
+    
 }

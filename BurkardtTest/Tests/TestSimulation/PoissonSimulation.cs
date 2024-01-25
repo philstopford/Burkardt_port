@@ -1,51 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using Burkardt.Simulation;
 using Burkardt.Types;
 
-namespace PoissonSimulationTest;
+namespace Burkardt_Tests.TestSimulation;
 
-internal static class Program
+public class PoissonSimulationTest
 {
-    private static void Main()
-        //****************************************************************************80
-        //
-        //  Purpose:
-        //
-        //    MAIN is the main program for POISSON_SIMULATION_TEST.
-        //
-        //  Discussion:
-        //
-        //    POISSON_SIMULATION_TEST tests the POISSON_SIMULATION library.
-        //
-        //  Licensing:
-        //
-        //    This code is distributed under the GNU LGPL license.
-        //
-        //  Modified:
-        //
-        //    27 September 2012
-        //
-        //  Author:
-        //
-        //    John Burkardt
-        //
-    {
-        Console.WriteLine("");
-        Console.WriteLine("POISSON_SIMULATION_TEST");
-        Console.WriteLine("  Test the POISSON_SIMULATION library.");
-
-        test01();
-        test02();
-
-        Console.WriteLine("");
-        Console.WriteLine("POISSON_SIMULATION_TEST");
-        Console.WriteLine("  Normal end of execution.");
-        Console.WriteLine("");
-    }
-
-    private static void test01()
+    [Test]
+    public static void test01()
 
         //****************************************************************************80
         //
@@ -221,7 +182,8 @@ internal static class Program
         Console.WriteLine("  Plot commands stored in \"" + command_filename + "\".");
     }
 
-    private static void test02()
+    [Test]
+    public static void test02()
 
         //****************************************************************************80
         //
@@ -340,4 +302,5 @@ internal static class Program
         Console.WriteLine("  Plot commands stored in \"" + command_filename + "\".");
 
     }
+    
 }

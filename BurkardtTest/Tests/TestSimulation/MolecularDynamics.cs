@@ -1,13 +1,12 @@
-﻿using System;
 using System.Globalization;
-using System.Linq;
 using Burkardt.Uniform;
 
-namespace MolecularDynamics;
+namespace Burkardt_Tests.TestSimulation;
 
-internal static class Program
+public class MolecularDynamicsTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -64,6 +63,8 @@ internal static class Program
         //
         //  Get the spatial dimension.
         //
+        nd = 2;
+        /*
         try
         {
             nd = Convert.ToInt32(args[0]);
@@ -74,10 +75,13 @@ internal static class Program
             Console.WriteLine("  Enter ND, the spatial dimension (2 or 3).");
             nd = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get the number of particles.
         //
+        np = 500;
+        /*
         try
         {
             np = Convert.ToInt32(args[1]);
@@ -88,10 +92,13 @@ internal static class Program
             Console.WriteLine("  Enter NP, the number of particles (500, for instance).");
             np = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get the number of time steps.
         //
+        step_num = 500;
+        /*
         try
         {
             step_num = Convert.ToInt32(args[2]);
@@ -102,10 +109,13 @@ internal static class Program
             Console.WriteLine("  Enter STEP_NUM, the number of time steps (500 or 1000, for instance).");
             step_num = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Get the time step.
         //
+        dt = 0.1;
+        /*
         try
         {
             dt = Convert.ToDouble(args[3]);
@@ -116,6 +126,7 @@ internal static class Program
             Console.WriteLine("  Enter DT, the time step size (0.1, for instance).");
             dt = Convert.ToDouble(Console.ReadLine());
         }
+        */
 
         //
         //  Report.
@@ -479,4 +490,5 @@ internal static class Program
         }
 
     }
+    
 }

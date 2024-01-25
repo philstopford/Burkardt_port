@@ -1,14 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.PlotNS;
 using Burkardt.Types;
 using Burkardt.Uniform;
 
-namespace Ising2DTest;
+namespace Burkardt_Tests.TestSimulation;
 
-internal static class Program
+public class Ising2DTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -55,47 +55,57 @@ internal static class Program
         //
         //  Get input.
         //
+        /*
         try
         {
             m = Convert.ToInt32(args[0]);
         }
         catch
+        */
         {
             m = 10;
         }
 
+        /*
         try
         {
             n = Convert.ToInt32(args[1]);
         }
         catch
+        */
         {
             n = 10;
         }
 
+        /*
         try
         {
             iterations = Convert.ToInt32(args[2]);
         }
         catch
+        */
         {
             iterations = 15;
         }
 
+        /*
         try
         {
             thresh = Convert.ToDouble(args[3]);
         }
         catch
+        */
         {
             thresh = 0.50;
         }
 
+        /*
         try
         {
             seed = Convert.ToInt32(args[4]);
         }
         catch
+        */
         {
             seed = 123456789;
         }
@@ -473,4 +483,5 @@ internal static class Program
         }
     }
 
+    
 }
