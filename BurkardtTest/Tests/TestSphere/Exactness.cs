@@ -1,15 +1,15 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Composition;
 using Burkardt.SphereNS;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace SphereExactnessTest;
+namespace Burkardt_Tests.TestSphere;
 
-internal static class Program
+public class ExactnessTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -82,6 +82,8 @@ internal static class Program
         //
         //  Get the file structure;
         //
+        files = "in.txt";
+        /*
         try
         {
             files = args[0];
@@ -107,10 +109,13 @@ internal static class Program
 
             files = Console.ReadLine();
         }
+        */
 
         //
         //  Get the file prefix.
         //
+        prefix = "prefix";
+        /*
         try
         {
             prefix = args[1];
@@ -123,10 +128,13 @@ internal static class Program
 
             prefix = Console.ReadLine();
         }
+        */
 
         //
         //  Get the maximum degree.
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[2]);
@@ -139,6 +147,7 @@ internal static class Program
 
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Summarize the input.
@@ -428,4 +437,5 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
+    
 }

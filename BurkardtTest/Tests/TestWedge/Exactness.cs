@@ -1,4 +1,3 @@
-﻿using System;
 using System.Globalization;
 using Burkardt.Composition;
 using Burkardt.MonomialNS;
@@ -6,11 +5,12 @@ using Burkardt.Table;
 using Burkardt.Types;
 using Burkardt.Wedge;
 
-namespace WedgeExactnessTest;
+namespace Burkardt_Tests.TestWedge;
 
-internal static class Program
+public class ExactnessTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -52,6 +52,8 @@ internal static class Program
         //
         //  Get the quadrature file root name:
         //
+        quad_filename = "in.txt";
+        /*
         try
         {
             quad_filename = args[0];
@@ -64,6 +66,7 @@ internal static class Program
 
             quad_filename = Console.ReadLine();
         }
+        */
 
         //
         //  Create the names of:
@@ -75,6 +78,8 @@ internal static class Program
         //
         //  The second command line argument is the maximum degree.
         //
+        degree_max = 45;
+        /*
         try
         {
             degree_max = Convert.ToInt32(args[1]);
@@ -87,6 +92,7 @@ internal static class Program
 
             degree_max = Convert.ToInt32(Console.ReadLine());
         }
+        */
 
         //
         //  Summarize the input.
@@ -195,5 +201,4 @@ internal static class Program
         Console.WriteLine("  Normal end of execution.");
         Console.WriteLine("");
     }
-
 }

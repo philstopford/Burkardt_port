@@ -1,14 +1,14 @@
-﻿using System;
 using System.Globalization;
 using Burkardt;
 using Burkardt.Table;
 using Burkardt.Types;
 
-namespace DiaphonyTest;
+namespace Burkardt_Tests;
 
-internal static class Program
+public class DiaphonyTest
 {
-    private static void Main(string[] args)
+    [Test]
+    public static void test()
         //****************************************************************************80
         //
         //  Purpose:
@@ -36,8 +36,9 @@ internal static class Program
         //    John Burkardt
         //
     {
-        string input_filename;
+        string input_filename = "in.txt";
 
+        /*
         //
         //  Get the input filename
         //
@@ -51,6 +52,7 @@ internal static class Program
             Console.WriteLine("  Enter the input filename:");
             input_filename = Console.ReadLine();
         }
+        */
 
         //
         //  Get the data size.
