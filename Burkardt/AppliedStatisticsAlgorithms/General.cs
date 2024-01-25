@@ -1455,12 +1455,12 @@ public static partial class Algorithms
             double an = a * term;
             for (int i = 0; i <= 1; i++)
             {
-                pn[i + 4] = b * pn[i + 2] - an * pn[i];
+                pn[(i + 4) % pn.Length] = b * pn[(i + 2) % pn.Length] - an * pn[i % pn.Length];
             }
 
             if (pn[5] != 0.0)
             {
-                rn = pn[4] / pn[5];
+                rn = pn[4 % pn.Length] / pn[5 % pn.Length];
                 double dif = Math.Abs(gin - rn);
                 //
                 //  Absolute error tolerance satisfied?
@@ -1482,7 +1482,7 @@ public static partial class Algorithms
 
             for (int i = 0; i < 4; i++)
             {
-                pn[i] = pn[i + 2];
+                pn[i % pn.Length] = pn[(i + 2) % pn.Length];
             }
 
             if (!(oflo <= Math.Abs(pn[4])))
@@ -1493,7 +1493,7 @@ public static partial class Algorithms
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    pn[i] /= oflo;
+                    pn[i % pn.Length] /= oflo;
                 }
             }
         }
@@ -1696,7 +1696,7 @@ public static partial class Algorithms
         double tmp = z + 7.0;
         for (j = 8; 1 <= j; j--)
         {
-            value += a[j] / tmp;
+            value += a[j % a.Length] / tmp;
             tmp -= 1.0;
         }
 
