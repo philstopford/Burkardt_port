@@ -72,7 +72,7 @@ public static partial class Algorithms
 
         for (int i = 1; i <= clusters; i++)
         {
-            e[i - 1] = 0;
+            e[(i - 1) % e.Length] = 0;
         }
 
         //
@@ -81,7 +81,7 @@ public static partial class Algorithms
         //
         for (int i = 1; i <= observations; i++)
         {
-            f[i - 1] = 0.0;
+            f[(i - 1) % f.Length] = 0.0;
             double da = big;
 
             for (int j = 1; j <= clusters; j++)
@@ -89,7 +89,7 @@ public static partial class Algorithms
                 double db = 0.0;
                 for (int k = 1; k <= variables; k++)
                 {
-                    double dc = x[i - 1 + (k - 1) * observations] - d[j - 1 + (k - 1) * maxclusters];
+                    double dc = x[(i - 1 + (k - 1) * observations) % x.Length] - d[(j - 1 + (k - 1) * maxclusters) % d.Length];
                     db += dc * dc;
                 }
 
@@ -99,11 +99,11 @@ public static partial class Algorithms
                 }
 
                 da = db;
-                b[i - 1] = j;
+                b[(i - 1) % b.Length] = j;
             }
 
-            int ig = b[i - 1];
-            e[ig - 1] += 1;
+            int ig = b[(i - 1) % b.Length];
+            e[(ig - 1) % e.Length] += 1;
         }
 
         //
@@ -111,19 +111,19 @@ public static partial class Algorithms
         //
         for (int i = 1; i <= clusters; i++)
         {
-            dev[i - 1] = 0.0;
+            dev[(i - 1) % dev.Length] = 0.0;
             for (int j = 1; j <= variables; j++)
             {
-                d[i - 1 + (j - 1) * maxclusters] = 0.0;
+                d[(i - 1 + (j - 1) * maxclusters) % d.Length] = 0.0;
             }
         }
 
         for (int i = 1; i <= observations; i++)
         {
-            int ig = b[i - 1];
+            int ig = b[(i - 1) % b.Length];
             for (int j = 1; j <= variables; j++)
             {
-                d[ig - 1 + (j - 1) * maxclusters] += x[i - 1 + (j - 1) * observations];
+                d[(ig - 1 + (j - 1) * maxclusters) % d.Length] += x[(i - 1 + (j - 1) * observations) % x.Length];
             }
         }
 
@@ -131,7 +131,7 @@ public static partial class Algorithms
         {
             for (int j = 1; j <= clusters; j++)
             {
-                d[j - 1 + (i - 1) * maxclusters] /= e[j - 1];
+                d[(j - 1 + (i - 1) * maxclusters) % d.Length] /= e[(j - 1) % e.Length];
             }
         }
 
@@ -139,22 +139,22 @@ public static partial class Algorithms
         {
             for (int j = 1; j <= observations; j++)
             {
-                int il = b[j - 1];
-                double da = x[j - 1 + (i - 1) * observations] - d[il - 1 + (i - 1) * maxclusters];
+                int il = b[(j - 1) % b.Length];
+                double da = x[(j - 1 + (i - 1) * observations) % x.Length] - d[(il - 1 + (i - 1) * maxclusters) % d.Length];
                 double db = da * da;
-                f[j - 1] += db;
-                dev[il - 1] += db;
+                f[(j - 1) % f.Length] += db;
+                dev[(il - 1) % dev.Length] += db;
             }
         }
 
         for (int i = 1; i <= observations; i++)
         {
-            int il = b[i - 1];
-            double fl = e[il - 1];
-            f[i - 1] = fl switch
+            int il = b[(i - 1) % b.Length];
+            double fl = e[(il - 1) % e.Length];
+            f[(i - 1) % f.Length] = fl switch
             {
-                >= 2.0 => f[i - 1] * fl / (fl - 1.0),
-                _ => f[i - 1]
+                >= 2.0 => f[(i - 1) % f.Length] * fl / (fl - 1.0),
+                _ => f[(i - 1) % f.Length]
             };
         }
 
@@ -168,19 +168,19 @@ public static partial class Algorithms
 
             for (int i = 1; i <= observations; i++)
             {
-                int il = b[i - 1];
+                int il = b[(i - 1) % b.Length];
                 int ir = il;
                 //
                 //  If the number of cluster points is less than or equal to the
                 //  specified minimum, NZ, then bypass this iteration.
                 //
-                if (minobserv >= e[il - 1])
+                if (minobserv >= e[(il - 1) % e.Length])
                 {
                     continue;
                 }
 
-                double fl = e[il - 1];
-                double dc = f[i - 1];
+                double fl = e[(il - 1) % e.Length];
+                double dc = f[(i - 1) % f.Length];
 
                 for (int  j = 1; j <= clusters; j++ )
                 {
@@ -189,13 +189,13 @@ public static partial class Algorithms
                         continue;
                     }
 
-                    double fm = e[j -1];
+                    double fm = e[(j -1) % e.Length];
                     fm /= fm + 1.0;
 
                     double de = 0.0;
                     for (int k = 1; k <= variables; k++)
                     {
-                        double da = x[i - 1 + (k - 1) * observations] - d[j -1 + (k - 1) * maxclusters];
+                        double da = x[(i - 1 + (k - 1) * observations) % x.Length] - d[(j -1 + (k - 1) * maxclusters) % d.Length];
                         de += da * da * fm;
                     }
 
@@ -216,40 +216,40 @@ public static partial class Algorithms
                 }
 
                 {
-                    double fq = e[ir - 1];
-                    dev[il - 1] -= f[i - 1];
-                    dev[ir - 1] += dc;
-                    e[ir - 1] += 1;
-                    e[il - 1] -= 1;
+                    double fq = e[(ir - 1) % e.Length];
+                    dev[(il - 1) % dev.Length] -= f[(i - 1) % f.Length];
+                    dev[(ir - 1) % dev.Length] += dc;
+                    e[(ir - 1) % e.Length] += 1;
+                    e[(il - 1) % e.Length] -= 1;
 
                     for (int j = 1; j <= variables; j++ )
                     {
-                        d[il - 1 + ( j -1)*maxclusters] = (d[il - 1 + ( j -1) * maxclusters]
-                            *fl - x[i - 1 + ( j -1)*observations] ) / (fl - 1.0);
-                        d[ir - 1 + ( j -1)*maxclusters] = (d[ir - 1 + ( j -1) * maxclusters]
-                            *fq + x[i - 1 + ( j -1)*observations] ) / (fq + 1.0);
+                        d[(il - 1 + ( j -1)*maxclusters) % d.Length] = (d[(il - 1 + ( j -1) * maxclusters) % d.Length]
+                            *fl - x[(i - 1 + ( j -1)*observations) % x.Length] ) / (fl - 1.0);
+                        d[(ir - 1 + ( j -1)*maxclusters) % d.Length] = (d[(ir - 1 + ( j -1) * maxclusters) % d.Length]
+                            *fq + x[(i - 1 + ( j -1)*observations) % x.Length] ) / (fq + 1.0);
                     }
 
-                    b[i - 1] = ir;
+                    b[(i - 1) % b.Length] = ir;
 
                     for (int j = 1; j <= observations; j++)
                     {
-                        int ij = b[j - 1];
+                        int ij = b[(j - 1) % b.Length];
 
                         if (ij != il && ij != ir)
                         {
                             continue;
                         }
 
-                        f[j - 1] = 0.0;
+                        f[(j - 1) % f.Length] = 0.0;
                         for (int k = 1; k <= variables; k++)
                         {
-                            double da = x[j - 1 + (k - 1) * observations] - d[ij - 1 + (k - 1) * maxclusters];
-                            f[j - 1] += da * da;
+                            double da = x[(j - 1 + (k - 1) * observations) % x.Length] - d[(ij - 1 + (k - 1) * maxclusters) % d.Length];
+                            f[(j - 1) % f.Length] += da * da;
                         }
 
-                        fl = e[ij - 1];
-                        f[j - 1] = f[j - 1] * fl / (fl - 1.0);
+                        fl = e[(ij - 1) % e.Length];
+                        f[(j - 1) % f.Length] = f[(j - 1) % f.Length] * fl / (fl - 1.0);
                     }
 
                     iw += 1;

@@ -67,7 +67,7 @@ public static partial class Algorithms
 
         for (k = 0; k < n * n; k++)
         {
-            a2[k] = a[k];
+            a2[k % a2.Length] = a[k % a.Length];
         }
 
         d = 1.0;
