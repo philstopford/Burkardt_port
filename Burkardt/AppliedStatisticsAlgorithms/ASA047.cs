@@ -327,7 +327,7 @@ public static partial class Algorithms
                                 {
                                     for (int i = 0; i < n; i++)
                                     {
-                                        p[(i + j * n) % p.Length] = (p[(i + j * n) % p.Length] + p[(i + ilo * n]) % p.Length) * 0.5;
+                                        p[(i + j * n) % p.Length] = (p[(i + j * n) % p.Length] + p[(i + ilo * n) % p.Length]) * 0.5;
                                         xmin[i % xmin.Length] = p[(i + j * n) % p.Length];
                                     }
 

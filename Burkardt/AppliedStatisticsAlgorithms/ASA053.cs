@@ -71,7 +71,7 @@ public static partial class Algorithms
         {
             rnorm(ref seed, ref u1, ref u2);
 
-            sb[k] = u1;
+            sb[k % sb.Length] = u1;
             k += 1;
 
             if (k >= nnp)
@@ -79,7 +79,7 @@ public static partial class Algorithms
                 continue;
             }
 
-            sb[k] = u2;
+            sb[k % sb.Length] = u2;
             k += 1;
         }
 
@@ -99,7 +99,7 @@ public static partial class Algorithms
             //  Wilson-Hilferty formula for approximating chi-square variates:
             //  The original code did not take the absolute value!
             //
-            sb[ns - 1] = Math.Sqrt(df * Math.Abs(Math.Pow(u2 + sb[ns - 1] * u1, 3)));
+            sb[(ns - 1) % sb.Length] = Math.Sqrt(df * Math.Abs(Math.Pow(u2 + sb[(ns - 1) % sb.Length] * u1, 3)));
         }
 
         double[] sa = new double[nnp];
@@ -119,7 +119,7 @@ public static partial class Algorithms
                 {
                     ip = ip + k - 1;
                     nq += 1;
-                    c += sb[ip - 1] * d[nq - 1];
+                    c += sb[(ip - 1) % sb.Length] * d[(nq - 1) % d.Length];
                 }
 
                 sa[ip - 1] = c;
@@ -138,10 +138,10 @@ public static partial class Algorithms
                 {
                     ip += 1;
                     nq += 1;
-                    c += sa[ip - 1] * sa[nq - 1];
+                    c += sa[(ip - 1) % sa.Length] * sa[(nq - 1) % sa.Length];
                 }
 
-                sa[nq - 1] = c / rn;
+                sa[(nq - 1) % sa.Length] = c / rn;
                 nq = nq - 2 * np + i + j - 1;
             }
         }
