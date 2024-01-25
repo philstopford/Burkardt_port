@@ -494,9 +494,9 @@ public static partial class Algorithms
                         live[(l2 - 1) % live.Length] = m + i;
                         ncp[(l1 - 1) % ncp.Length] = i;
                         ncp[(l2 - 1) % ncp.Length] = i;
-                        double al1 = nc[(l1 - 1) % ncp.Length];
+                        double al1 = nc[(l1 - 1) % nc.Length];
                         double alw = al1 - 1.0;
-                        double al2 = nc[(l2 - 1) % ncp.Length];
+                        double al2 = nc[(l2 - 1) % nc.Length];
                         double alt = al2 + 1.0;
                         for (int j = 1; j <= n; j++)
                         {
