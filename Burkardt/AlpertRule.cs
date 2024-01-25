@@ -280,8 +280,8 @@ public static class AlpertRule
 
               for (i = 0; i < n; i++)
               {
-                     f[i] = Math.Cos(200.0E+00 * x[i]) * Math.Log(x[i])
-                            + Math.Cos(200.0E+00 * x[i] + 0.3E+00);
+                     f[i] = Math.Cos(200.0E+00 * x[i % x.Length]) * Math.Log(x[i % x.Length])
+                            + Math.Cos(200.0E+00 * x[i % x.Length] + 0.3E+00);
               }
 
               return f;
@@ -322,8 +322,8 @@ public static class AlpertRule
 
               for (i = 0; i < n; i++)
               {
-                     f[i] = Math.Cos(200.0E+00 * x[i]) * Math.Pow(x[i], -0.5E+00)
-                            + Math.Cos(200.0E+00 * x[i] + 0.3E+00);
+                     f[i] = Math.Cos(200.0E+00 * x[i % x.Length]) * Math.Pow(x[i % x.Length], -0.5E+00)
+                            + Math.Cos(200.0E+00 * x[i % x.Length] + 0.3E+00);
               }
 
               return f;
@@ -364,7 +364,7 @@ public static class AlpertRule
 
               for (i = 0; i < n; i++)
               {
-                     f[i] = Math.Cos(200.0E+00 * x[i]) + Math.Cos(200.0E+00 * x[i] + 0.3E+00);
+                     f[i] = Math.Cos(200.0E+00 * x[i % x.Length]) + Math.Cos(200.0E+00 * x[i % x.Length] + 0.3E+00);
               }
 
               return f;

@@ -114,14 +114,14 @@ public static partial class Algorithms
             for (int irow = 1; irow <= icol; irow++ )
             {
                 k += 1;
-                w = a[k-1];
+                w = a[(k-1) % a.Length];
                 int m = j;
 
                 int i;
                 for ( i = 1; i < irow; i++ )
                 {
                     l += 1;
-                    w -= u[l-1] * u[m-1];
+                    w -= u[(l-1) % u.Length] * u[(m-1) % u.Length];
                     m += 1;
                 }
 
@@ -132,15 +132,15 @@ public static partial class Algorithms
                     break;
                 }
 
-                if ( u[l-1] != 0.0 )
+                if ( u[(l-1) % u.Length] != 0.0 )
                 {
-                    u[k-1] = w / u[l-1];
+                    u[(k-1) % u.Length] = w / u[(l-1) % u.Length];
                 }
                 else
                 {
-                    u[k-1] = 0.0;
+                    u[(k-1) % u.Length] = 0.0;
 
-                    if (!(Math.Abs(x * a[k - 1]) < w * w))
+                    if (!(Math.Abs(x * a[(k - 1) % a.Length]) < w * w))
                     {
                         continue;
                     }
@@ -152,9 +152,9 @@ public static partial class Algorithms
             //
             //  End of row, estimate relative accuracy of diagonal element.
             //
-            if ( Math.Abs ( w ) <= Math.Abs ( eta * a[k-1] ) )
+            if ( Math.Abs ( w ) <= Math.Abs ( eta * a[(k-1) % a.Length] ) )
             {
-                u[k-1] = 0.0;
+                u[(k-1) % u.Length] = 0.0;
                 nullty += 1;
             }
             else
@@ -165,7 +165,7 @@ public static partial class Algorithms
                         ifault = 2;
                         return;
                     default:
-                        u[k-1] = Math.Sqrt ( w );
+                        u[(k-1) % u.Length] = Math.Sqrt ( w );
                         break;
                 }
             }
@@ -263,25 +263,25 @@ public static partial class Algorithms
 
         for (int icol = 1; icol <= n; icol++)
         {
-            int ij = b[icol - 1] * (b[icol - 1] - 1) / 2;
-            int ii = ij + b[icol - 1];
-            double x = eta * eta * a[ii - 1];
+            int ij = b[(icol - 1) % b.Length] * (b[(icol - 1) % b.Length] - 1) / 2;
+            int ii = ij + b[(icol - 1) % b.Length];
+            double x = eta * eta * a[(ii - 1) % a.Length];
             int l = 0;
 
             double w = 0;
             int kk = 0;
             for (int irow = 1; irow <= icol; irow++)
             {
-                kk = b[irow - 1] * (b[irow - 1] + 1) / 2;
+                kk = b[(irow - 1) % b.Length] * (b[(irow - 1) % b.Length] + 1) / 2;
                 k += 1;
-                int jj = ij + b[irow - 1];
-                w = a[jj - 1];
+                int jj = ij + b[(irow - 1) % b.Length];
+                w = a[(jj - 1) % a.Length];
                 int m = j;
 
                 for (int i = 1; i <= irow - 1; i++)
                 {
                     l += 1;
-                    w -= u[l - 1] * u[m - 1];
+                    w -= u[(l - 1) % u.Length] * u[(m - 1) % u.Length];
                     m += 1;
                 }
 
@@ -292,23 +292,23 @@ public static partial class Algorithms
                     break;
                 }
 
-                if (u[l - 1] != 0.0)
+                if (u[(l - 1) % u.Length] != 0.0)
                 {
-                    u[k - 1] = w / u[l - 1];
+                    u[(k - 1) % u.Length] = w / u[(l - 1) % u.Length];
                 }
                 else
                 {
-                    if (Math.Abs(x * a[kk - 1]) < w * w)
+                    if (Math.Abs(x * a[(kk - 1) % a.Length]) < w * w)
                     {
                         ifault = 2;
                         return;
                     }
 
-                    u[k - 1] = 0.0;
+                    u[(k - 1) % u.Length] = 0.0;
                 }
             }
 
-            if (Math.Abs(eta * a[kk - 1]) <= Math.Abs(w))
+            if (Math.Abs(eta * a[(kk - 1) % a.Length]) <= Math.Abs(w))
             {
                 switch (w)
                 {
@@ -322,12 +322,12 @@ public static partial class Algorithms
             }
             else
             {
-                u[k - 1] = 0.0;
+                u[(k - 1) % u.Length] = 0.0;
                 nullty += 1;
             }
 
             j += icol;
-            det = det * u[k - 1] * u[k - 1];
+            det = det * u[(k - 1) % u.Length] * u[(k - 1) % u.Length];
         }
     }
 }

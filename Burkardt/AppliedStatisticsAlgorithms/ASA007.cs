@@ -92,14 +92,14 @@ public static partial class Algorithms
         for (;;)
         {
             int l;
-            switch (c[ndiag - 1])
+            switch (c[(ndiag - 1) % c.Length])
             {
                 case 0.0:
                 {
                     l = ndiag;
                     for (int j = irow; j <= n; j++)
                     {
-                        c[l - 1] = 0.0;
+                        c[(l - 1) % c.Length] = 0.0;
                         l += j;
                     }
 
@@ -110,7 +110,7 @@ public static partial class Algorithms
                     l = ndiag;
                     for (int i = irow; i <= n; i++)
                     {
-                        w[i - 1] = c[l - 1];
+                        w[(i - 1) % w.Length] = c[(l - 1) % c.Length];
                         l += i;
                     }
 
@@ -125,7 +125,7 @@ public static partial class Algorithms
                         double x;
                         if (icol == irow)
                         {
-                            x = 1.0 / w[irow - 1];
+                            x = 1.0 / w[(irow - 1) % w.Length];
                         }
                         else
                         {
@@ -136,7 +136,7 @@ public static partial class Algorithms
 
                         while (irow < k)
                         {
-                            x -= w[k - 1] * c[l - 1];
+                            x -= w[(k - 1) % w.Length] * c[(l - 1) % c.Length];
                             k -= 1;
                             l -= 1;
 
@@ -146,7 +146,7 @@ public static partial class Algorithms
                             }
                         }
 
-                        c[l - 1] = x / w[irow - 1];
+                        c[(l - 1) % c.Length] = x / w[(irow - 1) % w.Length];
 
                         if (icol <= irow)
                         {
