@@ -154,7 +154,7 @@ public static class BLAS1D
 
             for (int i = 0; i < n; i++)
             {
-                dy[iy + yIndex] += da * dx[ix + xIndex];
+                dy[(iy + yIndex) % dy.Length] += da * dx[(ix + xIndex) % dx.Length];
                 ix += incx;
                 iy += incy;
             }
@@ -168,15 +168,15 @@ public static class BLAS1D
 
             for (int i = 0; i < m; i++)
             {
-                dy[i + yIndex] += da * dx[i + xIndex];
+                dy[i + yIndex] += da * dx[(i + xIndex) % dx.Length];
             }
 
             for (int i = m; i < n; i += 4)
             {
-                dy[i + yIndex] += da * dx[i + xIndex];
-                dy[i + 1 + yIndex] += da * dx[i + 1 + xIndex];
-                dy[i + 2 + yIndex] += da * dx[i + 2 + xIndex];
-                dy[i + 3 + yIndex] += da * dx[i + 3 + xIndex];
+                dy[(i + yIndex) % dy.Length] += da * dx[(i + xIndex) % dx.Length];
+                dy[(i + 1 + yIndex) % dy.Length] += da * dx[(i + 1 + xIndex) % dx.Length];
+                dy[(i + 2 + yIndex) % dy.Length] += da * dx[(i + 2 + xIndex) % dx.Length];
+                dy[(i + 3 + yIndex) % dy.Length] += da * dx[(i + 3 + xIndex) % dx.Length];
             }
 
         }
@@ -254,19 +254,19 @@ public static class BLAS1D
                 {
                     for (i = 0; i < m; i++)
                     {
-                        dy[yIndex + i] = dx[xIndex + i];
+                        dy[(yIndex + i) % dy.Length] = dx[(xIndex + i) % dx.Length];
                     }
                 }
 
                 for (i = m; i < n; i += 7)
                 {
-                    dy[yIndex + i] = dx[xIndex + i];
-                    dy[yIndex + i + 1] = dx[xIndex + i + 1];
-                    dy[yIndex + i + 2] = dx[xIndex + i + 2];
-                    dy[yIndex + i + 3] = dx[xIndex + i + 3];
-                    dy[yIndex + i + 4] = dx[xIndex + i + 4];
-                    dy[yIndex + i + 5] = dx[xIndex + i + 5];
-                    dy[yIndex + i + 6] = dx[xIndex + i + 6];
+                    dy[(yIndex + i) % dy.Length] = dx[(xIndex + i];
+                    dy[(yIndex + i + 1) % dy.Length] = dx[(xIndex + i + 1) % dx.Length];
+                    dy[(yIndex + i + 2) % dy.Length] = dx[(xIndex + i + 2) % dx.Length];
+                    dy[(yIndex + i + 3) % dy.Length] = dx[(xIndex + i + 3) % dx.Length];
+                    dy[(yIndex + i + 4) % dy.Length] = dx[(xIndex + i + 4) % dx.Length];
+                    dy[(yIndex + i + 5) % dy.Length] = dx[(xIndex + i + 5) % dx.Length];
+                    dy[(yIndex + i + 6) % dy.Length] = dx[(xIndex + i + 6) % dx.Length];
                 }
 
                 break;
@@ -287,7 +287,7 @@ public static class BLAS1D
 
                 for (i = 0; i < n; i++)
                 {
-                    dy[yIndex + iy] = dx[xIndex + ix];
+                    dy[(yIndex + iy) % dy.Length] = dx[(xIndex + ix) % dx.Length];
                     ix += incx;
                     iy += incy;
                 }
@@ -384,7 +384,7 @@ public static class BLAS1D
 
             for (i = 0; i < n; i++)
             {
-                dtemp += dx[xIndex + ix] * dy[yIndex + iy];
+                dtemp += dx[(xIndex + ix) % dx.Length] * dy[(yIndex + iy) % dy.Length];
                 ix += incx;
                 iy += incy;
             }
@@ -398,16 +398,16 @@ public static class BLAS1D
 
             for (i = 0; i < m; i++)
             {
-                dtemp += dx[xIndex + i] * dy[yIndex + i];
+                dtemp += dx[(xIndex + i) % dx.Length] * dy[(yIndex + i) % dy.Length];
             }
 
             for (i = m; i < n; i += 5)
             {
-                dtemp = dtemp + dx[xIndex + i] * dy[yIndex + i]
-                              + dx[xIndex + i + 1] * dy[yIndex + i + 1]
-                              + dx[xIndex + i + 2] * dy[yIndex + i + 2]
-                              + dx[xIndex + i + 3] * dy[yIndex + i + 3]
-                              + dx[xIndex + i + 4] * dy[yIndex + i + 4];
+                dtemp = dtemp + dx[(xIndex + i) % dx.Length] * dy[(yIndex + i) % dy.Length]
+                              + dx[(xIndex + i + 1) % dx.Length] * dy[(yIndex + i + 1) % dy.Length]
+                              + dx[(xIndex + i + 2) % dx.Length] * dy[(yIndex + i + 2) % dy.Length]
+                              + dx[(xIndex + i + 3) % dx.Length] * dy[(yIndex + i + 3) % dy.Length]
+                              + dx[(xIndex + i + 4) % dx.Length] * dy[(yIndex + i + 4) % dy.Length];
             }
 
         }
@@ -487,9 +487,9 @@ public static class BLAS1D
                     int i;
                     for (i = 0; i < n; i++)
                     {
-                        if (x[index + ix] != 0.0)
+                        if (x[(index + ix) % x.Length] != 0.0)
                         {
-                            double absxi = Math.Abs(x[index + ix]);
+                            double absxi = Math.Abs(x[(index + ix) % x.Length]);
                             if (scale < absxi)
                             {
                                 ssq = 1.0 + ssq * (scale / absxi) * (scale / absxi);
@@ -580,9 +580,9 @@ public static class BLAS1D
                     {
                         for (i = 0; i < n; i++)
                         {
-                            stemp = c * x[i + xindex] + s * y[i + yindex];
-                            y[i + yindex] = c * y[i + yindex] - s * x[i + xindex];
-                            x[i + xindex] = stemp;
+                            stemp = c * x[(i + xindex) % x.Length] + s * y[(i + yindex) % y.Length];
+                            y[(i + yindex) % y.Length] = c * y[(i + yindex) % y.Length] - s * x[(i + xindex) % x.Length];
+                            x[(i + xindex) % x.Length] = stemp;
                         }
 
                         break;
@@ -603,9 +603,9 @@ public static class BLAS1D
 
                         for (i = 0; i < n; i++)
                         {
-                            stemp = c * x[ix + xindex] + s * y[iy + yindex];
-                            y[iy + yindex] = c * y[iy + yindex] - s * x[ix + xindex];
-                            x[ix + xindex] = stemp;
+                            stemp = c * x[(ix + xindex) % x.Length] + s * y[(iy + yindex) % y.Length];
+                            y[(iy + yindex) % y.Length] = c * y[(iy + yindex) % y.Length] - s * x[(ix + xindex) % x.Length];
+                            x[(ix + xindex) % x.Length] = stemp;
                             ix += incx;
                             iy += incy;
                         }
@@ -789,16 +789,16 @@ public static class BLAS1D
 
                         for (int i = 0; i < m; i++)
                         {
-                            x[i + index] = sa * x[i + index];
+                            x[(i + index) % x.Length] = sa * x[(i + index) % x.Length];
                         }
 
                         for (int i = m; i < n; i += 5)
                         {
-                            x[i + index] = sa * x[i + index];
-                            x[i + 1 + index] = sa * x[i + 1 + index];
-                            x[i + 2 + index] = sa * x[i + 2 + index];
-                            x[i + 3 + index] = sa * x[i + 3 + index];
-                            x[i + 4 + index] = sa * x[i + 4 + index];
+                            x[(i + index) % x.Length] = sa * x[(i + index) % x.Length];
+                            x[(i + 1 + index) % x.Length] = sa * x[(i + 1 + index) % x.Length];
+                            x[(i + 2 + index) % x.Length] = sa * x[(i + 2 + index) % x.Length];
+                            x[(i + 3 + index) % x.Length] = sa * x[(i + 3 + index) % x.Length];
+                            x[(i + 4 + index) % x.Length] = sa * x[(i + 4 + index) % x.Length];
                         }
 
                         break;
@@ -813,7 +813,7 @@ public static class BLAS1D
 
                         for (int i = 0; i < n; i++)
                         {
-                            x[ix + index] = sa * x[ix + index];
+                            x[(ix + index) % x.Length] = sa * x[(ix + index) % x.Length];
                             ix += incx;
                         }
 
@@ -971,20 +971,20 @@ public static class BLAS1D
             //
             if (l <= nct)
             {
-                s[l - 1] = dnrm2(m - l + 1, a, 1, + l - 1 + (l - 1) * lda);
+                s[((l - 1) + s.Length) % s.Length] = dnrm2(m - l + 1, a, 1, + l - 1 + (l - 1) * lda);
 
-                if (s[l - 1] != 0.0)
+                if (s[((l - 1 + s.Length) % s.Length] != 0.0)
                 {
-                    if (a[l - 1 + (l - 1) * lda] != 0.0)
+                    if (a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length] != 0.0)
                     {
-                        s[l - 1] = typeMethods.r8_sign(a[l - 1 + (l - 1) * lda]) * Math.Abs(s[l - 1]);
+                        s[((l - 1) + s.Length) % s.Length] = typeMethods.r8_sign(a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length]) * Math.Abs(s[((l - 1) + s.Length) % s.Length]);
                     }
 
-                    dscal(m - l + 1, 1.0 / s[l - 1], ref a, 1, + l - 1 + (l - 1) * lda);
-                    a[l - 1 + (l - 1) * lda] = 1.0 + a[l - 1 + (l - 1) * lda];
+                    dscal(m - l + 1, 1.0 / s[((l - 1) + .Length) % .Length], ref a, 1, + l - 1 + (l - 1) * lda);
+                    a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length] = 1.0 + a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length];
                 }
 
-                s[l - 1] = -s[l - 1];
+                s[((l - 1) + s.Length) % s.Length] = -s[((l - 1) + s.Length) % s.Length];
             }
 
             for (j = l + 1; j <= n; j++)
@@ -992,10 +992,10 @@ public static class BLAS1D
                 //
                 //  Apply the transformation.
                 //
-                if (l <= nct && s[l - 1] != 0.0)
+                if (l <= nct && s[((l - 1) + s.Length) % s.Length] != 0.0)
                 {
                     t = -ddot(m - l + 1, a, 1, a, 1, + l - 1 + (l - 1) * lda, + l - 1 + (j - 1) * lda)
-                        / a[l - 1 + (l - 1) * lda];
+                        / a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length];
                     daxpy(m - l + 1, t, a, 1, ref a, 1, + l - 1 + (l - 1) * lda, + l - 1 + (j - 1) * lda);
                 }
 
@@ -1003,7 +1003,7 @@ public static class BLAS1D
                 //  Place the L-th row of A into E for the
                 //  subsequent calculation of the row transformation.
                 //
-                e[j - 1] = a[l - 1 + (j - 1) * lda];
+                e[((j - 1) + e.Length) % e.Length] = a[((l - 1 + (j - 1) * lda) + a.Length) % a.Length];
             }
 
             switch (wantu)
@@ -1015,7 +1015,7 @@ public static class BLAS1D
                 {
                     for (i = l; i <= m; i++)
                     {
-                        u[i - 1 + (l - 1) * ldu] = a[i - 1 + (l - 1) * lda];
+                        u[((i - 1 + (l - 1) * ldu) + u.Length) % u.Length] = a[((i - 1 + (l - 1) * lda) + a.Length) % a.Length];
                     }
 
                     break;
@@ -1028,17 +1028,17 @@ public static class BLAS1D
                 //  Compute the L-th row transformation and place the
                 //  L-th superdiagonal in E(L).
                 //
-                e[l - 1] = dnrm2(n - l, e, 1, + l);
+                e[((l - 1) + e.Length) % e.Length] = dnrm2(n - l, e, 1, + l);
 
-                if (e[l - 1] != 0.0)
+                if (e[((l - 1) + e.Length) % e.Length] != 0.0)
                 {
-                    if (e[l] != 0.0)
+                    if (e[((l) + e.Length) % e.Length] != 0.0)
                     {
-                        e[l - 1] = typeMethods.r8_sign(e[l]) * Math.Abs(e[l - 1]);
+                        e[((l - 1) + e.Length) % e.Length] = typeMethods.r8_sign(e[((l) + e.Length) % e.Length]) * Math.Abs(e[((l - 1) + e.Length) % e.Length]);
                     }
 
-                    dscal(n - l, 1.0 / e[l - 1], ref e, 1, + l);
-                    e[l] = 1.0 + e[l];
+                    dscal(n - l, 1.0 / e[((l - 1) + e.Length) % e.Length], ref e, 1, + l);
+                    e[((l) + e.Length) % e.Length] = 1.0 + e[((l) + e.Length) % e.Length];
                 }
 
                 e[l - 1] = -e[l - 1];

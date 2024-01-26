@@ -652,7 +652,7 @@ public static partial class Algorithms
             double r1 = 1.0 + fxs * Math.Pow(0.5 + u[i], 2);
             double r2 = 1.0 + fxs * Math.Pow(0.5 - u[i], 2);
 
-            rt += r[i] * (Math.Exp(xs * r1) / r1 + Math.Exp(xs * r2) / r2);
+            rt += r[i % r.Length] * (Math.Exp(xs * r1) / r1 + Math.Exp(xs * r2) / r2);
         }
 
         value = rt * x2 * tp;

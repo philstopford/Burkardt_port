@@ -150,10 +150,10 @@ public static partial class Algorithms
         {
             for (int i = 0; i < n; i++)
             {
-                p[(i + n * n) % p.Length] = start[i % start.Length];
+                p[((i + n * n) + p.Length) % p.Length] = start[i % start.Length];
             }
 
-            y[n % y.Length] = fn(start);
+            y[(n + y.Length) % y.Length] = fn(start);
             icount += 1;
 
             double x;
@@ -163,7 +163,7 @@ public static partial class Algorithms
                 start[j % start.Length] += step[j % start.Length] * del;
                 for (int i = 0; i < n; i++)
                 {
-                    p[(i + j * n) % p.Length] = start[i % start.Length];
+                    p[((i + j * n) + p.Length) % p.Length] = start[i % start.Length];
                 }
 
                 y[j % y.Length] = fn(start);
@@ -225,7 +225,7 @@ public static partial class Algorithms
                     z = 0.0;
                     for (int j = 0; j < nn; j++)
                     {
-                        z += p[(i + j * n) % p.Length];
+                        z += p[((i + j * n) + p.Length) % p.Length];
                     }
 
                     z -= p[(i + ihi * n) % p.Length];
@@ -237,7 +237,7 @@ public static partial class Algorithms
                 //
                 for (int i = 0; i < n; i++)
                 {
-                    pstar[i % pstar.Length] = pbar[i % pbar.Length] + rcoeff * (pbar[i % pbar.Length] - p[(i + ihi * n) % p.Length]);
+                    pstar[i % pstar.Length] = pbar[i % pbar.Length] + rcoeff * (pbar[i % pbar.Length] - p[((i + ihi * n) + p.Length) % p.Length]);
                 }
 
                 double ystar = fn(pstar);
@@ -262,10 +262,10 @@ public static partial class Algorithms
                     {
                         for (int i = 0; i < n; i++)
                         {
-                            p[(i + ihi * n) % p.Length] = pstar[i % pstar.Length];
+                            p[((i + ihi * n) + p.Length) % p.Length] = pstar[i % pstar.Length];
                         }
 
-                        y[ihi % y.Length] = ystar;
+                        y[(ihi + y.Length) % y.Length] = ystar;
                     }
                     //
                     //  Retain extension or contraction.
@@ -274,7 +274,7 @@ public static partial class Algorithms
                     {
                         for (int i = 0; i < n; i++)
                         {
-                            p[(i + ihi * n) % p.Length] = p2star[i % p2star.Length];
+                            p[((i + ihi * n) + p.Length) % p.Length] = p2star[i % p2star.Length];
                         }
 
                         y[ihi % y.Length] = y2star;
@@ -300,7 +300,7 @@ public static partial class Algorithms
                         {
                             for (int i = 0; i < n; i++)
                             {
-                                p[(i + ihi * n) % p.Length] = pstar[i % pstar.Length];
+                                p[((i + ihi * n) + p.Length) % p.Length] = pstar[i % pstar.Length];
                             }
 
                             y[ihi % y.Length] = ystar;
@@ -313,7 +313,7 @@ public static partial class Algorithms
                         {
                             for (int i = 0; i < n; i++)
                             {
-                                p2star[i % p2star.Length] = pbar[i % pbar.Length] + ccoeff * (p[(i + ihi * n) % p.Length] - pbar[i % pbar.Length]);
+                                p2star[i % p2star.Length] = pbar[i % pbar.Length] + ccoeff * (p[((i + ihi * n) + p.Length) % p.Length] - pbar[i % pbar.Length]);
                             }
 
                             y2star = fn(p2star);
@@ -327,11 +327,11 @@ public static partial class Algorithms
                                 {
                                     for (int i = 0; i < n; i++)
                                     {
-                                        p[(i + j * n) % p.Length] = (p[(i + j * n) % p.Length] + p[(i + ilo * n) % p.Length]) * 0.5;
-                                        xmin[i % xmin.Length] = p[(i + j * n) % p.Length];
+                                        p[((i + j * n) + p.Length) % p.Length] = (p[((i + j * n) + p.Length) % p.Length] + p[((i + ilo * n) + p.Length) % p.Length]) * 0.5;
+                                        xmin[i % xmin.Length] = p[((i + j * n) + p.Length) % p.Length];
                                     }
 
-                                    y[j % y.Length] = fn(xmin);
+                                    y[(j + y.Length) % y.Length] = fn(xmin);
                                     icount += 1;
                                 }
 
@@ -357,7 +357,7 @@ public static partial class Algorithms
 
                             for (int i = 0; i < n; i++)
                             {
-                                p[(i + ihi * n) % p.Length] = p2star[i % p2star.Length];
+                                p[((i + ihi * n) + p.Length) % p.Length] = p2star[i % p2star.Length];
                             }
 
                             y[ihi % y.Length] = y2star;
@@ -383,7 +383,7 @@ public static partial class Algorithms
                             {
                                 for (int i = 0; i < n; i++)
                                 {
-                                    p[(i + ihi * n) % p.Length] = p2star[i % p2star.Length];
+                                    p[((i + ihi * n) + p.Length) % p.Length] = p2star[i % p2star.Length];
                                 }
 
                                 y[ihi] = y2star;
@@ -392,7 +392,7 @@ public static partial class Algorithms
                             {
                                 for (int i = 0; i < n; i++)
                                 {
-                                    p[(i + ihi * n) % p.Length] = pstar[i % pstar.Length];
+                                    p[((i + ihi * n) + p.Length) % p.Length] = pstar[i % pstar.Length];
                                 }
 
                                 y[ihi % y.Length] = ystar;
@@ -457,10 +457,10 @@ public static partial class Algorithms
             //
             for (int i = 0; i < n; i++)
             {
-                xmin[i % xmin.Length] = p[(i + ilo * n) % p.Length];
+                xmin[i % xmin.Length] = p[((i + ilo * n) + p.Length) % p.Length];
             }
 
-            ynewlo = y[ilo % y.Length];
+            ynewlo = y[(ilo + y.Length) % y.Length];
 
             if (kcount < icount)
             {

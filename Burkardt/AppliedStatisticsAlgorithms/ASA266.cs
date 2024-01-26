@@ -505,7 +505,7 @@ public static partial class Algorithms
             work[j] = 0.0;
             for (int i = 0; i < n; i++)
             {
-                work[j] += Math.Log(x[(i + j * ix) % x.Length]);
+                work[j] += Math.Log(x[((i + j * ix) + x.Length) % x.Length]);
             }
         }
 
@@ -727,7 +727,7 @@ public static partial class Algorithms
         {
             for (int elem_i = 0; elem_i < elem_num; elem_i++)
             {
-                switch (a[(comp_i + elem_i * comp_max) % a.Length])
+                switch (a[((comp_i + elem_i * comp_max) + a.Length) % a.Length])
                 {
                     case < 0.0:
                         Console.WriteLine("");
@@ -735,7 +735,7 @@ public static partial class Algorithms
                         Console.WriteLine("  A(COMP,ELEM) < 0.");
                         Console.WriteLine("  COMP = " + comp_i + "");
                         Console.WriteLine("  ELEM = " + elem_i + "");
-                        Console.WriteLine("  A[COMP,ELEM] = " + a[(comp_i + elem_i * comp_max) % a.Length] + "");
+                        Console.WriteLine("  A[COMP,ELEM] = " + a[((comp_i + elem_i * comp_max) + .Length) % a.Length] + "");
                         break;
                 }
             }

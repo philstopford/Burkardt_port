@@ -196,7 +196,7 @@ public static partial class Algorithms
                     ia = 0;
                     for (j = m; j < ncol; j++)
                     {
-                        matrix[(l + j * nrow) % matrix.Length] = 0;
+                        matrix[((l + j * nrow) + matrix.Length) % matrix.Length] = 0;
                     }
 
                     break;
@@ -225,9 +225,9 @@ public static partial class Algorithms
                     int ihp = iap - nlm;
                     int nlmp = nlm + 1;
                     int iip = ii + nlmp;
-                    x = Math.Exp(data.fact[(iap - 1) % data.fact.Length] + data.fact[ib % data.fact.Length] + data.fact[ic % data.fact.Length] +
-                                 data.fact[(idp - 1) % data.fact.Length] - data.fact[ie % data.fact.Length] - data.fact[(nlmp - 1) % data.fact.Length] -
-                                 data.fact[(igp - 1) % data.fact.Length] - data.fact[(ihp - 1) % data.fact.Length] - data.fact[(iip - 1) % data.fact.Length]);
+                    x = Math.Exp(data.fact[((iap - 1) + data.fact.Length) % data.fact.Length] + data.fact[ib % data.fact.Length] + data.fact[ic % data.fact.Length] +
+                                 data.fact[((idp - 1) + data.fact.Length) % data.fact.Length] - data.fact[ie % data.fact.Length] - data.fact[((nlmp - 1) + data.fact.Length) % data.fact.Length] -
+                                 data.fact[((igp - 1) + data.fact.Length) % data.fact.Length] - data.fact[((ihp - 1) + data.fact.Length) % data.fact.Length] - data.fact[((iip - 1) + data.fact.Length) % data.fact.Length]);
 
                     if (r <= x)
                     {
@@ -318,13 +318,13 @@ public static partial class Algorithms
 
                 }
 
-                matrix[(l + m * nrow) % matrix.Length] = nlm;
+                matrix[((l + m * nrow) + matrix.Length) % matrix.Length] = nlm;
                 ia -= nlm;
-                jwork[m % jwork.Length] -= nlm;
+                jwork[(m + jwork.Length) % jwork.Length] -= nlm;
 
             }
 
-            matrix[(l + (ncol - 1) * nrow) % matrix.Length] = ia;
+            matrix[((l + (ncol - 1) * nrow) + matrix.Length) % matrix.Length] = ia;
         }
 
         //
@@ -332,11 +332,9 @@ public static partial class Algorithms
         //
         for (j = 0; j < ncol - 1; j++)
         {
-            matrix[(nrow - 1 + j * nrow) % matrix.Length] = jwork[j % jwork.Length];
+            matrix[((nrow - 1 + j * nrow) + matrix.Length) % matrix.Length] = jwork[j % jwork.Length];
         }
 
-        matrix[(nrow - 1 + (ncol - 1) * nrow) % matrix.Length] = ib - matrix[(nrow - 1 + (ncol - 2) * nrow) % matrix.Length];
-
+        matrix[((nrow - 1 + (ncol - 1) * nrow) + matrix.Length) % matrix.Length] = ib - matrix[((nrow - 1 + (ncol - 2) * nrow) + matrix.Length) % matrix.Length];
     }
-
 }

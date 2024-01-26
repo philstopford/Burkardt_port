@@ -115,7 +115,7 @@ public static partial class Algorithms
 
             int k;
             int kjr;
-            switch (mat[(kir + ir - 1) % mat.Length])
+            switch (mat[((kir + ir - 1) + mat.Length) % mat.Length])
             {
                 case 0:
                 {
@@ -126,7 +126,7 @@ public static partial class Algorithms
 
                     for (kjr = kir + nrow + ir; kjr <= nrow * nrow; kjr += nrow)
                     {
-                        if (0 >= mat[(kjr - 1) % mat.Length])
+                        if (0 >= mat[((kjr - 1) + mat.Length) % mat.Length])
                         {
                             continue;
                         }
@@ -147,14 +147,14 @@ public static partial class Algorithms
                         {
                             for (kjr = ir; kjr <= kir; kjr += nrow)
                             {
-                                if (0 >= mat[(kjr - 1) % mat.Length])
+                                if (0 >= mat[((kjr - 1) + mat.Length) % mat.Length])
                                 {
                                     continue;
                                 }
 
                                 for (int i = kjr - ir + 1; i < kjr; i++)
                                 {
-                                    switch (mat[(i - 1) % mat.Length])
+                                    switch (mat[((i - 1) + mat.Length) % mat.Length])
                                     {
                                         case > 0:
                                             ifault = 3;
@@ -187,13 +187,13 @@ public static partial class Algorithms
 
                     for (int i = 1; i <= nrow; i++)
                     {
-                        k = mat[(kir + i - 1) % mat.Length];
-                        mat[(kir + i - 1) % mat.Length] = mat[(kjr + i - 1) % mat.Length];
-                        mat[(kjr + i - 1) % mat.Length] = k;
+                        k = mat[((kir + i - 1) + mat.Length) % mat.Length];
+                        mat[((kir + i - 1) + mat.Length) % mat.Length] = mat[((kjr + i - 1) + mat.Length) % mat.Length];
+                        mat[((kjr + i - 1) + mat.Length) % mat.Length] = k;
 
-                        k = imat[(kir + i - 1) % imat.Length];
-                        imat[(kir + i - 1) % imat.Length] = imat[(kjr + i - 1) % imat.Length];
-                        imat[(kjr + i - 1) % imat.Length] = k;
+                        k = imat[((kir + i - 1) + imat.Length) % imat.Length];
+                        imat[((kir + i - 1) + imat.Length) % imat.Length] = imat[((kjr + i - 1) + imat.Length) % imat.Length];
+                        imat[((kjr + i - 1) + imat.Length) % imat.Length] = k;
                     }
 
                     break;
@@ -203,10 +203,10 @@ public static partial class Algorithms
             //
             //  Find a multiplier N such that N*MAT(IR,IR)=1 mod(P{IR})
             //
-            k = mat[(kir + ir - 1) % mat.Length];
-            for (n = 1; n < rmod[(ir - 1) % rmod.Length]; n++)
+            k = mat[((kir + ir - 1) + mat.Length) % mat.Length];
+            for (n = 1; n < rmod[((ir - 1) + rmod.Length) % rmod.Length]; n++)
             {
-                if (n * k % rmod[(ir - 1) % rmod.Length] == 1)
+                if (n * k % rmod[((ir - 1) + rmod.Length) % rmod.Length] == 1)
                 {
                     break;
                 }
@@ -221,8 +221,8 @@ public static partial class Algorithms
                 {
                     for (int i = kir + 1; i <= ir * nrow; i++)
                     {
-                        mat[(i - 1) % mat.Length] *= n;
-                        imat[(i - 1) % imat.Length] *= n;
+                        mat[((i - 1) + mat.Length) % mat.Length] *= n;
+                        imat[((i - 1) + imat.Length) % imat.Length] *= n;
                     }
 
                     break;
@@ -234,7 +234,7 @@ public static partial class Algorithms
             //
             for (kjr = 0; kjr < nrow * nrow; kjr += nrow)
             {
-                n = rmod[(ir - 1) % rmod.Length] - mat[(kjr + ir - 1) % mat.Length];
+                n = rmod[((ir - 1) + rmod.Length) % rmod.Length] - mat[((kjr + ir - 1) + mat.Length) % mat.Length];
                 if (kjr == kir || n == 0)
                 {
                     continue;
@@ -242,8 +242,8 @@ public static partial class Algorithms
 
                 for (int i = 1; i <= nrow; i++)
                 {
-                    mat[(kjr + i - 1) % mat.Length] = (mat[(kjr + i - 1) % mat.Length] + n * mat[(kir + i - 1) % mat.Length]) % cmod[(i - 1) % cmod.Length];
-                    imat[(kjr + i - 1) % imat.Length] = (imat[(kjr + i - 1) % imat.Length] + n * imat[(kir + i - 1) % imat.Length]) % cmod[(i - 1) % cmod.Length];
+                    mat[((kjr + i - 1) + mat.Length) % mat.Length] = (mat[((kjr + i - 1) + mat.Length) % mat.Length] + n * mat[((kir + i - 1) + mat.Length) % mat.Length]) % cmod[((i - 1) + cmod.Length) % cmod.Length];
+                    imat[((kjr + i - 1) + imat.Length) % imat.Length] = (imat[((kjr + i - 1) + imat.Length) % imat.Length] + n * imat[((kir + i - 1) + imat.Length) % imat.Length]) % cmod[((i - 1) + cmod.Length) % cmod.Length];
                 }
             }
 
@@ -260,18 +260,18 @@ public static partial class Algorithms
         //
         for (n = 1; n <= nrow * nrow; n = n + nrow + 1)
         {
-            ifault = mat[(n - 1) % mat.Length] switch
+            ifault = mat[((n - 1) + mat.Length) % mat.Length] switch
             {
                 0 => -1,
                 _ => ifault
             };
 
-            mat[(n - 1) % mat.Length] = -mat[(n - 1) % mat.Length];
+            mat[((n - 1) + mat.Length) % mat.Length] = -mat[((n - 1) + mat.Length) % mat.Length];
         }
 
         for (n = 1; n <= nrow * nrow; n++)
         {
-            switch (mat[(n - 1) % mat.Length])
+            switch (mat[((n - 1) + mat.Length) % mat.Length])
             {
                 case > 0:
                     ifault = 3;
@@ -281,7 +281,7 @@ public static partial class Algorithms
 
         for (n = 1; n <= nrow * nrow; n = n + nrow + 1)
         {
-            mat[(n - 1) % mat.Length] = -mat[(n - 1) % mat.Length];
+            mat[((n - 1) + mat.Length) % mat.Length] = -mat[((n - 1) + mat.Length) % mat.Length];
         }
 
         //

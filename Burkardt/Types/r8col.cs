@@ -176,7 +176,7 @@ public static partial class typeMethods
             j2 = UniformRNG.i4_uniform_ab(0, n_unique - 1, ref seed);
             for (i = 0; i < m; i++)
             {
-                a[i + j1 * m] = a[i + j2 * m];
+                a[(i + j1 * m) % a.Length] = a[(i + j2 * m) % a.Length];
             }
         }
 
@@ -188,7 +188,7 @@ public static partial class typeMethods
             j2 = UniformRNG.i4_uniform_ab(j1, n - 1, ref seed);
             for (i = 0; i < m; i++)
             {
-                (a[i + j1 * m], a[i + j2 * m]) = (a[i + j2 * m], a[i + j1 * m]);
+                (a[(i + j1 * m) % a.Length], a[(i + j2 * m) % a.Length]) = (a[(i + j2 * m) % a.Length], a[(i + j1 * m) % a.Length]);
             }
         }
 
@@ -265,7 +265,7 @@ public static partial class typeMethods
             int i;
             for (i = 1; i <= m; i++)
             {
-                if (!(Math.Abs(x[i - 1] - a[i - 1 + (j - 1) * m]) > typeMethods.r8_epsilon()))
+                if (!(Math.Abs(x[(i - 1) % x.Length] - a[(i - 1 + (j - 1) * m) % a.Length]) > typeMethods.r8_epsilon()))
                 {
                     continue;
                 }
@@ -329,7 +329,7 @@ public static partial class typeMethods
 
         for (j1 = 0; j1 < n; j1++)
         {
-            first_index[j1] = -1;
+            first_index[j1 % first_index.Length] = -1;
         }
 
         for (j1 = 0; j1 < n; j1++)
@@ -338,7 +338,7 @@ public static partial class typeMethods
             {
                 case -1:
                 {
-                    first_index[j1] = j1;
+                    first_index[j1 % first_index.Length] = j1;
 
                     int j2;
                     for (j2 = j1 + 1; j2 < n; j2++)
@@ -347,12 +347,12 @@ public static partial class typeMethods
                         int i;
                         for (i = 0; i < m; i++)
                         {
-                            diff = Math.Max(diff, Math.Abs(a[i + j1 * m] - a[i + j2 * m]));
+                            diff = Math.Max(diff, Math.Abs(a[(i + j1 * m) % a.Length] - a[(i + j2 * m) % a.Length]));
                         }
 
                         if (diff <= tol)
                         {
-                            first_index[j2] = j1;
+                            first_index[j2 % first_index.Length] = j1;
                         }
                     }
 
@@ -400,9 +400,9 @@ public static partial class typeMethods
             int i;
             for (i = 0; i < ihi; i++)
             {
-                double t = a[i + j * m];
-                a[i + j * m] = a[m + 1 - i + j * m];
-                a[m - 1 - j + j * m] = t;
+                double t = a[(i + j * m) % a.Length];
+                a[(i + j * m) % a.Length] = a[(m + 1 - i + j * m) % a.Length];
+                a[(m - 1 - j + j * m) % a.Length] = t;
             }
         }
     }
@@ -460,7 +460,7 @@ public static partial class typeMethods
             int j;
             for (j = 1; j <= n; j++)
             {
-                a[i - 1 + (j - 1) * m] = fac * i + j;
+                a[(i - 1 + (j - 1) * m) % a.Length] = fac * i + j;
             }
         }
 
@@ -558,7 +558,7 @@ public static partial class typeMethods
         //
         for (i = 0; i < m; i++)
         {
-            a[i + n * m] = x[i];
+            a[(i + n * m) % a.Length] = x[i % x.Length];
         }
 
         //
@@ -600,7 +600,7 @@ public static partial class typeMethods
         {
             for (i = 0; i < m; i++)
             {
-                a[i + (j + 1) * m] = a[i + j * m];
+                a[(i + (j + 1) * m) % a.Length] = a[(i + j * m) % a.Length];
             }
         }
 
@@ -609,7 +609,7 @@ public static partial class typeMethods
         //
         for (i = 0; i < m; i++)
         {
-            a[i + (col - 1) * m] = x[i];
+            a[(i + (col - 1) * m) % a.Length] = x[i % x.Length];
         }
 
         n += 1;
@@ -657,11 +657,11 @@ public static partial class typeMethods
 
         for (j = 0; j < n; j++)
         {
-            amax[j] = a[0 + j * m];
+            amax[j % amax.Length] = a[(0 + j * m) % a.Length];
             int i;
             for (i = 0; i < m; i++)
             {
-                amax[j] = Math.Max(amax[j], a[i + j * m]);
+                amax[j % amax.Length] = Math.Max(amax[j % amax.Length], a[(i + j * m) % a.Length]);
             }
         }
 
@@ -709,19 +709,19 @@ public static partial class typeMethods
 
         for (j = 0; j < n; j++)
         {
-            imax[j] = 1;
+            imax[j % imax.Length] = 1;
             double amax = a[0 + j * m];
 
             int i;
             for (i = 1; i < m; i++)
             {
-                if (!(amax < a[i + j * m]))
+                if (!(amax < a[(i + j * m) % a.Length]))
                 {
                     continue;
                 }
 
-                imax[j] = i + 1;
-                amax = a[i + j * m];
+                imax[j % imax.Length] = i + 1;
+                amax = a[(i + j * m) % a.Length];
             }
         }
 
@@ -768,13 +768,13 @@ public static partial class typeMethods
             int i;
             for (i = 1; i < m; i++)
             {
-                if (Math.Abs(a[i_big + j * m]) < Math.Abs(a[i + j * m]))
+                if (Math.Abs(a[(i_big + j * m) % a.Length]) < Math.Abs(a[(i + j * m) % a.Length]))
                 {
                     i_big = i;
                 }
             }
 
-            double temp = a[i_big + j * m];
+            double temp = a[(i_big + j * m) % a.Length];
 
             if (temp == 0.0)
             {
@@ -783,7 +783,7 @@ public static partial class typeMethods
 
             for (i = 0; i < m; i++)
             {
-                a[i + j * m] /= temp;
+                a[(i + j * m) % a.Length] /= temp;
             }
         }
     }
@@ -942,7 +942,7 @@ public static partial class typeMethods
 
         for (i = 0; i < n; i++)
         {
-            indx[i] = i;
+            indx[i % indx.Length] = i;
         }
 
         switch (n)
@@ -964,10 +964,10 @@ public static partial class typeMethods
             if (1 < l)
             {
                 l -= 1;
-                indxt = indx[l - 1];
+                indxt = indx[(l - 1) % indx.Length];
                 for (k = 0; k < m; k++)
                 {
-                    column[k] = a[k + indxt * m];
+                    column[k % column.Length] = a[(k + indxt * m) % a.Length];
                 }
             }
             else
@@ -975,10 +975,10 @@ public static partial class typeMethods
                 indxt = indx[ir - 1];
                 for (k = 0; k < m; k++)
                 {
-                    column[k] = a[k + indxt * m];
+                    column[k % column.Length] = a[(k + indxt * m) % a.Length];
                 }
 
-                indx[ir - 1] = indx[0];
+                indx[(ir - 1) % indx.Length] = indx[0];
                 ir -= 1;
 
                 if (ir == 1)
@@ -996,7 +996,7 @@ public static partial class typeMethods
                 int isgn;
                 if (j < ir)
                 {
-                    isgn = r8vec_compare(m, a, a, aIndex: + indx[j - 1] * m, bIndex: + indx[j] * m);
+                    isgn = r8vec_compare(m, a, a, aIndex: + indx[(j - 1) % indx.Length] * m, bIndex: + indx[j % indx.Length] * m);
 
                     switch (isgn)
                     {
@@ -1006,12 +1006,12 @@ public static partial class typeMethods
                     }
                 }
 
-                isgn = r8vec_compare(m, column, a, bIndex: + indx[j - 1] * m);
+                isgn = r8vec_compare(m, column, a, bIndex: + indx[(j - 1) % indx.Length] * m);
 
                 switch (isgn)
                 {
                     case < 0:
-                        indx[i - 1] = indx[j - 1];
+                        indx[(i - 1) % indx.Length] = indx[(j - 1) % indx.Length];
                         i = j;
                         j += j;
                         break;
@@ -1021,7 +1021,7 @@ public static partial class typeMethods
                 }
             }
 
-            indx[i - 1] = indxt;
+            indx[(i - 1) % indx.Length] = indxt;
         }
 
         return indx;
@@ -1111,7 +1111,7 @@ public static partial class typeMethods
                 case > 1:
                     level += 1;
                     n_segment = l_segment;
-                    rsave[level - 1] = r_segment + base_ - 1;
+                    rsave[(level - 1) % rsave.Length] = r_segment + base_ - 1;
                     break;
                 //
                 default:
@@ -1134,8 +1134,8 @@ public static partial class typeMethods
                                     return;
                             }
 
-                            base_ = rsave[level - 1];
-                            n_segment = rsave[level - 2] - rsave[level - 1];
+                            base_ = rsave[(level - 1) % rsave.Length];
+                            n_segment = rsave[(level - 2) % rsave.Length] - rsave[(level - 1) % rsave.Length];
                             level -= 1;
 
                             if (0 < n_segment)
@@ -1270,7 +1270,7 @@ public static partial class typeMethods
                 int i3;
                 for ( i3 = 0; i3 < m; i3++ )
                 {
-                    diff = Math.Max ( diff, Math.Abs ( a[i3+i*m] - a[i3+i2*m] ) );
+                    diff = Math.Max ( diff, Math.Abs ( a[(i3+i*m) % a.Length] - a[(i3+i2*m) % a.Length] ) );
                 }
 
                 if (!(diff <= tol))
@@ -1279,15 +1279,15 @@ public static partial class typeMethods
                 }
 
                 unique = false;
-                xdnu[i] = j;
+                xdnu[i % xdnu.Length] = j;
                 break;
             }
             switch (unique)
             {
                 case true:
                     k += 1;
-                    undx[k] = i;
-                    xdnu[i] = k;
+                    undx[k % undx.Length] = i;
+                    xdnu[i % xdnu.Length] = k;
                     break;
             }
         }
@@ -1355,7 +1355,7 @@ public static partial class typeMethods
                 double diff = 0.0;
                 for (k = 0; k < m; k++)
                 {
-                    diff = Math.Max(diff, Math.Abs(a[k + i * m] - a[k + j * m]));
+                    diff = Math.Max(diff, Math.Abs(a[(k + i * m) % a.Length] - a[(k + j * m) % a.Length]));
                 }
 
                 if (!(diff < tol))

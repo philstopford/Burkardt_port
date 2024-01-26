@@ -132,7 +132,7 @@ public static partial class typeMethods
                 for (j2 = 1; j2 <= inc; j2++)
                 {
                     j = j2lo - 1 + j2;
-                    Complex c = a[i - 1 + (j - 1) * m];
+                    Complex c = a[(i - 1 + (j - 1) * m) % a.Length];
                     cout += "  " + c.Real.ToString(CultureInfo.InvariantCulture).PadLeft(8)
                                  + "  " + c.Imaginary.ToString(CultureInfo.InvariantCulture).PadLeft(8);
                 }

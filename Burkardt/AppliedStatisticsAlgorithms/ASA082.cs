@@ -67,7 +67,7 @@ public static partial class Algorithms
 
         for (k = 0; k < n * n; k++)
         {
-            a2[k % a2.Length] = a[k % a.Length];
+            a2[(k + a2.Length) % a2.Length] = a[(k + a.Length) % a.Length];
         }
 
         d = 1.0;
@@ -76,7 +76,7 @@ public static partial class Algorithms
         for (k = 2; k <= n + 1; k++)
         {
             int q = r;
-            double x = a2[r];
+            double x = a2[(r + a2.Length) % a2.Length];
             double y = x switch
             {
                 < 0.0 => -1.0,
@@ -113,7 +113,7 @@ public static partial class Algorithms
                 for (i = k; i <= n; i++)
                 {
                     q += n;
-                    x = a2[q] * y;
+                    x = a2[(q + a2.Length) % a2.Length] * y;
                     int p = r;
                     int s = q;
                     int j;
@@ -121,7 +121,7 @@ public static partial class Algorithms
                     {
                         p += 1;
                         s += 1;
-                        a2[s] += x * a2[p];
+                        a2[(s + a2.Length) % a2.Length] += x * a2[(p + a2.Length) % a2.Length];
                     }
                 }
             }

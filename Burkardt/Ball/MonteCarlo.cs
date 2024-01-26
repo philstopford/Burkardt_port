@@ -168,7 +168,7 @@ public static class MonteCarlo
             int i;
             for (i = 0; i < 3; i++)
             {
-                x[i + j * 3] /= norm;
+                x[(i + j * 3) % x.Length] /= norm;
             }
 
             //
@@ -178,7 +178,7 @@ public static class MonteCarlo
 
             for (i = 0; i < 3; i++)
             {
-                x[i + j * 3] = Math.Pow(r, exponent) * x[i + j * 3];
+                x[(i + j * 3) % x.Length] = Math.Pow(r, exponent) * x[(i + j * 3) % x.Length];
             }
         }
 

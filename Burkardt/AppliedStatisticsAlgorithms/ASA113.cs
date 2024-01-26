@@ -140,7 +140,7 @@ public static partial class Algorithms
                     continue;
                 }
 
-                if (clsize[(l - 1) % clsize.Length] == 1 && clsize[(m - 1) % clsize.Length] == 1)
+                if (clsize[((l - 1) + clsize.Length) % clsize.Length] == 1 && clsize[((m - 1) + clsize.Length) % clsize.Length] == 1)
                 {
                     continue;
                 }
@@ -162,8 +162,8 @@ public static partial class Algorithms
                     i, j, l, m, iswitch);
 
                 ntrans += 1;
-                klass[(i - 1) % klass.Length] = m;
-                klass[(j - 1) % klass.Length] = l;
+                klass[((i - 1) + klass.Length) % klass.Length] = m;
+                klass[((j - 1) + klass.Length) % klass.Length] = l;
                 l = m;
             }
         }
@@ -285,8 +285,8 @@ public static partial class Algorithms
                 continue;
             }
 
-            int m = klass[(i - 1) % klass.Length];
-            switch (clsize[(m - 1) % clsize.Length])
+            int m = klass[((i - 1) + klass.Length) % klass.Length];
+            switch (clsize[((m - 1) + clsize.Length) % clsize.Length])
             {
                 case <= 1:
                     icount += 1;
@@ -340,9 +340,9 @@ public static partial class Algorithms
                 i, m, l, iswitch);
 
             ntrans += 1;
-            klass[(i - 1) % klass.Length] = l;
-            clsize[(l - 1) % clsize.Length] += 1;
-            clsize[(m - 1) % clsize.Length] -= 1;
+            klass[((i - 1) + klass.Length) % klass.Length] = l;
+            clsize[((l - 1) + clsize.Length) % clsize.Length] += 1;
+            clsize[((m - 1) + clsize.Length) % clsize.Length] -= 1;
         }
     }
 
@@ -426,28 +426,28 @@ public static partial class Algorithms
         //  Move object I1 from class C1 to class C2.
         //  Move object I2 from class C2 to class C1.
         //
-        c[(i1 - 1) % c.Length] = c2;
-        c[(i2 - 1) % c.Length] = c1;
+        c[((i1 - 1) + c.Length) % c.Length] = c2;
+        c[((i2 - 1) + c.Length) % c.Length] = c1;
         //
         //  Define the critical value as the sum of the squares of the distances
         //  of the points to their cluster center.
         //
         for (int i = 1; i <= k; i++)
         {
-            c_size[(i - 1) % c_size.Length] = 0;
+            c_size[((i - 1) + c_size.Length) % c_size.Length] = 0;
             for (int j = 1; j <= n; j++)
             {
-                c_center[(i - 1 + (j - 1) * k) % c_center.Length] = 0.0;
+                c_center[((i - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] = 0.0;
             }
         }
 
         for (int i = 1; i <= m; i++)
         {
-            ci = c[(i - 1) % c.Length];
-            c_size[(ci - 1) % c_size.Length] += 1;
+            ci = c[((i - 1) + c.Length) % c.Length];
+            c_size[((ci - 1) + c_size.Length) % c_size.Length] += 1;
             for (int j = 1; j <= n; j++)
             {
-                c_center[(ci - 1 + (j - 1) * k) % c_center.Length] += a[(i - 1 + (j - 1) * m) % a.Length];
+                c_center[((ci - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] += a[((i - 1 + (j - 1) * m) + a.Length) % a.Length];
             }
         }
 
@@ -455,7 +455,7 @@ public static partial class Algorithms
         {
             for (int j = 1; j <= n; j++)
             {
-                c_center[(i - 1 + (j - 1) * k) % c_center.Length] /= c_size[(i - 1) % c_size.Length];
+                c_center[((i - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] /= c_size[((i - 1) + c_size.Length) % c_size.Length];
             }
         }
 
@@ -463,10 +463,10 @@ public static partial class Algorithms
 
         for (int i = 1; i <= m; i++)
         {
-            ci = c[(i - 1) % c.Length];
+            ci = c[((i - 1) + c.Length) % c.Length];
             for (int j = 1; j <= n; j++)
             {
-                critvl_new += Math.Pow(a[(i - 1 + (j - 1) * m) % a.Length] - c_center[(ci - 1 + (j - 1) * k) % c_center.Length], 2);
+                critvl_new += Math.Pow(a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c_center[((ci - 1 + (j - 1) * k) + c_center.Length) % c_center.Length], 2);
             }
         }
 
@@ -475,8 +475,8 @@ public static partial class Algorithms
         //  Move object I1 from class C2 to class C1.
         //  Move object I2 from class C1 to class C2.
         //
-        c[(i1 - 1) % c.Length] = c1;
-        c[(i2 - 1) % c.Length] = c2;
+        c[((i1 - 1) + c.Length) % c.Length] = c1;
+        c[((i2 - 1) + c.Length) % c.Length] = c2;
 
         return inc;
     }
@@ -561,29 +561,29 @@ public static partial class Algorithms
         //
         //  Move object I from class C1 to class C2.
         //
-        c[(i1 - 1) % c.Length] = c2;
-        c_size[(c1 - 1) % c_size.Length] -= 1;
-        c_size[(c2 - 1) % c_size.Length] += 1;
+        c[((i1 - 1) + c.Length) % c.Length] = c2;
+        c_size[((c1 - 1) + c_size.Length) % c_size.Length] -= 1;
+        c_size[((c2 - 1) + c_size.Length) % c_size.Length] += 1;
         //
         //  Define the critical value as the sum of the squares of the distances
         //  of the points to their cluster center.
         //
         for (int i = 1; i <= k; i++)
         {
-            c_size[(i - 1) % c_size.Length] = 0;
+            c_size[((i - 1) + c_size.Length) % c_size.Length] = 0;
             for (int j = 1; j <= n; j++)
             {
-                c_center[(i - 1 + (j - 1) * k) % c_center.Length] = 0.0;
+                c_center[((i - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] = 0.0;
             }
         }
 
         for (int i = 1; i <= m; i++)
         {
-            ci = c[(i - 1) % c.Length];
-            c_size[(ci - 1) % c_size.Length] += 1;
+            ci = c[((i - 1) + c.Length) % c.Length];
+            c_size[((ci - 1) + c_size.Length) % c_size.Length] += 1;
             for (int j = 1; j <= n; j++)
             {
-                c_center[(ci - 1 + (j - 1) * k) % c_center.Length] += a[(i - 1 + (j - 1) * m) % a.Length];
+                c_center[((ci - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] += a[((i - 1 + (j - 1) * m) + a.Length) % a.Length];
             }
         }
 
@@ -591,7 +591,7 @@ public static partial class Algorithms
         {
             for (int j = 1; j <= n; j++)
             {
-                c_center[(i - 1 + (j - 1) * k) % c_center.Length] /= c_size[(i - 1) % c_size.Length];
+                c_center[((i - 1 + (j - 1) * k) + c_center.Length) % c_center.Length] /= c_size[((i - 1) + c_size.Length) % c_size.Length];
             }
         }
 
@@ -599,10 +599,10 @@ public static partial class Algorithms
 
         for (int i = 1; i <= m; i++)
         {
-            ci = c[(i - 1) % c.Length];
+            ci = c[((i - 1) + c.Length) % c.Length];
             for (int j = 1; j <= n; j++)
             {
-                critvl_new += Math.Pow(a[(i - 1 + (j - 1) * m) % a.Length] - c_center[(ci - 1 + (j - 1) * k) % c_center.Length], 2);
+                critvl_new += Math.Pow(a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c_center[((ci - 1 + (j - 1) * k) + c_center.Length) % c_center.Length], 2);
             }
         }
 
@@ -610,12 +610,10 @@ public static partial class Algorithms
         //
         //  Move object I1 from class C2 to class C1.
         //
-        c[(i1 - 1) % c.Length] = c1;
-        c_size[(c1 - 1) % c_size.Length] += 1;
-        c_size[(c2 - 1) % c_size.Length] -= 1;
+        c[((i1 - 1) + c.Length) % c.Length] = c1;
+        c_size[((c1 - 1) + c_size.Length) % c_size.Length] += 1;
+        c_size[((c2 - 1) + c_size.Length) % c_size.Length] -= 1;
 
         return inc;
     }
-
-
 }

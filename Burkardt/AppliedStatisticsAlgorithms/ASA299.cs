@@ -191,7 +191,7 @@ public static partial class Algorithms
                 //
                 //  Is this the last point?
                 //
-                if (x[(n - 1) % x.Length] == t)
+                if (x[((n - 1) + x.Length) % x.Length] == t)
                 {
                     more = false;
                 }

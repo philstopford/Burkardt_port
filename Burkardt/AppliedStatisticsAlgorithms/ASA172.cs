@@ -136,7 +136,7 @@ public static partial class Algorithms
             //
             //  Index subscript to subscript vector conversion.
             //
-            case true when iprod[(kdim - 1) % iprod.Length] < jsub:
+            case true when iprod[((kdim - 1) + iprod.Length) % iprod.Length] < jsub:
                 ifault = 1;
                 Console.WriteLine("");
                 Console.WriteLine("SIMDO - Fatal error!");
@@ -154,7 +154,7 @@ public static partial class Algorithms
                     ivec[i % ivec.Length] += 1;
                 }
 
-                ivec[(kdim - 1) % ivec.Length] = itempv + 1;
+                ivec[((kdim - 1) + ivec.Length) % ivec.Length] = itempv + 1;
                 switch (qfor)
                 {
                     case true:

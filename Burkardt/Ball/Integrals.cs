@@ -178,7 +178,7 @@ public static class Integrals
 
             for (i = 0; i < 3; i++)
             {
-                x[(i + j * 3) % x.Length] = Math.Pow(r, exponent) * x[i + j * 3];
+                x[(i + j * 3) % x.Length] = Math.Pow(r, exponent) * x[(i + j * 3) % x.Length];
             }
         }
 

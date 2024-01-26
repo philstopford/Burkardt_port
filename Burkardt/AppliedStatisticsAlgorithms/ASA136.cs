@@ -92,23 +92,23 @@ public static partial class Algorithms
         //
         for (int i = 1; i <= m; i++)
         {
-            ic1[(i - 1) % ic1.Length] = 1;
-            ic2[(i - 1) % ic2.Length] = 2;
+            ic1[((i - 1) + ic1.Length) % ic1.Length] = 1;
+            ic2[((i - 1) + ic2.Length) % ic2.Length] = 2;
 
             for (int il = 1; il <= 2; il++)
             {
-                dt[(il - 1) % dt.Length] = 0.0;
+                dt[((il - 1) + dt.Length) % dt.Length] = 0.0;
                 for (int j = 1; j <= n; j++)
                 {
-                    double da = a[(i - 1 + (j - 1) * m) % a.Length] - c[(il - 1 + (j - 1) * k) % c.Length];
-                    dt[(il - 1) % dt.Length] += da * da;
+                    double da = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((il - 1 + (j - 1) * k) + c.Length) % c.Length];
+                    dt[((il - 1) + dt.Length) % dt.Length] += da * da;
                 }
             }
 
             if (dt[1] < dt[0])
             {
-                ic1[(i - 1) % ic1.Length] = 2;
-                ic2[(i - 1) % ic2.Length] = 1;
+                ic1[((i - 1) + ic1.Length) % ic1.Length] = 2;
+                ic2[((i - 1) + ic2.Length) % ic2.Length] = 1;
                 (dt[0], dt[1]) = (dt[1], dt[0]);
             }
 
@@ -117,7 +117,7 @@ public static partial class Algorithms
                 double db = 0.0;
                 for (int j = 1; j <= n; j++)
                 {
-                    double dc = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l - 1 + (j - 1) * k) % c.Length];
+                    double dc = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l - 1 + (j - 1) * k) + c.Length) % c.Length];
                     db += dc * dc;
                 }
 
@@ -129,14 +129,14 @@ public static partial class Algorithms
                 if (dt[0] <= db)
                 {
                     dt[1] = db;
-                    ic2[(i - 1) % ic2.Length] = l;
+                    ic2[((i - 1) + ic2.Length) % ic2.Length] = l;
                 }
                 else
                 {
                     dt[1] = dt[0];
-                    ic2[(i - 1) % ic2.Length] = ic1[(i - 1) % ic1.Length];
+                    ic2[((i - 1) + ic2.Length) % ic2.Length] = ic1[((i - 1) + ic1.Length) % ic1.Length];
                     dt[0] = db;
-                    ic1[(i - 1) % ic1.Length] = l;
+                    ic1[((i - 1) + ic1.Length) % ic1.Length] = l;
                 }
             }
         }
@@ -146,20 +146,20 @@ public static partial class Algorithms
         //
         for (int l = 1; l <= k; l++)
         {
-            nc[(l - 1) % nc.Length] = 0;
+            nc[((l - 1) + nc.Length) % nc.Length] = 0;
             for (int j = 1; j <= n; j++)
             {
-                c[(l - 1 + (j - 1) * k) % c.Length] = 0.0;
+                c[((l - 1 + (j - 1) * k) + c.Length) % c.Length] = 0.0;
             }
         }
 
         for (int i = 1; i <= m; i++)
         {
-            int l = ic1[(i - 1) % ic1.Length];
-            nc[(l - 1) % nc.Length] += 1;
+            int l = ic1[((i - 1) + ic1.Length) % ic1.Length];
+            nc[((l - 1) + nc.Length) % nc.Length] += 1;
             for (int j = 1; j <= n; j++)
             {
-                c[(l - 1 + (j - 1) * k) % c.Length] += a[(i - 1 + (j - 1) * m) % a.Length];
+                c[((l - 1 + (j - 1) * k) + c.Length) % c.Length] += a[((i - 1 + (j - 1) * m) + a.Length) % a.Length];
             }
         }
 
@@ -170,7 +170,7 @@ public static partial class Algorithms
 
         for (int l = 1; l <= k; l++)
         {
-            switch (nc[(l - 1) % nc.Length])
+            switch (nc[((l - 1) + nc.Length) % nc.Length])
             {
                 case 0:
                     ifault = 1;
@@ -182,11 +182,11 @@ public static partial class Algorithms
 
         for (int l = 1; l <= k; l++)
         {
-            double aa = nc[(l - 1) % nc.Length];
+            double aa = nc[((l - 1) + nc.Length) % nc.Length];
 
             for (int j = 1; j <= n; j++)
             {
-                c[(l - 1 + (j - 1) * k) % c.Length] /= aa;
+                c[((l - 1 + (j - 1) * k) + c.Length) % c.Length] /= aa;
             }
 
             //
@@ -203,16 +203,16 @@ public static partial class Algorithms
             //  In the quick-transfer stage, NCP(L) stores the step at which
             //  cluster L is last updated plus M.
             //
-            an2[(l - 1) % an2.Length] = aa / (aa + 1.0);
+            an2[((l - 1) + an2.Length) % an2.Length] = aa / (aa + 1.0);
 
-            an1[(l - 1) % an1.Length] = aa switch
+            an1[((l - 1) + an1.Length) % an1.Length] = aa switch
             {
                 > 1.0 => aa / (aa - 1.0),
                 _ => typeMethods.r8_huge()
             };
 
-            itran[(l - 1) % itran.Length] = 1;
-            ncp[(l - 1) % ncp.Length] = -1;
+            itran[((l - 1) + itran.Length) % itran.Length] = 1;
+            ncp[((l - 1) + ncp.Length) % ncp.Length] = -1;
         }
 
         int indx = 0;
@@ -257,7 +257,7 @@ public static partial class Algorithms
             //
             for (int l = 1; l <= k; l++)
             {
-                ncp[(l - 1) % ncp.Length] = 0;
+                ncp[((l - 1) + ncp.Length) % ncp.Length] = 0;
             }
 
         }
@@ -281,19 +281,19 @@ public static partial class Algorithms
         //
         for (int l = 1; l <= k; l++)
         {
-            wss[(l - 1) % wss.Length] = 0.0;
+            wss[((l - 1) + wss.Length) % wss.Length] = 0.0;
             for (int j = 1; j <= n; j++)
             {
-                c[(l - 1 + (j - 1) * k) % c.Length] = 0.0;
+                c[((l - 1 + (j - 1) * k) + c.Length) % c.Length] = 0.0;
             }
         }
 
         for (int i = 1; i <= m; i++)
         {
-            int ii = ic1[i - 1];
+            int ii = ic1[((i - 1) + ic1.Length) + ic1.Length)];
             for (int j = 1; j <= n; j++)
             {
-                c[(ii - 1 + (j - 1) * k) % c.Length] += a[(i - 1 + (j - 1) * m) % a.Length];
+                c[((ii - 1 + (j - 1) * k) + c.Length) % c.Length] += a[((i - 1 + (j - 1) * m) + a.Length) % a.Length];
             }
         }
 
@@ -301,14 +301,14 @@ public static partial class Algorithms
         {
             for (int l = 1; l <= k; l++)
             {
-                c[(l - 1 + (j - 1) * k) % c.Length] /= nc[(l - 1) % nc.Length];
+                c[((l - 1 + (j - 1) * k) + c.Length) % c.Length] /= nc[((l - 1) + nc.Length) % nc.Length];
             }
 
             for (int i = 1; i <= m; i++)
             {
-                int ii = ic1[(i - 1) % ic1.Length];
-                double da = a[(i - 1 + (j - 1) * m) % a.Length] - c[(ii - 1 + (j - 1) * k) % c.Length];
-                wss[(ii - 1) % wss.Length] += da * da;
+                int ii = ic1[((i - 1) + ic1.Length) % ic1.Length];
+                double da = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((ii - 1 + (j - 1) * k) + c.Length) % c.Length];
+                wss[((ii - 1) + wss.Length) % wss.Length] += da * da;
             }
         }
 
@@ -397,20 +397,20 @@ public static partial class Algorithms
         //
         for (int l = 1; l <= k; l++)
         {
-            live[(l - 1) % live.Length] = itran[(l - 1) % itran.Length] switch
+            live[((l - 1) + live.Length) % live.Length] = itran[((l - 1) + itran.Length) % itran.Length] switch
             {
                 1 => m + 1,
-                _ => live[(l - 1) % live.Length]
+                _ => live[((l - 1)) + live.Length) % live.Length]
             };
         }
 
         for (int i = 1; i <= m; i++)
         {
             indx += 1;
-            int l1 = ic1[(i - 1) % ic1.Length];
-            int l2 = ic2[(i - 1) % ic2.Length];
+            int l1 = ic1[((i - 1) + ic1.Length) % ic1.Length];
+            int l2 = ic2[((i - 1) + ic2.Length) % ic2.Length];
             int ll = l2;
-            switch (nc[(l1 - 1) % nc.Length])
+            switch (nc[((l1 - 1) + nc.Length) % nc.Length])
             {
                 //
                 //  If point I is the only member of cluster L1, no transfer.
@@ -421,16 +421,16 @@ public static partial class Algorithms
                     //  If L1 has not yet been updated in this stage, no need to
                     //  re-compute D(I).
                     //
-                    if (ncp[(l1 - 1) % ncp.Length] != 0)
+                    if (ncp[((l1 - 1) + ncp.Length) % ncp.Length] != 0)
                     {
                         double de = 0.0;
                         for (int j = 1; j <= n; j++)
                         {
-                            double df = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l1 - 1 + (j - 1) * k) % c.Length];
+                            double df = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length];
                             de += df * df;
                         }
 
-                        d[(i - 1) % d.Length] = de * an1[(l1 - 1) % an1.Length];
+                        d[((i - 1) + d.Length) % d.Length] = de * an1[((l1 - 1) + an1.Length) % an1.Length];
                     }
 
                     //
@@ -439,11 +439,11 @@ public static partial class Algorithms
                     double da = 0.0;
                     for (int j = 1; j <= n; j++)
                     {
-                        double db = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l2 - 1 + (j - 1) * k) % c.Length];
+                        double db = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length];
                         da += db * db;
                     }
 
-                    double r2 = da * an2[(l2 - 1) % an2.Length];
+                    double r2 = da * an2[((l2 - 1) + an2.Length) % an2.Length];
 
                     for (int l = 1; l <= k; l++)
                     {
@@ -453,17 +453,17 @@ public static partial class Algorithms
                         //  for possible transfer of point I.   Otherwise, we need to consider
                         //  all possible clusters.
                         //
-                        if ((i >= live[(l1 - 1) % live.Length] && i >= live[(l2 - 1) % live.Length]) || l == l1 || l == ll)
+                        if ((i >= live[((l1 - 1) + live.Length) % live.Length] && i >= live[((l2 - 1) + live.Length) % live.Length]) || l == l1 || l == ll)
                         {
                             continue;
                         }
 
-                        double rr = r2 / an2[(l - 1) % an2.Length];
+                        double rr = r2 / an2[((l - 1) + an2.Length) % an2.Length];
 
                         double dc = 0.0;
                         for (int j = 1; j <= n; j++)
                         {
-                            double dd = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l - 1 + (j - 1) * k) % c.Length];
+                            double dd = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l - 1 + (j - 1) * k) + c.Length) % c.Length];
                             dc += dd * dd;
                         }
 
@@ -472,16 +472,16 @@ public static partial class Algorithms
                             continue;
                         }
 
-                        r2 = dc * an2[(l - 1) % an2.Length];
+                        r2 = dc * an2[((l - 1) + an2.Length) % an2.Length];
                         l2 = l;
                     }
 
                     //
                     //  If no transfer is necessary, L2 is the new IC2(I).
                     //
-                    if (d[(i - 1) % d.Length] <= r2)
+                    if (d[((i - 1) + d.Length) % d.Length] <= r2)
                     {
-                        ic2[(i - 1) % ic2.Length] = l2;
+                        ic2[((i - 1) + ic2.Length) % ic2.Length] = l2;
                     }
                     //
                     //  Update cluster centers, LIVE, NCP, AN1 and AN2 for clusters L1 and
@@ -490,33 +490,33 @@ public static partial class Algorithms
                     else
                     {
                         indx = 0;
-                        live[(l1 - 1) % live.Length] = m + i;
-                        live[(l2 - 1) % live.Length] = m + i;
-                        ncp[(l1 - 1) % ncp.Length] = i;
-                        ncp[(l2 - 1) % ncp.Length] = i;
-                        double al1 = nc[(l1 - 1) % nc.Length];
+                        live[((l1 - 1) + live.Length) % live.Length] = m + i;
+                        live[((l2 - 1) + live.Length) % live.Length] = m + i;
+                        ncp[((l1 - 1) + ncp.Length) % ncp.Length] = i;
+                        ncp[((l2 - 1) + ncp.Length) % ncp.Length] = i;
+                        double al1 = nc[((l1 - 1) + nc.Length) % nc.Length];
                         double alw = al1 - 1.0;
-                        double al2 = nc[(l2 - 1) % nc.Length];
+                        double al2 = nc[((l2 - 1) + nc.Length) % nc.Length];
                         double alt = al2 + 1.0;
                         for (int j = 1; j <= n; j++)
                         {
-                            c[(l1 - 1 + (j - 1) * k) % c.Length] = (c[(l1 - 1 + (j - 1) * k) % c.Length] * al1 - a[(i - 1 + (j - 1) * m) % a.Length]) / alw;
-                            c[(l2 - 1 + (j - 1) * k) % c.Length] = (c[(l2 - 1 + (j - 1) * k) % c.Length] * al2 + a[(i - 1 + (j - 1) * m) % a.Length]) / alt;
+                            c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length] = (c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length] * al1 - a[((i - 1 + (j - 1) * m) + a.Length) % a.Length]) / alw;
+                            c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length] = (c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length] * al2 + a[((i - 1 + (j - 1) * m) + a.Length) % a.Length]) / alt;
                         }
 
-                        nc[(l1 - 1) % nc.Length] -= 1;
-                        nc[(l2 - 1) % nc.Length] += 1;
-                        an2[(l1 - 1) % an2.Length] = alw / al1;
-                        an1[(l1 - 1) % an1.Length] = alw switch
+                        nc[((l1 - 1) + nc.Length) % nc.Length] -= 1;
+                        nc[((l2 - 1) + nc.Length) % nc.Length] += 1;
+                        an2[((l1 - 1) + an2.Length) % an2.Length] = alw / al1;
+                        an1[((l1 - 1) + an1.Length) % an1.Length] = alw switch
                         {
                             > 1.0 => alw / (alw - 1.0),
                             _ => typeMethods.r8_huge()
                         };
 
-                        an1[(l2 - 1) % an1.Length] = alt / al2;
-                        an2[(l2 - 1) % an2.Length] = alt / (alt + 1.0);
-                        ic1[(i - 1) % ic1.Length] = l2;
-                        ic2[(i - 1) % ic2.Length] = l1;
+                        an1[((l2 - 1) + an1.Length) % an1.Length] = alt / al2;
+                        an2[((l2 - 1) + an2.Length) % an2.Length] = alt / (alt + 1.0);
+                        ic1[((i - 1) + ic1.Length) % ic1.Length] = l2;
+                        ic2[((i - 1) + ic2.Length) % ic2.Length] = l1;
                     }
 
                     break;
@@ -535,8 +535,8 @@ public static partial class Algorithms
         //
         for (int l = 1; l <= k; l++)
         {
-            itran[(l - 1) % itran.Length] = 0;
-            live[(l - 1) % live.Length] -= m;
+            itran[((l - 1) + itran.Length) % itran.Length] = 0;
+            live[((l - 1) + live.Length) % live.Length] -= m;
         }
     }
 
@@ -632,9 +632,9 @@ public static partial class Algorithms
             {
                 icoun += 1;
                 istep += 1;
-                int l1 = ic1[(i - 1) % ic1.Length];
-                int l2 = ic2[(i - 1) % ic2.Length];
-                switch (nc[(l1 - 1) % nc.Length])
+                int l1 = ic1[((i - 1) + ic1.Length) % ic1.Length];
+                int l2 = ic2[((i - 1) + ic2.Length) % ic2.Length];
+                switch (nc[((l1 - 1) + nc.Length) % nc.Length])
                 {
                     //
                     //  If point I is the only member of cluster L1, no transfer.
@@ -648,30 +648,30 @@ public static partial class Algorithms
                         //  cluster L1.
                         //
                         int j;
-                        if (istep <= ncp[(l1 - 1) % ncp.Length])
+                        if (istep <= ncp[((l1 - 1) + ncp.Length) % ncp.Length])
                         {
                             double da = 0.0;
                             for (j = 1; j <= n; j++)
                             {
-                                double db = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l1 - 1 + (j - 1) * k) % c.Length];
+                                double db = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length];
                                 da += db * db;
                             }
 
-                            d[(i - 1) % d.Length] = da * an1[(l1 - 1) % an1.Length];
+                            d[((i - 1) + d.Length) % d.Length] = da * an1[((l1 - 1) + an1.Length) % an1.Length];
                         }
 
                         //
                         //  If NCP(L1) <= ISTEP and NCP(L2) <= ISTEP, there will be no transfer of
                         //  point I at this step.
                         //
-                        if (istep < ncp[(l1 - 1) % ncp.Length] || istep < ncp[(l2 - 1) % ncp.Length])
+                        if (istep < ncp[((l1 - 1) + ncp.Length) % ncp.Length] || istep < ncp[((l2 - 1) + ncp.Length) % ncp.Length])
                         {
-                            double r2 = d[(i - 1) % d.Length] / an2[(l2 - 1) % an2.Length];
+                            double r2 = d[((i - 1) + d.Length) % d.Length] / an2[((l2 - 1) + an2.Length) % an2.Length];
 
                             double dd = 0.0;
                             for (j = 1; j <= n; j++)
                             {
-                                double de = a[(i - 1 + (j - 1) * m) % a.Length] - c[(l2 - 1 + (j - 1) * k) % c.Length];
+                                double de = a[((i - 1 + (j - 1) * m) + a.Length) % a.Length] - c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length];
                                 dd += de * de;
                             }
 
@@ -684,35 +684,35 @@ public static partial class Algorithms
                             {
                                 icoun = 0;
                                 indx = 0;
-                                itran[(l1 - 1) % itran.Length] = 1;
-                                itran[(l2 - 1) % itran.Length] = 1;
-                                ncp[(l1 - 1) % ncp.Length] = istep + m;
-                                ncp[(l2 - 1) % ncp.Length] = istep + m;
-                                double al1 = nc[(l1 - 1) % nc.Length];
+                                itran[((l1 - 1) + itran.Length) % itran.Length] = 1;
+                                itran[((l2 - 1) + itran.Length) % itran.Length] = 1;
+                                ncp[((l1 - 1) + ncp.Length) % ncp.Length] = istep + m;
+                                ncp[((l2 - 1) + ncp.Length) % ncp.Length] = istep + m;
+                                double al1 = nc[((l1 - 1) + nc.Length) % nc.Length];
                                 double alw = al1 - 1.0;
-                                double al2 = nc[(l2 - 1) % nc.Length];
+                                double al2 = nc[((l2 - 1) + nc.Length) % nc.Length];
                                 double alt = al2 + 1.0;
                                 for (j = 1; j <= n; j++)
                                 {
-                                    c[(l1 - 1 + (j - 1) * k) % c.Length] =
-                                        (c[(l1 - 1 + (j - 1) * k) % c.Length] * al1 - a[(i - 1 + (j - 1) * m) % a.Length]) / alw;
-                                    c[(l2 - 1 + (j - 1) * k) % c.Length] =
-                                        (c[(l2 - 1 + (j - 1) * k) % c.Length] * al2 + a[(i - 1 + (j - 1) * m) % a.Length]) / alt;
+                                    c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length] =
+                                        (c[((l1 - 1 + (j - 1) * k) + c.Length) % c.Length] * al1 - a[((i - 1 + (j - 1) * m) + a.Length) % a.Length]) / alw;
+                                    c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length] =
+                                        (c[((l2 - 1 + (j - 1) * k) + c.Length) % c.Length] * al2 + a[((i - 1 + (j - 1) * m) + a.Length) % a.Length]) / alt;
                                 }
 
-                                nc[(l1 - 1) % nc.Length] -= 1;
-                                nc[(l2 - 1) % nc.Length] += 1;
-                                an2[(l1 - 1) % an2.Length] = alw / al1;
-                                an1[(l1 - 1) % an1.Length] = alw switch
+                                nc[((l1 - 1) + nc.Length) % nc.Length] -= 1;
+                                nc[((l2 - 1) + nc.Length) % nc.Length] += 1;
+                                an2[((l1 - 1) + an2.Length) % an2.Length] = alw / al1;
+                                an1[((l1 - 1) + an1.Length) % an1.Length] = alw switch
                                 {
                                     > 1.0 => alw / (alw - 1.0),
                                     _ => typeMethods.r8_huge()
                                 };
 
-                                an1[(l2 - 1) % an1.Length] = alt / al2;
-                                an2[(l2 - 1) % an2.Length] = alt / (alt + 1.0);
-                                ic1[(i - 1) % ic1.Length] = l2;
-                                ic2[(i - 1) % ic2.Length] = l1;
+                                an1[((l2 - 1) + an1.Length) % an1.Length] = alt / al2;
+                                an2[((l2 - 1) + an2.Length) % an2.Length] = alt / (alt + 1.0);
+                                ic1[((i - 1) + ic1.Length) % ic1.Length] = l2;
+                                ic2[((i - 1) + ic2.Length) % ic2.Length] = l1;
                             }
                         }
 
