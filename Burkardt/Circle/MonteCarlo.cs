@@ -61,8 +61,8 @@ public static class MonteCarlo
 
         for (int j = 0; j < n; j++ )
         {
-            x[0+j*2] = c[0] + r * Math.Cos ( angle );
-            x[1+j*2] = c[1] + r * Math.Sin ( angle );
+            x[((0+j*2) + x.Length) % x.Length] = c[0] + r * Math.Cos ( angle );
+            x[((1+j*2) + x.Length) % x.Length] = c[1] + r * Math.Sin ( angle );
             angle += golden_angle % 2.0 * Math.PI ;
         }
 
@@ -123,8 +123,8 @@ public static class MonteCarlo
 
         for ( int j = 0; j < n; j++ )
         {
-            x[0+j*2] = c[0] + r * Math.Cos ( 2.0 * Math.PI * theta[j] );
-            x[1+j*2] = c[1] + r * Math.Sin ( 2.0 * Math.PI * theta[j] );
+            x[((0+j*2) + x.Length) % x.Length] = c[0] + r * Math.Cos ( 2.0 * Math.PI * theta[j] );
+            x[((1+j*2) + x.Length) % x.Length] = c[1] + r * Math.Sin ( 2.0 * Math.PI * theta[j] );
         }
 
         return x;

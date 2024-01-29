@@ -45,8 +45,8 @@ public static class QuadratureRule
     {
         for ( int it = 0; it < nt; it++ )
         {
-            w[it] = 1.0 / nt;
-            t[it] = 2.0 * Math.PI * it / nt;
+            w[it % w.Length] = 1.0 / nt;
+            t[it % w.Length] = 2.0 * Math.PI * it / nt;
         }
     }
 }

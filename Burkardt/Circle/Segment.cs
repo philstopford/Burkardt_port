@@ -1356,8 +1356,8 @@ public static class Segment
         //
         for (i = 0; i < n; i++)
         {
-            x[i] = c[0] + eta[i] * vr[0] + xi[i] * vc[0];
-            y[i] = c[1] + eta[i] * vr[1] + xi[i] * vc[1];
+            x[i % x.Length] = c[0] + eta[i] * vr[0] + xi[i] * vc[0];
+            y[i % y.Length] = c[1] + eta[i] * vr[1] + xi[i] * vc[1];
         }
     }
 
@@ -1449,7 +1449,7 @@ public static class Segment
 
         for (i = 0; i < n; i++)
         {
-            x[i] = (2.0 * u[i] - 1.0) * wh[i];
+            x[i % x.Length] = (2.0 * u[i] - 1.0) * wh[i];
         }
 
         //
@@ -1459,7 +1459,7 @@ public static class Segment
         //
         for (i = 0; i < n; i++)
         {
-            y[i] = r - h2[i];
+            y[i % y.Length] = r - h2[i];
         }
     }
 

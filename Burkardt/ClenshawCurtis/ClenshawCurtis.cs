@@ -261,18 +261,18 @@ public static class ClenshawCurtis
                 int i;
                 for (i = 0; i < n; i++)
                 {
-                    result.x[i] = Math.Cos((n - 1 - i) * Math.PI
+                    result.x[i % result.x.Length] = Math.Cos((n - 1 - i) * Math.PI
                                            / (n - 1));
                 }
 
                 result.x[0] = -1.0;
-                result.x[(n + 1) / 2 - 1] = (n % 2) switch
+                result.x[(((n + 1) / 2 - 1) + result.x.Length) % result.x.Length] = (n % 2) switch
                 {
                     1 => 0.0,
-                    _ => result.x[(n + 1) / 2 - 1]
+                    _ => result.x[(((n + 1) / 2 - 1) + result.x.Length) % result.x.Length]
                 };
 
-                result.x[n - 1] = +1.0;
+                result.x[((n - 1) + result.x.Length) % result.x.Length] = +1.0;
 
                 int j;
                 for (i = 0; i < n; i++)
@@ -280,13 +280,13 @@ public static class ClenshawCurtis
                     double theta = i * Math.PI
                                    / (n - 1);
 
-                    result.w[i] = 1.0;
+                    result.w[i % result.w.Length] = 1.0;
 
                     for (j = 1; j <= (n - 1) / 2; j++)
                     {
                         double b = 2 * j == n - 1 ? 1.0 : 2.0;
 
-                        result.w[i] -= b * Math.Cos(2.0 * j * theta)
+                        result.w[i % result.w.Length] -= b * Math.Cos(2.0 * j * theta)
                                        / (4 * j * j - 1);
                     }
                 }
@@ -294,10 +294,10 @@ public static class ClenshawCurtis
                 result.w[0] /= n - 1;
                 for (j = 1; j < n - 1; j++)
                 {
-                    result.w[j] = 2.0 * result.w[j] / (n - 1);
+                    result.w[j % result.w.Length] = 2.0 * result.w[j % result.w.Length] / (n - 1);
                 }
 
-                result.w[n - 1] /= n - 1;
+                result.w[((n - 1) + result.w.Length) % result.w.Length] /= n - 1;
                 break;
             }
         }
@@ -437,9 +437,9 @@ public static class ClenshawCurtis
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            double[] w_1d = cc_weights(order_1d[dim]);
+            double[] w_1d = cc_weights(order_1d[dim % order_1d.Length]);
 
-            typeMethods.r8vec_direct_product2(ref data, dim, order_1d[dim], w_1d, dim_num,
+            typeMethods.r8vec_direct_product2(ref data, dim, order_1d[dim % order_1d.Length], w_1d, dim_num,
                 order_nd, ref w_nd);
         }
 
@@ -502,7 +502,7 @@ public static class ClenshawCurtis
             {
                 double b = 2 * j == n - 1 ? 1.0 : 2.0;
 
-                w[i - 1] -= b * Math.Cos(2.0 * j * theta)
+                w[((i - 1) + w.Length) % w.Length] -= b * Math.Cos(2.0 * j * theta)
                             / (4 * j * j - 1);
             }
         }
@@ -510,10 +510,10 @@ public static class ClenshawCurtis
         w[0] /= n - 1;
         for (i = 1; i < n - 1; i++)
         {
-            w[i] = 2.0 * w[i] / (n - 1);
+            w[i % w.Length] = 2.0 * w[i % w.Length] / (n - 1);
         }
 
-        w[n - 1] /= n - 1;
+        w[((n - 1) + w.Length) % w.Length] /= n - 1;
 
         return w;
     }
@@ -566,16 +566,16 @@ public static class ClenshawCurtis
                 int index;
                 for ( index = 1; index <= n; index++ )
                 {
-                    x[index-1] =  Math.Cos ( (n - index) * Math.PI
+                    x[((index-1) + x.Length) % x.Length] =  Math.Cos ( (n - index) * Math.PI
                                              / (n - 1) );
                 }
                 x[0] = -1.0;
-                x[(n - 1) / 2] = (n % 2) switch
+                x[(((n - 1) / 2) + x.Length) % x.Length] = (n % 2) switch
                 {
                     1 => 0.0,
-                    _ => x[(n - 1) / 2]
+                    _ => x[(((n - 1) / 2) + x.Length) % x.Length]
                 };
-                x[n-1] = +1.0;
+                x[((n-1) + x.Length) % x.Length] = +1.0;
                 break;
             }
         }
@@ -637,14 +637,14 @@ public static class ClenshawCurtis
         {
             double theta = (i - 1) * Math.PI / (n - 1);
 
-            w[i - 1] = 1.0;
+            w[((i - 1) + w.Length) % w.Length] = 1.0;
 
             int j;
             for (j = 1; j <= (n - 1) / 2; j++)
             {
                 double b = 2 * j == n - 1 ? 1.0 : 2.0;
 
-                w[i - 1] -= b * Math.Cos(2.0 * j * theta)
+                w[((i - 1) + w.Length) % w.Length] -= b * Math.Cos(2.0 * j * theta)
                             / (4 * j * j - 1);
             }
         }
@@ -652,10 +652,10 @@ public static class ClenshawCurtis
         w[0] /= n - 1;
         for (i = 1; i < n - 1; i++)
         {
-            w[i] = 2.0 * w[i] / (n - 1);
+            w[i % w.Length] = 2.0 * w[i % w.Length] / (n - 1);
         }
 
-        w[n - 1] /= n - 1;
+        w[((n - 1) + w.Length) % w.Length] /= n - 1;
     }
 
     public static double[] clenshaw_curtis_compute_weights_np(int n, int np, double[] p,
@@ -877,11 +877,11 @@ public static class ClenshawCurtis
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            order[dim] = level[dim] switch
+            order[dim % order.Length] = level[dim % level.Length] switch
             {
                 < 0 => -1,
                 0 => 1,
-                _ => (int) Math.Pow(2, level[dim]) + 1
+                _ => (int) Math.Pow(2, level[dim % level.Length]) + 1
             };
         }
     }
@@ -993,7 +993,7 @@ public static class ClenshawCurtis
                 int i;
                 for (i = 0; i < order; i++)
                 {
-                    x[i] = Math.Cos((order - 1 - i) * Math.PI
+                    x[i % x.Length] = Math.Cos((order - 1 - i) * Math.PI
                                     / (order - 1));
                 }
 
@@ -1001,23 +1001,23 @@ public static class ClenshawCurtis
                 x[(order - 1) / 2] = (order % 2) switch
                 {
                     1 => 0.0,
-                    _ => x[(order - 1) / 2]
+                    _ => x[(((order - 1) / 2) + x.Length) % x.Length]
                 };
 
-                x[order - 1] = +1.0;
+                x[((order - 1) + x.Length) % x.Length] = +1.0;
 
                 for (i = 0; i < order; i++)
                 {
                     double theta = i * Math.PI / (order - 1);
 
-                    w[i] = 1.0;
+                    w[i % w.Length] = 1.0;
 
                     int j;
                     for (j = 1; j <= (order - 1) / 2; j++)
                     {
                         double b = 2 * j == order - 1 ? 1.0 : 2.0;
 
-                        w[i] -= b * Math.Cos(2.0 * j * theta)
+                        w[i % w.Length] -= b * Math.Cos(2.0 * j * theta)
                                 / (4 * j * j - 1);
                     }
                 }
@@ -1025,10 +1025,10 @@ public static class ClenshawCurtis
                 w[0] /= order - 1;
                 for (i = 1; i < order - 1; i++)
                 {
-                    w[i] = 2.0 * w[i] / (order - 1);
+                    w[i % w.Length] = 2.0 * w[i % w.Length] / (order - 1);
                 }
 
-                w[order - 1] /= order - 1;
+                w[((order - 1) + w.Length) % w.Length] /= order - 1;
                 break;
             }
         }
@@ -1088,18 +1088,18 @@ public static class ClenshawCurtis
                 int i;
                 for (i = 1; i <= n; i++)
                 {
-                    x[i - 1] = Math.Cos((n - i) * Math.PI
+                    x[((i - 1) + x.Length) % x.Length] = Math.Cos((n - i) * Math.PI
                                         / (n - 1));
                 }
 
                 x[0] = -1.0;
-                x[(n - 1) / 2] = (n % 2) switch
+                x[(((n - 1) / 2) + x.Length) % x.Length] = (n % 2) switch
                 {
                     1 => 0.0,
-                    _ => x[(n - 1) / 2]
+                    _ => x[(((n - 1) / 2) + x.Length) % x.Length]
                 };
 
-                x[n - 1] = +1.0;
+                x[((n - 1) + x.Length) % x.Length] = +1.0;
                 break;
             }
         }
@@ -1233,11 +1233,11 @@ public static class ClenshawCurtis
                 switch (i % 2)
                 {
                     case 1:
-                        x[m + i - 1] = tu / 2.0 / k;
+                        x[((m + i - 1) + x.Length) % x.Length] = tu / 2.0 / k;
                         tu += 2;
                         break;
                     default:
-                        x[m + i - 1] = td / 2.0 / k;
+                        x[((m + i - 1) + x.Length) % x.Length] = td / 2.0 / k;
                         td -= 2;
                         break;
                 }
@@ -1252,7 +1252,7 @@ public static class ClenshawCurtis
         //
         for (i = 0; i < n; i++)
         {
-            x[i] = Math.Cos(x[i] * Math.PI);
+            x[i] = Math.Cos(x[i % x.Length] * Math.PI);
         }
 
         x[0] = 0.0;
@@ -1379,11 +1379,11 @@ public static class ClenshawCurtis
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            order[dim] = level[dim] switch
+            order[dim % order.Length] = level[dim] switch
             {
                 < 0 => -1,
                 0 => 1,
-                _ => (int) Math.Pow(2, level[dim] + 1) - 1
+                _ => (int) Math.Pow(2, level[dim % level.Length] + 1) - 1
             };
         }
     }
@@ -1448,18 +1448,18 @@ public static class ClenshawCurtis
             int j;
             for (j = 0; j < n; j++)
             {
-                d[j] = 0.0;
+                d[j % d.Length] = 0.0;
             }
 
-            d[i] = 1.0;
+            d[i % d.Length] = 1.0;
 
             int k;
             for (j = 2; j <= n; j++)
             {
                 for (k = j; k <= n; k++)
                 {
-                    d[n + j - k - 1] = (d[n + j - k - 1 - 1] - d[n + j - k - 1]) /
-                                       (x[n + 1 - k - 1] - x[n + j - k - 1]);
+                    d[n + j - k - 1] = (d[((n + j - k - 1 - 1) + d.Length) % d.Length] - d[((n + j - k - 1) + d.Length) % d.Length]) /
+                                       (x[((n + 1 - k - 1) + x.Length) % x.Length] - x[((n + j - k - 1) + x.Length) % x.Length]);
                 }
             }
 
@@ -1467,7 +1467,7 @@ public static class ClenshawCurtis
             {
                 for (k = 1; k <= n - j; k++)
                 {
-                    d[n - k - 1] -= x[n - k - j] * d[n - k];
+                    d[((n - k - 1) + d.Length) % d.Length] -= x[((n - k - j) + x.Length) % x.Length] * d[((n - k) + d.Length) % d.Length];
                 }
             }
 
@@ -1475,23 +1475,23 @@ public static class ClenshawCurtis
             //  Evaluate the antiderivative of the polynomial at the left and
             //  right endpoints.
             //
-            double yvala = d[n - 1] / n;
+            double yvala = d[((n - 1) + d.Length) % d.Length] / n;
             for (j = n - 2; 0 <= j; j--)
             {
-                yvala = yvala * x_min + d[j] / (j + 1);
+                yvala = yvala * x_min + d[j % d.Length] / (j + 1);
             }
 
             yvala *= x_min;
 
-            double yvalb = d[n - 1] / n;
+            double yvalb = d[((n - 1) + d.Length) % d.Length] / n;
             for (j = n - 2; 0 <= j; j--)
             {
-                yvalb = yvalb * x_max + d[j] / (j + 1);
+                yvalb = yvalb * x_max + d[j % d.Length] / (j + 1);
             }
 
             yvalb *= x_max;
 
-            w[i] = yvalb - yvala;
+            w[i % w.Length] = yvalb - yvala;
         }
 
         return w;
@@ -1541,12 +1541,12 @@ public static class ClenshawCurtis
 
         for (i = 0; i < n; i++)
         {
-            x[i] = (a + b + (b - a) * x[i]) / 2.0;
+            x[i % x.Length] = (a + b + (b - a) * x[i % x.Length]) / 2.0;
         }
 
         for (i = 0; i < n; i++)
         {
-            w[i] = (b - a) * w[i] / 2.0;
+            w[i % w.Length] = (b - a) * w[i % w.Length] / 2.0;
         }
     }
 
