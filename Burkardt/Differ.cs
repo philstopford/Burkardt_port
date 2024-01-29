@@ -54,7 +54,7 @@ public static class Differ
 
         for (i = 0; i < n; i++)
         {
-            x[i] = (i + 1 - n) * h;
+            x[i % x.Length] = (i + 1 - n) * h;
         }
 
         double[] b = new double[n];
@@ -80,7 +80,7 @@ public static class Differ
         double t = typeMethods.r8_factorial(o);
         for (i = 0; i < n; i++)
         {
-            c[i] *= t;
+            c[i % c.Length] *= t;
         }
     }
 
@@ -134,7 +134,7 @@ public static class Differ
 
         for (i = 0; i < n; i++)
         {
-            x[i] = (-n + 1 + 2 * i) * h / 2.0;
+            x[i % x.Length] = (-n + 1 + 2 * i) * h / 2.0;
         }
 
         double[] b = new double[n];
@@ -159,7 +159,7 @@ public static class Differ
         double t = typeMethods.r8_factorial(o);
         for (i = 0; i < n; i++)
         {
-            c[i] *= t;
+            c[i % c.Length] *= t;
         }
     }
 
@@ -212,7 +212,7 @@ public static class Differ
 
         for (i = 0; i < n; i++)
         {
-            x[i] = i * h;
+            x[i % x.Length] = i * h;
         }
 
         double[] b = new double[n];
@@ -237,7 +237,7 @@ public static class Differ
         double t = typeMethods.r8_factorial(o);
         for (i = 0; i < n; i++)
         {
-            c[i] *= t;
+            c[i % c.Length] *= t;
         }
     }
 

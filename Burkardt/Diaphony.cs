@@ -62,7 +62,7 @@ public static class Diaphony
                 int k;
                 for ( k = 0; k < dim_num; k++ )
                 {
-                    double z = typeMethods.r8_modp ( x[k+i*dim_num] - x[k+j*dim_num], 1.0 );
+                    double z = typeMethods.r8_modp ( x[((k+i*dim_num) + x.Length) % x.Length] - x[((k+j*dim_num) + x.Length) % x.Length], 1.0 );
                     prod *= 1.0 + 2.0 * Math.PI * Math.PI * ( z * z - z + 1.0 / 6.0 );
                 }
                 d = d + prod - 1.0;
