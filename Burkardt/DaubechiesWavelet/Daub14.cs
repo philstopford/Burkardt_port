@@ -76,8 +76,8 @@ public static class Daub14
                 {
                     int j0 = typeMethods.i4_wrap(j + k, 0, m - 1);
                     int j1 = typeMethods.i4_wrap(j + k + 1, 0, m - 1);
-                    z[i] = z[i] + c[k] * y[j0] + c[k + 1] * y[j1];
-                    z[i + m / 2] = z[i + m / 2] + c[p - k] * y[j0] - c[p - k - 1] * y[j1];
+                    z[i % z.Length] = z[i % z.Length] + c[k % c.Length] * y[j0 % y.Length] + c[(k + 1) % c.Length] * y[j1 % y.Length];
+                    z[(i + m / 2) % z.Length] = z[(i + m / 2) % z.Length] + c[(p - k) % c.Length] * y[j0 % y.Length] - c[(p - k - 1) % c.Length] * y[j1 % y.Length];
                 }
 
                 i += 1;
@@ -166,8 +166,8 @@ public static class Daub14
                 {
                     int i0 = typeMethods.i4_wrap(i + k / 2, 0, m / 2 - 1);
                     int i1 = typeMethods.i4_wrap(i + m / 2 + k / 2, m / 2, m - 1);
-                    z[j] = z[j] + c[p - k - 1] * x[i0] + c[k + 1] * x[i1];
-                    z[j + 1] = z[j + 1] + c[p - k] * x[i0] - c[k] * x[i1];
+                    z[j % z.Length] = z[j % z.Length] + c[(p - k - 1) % c.Length] * x[i0 % x.Length] + c[(k + 1) % c.Length] * x[i1 % x.Length];
+                    z[(j + 1) % z.Length] = z[(j + 1) % z.Length] + c[(p - k) % c.Length] * x[i0 % x.Length] - c[k % c.Length] * x[i1 % x.Length];
                 }
 
                 j += 2;

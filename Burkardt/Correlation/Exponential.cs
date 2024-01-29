@@ -47,7 +47,7 @@ public static partial class Correlation
         double[] c = new double[n];
         for ( i = 0; i < n; i++ )
         {
-            c[i] = Math.Exp ( - Math.Abs ( rho[i % rho.length] ) / rho0 );
+            c[i] = Math.Exp ( - Math.Abs ( rho[i % rho.Length] ) / rho0 );
         }
         return new CorrelationResult {result = c, data = globaldata, k1data = data};
     }

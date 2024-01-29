@@ -42,8 +42,8 @@ public static partial class Correlation
 
         for ( i = 0; i < n; i++ )
         {
-            c[i] = ( 1.0 - Math.Abs ( rho[i % rho.length] ) / rho0 ) 
-                   * Math.Exp ( - Math.Abs ( rho[i % rho.length] ) / rho0 );
+            c[i] = ( 1.0 - Math.Abs ( rho[i % rho.Length] ) / rho0 ) 
+                   * Math.Exp ( - Math.Abs ( rho[i % rho.Length] ) / rho0 );
         }
         return new CorrelationResult {result = c, data = globaldata, k1data = data};
     }

@@ -53,7 +53,7 @@ public static partial class Correlation
 
         for ( i = 0; i < n; i++ )
         {
-            double rhohat = Math.Min ( Math.Abs ( rho[i % rho.length] ) / rho0, 1.0 );
+            double rhohat = Math.Min ( Math.Abs ( rho[i % rho.Length] ) / rho0, 1.0 );
 
             c[i] = 1.0 - 1.875 * rhohat + 1.25 * Math.Pow ( rhohat, 3 )
                    - 0.375 * Math.Pow ( rhohat, 5 );

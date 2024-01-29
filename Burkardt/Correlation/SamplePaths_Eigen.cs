@@ -83,7 +83,7 @@ public static partial class SamplePaths
             for (i = 0; i < n; i++)
             {
                 k = typeMethods.i4_wrap(Math.Abs(i - j), 0, n - 1);
-                cor[((i + j * n) + cor.Length) % cor.Length] = cor_vec[k % cor_vec.length];
+                cor[((i + j * n) + cor.Length) % cor.Length] = cor_vec[k % cor_vec.Length];
             }
         }
 
