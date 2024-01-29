@@ -112,7 +112,7 @@ public static class BoxBehnken
 
                 for (int i2 = last_low + 1; i2 < dim_num; i2++ )
                 {
-                    if ( Math.Abs(x[((i2+j*dim_num) + x.Length) % x.Length] - range[((i2+1*dim_num]) + range.Length) % range.Length) <= typeMethods.r8_epsilon() )
+                    if ( Math.Abs(x[((i2+j*dim_num) + x.Length) % x.Length] - range[((i2+1*dim_num) + range.Length) % range.Length]) <= typeMethods.r8_epsilon() )
                     {
                         x[((i2+j*dim_num) + x.Length) % x.Length] = range[((i2+0*dim_num) + range.Length) % range.Length];
                     }

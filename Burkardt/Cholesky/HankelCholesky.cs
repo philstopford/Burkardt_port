@@ -63,7 +63,7 @@ public static class HankelCholesky
                     b = 0.0;
                     break;
                 default:
-                    a = c[((i + (i + 1) * (2 * n - 1)) + c.Length) % c.Length] / c[((i + i * (2 * n - 1)) + .Length) % .Length] -
+                    a = c[((i + (i + 1) * (2 * n - 1)) + c.Length) % c.Length] / c[((i + i * (2 * n - 1)) + c.Length) % c.Length] -
                         c[((i - 1 + i * (2 * n - 1)) + c.Length) % c.Length] / c[((i - 1 + (i - 1) * (2 * n - 1)) + c.Length) % c.Length];
                     b = c[((i + i * (2 * n - 1)) + c.Length) % c.Length] / c[((i - 1 + (i - 1) * (2 * n - 1)) + c.Length) % c.Length];
                     break;
