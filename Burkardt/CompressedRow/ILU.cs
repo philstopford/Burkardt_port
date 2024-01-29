@@ -60,7 +60,7 @@ public static class ILUCR
         //
         for (k = 0; k < nz_num; k++)
         {
-            l[k] = a[k];
+            l[k % l.Length] = a[k % a.Length];
         }
 
         for (i = 0; i < n; i++)
@@ -74,37 +74,37 @@ public static class ILUCR
                 iw[j] = -1;
             }
 
-            for (k = ia[i]; k <= ia[i + 1] - 1; k++)
+            for (k = ia[i % ia.Length]; k <= ia[(i + 1) % ia.Length] - 1; k++)
             {
-                iw[ja[k]] = k;
+                iw[ja[k % j.Length] % iw.Length] = k;
             }
 
-            j = ia[i];
+            j = ia[i % ia.Length];
             int jrow;
             do
             {
-                jrow = ja[j];
+                jrow = ja[j % ja.Length];
                 if (i <= jrow)
                 {
                     break;
                 }
 
-                double tl = l[j] * l[ua[jrow]];
-                l[j] = tl;
+                double tl = l[j % l.Length] * l[ua[jrow % ua.Length] % l.Length];
+                l[j % l.Length] = tl;
                 int jj;
-                for (jj = ua[jrow] + 1; jj <= ia[jrow + 1] - 1; jj++)
+                for (jj = ua[jrow % ua.Length] + 1; jj <= ia[(jrow + 1) % ia.Length] - 1; jj++)
                 {
-                    int jw = iw[ja[jj]];
+                    int jw = iw[ja[jj % ja.Length] % iw.Length];
                     if (jw != -1)
                     {
-                        l[jw] -= tl * l[jj];
+                        l[jw % l.Length] -= tl * l[jj % l.Length];
                     }
                 }
 
                 j += 1;
-            } while (j <= ia[i + 1] - 1);
+            } while (j <= ia[(i + 1) % ia.Length] - 1);
 
-            ua[i] = j;
+            ua[i % ua.Length] = j;
 
             if (jrow != i)
             {
@@ -116,7 +116,7 @@ public static class ILUCR
                 return;
             }
 
-            switch (l[j])
+            switch (l[j % l.Length])
             {
                 case 0.0:
                     Console.WriteLine("");
@@ -125,14 +125,14 @@ public static class ILUCR
                     Console.WriteLine("  L[" + j + "] = 0.0");
                     return;
                 default:
-                    l[j] = 1.0 / l[j];
+                    l[j % l.Length] = 1.0 / l[j % l.Length];
                     break;
             }
         }
 
         for (k = 0; k < n; k++)
         {
-            l[ua[k]] = 1.0 / l[ua[k]];
+            l[ua[k % ua.Length] % l.Length] = 1.0 / l[ua[k % ua.Length] % l.Length];
         }
     }
 }

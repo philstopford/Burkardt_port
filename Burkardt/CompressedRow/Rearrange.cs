@@ -58,8 +58,8 @@ public static class RearrangeCR
 
         for (i = 0; i < n; i++)
         {
-            int j1 = ia[i];
-            int j2 = ia[i + 1];
+            int j1 = ia[i % ia.Length];
+            int j2 = ia[(i + 1) % ia.Length];
             int is_ = j2 - j1;
 
             int k;
@@ -68,14 +68,14 @@ public static class RearrangeCR
                 int j;
                 for (j = j1; j < j2 - k; j++)
                 {
-                    if (ja[j + 1] >= ja[j])
+                    if (ja[((j + 1) + ja.Length) % ja.Length] >= ja[((j) + ja.Length) % ja.Length])
                     {
                         continue;
                     }
 
-                    (ja[j + 1], ja[j]) = (ja[j], ja[j + 1]);
+                    (ja[((j + 1) + ja.Length) % ja.Length], ja[((j) + ja.Length) % ja.Length]) = (ja[((j) + ja.Length) % ja.Length], ja[((j + 1) + ja.Length) % ja.Length]);
 
-                    (a[j + 1], a[j]) = (a[j], a[j + 1]);
+                    (a[((j + 1) + a.Length) % a.Length], a[((j) + a.Length) % a.Length]) = (a[((j) + a.Length) % a.Length], a[((j + 1) + a.Length) % a.Length]);
                 }
             }
         }

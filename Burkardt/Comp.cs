@@ -98,7 +98,7 @@ public static class Comp
         int row = 0;
         for (i = 0; i < d; i++)
         {
-            fs[row + i * seq_num] = seq[i] + 1;
+            fs[((row + i * seq_num) + fs.Length) % fs.Length] = seq[i] + 1;
         }
 
         int c = 0;
@@ -136,7 +136,7 @@ public static class Comp
             row += 1;
             for (i = 0; i < d; i++)
             {
-                fs[row + i * seq_num] = seq[i] + 1;
+                fs[((row + i * seq_num) + fs.Length) % fs.Length] = seq[i] + 1;
             }
         }
 
@@ -369,7 +369,7 @@ public static class Comp
         //
         for (i = 0; i < kc; i++)
         {
-            switch (xc[i])
+            switch (xc[i % xc.Length])
             {
                 case < 0:
                     Console.WriteLine("");
@@ -385,7 +385,7 @@ public static class Comp
         i = 0;
         for (j = kc; 1 <= j; j--)
         {
-            if (0 >= xc[j - 1])
+            if (0 >= xc[(j - 1) % xc.Length])
             {
                 continue;
             }
@@ -403,21 +403,21 @@ public static class Comp
             //  increment XC(KC) by T-1.
             //
             case 0:
-                xc[kc - 1] = 1;
+                xc[((kc - 1) + xc.Length) % xc.Length] = 1;
                 return;
             case 1:
                 t = xc[0] + 1;
                 im1 = kc;
                 break;
             case > 1:
-                t = xc[i - 1];
+                t = xc[((i - 1) + xc.Length) % xc.Length];
                 im1 = i - 1;
                 break;
         }
 
-        xc[i - 1] = 0;
-        xc[im1 - 1] += 1;
-        xc[kc - 1] = xc[kc - 1] + t - 1;
+        xc[((i - 1) + xc.Length) % xc.Length] = 0;
+        xc[((im1 - 1) + xc.Length) % xc.Length] += 1;
+        xc[((kc - 1) + xc.Length) % xc.Length] = xc[((kc - 1) + xc.Length) % xc.Length] + t - 1;
     }
 
     public static void comp_random(int n, int k, ref int seed, ref int[] a)
@@ -469,17 +469,17 @@ public static class Comp
 
         for (i = 0; i < k - 1; i++)
         {
-            a[i] = b[i];
+            a[i % a.Length] = b[i];
         }
 
-        a[k - 1] = n + k;
+        a[((k - 1) + a.Length) % a.Length] = n + k;
 
         int l = 0;
 
         for (i = 0; i < k; i++)
         {
-            int m = a[i];
-            a[i] = a[i] - l - 1;
+            int m = a[i % a.Length];
+            a[i % a.Length] = a[i % a.Length] - l - 1;
             l = m;
         }
     }
@@ -612,7 +612,7 @@ public static class Comp
 
         Ksub.ksub_random2 ( n+k-1, k-1, ref seed, ref a );
 
-        a[k-1] = n + k;
+        a[((k-1) + a.Length) % a.Length] = n + k;
         int l = 0;
 
         for ( i = 0; i < k; i++ )
@@ -734,7 +734,7 @@ public static class Comp
         xs[0] = xc[0] + 1;
         for (i = 2; i < kc; i++)
         {
-            xs[i - 1] = xs[i - 2] + xc[i - 1] + 1;
+            xs[((i - 1) + xs.Length) % xs.Length] = xs[((i - 2) + xs.Length) % xs.Length] + xc[((i - 1) + xc.Length) % xc.Length] + 1;
         }
 
         //
@@ -747,7 +747,7 @@ public static class Comp
             int tim1 = i switch
             {
                 1 => 0,
-                _ => xs[i - 2]
+                _ => xs[((i - 2) + xs.Length) % xs.Length]
             };
 
             if (tim1 + 1 > xs[i - 1] - 1)
@@ -756,7 +756,7 @@ public static class Comp
             }
 
             int j;
-            for (j = tim1 + 1; j <= xs[i - 1] - 1; j++)
+            for (j = tim1 + 1; j <= xs[((i - 1) + xs.Length) % xs.Length] - 1; j++)
             {
                 rank += typeMethods.i4_choose(ns - j, ks - i);
             }
@@ -826,7 +826,7 @@ public static class Comp
         as_[0] = ac[0] + 1;
         for (i = 1; i < kc - 1; i++)
         {
-            as_[i] = as_[i - 1] + ac[i] + 1;
+            as_[i % as_.Length] = as_[(i - 1) % as_.Length] + ac[i % ac.Length] + 1;
         }
     }
 
@@ -1072,7 +1072,7 @@ public static class Comp
                 a[0] = n;
                 for (int i = 1; i < k; i++)
                 {
-                    a[i] = 0;
+                    a[i % a.Length] = 0;
                 }
 
                 break;
@@ -1086,15 +1086,15 @@ public static class Comp
                 };
 
                 h += 1;
-                t = a[h - 1];
-                a[h - 1] = 0;
+                t = a[((h - 1) + a.Length) % a.Length];
+                a[((h - 1) + a.Length) % a.Length] = 0;
                 a[0] = t - 1;
-                a[h] += 1;
+                a[h % a.Length] += 1;
                 break;
             }
         }
 
-        more = a[k - 1] != n;
+        more = a[((k - 1) + a.Length) % a.Length] != n;
     }
 
     public static int compnz_enum(int n, int k)
@@ -1247,7 +1247,7 @@ public static class Comp
             more = false;
             for (i = 0; i < k; i++)
             {
-                a[i] = -1;
+                a[i % a.Length] = -1;
             }
 
             return;
@@ -1265,7 +1265,7 @@ public static class Comp
                 a[0] = n - k;
                 for (i = 1; i < k; i++)
                 {
-                    a[i] = 0;
+                    a[i % a.Length] = 0;
                 }
 
                 break;
@@ -1274,7 +1274,7 @@ public static class Comp
             {
                 for (i = 0; i < k; i++)
                 {
-                    a[i] -= 1;
+                    a[i % a.Length] -= 1;
                 }
 
                 data.h = data.t switch
@@ -1284,19 +1284,19 @@ public static class Comp
                 };
 
                 data.h += 1;
-                data.t = a[data.h - 1];
-                a[data.h - 1] = 0;
+                data.t = a[((data.h - 1) + a.Length) % a.Length];
+                a[((data.h - 1) + a.Length) % a.Length] = 0;
                 a[0] = data.t - 1;
-                a[data.h] += 1;
+                a[data.h % a.Length] += 1;
                 break;
             }
         }
 
-        more = a[k - 1] != n - k;
+        more = a[((k - 1) + a.Length) % a.Length] != n - k;
 
         for (i = 0; i < k; i++)
         {
-            a[i] += 1;
+            a[i % a.Length] += 1;
         }
     }
 
@@ -1347,7 +1347,7 @@ public static class Comp
         {
             for (i = 0; i < k; i++)
             {
-                a[i] = -1;
+                a[i % a.Length] = -1;
             }
 
             return;
@@ -1360,19 +1360,19 @@ public static class Comp
                 break;
         }
 
-        a[k - 1] = n;
+        a[((k - 1) + a.Length) % a.Length] = n;
         int l = 0;
 
         for (i = 0; i < k; i++)
         {
-            int m = a[i];
-            a[i] = a[i] - l - 1;
+            int m = a[i % a.Length];
+            a[i] = a[i % a.Length] - l - 1;
             l = m;
         }
 
         for (i = 0; i < k; i++)
         {
-            a[i] += 1;
+            a[i % a.Length] += 1;
         }
 
     }
@@ -1434,7 +1434,7 @@ public static class Comp
         as_[0] = ac[0];
         for (i = 1; i < kc - 1; i++)
         {
-            as_[i] = as_[i - 1] + ac[i];
+            as_[i % as_.Length] = as_[((i - 1) + as_.Length) % as_.Length] + ac[i % ac.Length];
         }
     }
 
@@ -1515,7 +1515,7 @@ public static class SubComp
                 int i;
                 for (i = 0; i < k; i++)
                 {
-                    a[i] = 0;
+                    a[i % a.Length] = 0;
                 }
 
                 data.more2 = false;
@@ -1611,7 +1611,7 @@ public static class SubComp
         {
             for (i = 0; i < k; i++)
             {
-                a[i] = -1;
+                a[i % a.Length] = -1;
             }
 
             return;
@@ -1626,7 +1626,7 @@ public static class SubComp
             {
                 for (i = 0; i < k; i++)
                 {
-                    a[i] = 1;
+                    a[i % a.Length] = 1;
                 }
 
                 more = true;
@@ -1730,7 +1730,7 @@ public static class SubComp
         {
             for (i = 0; i < k; i++)
             {
-                a[i] = -1;
+                a[i % a.Length] = -1;
             }
 
             return;
@@ -1740,7 +1740,7 @@ public static class SubComp
         {
             for (i = 0; i < k; i++)
             {
-                a[i] = -1;
+                a[i % a.Length] = -1;
             }
 
             return;

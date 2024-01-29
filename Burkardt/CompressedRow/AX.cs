@@ -85,13 +85,13 @@ public static class AXCR
 
         for (i = 0; i < n; i++)
         {
-            w[wIndex + i] = 0.0;
-            int k1 = ia[i];
-            int k2 = ia[i + 1];
+            w[((wIndex + i) + w.Length) % w.Length] = 0.0;
+            int k1 = ia[i % ia.Length];
+            int k2 = ia[(i + 1) % ia.Length];
             int k;
             for (k = k1; k < k2; k++)
             {
-                w[wIndex + i] += a[aIndex + k] * x[xIndex + ja[k]];
+                w[((wIndex + i) + w.Length) % w.Length] += a[((aIndex + k) + a.Length) % a.Length] * x[((xIndex + ja[((k) + ja.Length) % ja.Length]) + x.Length) % x.Length];
             }
         }
     }

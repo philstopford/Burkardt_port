@@ -64,7 +64,7 @@ public static class LUSCR
         //
         for (i = 0; i < n; i++)
         {
-            w[i] = r[rIndex + i];
+            w[i] = r[((rIndex + i) + r.Length) % r.Length];
         }
 
         //
@@ -72,9 +72,9 @@ public static class LUSCR
         //
         for (i = 1; i < n; i++)
         {
-            for (j = ia[i]; j < ua[i]; j++)
+            for (j = ia[i % ia.Length]; j < ua[i % ua.Length]; j++)
             {
-                w[i] -= l[j] * w[ja[j]];
+                w[i] -= l[((j) + j.Length) % j.Length] * w[((ja[((j) + ja.Length) % ja.Length]) + w.Length) % w.Length];
             }
         }
 
@@ -83,12 +83,12 @@ public static class LUSCR
         //
         for (i = n - 1; 0 <= i; i--)
         {
-            for (j = ua[i] + 1; j < ia[i + 1]; j++)
+            for (j = ua[i % ua.Length] + 1; j < ia[(i + 1) % ia.Length]; j++)
             {
-                w[i] -= l[j] * w[ja[j]];
+                w[((i) + w.Length) % w.Length] -= l[((j) + l.Length) % l.Length] * w[((ja[((j) + ja.Length) % ja.Length]) + w.Length) % w.Length];
             }
 
-            w[i] /= l[ua[i]];
+            w[((i) + w.Length) % w.Length] /= l[((ua[((i) + ua.Length) % ua.Length]) + l.Length) % l.Length];
         }
 
         //
@@ -96,7 +96,7 @@ public static class LUSCR
         //
         for (i = 0; i < n; i++)
         {
-            z[zIndex + i] = w[i];
+            z[((zIndex + i) + z.Length) % z.Length] = w[i % w.Length];
         }
     }
 }

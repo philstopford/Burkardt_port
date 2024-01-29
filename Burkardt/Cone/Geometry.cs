@@ -81,7 +81,7 @@ public static class Geometry
 
         for (i = 0; i < dim_num; i++)
         {
-            centroid[i] = 0.75 * pc[i] + 0.25 * pt[i];
+            centroid[i] = 0.75 * pc[i % pc.Length] + 0.25 * pt[i % pt.Length];
         }
 
         return centroid;
