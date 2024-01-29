@@ -59,12 +59,12 @@ public static class HankelSPDCholesky
 
         for (i = 0; i < n; i++)
         {
-            l[i + i * n] = lii[i];
+            l[((i + i * n) + l.Length) % l.Length] = lii[i % lii.Length];
         }
 
         for (i = 0; i < n - 1; i++)
         {
-            l[i + 1 + i * n] = liim1[i];
+            l[((i + 1 + i * n) + l.Length) % l.Length] = liim1[i % liim1.Length];
         }
 
         for (i = 2; i < n; i++)
@@ -90,17 +90,17 @@ public static class HankelSPDCholesky
                 int s;
                 for (s = 0; s <= q; s++)
                 {
-                    alpha += l[q + s * n] * l[r + s * n];
+                    alpha += l[((q + s * n) + l.Length) % l.Length] * l[((r + s * n) + l.Length) % l.Length];
                 }
 
                 double beta = 0.0;
                 int t;
                 for (t = 0; t < j; t++)
                 {
-                    beta += l[i + t * n] * l[j + t * n];
+                    beta += l[((i + t * n) + l.Length) % l.Length] * l[((j + t * n) + l.Length) % l.Length];
                 }
 
-                l[i + j * n] = (alpha - beta) / l[j + j * n];
+                l[((i + j * n) + l.Length) % l.Length] = (alpha - beta) / l[((j + j * n) + l.Length) % l.Length];
             }
         }
 

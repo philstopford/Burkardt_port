@@ -48,8 +48,8 @@ public static class Circle
                           + j * a[1] ) 
                         / (n     - 1);
 
-            xy[0+j*2] = c[0] + r * Math.Cos ( aj * Math.PI / 180.0 );
-            xy[1+j*2] = c[1] + r * Math.Sin ( aj * Math.PI / 180.0 );
+            xy[((0+j*2) + xy.Length) % xy.Length] = c[0] + r * Math.Cos ( aj * Math.PI / 180.0 );
+            xy[((1+j*2) + xy.Length) % xy.Length] = c[1] + r * Math.Sin ( aj * Math.PI / 180.0 );
         }
 
         return xy;

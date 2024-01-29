@@ -72,7 +72,7 @@ public static class Geometry
                 dist = 0.0;
                 for (i = 0; i < DIM_NUM; i++)
                 {
-                    dist += Math.Pow(p[i] - pn[i], 2);
+                    dist += Math.Pow(p[i % p.Length] - pn[i % pn.Length], 2);
                 }
 
                 dist = Math.Sqrt(dist);
@@ -94,13 +94,13 @@ public static class Geometry
             double r2 = 0.0;
             for (i = 0; i < DIM_NUM; i++)
             {
-                r2 += Math.Pow(p[i] - pc[i], 2);
+                r2 += Math.Pow(p[i % p.Length] - pc[i % pc.Length], 2);
             }
 
             r2 = Math.Sqrt(r2);
             for (i = 0; i < DIM_NUM; i++)
             {
-                pn[i] = pc[i] + (p[i] - pc[i]) * r / r2;
+                pn[i % pn.Length] = pc[i % pc.Length] + (p[i % p.Length] - pc[i % pc.Length]) * r / r2;
             }
         }
         //
@@ -126,7 +126,7 @@ public static class Geometry
         dist = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            dist += Math.Pow(p[i] - pn[i], 2);
+            dist += Math.Pow(p[i % p.Length] - pn[i % pn.Length], 2);
         }
 
         dist = Math.Sqrt(dist);
@@ -808,7 +808,7 @@ public static class Geometry
             dist = r;
             for (i = 0; i < DIM_NUM; i++)
             {
-                pn[i] = pc[i] + r / Math.Sqrt(DIM_NUM);
+                pn[i % pn.Length] = pc[i % pc.Length] + r / Math.Sqrt(DIM_NUM);
             }
 
             return dist;
@@ -817,7 +817,7 @@ public static class Geometry
         double r2 = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            r2 += Math.Pow(p[i] - pc[i], 2);
+            r2 += Math.Pow(p[i % p.Length] - pc[i % pc.Length], 2);
         }
 
         r2 = Math.Sqrt(r2);
@@ -826,7 +826,7 @@ public static class Geometry
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            pn[i] = pc[i] + r * (p[i] - pc[i]) / r2;
+            pn[i % pc.Length] = pc[i % pc.Length] + r * (p[i % p.Length] - pc[i % pc.Length]) / r2;
         }
 
         return dist;
@@ -960,8 +960,8 @@ public static class Geometry
             int i;
             for (i = 0; i < DIM_NUM; i++)
             {
-                p[i + j * DIM_NUM] = pc[i] + r * (Math.Cos(theta) * n1[i]
-                                                  + Math.Sin(theta) * n2[i]);
+                p[((i + j * DIM_NUM) + p.Length) % p.Length] = pc[i % pc.Length] + r * (Math.Cos(theta) * n1[i % n1.Length]
+                                                  + Math.Sin(theta) * n2[i % n2.Length]);
             }
         }
 
@@ -1029,8 +1029,8 @@ public static class Geometry
                 _ => 0.5 * (theta1 + theta3)
             };
 
-            p[0 + i * 2] = pc[0] + r * Math.Cos(theta);
-            p[1 + i * 2] = pc[1] + r * Math.Sin(theta);
+            p[((0 + i * 2) + p.Length) % p.Length] = pc[0] + r * Math.Cos(theta);
+            p[((1 + i * 2) + p.Length) % p.Length] = pc[1] + r * Math.Sin(theta);
         }
 
     }
@@ -1645,7 +1645,7 @@ public static class Geometry
             {
                 for (i = 0; i < DIM_NUM; i++)
                 {
-                    pc[i + j * DIM_NUM] = 0.5 * (p1[i] + p2[i]);
+                    pc[((i + j * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p1[i % p1.Length] + p2[i % p2.Length]);
                 }
             }
         }
@@ -1664,25 +1664,25 @@ public static class Geometry
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            v[i] = p3[i] - p1[i];
+            v[i % v.Length] = p3[i % p3.Length] - p1[i % p1.Length];
         }
 
         double dot = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            dot += v[i] * (p2[i] - p1[i]);
+            dot += v[i % v.Length] * (p2[i % p2.Length] - p1[i % p1.Length]);
         }
 
         dot /= dist;
         for (i = 0; i < DIM_NUM; i++)
         {
-            v[i] -= dot * (p2[i] - p1[i]) / dist;
+            v[i % v.Length] -= dot * (p2[i % p2.Length] - p1[i % p1.Length]) / dist;
         }
 
         double length = typeMethods.r8vec_norm(DIM_NUM, v);
         for (i = 0; i < DIM_NUM; i++)
         {
-            v[i] /= length;
+            v[i % v.Length] /= length;
         }
 
         //
@@ -1690,8 +1690,8 @@ public static class Geometry
         //
         for (i = 0; i < DIM_NUM; i++)
         {
-            pc[i + 0 * DIM_NUM] = 0.5 * (p2[i] + p1[i]) + h * v[i];
-            pc[i + 1 * DIM_NUM] = 0.5 * (p2[i] + p1[i]) - h * v[i];
+            pc[((i + 0 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[i % p2.Length] + p1[i % p1.Length]) + h * v[i % v.Length];
+            pc[((i + 1 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[i % p2.Length] + p1[i % p1.Length]) - h * v[i % v.Length];
         }
 
         Plane.Geometry.plane_exp_normal_3d(p1, p2, p3, ref normal);
@@ -1769,7 +1769,7 @@ public static class Geometry
                 int i;
                 for (i = 0; i < DIM_NUM; i++)
                 {
-                    pc[i + j * DIM_NUM] = 0.5 * (p1[i] + p2[i]);
+                    pc[((i + j * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p1[i % p1.Length] + p2[i % p2.Length]);
                 }
             }
         }
@@ -1784,11 +1784,11 @@ public static class Geometry
         //
         //  We actually have two choices for the normal direction.
         //
-        pc[0 + 0 * DIM_NUM] = 0.5 * (p2[0] + p1[0]) + h * (p2[1] - p1[1]) / dist;
-        pc[1 + 0 * DIM_NUM] = 0.5 * (p2[1] + p1[1]) - h * (p2[0] - p1[0]) / dist;
+        pc[((0 + 0 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[0] + p1[0]) + h * (p2[1] - p1[1]) / dist;
+        pc[((1 + 0 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[1] + p1[1]) - h * (p2[0] - p1[0]) / dist;
 
-        pc[0 + 1 * DIM_NUM] = 0.5 * (p2[0] + p1[0]) - h * (p2[1] - p1[1]) / dist;
-        pc[1 + 1 * DIM_NUM] = 0.5 * (p2[1] + p1[1]) + h * (p2[0] - p1[0]) / dist;
+        pc[((0 + 1 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[0] + p1[0]) - h * (p2[1] - p1[1]) / dist;
+        pc[((1 + 1 * DIM_NUM) + pc.Length) % pc.Length] = 0.5 * (p2[1] + p1[1]) + h * (p2[0] - p1[0]) / dist;
 
         return pc;
     }

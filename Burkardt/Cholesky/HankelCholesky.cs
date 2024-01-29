@@ -49,7 +49,7 @@ public static class HankelCholesky
 
         for (j = 0; j < 2 * n - 1; j++)
         {
-            c[0 + j * (2 * n - 1)] = h[j];
+            c[((0 + j * (2 * n - 1)) + c.Length) % c.Length] = h[j % h.Length];
         }
 
         for (i = 0; i < n - 1; i++)
@@ -59,23 +59,23 @@ public static class HankelCholesky
             switch (i)
             {
                 case 0:
-                    a = c[0 + 1 * (2 * n - 1)] / c[0 + 0 * (2 * n - 1)];
+                    a = c[((0 + 1 * (2 * n - 1)) + c.Length) % c.Length] / c[((0 + 0 * (2 * n - 1)) + c.Length) % c.Length];
                     b = 0.0;
                     break;
                 default:
-                    a = c[i + (i + 1) * (2 * n - 1)] / c[i + i * (2 * n - 1)] -
-                        c[i - 1 + i * (2 * n - 1)] / c[i - 1 + (i - 1) * (2 * n - 1)];
-                    b = c[i + i * (2 * n - 1)] / c[i - 1 + (i - 1) * (2 * n - 1)];
+                    a = c[((i + (i + 1) * (2 * n - 1)) + c.Length) % c.Length] / c[((i + i * (2 * n - 1)) + .Length) % .Length] -
+                        c[((i - 1 + i * (2 * n - 1)) + c.Length) % c.Length] / c[((i - 1 + (i - 1) * (2 * n - 1)) + c.Length) % c.Length];
+                    b = c[((i + i * (2 * n - 1)) + c.Length) % c.Length] / c[((i - 1 + (i - 1) * (2 * n - 1)) + c.Length) % c.Length];
                     break;
             }
 
             for (j = i + 1; j < 2 * n - i - 2; j++)
             {
-                c[i + 1 + j * (2 * n - 1)] = c[i + (j + 1) * (2 * n - 1)] - a * c[i + j * (2 * n - 1)];
+                c[((i + 1 + j * (2 * n - 1)) + c.Length) % c.Length] = c[((i + (j + 1) * (2 * n - 1)) + c.Length) % c.Length] - a * c[((i + j * (2 * n - 1)) + c.Length) % c.Length];
                 switch (i)
                 {
                     case > 0:
-                        c[i + 1 + j * (2 * n - 1)] -= b * c[i - 1 + j * (2 * n - 1)];
+                        c[((i + 1 + j * (2 * n - 1)) + c.Length) % c.Length] -= b * c[((i - 1 + j * (2 * n - 1)) + c.Length) % c.Length];
                         break;
                 }
             }
@@ -87,7 +87,7 @@ public static class HankelCholesky
         {
             for (i = 0; i < n; i++)
             {
-                r[i + j * n] = c[i + j * (2 * n - 1)];
+                r[((i + j * n) + r.Length) % r.Length] = c[((i + j * (2 * n - 1)) + c.Length) % c.Length];
             }
         }
 
@@ -100,12 +100,12 @@ public static class HankelCholesky
             double t = Math.Sqrt(r[i + i * n]);
             for (j = 0; j < i; j++)
             {
-                r[i + j * n] = 0.0;
+                r[((i + j * n) + r.Length) % r.Length] = 0.0;
             }
 
             for (j = i; j < n; j++)
             {
-                r[i + j * n] /= t;
+                r[((i + j * n) + r.Length) % r.Length] /= t;
             }
         }
         return r;
@@ -166,12 +166,12 @@ public static class HankelCholesky
 
         for (i = 0; i < n; i++)
         {
-            l[i + i * n] = lii[i];
+            l[((i + i * n) + l.Length) % l.Length] = lii[i % lii.Length];
         }
 
         for (i = 0; i < n - 1; i++)
         {
-            l[i + 1 + i * n] = liim1[i];
+            l[((i + 1 + i * n) + l.Length) % l.Length] = liim1[i % liim1.Length];
         }
 
         for (i = 2; i < n; i++)
@@ -197,17 +197,17 @@ public static class HankelCholesky
                 int s;
                 for (s = 0; s <= q; s++)
                 {
-                    alpha += l[q + s * n] * l[r + s * n];
+                    alpha += l[((q + s * n) + l.Length) % l.Length] * l[((r + s * n) + l.Length) % l.Length];
                 }
 
                 double beta = 0.0;
                 int t;
                 for (t = 0; t < j; t++)
                 {
-                    beta += l[i + t * n] * l[j + t * n];
+                    beta += l[((i + t * n) + l.Length) % l.Length] * l[((j + t * n) + l.Length) % l.Length];
                 }
 
-                l[i + j * n] = (alpha - beta) / l[j + j * n];
+                l[((i + j * n) + l.Length) % l.Length] = (alpha - beta) / l[((j + j * n) + l.Length) % l.Length];
             }
         }
 
