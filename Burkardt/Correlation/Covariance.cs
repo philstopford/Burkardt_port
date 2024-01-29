@@ -58,7 +58,7 @@ public static partial class Correlation
         //
         for (i = 0; i < n; i++)
         {
-            double e = Math.Abs(c[i + i * n] - 1.0);
+            double e = Math.Abs(c[(i + i * n) % c.Length] - 1.0);
             if (!(tol < e))
             {
                 continue;
@@ -103,7 +103,7 @@ public static partial class Correlation
         {
             for (i = 0; i < n; i++)
             {
-                k[i + j * n] = sigma[i] * c[i + j * n] * sigma[j];
+                k[i + j * n] = sigma[i % sigma.Length] * c[(i + j * n) % c.Length] * sigma[j % sigma.Length];
             }
         }
 
@@ -166,7 +166,7 @@ public static partial class Correlation
         {
             for (j = i + 1; j < n; j++)
             {
-                e = Math.Max(e, k[i + j * n] * k[i + j * n] - k[i + i * n] * k[j + j * n]);
+                e = Math.Max(e, k[(i + j * n) % k.Length] * k[(i + j * n) % k.Length] - k[(i + i * n) % k.Length] * k[(j + j * n) % k.Length]);
             }
         }
 
@@ -183,7 +183,7 @@ public static partial class Correlation
         //
         for (i = 0; i < n; i++)
         {
-            sigma[i] = k[i + i * n];
+            sigma[i % sigma.Length] = k[(i + i * n) % k.Length];
         }
 
         //
@@ -205,7 +205,7 @@ public static partial class Correlation
         //
         for (i = 0; i < n; i++)
         {
-            sigma[i] = Math.Sqrt(sigma[i]);
+            sigma[i % sigma.Length] = Math.Sqrt(sigma[i % sigma.Length]);
         }
 
         //
@@ -215,7 +215,7 @@ public static partial class Correlation
         {
             for (i = 0; i < n; i++)
             {
-                c[i + j * n] = k[i + j * n] / sigma[i] / sigma[j];
+                c[(i + j * n) % c.Length] = k[(i + j * n) % k.Length] / sigma[i % sigma.Length] / sigma[j % sigma.Length];
             }
         }
     }

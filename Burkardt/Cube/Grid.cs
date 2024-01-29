@@ -73,14 +73,14 @@ public static class Grid
             int j;
             for (j = 0; j < s; j++)
             {
-                xs[j] = c[i] switch
+                xs[j] = c[i % c.Length] switch
                 {
-                    1 when s == 1 => 0.5 * (a[i] + b[i]),
-                    1 => ((s - j - 1) * a[i] + j * b[i]) / (s - 1),
-                    2 => ((s - j) * a[i] + (j + 1) * b[i]) / (s + 1),
-                    3 => ((s - j) * a[i] + (j - 2) * b[i]) / s,
-                    4 => ((s - j - 1) * a[i] + (j + 1) * b[i]) / s,
-                    5 => ((2 * s - 2 * j - 1) * a[i] + (2 * j + 1) * b[i]) / (2 * s),
+                    1 when s == 1 => 0.5 * (a[i % a.Length] + b[i % b.Length]),
+                    1 => ((s - j - 1) * a[i % a.Length] + j * b[i % b.Length]) / (s - 1),
+                    2 => ((s - j) * a[i % a.Length] + (j + 1) * b[i % b.Length]) / (s + 1),
+                    3 => ((s - j) * a[i % a.Length] + (j - 2) * b[i % b.Length]) / s,
+                    4 => ((s - j - 1) * a[i % a.Length] + (j + 1) * b[i % b.Length]) / s,
+                    5 => ((2 * s - 2 * j - 1) * a[i % a.Length] + (2 * j + 1) * b[i % b.Length]) / (2 * s),
                     _ => xs[j]
                 };
             }

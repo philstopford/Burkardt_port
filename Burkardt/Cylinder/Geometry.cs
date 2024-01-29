@@ -83,7 +83,7 @@ public static class Geometry
         double p_dot_axis = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            p_dot_axis += (p[i] - p1[i]) * axis[i];
+            p_dot_axis += (p[i % p.Length] - p1[i % p1.Length]) * axis[i];
         }
 
         switch (p_dot_axis)
@@ -101,7 +101,7 @@ public static class Geometry
                 {
                     for (i = 0; i < DIM_NUM; i++)
                     {
-                        v1[i] = p[i] - p1[i];
+                        v1[i] = p[i % p.Length] - p1[i % p1.Length];
                     }
 
                     double p_length = typeMethods.r8vec_norm(DIM_NUM, v1);
@@ -191,7 +191,7 @@ public static class Geometry
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            axis[i] = p2[i] - p1[i];
+            axis[i] = p2[i % p2.Length] - p1[i % p1.Length];
         }
 
         double axis_length = typeMethods.r8vec_norm(DIM_NUM, axis);
@@ -211,7 +211,7 @@ public static class Geometry
         double p_dot_axis = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            p_dot_axis += (p[i] - p1[i]) * axis[i];
+            p_dot_axis += (p[i % p.Length] - p1[i % p1.Length]) * axis[i];
         }
 
         switch (p_dot_axis)
@@ -229,7 +229,7 @@ public static class Geometry
                 {
                     for (i = 0; i < DIM_NUM; i++)
                     {
-                        v1[i] = p[i] - p1[i];
+                        v1[i] = p[i % p.Length] - p1[i % p1.Length];
                     }
 
                     double p_length = typeMethods.r8vec_norm(DIM_NUM, v1);
@@ -312,7 +312,7 @@ public static class Geometry
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            axis[i] = p2[i] - p1[i];
+            axis[i] = p2[i % p2.Length] - p1[i % p1.Length];
         }
 
         double axis_length = typeMethods.r8vec_norm(DIM_NUM, axis);
@@ -331,7 +331,7 @@ public static class Geometry
         double p_dot_axis = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            p_dot_axis += (p[i] - p1[i]) * axis[i];
+            p_dot_axis += (p[i % p.Length] - p1[i % p1.Length]) * axis[i];
         }
 
         //
@@ -348,7 +348,7 @@ public static class Geometry
         {
             for (i = 0; i < DIM_NUM; i++)
             {
-                v1[i] = p[i] - p1[i];
+                v1[i] = p[i % p.Length] - p1[i % p1.Length];
             }
 
             double p_length = typeMethods.r8vec_norm(DIM_NUM, v1);
@@ -418,7 +418,7 @@ public static class Geometry
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            axis[i] = p2[i] - p1[i];
+            axis[i] = p2[i % p2.Length] - p1[i % p1.Length];
         }
 
         double axis_length = typeMethods.r8vec_norm(DIM_NUM, axis);
@@ -430,12 +430,12 @@ public static class Geometry
         double axial_component = 0.0;
         for (i = 0; i < DIM_NUM; i++)
         {
-            axial_component += (p[i] - p1[i]) * axis[i];
+            axial_component += (p[i % p.Length] - p1[i % p1.Length]) * axis[i];
         }
 
         for (i = 0; i < DIM_NUM; i++)
         {
-            off_axis[i] = p[i] - p1[i] - axial_component * axis[i];
+            off_axis[i] = p[i % p.Length] - p1[i % p1.Length] - axial_component * axis[i];
         }
 
         double off_axis_component = typeMethods.r8vec_norm(DIM_NUM, off_axis);
@@ -448,7 +448,7 @@ public static class Geometry
             {
                 for (i = 0; i < DIM_NUM; i++)
                 {
-                    pn[i] = p1[i] + off_axis[i];
+                    pn[i] = p1[i % p1.Length] + off_axis[i];
                 }
 
                 break;
@@ -457,7 +457,7 @@ public static class Geometry
             {
                 for (i = 0; i < DIM_NUM; i++)
                 {
-                    pn[i] = p1[i] + r / off_axis_component * off_axis[i];
+                    pn[i] = p1[i % p1.Length] + r / off_axis_component * off_axis[i];
                 }
 
                 break;
@@ -474,7 +474,7 @@ public static class Geometry
                             double[] normal = typeMethods.r8vec_any_normal(DIM_NUM, axis);
                             for (i = 0; i < DIM_NUM; i++)
                             {
-                                pn[i] = p[i] + r * normal[i];
+                                pn[i] = p[i % p.Length] + r * normal[i];
                             }
 
                             break;
@@ -485,7 +485,7 @@ public static class Geometry
 
                             for (i = 0; i < DIM_NUM; i++)
                             {
-                                pn[i] = p1[i] + axial_component * axis[i]
+                                pn[i] = p1[i % p1.Length] + axial_component * axis[i]
                                               + r / off_axis_component * off_axis[i];
                             }
 
@@ -496,7 +496,7 @@ public static class Geometry
                                     distance = axis_length - axial_component;
                                     for (i = 0; i < DIM_NUM; i++)
                                     {
-                                        pn[i] = p2[i] + off_axis[i];
+                                        pn[i] = p2[i % p2.Length] + off_axis[i];
                                     }
                                 }
 
@@ -505,7 +505,7 @@ public static class Geometry
                                     distance = axial_component;
                                     for (i = 0; i < DIM_NUM; i++)
                                     {
-                                        pn[i] = p1[i] + off_axis[i];
+                                        pn[i] = p1[i % p1.Length] + off_axis[i];
                                     }
                                 }
                             }
@@ -523,14 +523,14 @@ public static class Geometry
                     {
                         for (i = 0; i < DIM_NUM; i++)
                         {
-                            pn[i] = p2[i] + off_axis[i];
+                            pn[i] = p2[i % p2.Length] + off_axis[i];
                         }
                     }
                     else
                     {
                         for (i = 0; i < DIM_NUM; i++)
                         {
-                            pn[i] = p2[i] + r / off_axis_component * off_axis[i];
+                            pn[i] = p2[i % p2.Length] + r / off_axis_component * off_axis[i];
                         }
                     }
                 }
@@ -600,7 +600,7 @@ public static class Geometry
         //
         for (i = 0; i < DIM_NUM; i++)
         {
-            axis[i] = p2[i] - p1[i];
+            axis[i] = p2[i % p2.Length] - p1[i % p1.Length];
         }
 
         double axis_length = typeMethods.r8vec_norm(DIM_NUM, axis);

@@ -48,13 +48,13 @@ public static partial class Correlation
 
         for ( i = 0; i < n; i++ )
         {
-            if ( rho0 < Math.Abs ( rho[i] ) )
+            if ( rho0 < Math.Abs ( rho[i % rho.length] ) )
             {
                 c[i] = 0.0;
             }
             else
             {
-                c[i] = ( rho0 - Math.Abs ( rho[i] ) ) / rho0;
+                c[i] = ( rho0 - Math.Abs ( rho[i % rho.length] ) ) / rho0;
             }
         }
         return new CorrelationResult {result = c, data = globaldata, k1data = data};

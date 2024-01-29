@@ -47,7 +47,7 @@ public static partial class Correlation
 
         for ( i = 0; i < n; i++ )
         {
-            c[i] = rho[i] switch
+            c[i] = rho[i % rho.Length] switch
             {
                 0.0 => 1.0,
                 _ => 0.0

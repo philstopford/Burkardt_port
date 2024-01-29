@@ -60,7 +60,7 @@ public static partial class Correlation
 
         for ( i = nos - 1; 0 <= i; i-- )
         {
-            err += Math.Abs ( dos[i] );
+            err += Math.Abs ( dos[i % dos.Length] );
             if (!(eta < err))
             {
                 continue;

@@ -348,7 +348,7 @@ public static class QuadratureRule
                 int n1;
                 for (n1 = 0; n1 <= n2; n1++)
                 {
-                    pols[kk] = f1[m - n2] * f2[n2 - n1] * f3[n1];
+                    pols[kk % pols.Length] = f1[((m - n2) + f1.Length) % f1.Length] * f2[((n2 - n1) + f2.Length) % f2.Length] * f3[n1 % f3.Length];
                     double scale = 1.0;
                     double t = 0.5 * (1 + 2 * n1);
                     scale *= Math.Sqrt(t);
@@ -356,7 +356,7 @@ public static class QuadratureRule
                     scale *= Math.Sqrt(t);
                     t = 0.5 * (1 + 2 * m - 2 * n2);
                     scale *= Math.Sqrt(t);
-                    pols[kk] *= scale;
+                    pols[kk % pols.Length] *= scale;
                     kk += 1;
                 }
             }
@@ -3399,9 +3399,9 @@ public static class QuadratureRule
             int j;
             for (j = 0; j < o; j++)
             {
-                w_1d[j] = w_1d[j] * (b[i] - a[i]) / 2.0;
-                x_1d[j] = ((1.0 - x_1d[j]) * a[i]
-                           + (1.0 + x_1d[j]) * b[i])
+                w_1d[j] = w_1d[j] * (b[i % b.Length] - a[i % a.Length]) / 2.0;
+                x_1d[j] = ((1.0 - x_1d[j]) * a[i % a.Length]
+                           + (1.0 + x_1d[j]) * b[i % b.Length])
                           / 2.0;
             }
 

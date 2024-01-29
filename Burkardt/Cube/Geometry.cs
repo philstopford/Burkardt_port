@@ -93,7 +93,7 @@ public static class Geometry
 
         for (i = 0; i < dim_num; i++)
         {
-            if (p[i] < p1[i] || p2[i] < p[i])
+            if (p[i % p.Length] < p1[i % p1.Length] || p2[i % p2.Length] < p[i % p.Length])
             {
                 return false;
             }
@@ -470,7 +470,7 @@ public static class Geometry
 
         for (i = 0; i < dim_num; i++)
         {
-            switch (p[i])
+            switch (p[i % p.Length])
             {
                 case < 0.0:
                 case > 1.0:

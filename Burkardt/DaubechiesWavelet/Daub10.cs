@@ -329,8 +329,8 @@ public static class Daub10
                 {
                     int i0 = typeMethods.i4_wrap(i + k / 2, 0, m / 2 - 1);
                     int i1 = typeMethods.i4_wrap(i + m / 2 + k / 2, m / 2, m - 1);
-                    z[j] = z[j] + c[p - k - 1] * x[i0] + c[k + 1] * x[i1];
-                    z[j + 1] = z[j + 1] + c[p - k] * x[i0] - c[k] * x[i1];
+                    z[j % z.Length] = z[j % z.Length] + c[((p - k - 1) + c.Length) % c.Length] * x[((i0) + x.Length) % x.Length] + c[((k + 1) + c.Length) % c.Length] * x[((i1) + x.Length) % x.Length];
+                    z[(j + 1) % z.Length] = z[(j + 1) % z.Length] + c[((p - k) + c.Length) % c.Length] * x[((i0) + x.Length) % x.Length] - c[k % c.Length] * x[((i1) + x.Length) % x.Length];
                 }
 
                 j += 2;
@@ -338,7 +338,7 @@ public static class Daub10
 
             for (i = 0; i < m; i++)
             {
-                x[i] = z[i];
+                x[i % x.Length] = z[i % z.Length];
             }
 
             m *= 2;

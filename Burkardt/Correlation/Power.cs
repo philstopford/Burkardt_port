@@ -62,7 +62,7 @@ public static partial class Correlation
 
         for ( i = 0; i < n; i++ )
         {
-            double rhohat = Math.Abs ( rho[i] ) / rho0;
+            double rhohat = Math.Abs ( rho[i % rho.length] ) / rho0;
             c[i] = rhohat switch
             {
                 <= 1.0 => Math.Pow(1.0 - rhohat, e),

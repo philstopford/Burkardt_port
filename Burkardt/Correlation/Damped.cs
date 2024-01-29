@@ -48,7 +48,7 @@ public static partial class Correlation
 
         for (i = 0; i < n; i++)
         {
-            c[i] = Math.Exp(-Math.Abs(rho[i]) / rho0) * Math.Cos(Math.Abs(rho[i]) / rho0);
+            c[i] = Math.Exp(-Math.Abs(rho[i % rho.length]) / rho0) * Math.Cos(Math.Abs(rho[i % rho.length]) / rho0);
         }
 
         return new CorrelationResult {result = c, data = globaldata, k1data = data};
@@ -103,7 +103,7 @@ public static partial class Correlation
                     c[i] = 1.0;
                     break;
                 default:
-                    double rhohat = Math.Abs(rho[i]) / rho0;
+                    double rhohat = Math.Abs(rho[i % rho.length]) / rho0;
                     c[i] = Math.Sin(rhohat) / rhohat;
                     break;
             }
