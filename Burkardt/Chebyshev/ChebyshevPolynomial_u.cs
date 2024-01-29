@@ -971,7 +971,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < n; i++)
         {
-            t[i % n] = 0.0;
+            t[i % t.Length] = 0.0;
         }
 
         double[] bj = new double[n];
@@ -983,14 +983,14 @@ public static partial class ChebyshevPolynomial
         w[0] = Math.Sqrt(Math.PI / 2.0);
         for (i = 1; i < n; i++)
         {
-            w[i % n] = 0.0;
+            w[i % w.Length] = 0.0;
         }
 
         IMTQLX.imtqlx(n, ref t, ref bj, ref w);
 
         for (i = 0; i < n; i++)
         {
-            w[i % n] *= w[i % n];
+            w[i % w.Length] *= w[i % w.Length];
         }
     }
 
