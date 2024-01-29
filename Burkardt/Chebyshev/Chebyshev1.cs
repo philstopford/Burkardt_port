@@ -123,18 +123,18 @@ public static class Chebyshev1
 
         for ( i = 0; i < n; i++ )
         {
-            w[i] = Math.PI / n;
+            w[((i) + w.Length) % w.Length] = Math.PI / n;
         }
         for ( i = 0; i < n; i++ )
         {
-            x[i] = Math.Cos ( Math.PI * (2 * n - 1 - 2 * i)
+            x[((i) + x.Length) % x.Length] = Math.Cos ( Math.PI * (2 * n - 1 - 2 * i)
                               / (2 * n) );
         }
 
         x[(n - 1) / 2] = (n % 2) switch
         {
             1 => 0.0,
-            _ => x[(n - 1) / 2]
+            _ => x[(((n - 1) / 2) + x.Length) % x.Length]
         };
     }
 }

@@ -140,10 +140,10 @@ public static partial class CDF
         for (n = 2; n <= num; n += 2)
         {
             hn = h2 * hn;
-            a0[n - 1] = 2.0e0 * r0 * (1.0e0 + h * hn) / (n + 2.0e0);
+            a0[((n - 1) + a0.Length) % a0.Length] = 2.0e0 * r0 * (1.0e0 + h * hn) / (n + 2.0e0);
             int np1 = n + 1;
             s += hn;
-            a0[np1 - 1] = 2.0e0 * r1 * s / (n + 3.0e0);
+            a0[((np1 - 1) + a0.Length) % a0.Length] = 2.0e0 * r1 * s / (n + 3.0e0);
             int i;
             for (i = n; i <= np1; i++)
             {
@@ -158,22 +158,22 @@ public static partial class CDF
                     for (j = 1; j <= mm1; j++)
                     {
                         int mmj = m - j;
-                        bsum += (j * r - mmj) * a0[j - 1] * b0[mmj - 1];
+                        bsum += (j * r - mmj) * a0[((j - 1) + a0.Length) % a0.Length] * b0[((mmj - 1) + b0.Length) % b0.Length];
                     }
 
-                    b0[m - 1] = r * a0[m - 1] + bsum / m;
+                    b0[((m - 1) + b0.Length) % b0.Length] = r * a0[((m - 1) + a0.Length) % a0.Length] + bsum / m;
                 }
 
-                c[i - 1] = b0[i - 1] / (i + 1.0e0);
+                c[((i - 1) + c.Length) % c.Length] = b0[((i - 1) + b0.Length) % b0.Length] / (i + 1.0e0);
                 double dsum = 0.0e0;
                 int im1 = i - 1;
                 for (j = 1; j <= im1; j++)
                 {
                     int imj = i - j;
-                    dsum += d[imj - 1] * c[j - 1];
+                    dsum += d[((imj - 1) + d.Length) % d.Length] * c[((j - 1) + c.Length) % c.Length];
                 }
 
-                d[i - 1] = -(dsum + c[i - 1]);
+                d[((i - 1) + d.Length) % d.Length] = -(dsum + c[((i - 1) + c.Length) % c.Length]);
             }
 
             j0 = e1 * znm1 + (n - 1.0e0) * j0;
@@ -181,9 +181,9 @@ public static partial class CDF
             znm1 = z2 * znm1;
             zn = z2 * zn;
             w = w0 * w;
-            double t0 = d[n - 1] * w * j0;
+            double t0 = d[((n - 1) + d.Length) % d.Length] * w * j0;
             w = w0 * w;
-            double t1 = d[np1 - 1] * w * j1;
+            double t1 = d[((np1 - 1) + d.Length) % d.Length] * w * j1;
             sum += t0 + t1;
             if (Math.Abs(t0) + Math.Abs(t1) <= eps * sum)
             {

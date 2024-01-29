@@ -63,7 +63,7 @@ public static class Chebyshev1D
         double[] x = new double[nd];
         for (i = 0; i < nd; i++)
         {
-            x[i] = (2.0 * xd[i] - xmin - xmax) / (xmax - xmin);
+            x[((i) + x.Length) % x.Length] = (2.0 * xd[((i) + xd.Length) % xd.Length] - xmin - xmax) / (xmax - xmin);
         }
 
         //
@@ -74,7 +74,7 @@ public static class Chebyshev1D
         {
             for (i = 0; i < nd; i++)
             {
-                a[i + j * nd] = Math.Cos(Math.Acos(x[i]) * j);
+                a[((i + j * nd) + a.Length) % a.Length] = Math.Cos(Math.Acos(x[((i) + x.Length) % x.Length]) * j);
             }
         }
 
@@ -188,7 +188,7 @@ public static class Chebyshev1D
         double[] x = new double[ni];
         for (int i = 0; i < ni; i++)
         {
-            x[i] = (2.0 * xi[i] - xmin - xmax) / (xmax - xmin);
+            x[((i) + x.Length) % x.Length] = (2.0 * xi[((i) + xi.Length) % xi.Length] - xmin - xmax) / (xmax - xmin);
         }
 
         double[] a = new double[ni * nd];
@@ -196,7 +196,7 @@ public static class Chebyshev1D
         {
             for (int i = 0; i < ni; i++)
             {
-                a[i + j * ni] = Math.Cos(Math.Acos(x[i]) * j);
+                a[((i + j * ni) + a.Length) % a.Length] = Math.Cos(Math.Acos(x[((i) + x.Length) % x.Length]) * j);
             }
         }
 

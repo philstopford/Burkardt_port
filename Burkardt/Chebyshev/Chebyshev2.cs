@@ -125,14 +125,14 @@ public static class Chebyshev2
         for ( i = 0; i < n; i++ )
         {
             double angle = Math.PI * (n - i) / (n + 1);
-            w[i] = Math.PI / (n + 1) * Math.Pow ( Math.Sin ( angle ), 2 );
-            x[i] = Math.Cos ( angle );
+            w[((i) + w.Length) % w.Length] = Math.PI / (n + 1) * Math.Pow ( Math.Sin ( angle ), 2 );
+            x[((i) + x.Length) % x.Length] = Math.Cos ( angle );
         }
 
         x[(n - 1) / 2] = (n % 2) switch
         {
             1 => 0.0,
-            _ => x[(n - 1) / 2]
+            _ => x[(((n - 1) / 2) + x.Length) % x.Length]
         };
     }
 }

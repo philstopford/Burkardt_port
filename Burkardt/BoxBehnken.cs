@@ -49,7 +49,7 @@ public static class BoxBehnken
         //
         for (int i = 0; i < dim_num; i++ )
         {
-            if (!(range[i + 1 * dim_num] <= range[i + 0 * dim_num]))
+            if (!(range[((i + 1 * dim_num) + range.Length) % range.Length] <= range[((i + 0 * dim_num) + range.Length) % range.Length]))
             {
                 continue;
             }
@@ -68,7 +68,7 @@ public static class BoxBehnken
 
         for (int i = 0; i < dim_num; i++ )
         {
-            x[i+j*dim_num] = ( range[i+0*dim_num] + range[i+1*dim_num] ) / 2.0;
+            x[((i+j*dim_num) + x.Length) % x.Length] = ( range[((i+0*dim_num) + range.Length) % range.Length] + range[((i+1*dim_num) + range.Length) % range.Length] ) / 2.0;
         }
         //
         //  For subsequent elements, one entry is fixed at the middle of the range.
@@ -79,9 +79,9 @@ public static class BoxBehnken
             j += 1;
             for (int i2 = 0; i2 < dim_num; i2++ )
             {
-                x[i2+j*dim_num] = range[i2+0*dim_num];
+                x[((i2+j*dim_num) + x.Length) % x.Length] = range[((i2+0*dim_num) + range.Length) % range.Length];
             }
-            x[i+j*dim_num] = ( range[i+0*dim_num] + range[i+1*dim_num] ) / 2.0;
+            x[((i+j*dim_num) + x.Length) % x.Length] = ( range[((i+0*dim_num) + range.Length) % range.Length] + range[((i+1*dim_num) + range.Length) % range.Length] ) / 2.0;
             //
             //  The next element is made by finding the last low value, making it
             //  high, and all subsequent high values low.
@@ -92,7 +92,7 @@ public static class BoxBehnken
 
                 for (int i2 = 0; i2 < dim_num; i2++ )
                 {
-                    if ( Math.Abs(x[i2+j*dim_num] - range[i2+0*dim_num]) <= typeMethods.r8_epsilon() )
+                    if ( Math.Abs(x[((i2+j*dim_num) + x.Length) % x.Length] - range[((i2+0*dim_num) + range.Length) % range.Length]) <= typeMethods.r8_epsilon() )
                     {
                         last_low = i2;
                     }
@@ -106,15 +106,15 @@ public static class BoxBehnken
                 j += 1;
                 for (int i2 = 0; i2 < dim_num; i2++ )
                 {
-                    x[i2+j*dim_num] = x[i2+(j-1)*dim_num];
+                    x[((i2+j*dim_num) + x.Length) % x.Length] = x[((i2+(j-1)*dim_num) + x.Length) % x.Length];
                 }
-                x[last_low+j*dim_num] = range[last_low+1*dim_num];
+                x[((last_low+j*dim_num) + x.Length) % x.Length] = range[((last_low+1*dim_num) + range.Length) % range.Length];
 
                 for (int i2 = last_low + 1; i2 < dim_num; i2++ )
                 {
-                    if ( Math.Abs(x[i2+j*dim_num] - range[i2+1*dim_num]) <= typeMethods.r8_epsilon() )
+                    if ( Math.Abs(x[((i2+j*dim_num) + x.Length) % x.Length] - range[((i2+1*dim_num]) + range.Length) % range.Length) <= typeMethods.r8_epsilon() )
                     {
-                        x[i2+j*dim_num] = range[i2+0*dim_num];
+                        x[((i2+j*dim_num) + x.Length) % x.Length] = range[((i2+0*dim_num) + range.Length) % range.Length];
                     }
                 }
             }

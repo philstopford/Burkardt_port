@@ -99,7 +99,7 @@ public static class Chebyshev
                 int lm = l * j % (2 * n);
                 for (k = 0; k < nf; k++)
                 {
-                    x[l + k * npl] += fxj[k] * gc[lm];
+                    x[((l + k * npl) + x.Length) % x.Length] += fxj[((k) + fxj.Length) % fxj.Length] * gc[((lm) + gc.Length) % gc.Length];
                 }
             }
         }
