@@ -425,7 +425,7 @@ public static class ClenshawCurtisGrid
                 {
                     for (dim = 0; dim < dim_num; dim++)
                     {
-                        point[ptIndex + dim + p * dim_num] = cc_abscissa(order_1d[dim], 1);
+                        point[((ptIndex + dim + p * dim_num) + point.Length) % point.Length] = cc_abscissa(order_1d[dim % order_1d.Length], 1);
                     }
 
                     break;
@@ -434,10 +434,10 @@ public static class ClenshawCurtisGrid
                 {
                     for (dim = 0; dim < dim_num; dim++)
                     {
-                        point[ptIndex + dim + p * dim_num] = point[ptIndex + dim + (p - 1) * dim_num];
+                        point[((ptIndex + dim + p * dim_num) + point.Length) % point.Length] = point[((ptIndex + dim + (p - 1) * dim_num) + point.Length) % point.Length];
                     }
 
-                    point[ptIndex + change + p * dim_num] = cc_abscissa(order_1d[change], a[change] + 1);
+                    point[((ptIndex + change + p * dim_num) + point.Length) % point.Length] = cc_abscissa(order_1d[change % order_1d.Length], a[change % a.Length] + 1);
                     break;
                 }
             }
@@ -502,7 +502,7 @@ public static class ClenshawCurtisGrid
             int dim;
             for (dim = 0; dim < dim_num; dim++)
             {
-                indx[dim + p * dim_num] = a[dim];
+                indx[((dim + p * dim_num) + indx.Length) % indx.Length] = a[dim % a.Length];
             }
 
             p += 1;
@@ -590,7 +590,7 @@ public static class ClenshawCurtisGrid
             int dim;
             for (dim = 0; dim < dim_num; dim++)
             {
-                order_nd *= order_1d[dim];
+                order_nd *= order_1d[dim % order_1d.Length];
             }
 
             cc_grid(dim_num, order_1d, order_nd, ref grid_point, ptIndex: +point_num * dim_num);
@@ -599,7 +599,7 @@ public static class ClenshawCurtisGrid
 
             for (dim = 0; dim < dim_num; dim++)
             {
-                grid_order[dim + grid_num * dim_num] = order_1d[dim];
+                grid_order[((dim + grid_num * dim_num) + grid_order.Length) % grid_order.Length] = order_1d[dim % order_1d.Length];
             }
 
             grid_num += 1;
@@ -682,7 +682,7 @@ public static class ClenshawCurtisGrid
             int dim;
             for (dim = 0; dim < dim_num; dim++)
             {
-                order_nd *= order_1d[dim];
+                order_nd *= order_1d[dim % order_1d.Length];
             }
 
             point_num += order_nd;
@@ -764,7 +764,7 @@ public static class ClenshawCurtisGrid
                 int dim;
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    order_nd *= order_1d[dim];
+                    order_nd *= order_1d[dim % order_1d.Length];
                 }
 
                 cc_grid(dim_num, order_1d, order_nd, ref grid_point, ptIndex: +point_num * dim_num);
@@ -773,7 +773,7 @@ public static class ClenshawCurtisGrid
 
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    grid_order[dim + grid_num * dim_num] = order_1d[dim];
+                    grid_order[((dim + grid_num * dim_num) + grid_order.Length) % grid_order.Length] = order_1d[dim % order_1d.Length];
                 }
 
                 grid_num += 1;
@@ -849,7 +849,7 @@ public static class ClenshawCurtisGrid
                 int dim;
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    order_nd *= order_1d[dim];
+                    order_nd *= order_1d[dim % order_1d.Length];
                 }
 
                 point_num += order_nd;
@@ -917,11 +917,11 @@ public static class ClenshawCurtisGrid
 
         for (dim = 0; dim < dim_num; dim++)
         {
-            order[dim] = level[dim] switch
+            order[dim % order.Length] = level[dim % level.Length] switch
             {
                 < 0 => -1,
                 0 => 1,
-                _ => (int) Math.Pow(2, level[dim]) + 1
+                _ => (int) Math.Pow(2, level[dim % level.Length]) + 1
             };
         }
     }
@@ -1014,7 +1014,7 @@ public static class ClenshawCurtisGrid
             int dim;
             for (dim = 0; dim < dim_num; dim++)
             {
-                order_nd *= order_1d[dim];
+                order_nd *= order_1d[dim % order_1d.Length];
             }
 
             cc_grid(dim_num, order_1d, order_nd, ref grid_point, ptIndex: +point_num * dim_num);
@@ -1023,7 +1023,7 @@ public static class ClenshawCurtisGrid
 
             for (dim = 0; dim < dim_num; dim++)
             {
-                grid_level[dim + grid_num * dim_num] = level_1d[dim];
+                grid_level[((dim + grid_num * dim_num) + grid_level.Length) % grid_level.Length] = level_1d[dim % level_1d.Length];
             }
 
             grid_num += 1;
@@ -1114,7 +1114,7 @@ public static class ClenshawCurtisGrid
             int dim;
             for (dim = 0; dim < dim_num; dim++)
             {
-                order_nd *= order_1d[dim];
+                order_nd *= order_1d[dim % order_1d.Length];
             }
 
             point_num += order_nd;
@@ -1206,7 +1206,7 @@ public static class ClenshawCurtisGrid
                 int dim;
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    order_nd *= order_1d[dim];
+                    order_nd *= order_1d[dim % order_1d.Length];
                 }
 
                 cc_grid(dim_num, order_1d, order_nd, ref grid_point, ptIndex: +point_num * dim_num);
@@ -1215,12 +1215,12 @@ public static class ClenshawCurtisGrid
 
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    grid_level[dim + grid_num * dim_num] = level_1d[dim];
+                    grid_level[((dim + grid_num * dim_num) + grid_level.Length) % grid_level.Length] = level_1d[dim % level_1d.Length];
                 }
 
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    grid_order[dim + grid_num * dim_num] = order_1d[dim];
+                    grid_order[((dim + grid_num * dim_num) + grid_order.Length) % grid_order.Length] = order_1d[dim % order_1d.Length];
                 }
 
                 grid_num += 1;
@@ -1300,7 +1300,7 @@ public static class ClenshawCurtisGrid
                 int dim;
                 for (dim = 0; dim < dim_num; dim++)
                 {
-                    order_nd *= order_1d[dim];
+                    order_nd *= order_1d[dim % order_1d.Length];
                 }
 
                 point_num += order_nd;
@@ -1443,7 +1443,7 @@ public static class ClenshawCurtisGrid
 
         for (order = 0; order < order_nd; order++)
         {
-            weight[order] = 1.0;
+            weight[order % weight.Length] = 1.0;
         }
 
         order = -1;
@@ -1452,7 +1452,7 @@ public static class ClenshawCurtisGrid
         {
             int order_old = order;
 
-            order = order_1d[dim];
+            order = order_1d[dim % order_1d.Length];
             //
             //  For efficiency's sake, we reuse the 1D rule if we can.
             //
@@ -1466,7 +1466,7 @@ public static class ClenshawCurtisGrid
 
             int p = 0;
             int n1 = typeMethods.i4vec_product(dim, order_1d);
-            int n2 = order_1d[dim];
+            int n2 = order_1d[dim & order_1d.Length];
             int n3 = typeMethods.i4vec_product(dim_num - dim - 1, order_1d, aIndex: + dim + 1);
 
             int k;
@@ -1480,12 +1480,12 @@ public static class ClenshawCurtisGrid
                     {
                         if (x1d != null)
                         {
-                            point[dim + p * dim_num] = x1d[j];
+                            point[((dim + p * dim_num) + point.Length) % point.Length] = x1d[j % x1d.Length];
                         }
 
                         if (w1d != null)
                         {
-                            weight[p] *= w1d[j];
+                            weight[p % weight.Length] *= w1d[j % w1d.Length];
                         }
 
                         p += 1;
