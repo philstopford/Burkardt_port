@@ -529,7 +529,7 @@ public static partial class ChebyshevPolynomial
             }
 
             c[((i + (i - 1) * (n + 1)) + c.Length) % c.Length] = 2.0 * c[((i - 1 + (i - 2) * (n + 1)) + c.Length) % c.Length];
-            c[((i + i * (n + 1)) + .Length) % .Length] = 2.0 * c[((i - 1 + (i - 1) * (n + 1)) + c.Length) % c.Length];
+            c[((i + i * (n + 1)) + c.Length) % c.Length] = 2.0 * c[((i - 1 + (i - 1) * (n + 1)) + c.Length) % c.Length];
         }
 
         return c;

@@ -173,7 +173,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < m; i++)
         {
-            v[((i + 1 * m) + v.Length) % v.Length] = 2.0 * x[((i) + i.Length) % i.Length] - 1.0;
+            v[((i + 1 * m) + v.Length) % v.Length] = 2.0 * x[((i) + x.Length) % x.Length] - 1.0;
         }
 
         for (i = 0; i < m; i++)
