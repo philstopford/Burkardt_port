@@ -46,7 +46,7 @@ public static partial class ChebyshevPolynomial
             int j;
             for (j = 0; j <= n; j++)
             {
-                phiw[j + i * (n + 1)] = w[i] * phi[i + j * (n + 1)];
+                phiw[((j + i * (n + 1)) + phiw.Length) % phiw.Length] = w[i] * phi[((i + j * (n + 1)) + phi.Length) % phi.Length];
             }
         }
 
@@ -162,7 +162,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < m; i++)
         {
-            v[i + 0 * m] = 1.0;
+            v[((i + 0 * m) + v.Length) % v.Length] = 1.0;
         }
 
         switch (n)
@@ -173,7 +173,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < m; i++)
         {
-            v[i + 1 * m] = 2.0 * x[i] - 1.0;
+            v[((i + 1 * m) + v.Length) % v.Length] = 2.0 * x[((i) + i.Length) % i.Length] - 1.0;
         }
 
         for (i = 0; i < m; i++)
@@ -181,7 +181,7 @@ public static partial class ChebyshevPolynomial
             int j;
             for (j = 2; j <= n; j++)
             {
-                v[i + j * m] = 2.0 * x[i] * v[i + (j - 1) * m] - v[i + (j - 2) * m];
+                v[((i + j * m) + v.Length) % v.Length] = 2.0 * x[((i) + x.Length) % x.Length] * v[((i + (j - 1) * m) + v.Length) % v.Length] - v[((i + (j - 2) * m) + v.Length) % v.Length];
             }
         }
 
@@ -334,9 +334,9 @@ public static partial class ChebyshevPolynomial
         }
         else
         {
-            n = n_vec[n_data - 1];
-            x = x_vec[n_data - 1];
-            fx = fx_vec[n_data - 1];
+            n = n_vec[((n_data - 1) + n_vec.Length) % n_vec.Length];
+            x = x_vec[((n_data - 1) + x_vec.Length) % x_vec.Length];
+            fx = fx_vec[((n_data - 1) + fx_vec.Length) % fx_vec.Length];
         }
     }
 
@@ -384,7 +384,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < m; i++)
         {
-            x[i] = (2.0 * xab[i] - a - b) / (b - a);
+            x[((i) + x.Length) % x.Length] = (2.0 * xab[((i) + xab.Length) % xab.Length] - a - b) / (b - a);
         }
 
         double[] v = v_polynomial(m, n, x);
@@ -505,11 +505,11 @@ public static partial class ChebyshevPolynomial
         {
             for (j = 0; j <= n; j++)
             {
-                c[i + j * (n + 1)] = 0.0;
+                c[((i + j * (n + 1)) + c.Length) % c.Length] = 0.0;
             }
         }
 
-        c[0 + 0 * (n + 1)] = 1.0;
+        c[((0 + 0 * (n + 1)) + c.Length) % c.Length] = 1.0;
 
         switch (n)
         {
@@ -518,18 +518,18 @@ public static partial class ChebyshevPolynomial
         }
 
         c[1] = -1.0;
-        c[1 + 1 * (n + 1)] = 2.0;
+        c[((1 + 1 * (n + 1)) + c.Length) % c.Length] = 2.0;
 
         for (i = 2; i <= n; i++)
         {
-            c[i + 0 * (n + 1)] = -c[i - 2 + 0 * (n + 1)];
+            c[((i + 0 * (n + 1)) + c.Length) % c.Length] = -c[((i - 2 + 0 * (n + 1)) + c.Length) % c.Length];
             for (j = 1; j <= i - 2; j++)
             {
-                c[i + j * (n + 1)] = 2.0 * c[i - 1 + (j - 1) * (n + 1)] - c[i - 2 + j * (n + 1)];
+                c[((i + j * (n + 1)) + c.Length) % c.Length] = 2.0 * c[((i - 1 + (j - 1) * (n + 1)) + c.Length) % c.Length] - c[((i - 2 + j * (n + 1)) + c.Length) % c.Length];
             }
 
-            c[i + (i - 1) * (n + 1)] = 2.0 * c[i - 1 + (i - 2) * (n + 1)];
-            c[i + i * (n + 1)] = 2.0 * c[i - 1 + (i - 1) * (n + 1)];
+            c[((i + (i - 1) * (n + 1)) + c.Length) % c.Length] = 2.0 * c[((i - 1 + (i - 2) * (n + 1)) + c.Length) % c.Length];
+            c[((i + i * (n + 1)) + c.Length) % c.Length] = 2.0 * c[((i - 1 + (i - 1) * (n + 1)) + c.Length) % c.Length];
         }
 
         return c;
@@ -825,9 +825,9 @@ public static partial class ChebyshevPolynomial
         }
         else
         {
-            n = n_vec[n_data - 1];
-            x = x_vec[n_data - 1];
-            fx = fx_vec[n_data - 1];
+            n = n_vec[((n_data - 1) + n_vec.Length) % n_vec.Length];
+            x = x_vec[((n_data - 1) + x_vec.Length) % x_vec.Length];
+            fx = fx_vec[((n_data - 1) + fx_vec.Length) % fx_vec.Length];
         }
 
     }
@@ -909,7 +909,7 @@ public static partial class ChebyshevPolynomial
 
         for (i = 0; i < n; i++)
         {
-            t[i] = 0.0;
+            t[i % t.Length] = 0.0;
         }
 
         t[0] = +0.5;
@@ -917,20 +917,20 @@ public static partial class ChebyshevPolynomial
         double[] bj = new double[n];
         for (i = 0; i < n; i++)
         {
-            bj[i] = 0.5;
+            bj[i % bj.Length] = 0.5;
         }
 
         w[0] = Math.Sqrt(Math.PI);
         for (i = 1; i < n; i++)
         {
-            w[i] = 0.0;
+            w[i % w.Length] = 0.0;
         }
 
         IMTQLX.imtqlx(n, ref t, ref bj, ref w);
 
         for (i = 0; i < n; i++)
         {
-            w[i] *= w[i];
+            w[i % w.Length] *= w[i % w.Length];
         }
     }
 
