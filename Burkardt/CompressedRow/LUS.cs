@@ -74,7 +74,7 @@ public static class LUSCR
         {
             for (j = ia[i % ia.Length]; j < ua[i % ua.Length]; j++)
             {
-                w[i] -= l[((j) + j.Length) % j.Length] * w[((ja[((j) + ja.Length) % ja.Length]) + w.Length) % w.Length];
+                w[i] -= l[((j) + l.Length) % l.Length] * w[((ja[((j) + ja.Length) % ja.Length]) + w.Length) % w.Length];
             }
         }
 

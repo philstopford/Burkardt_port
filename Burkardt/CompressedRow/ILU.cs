@@ -76,7 +76,7 @@ public static class ILUCR
 
             for (k = ia[i % ia.Length]; k <= ia[(i + 1) % ia.Length] - 1; k++)
             {
-                iw[ja[k % j.Length] % iw.Length] = k;
+                iw[ja[k % ja.Length] % iw.Length] = k;
             }
 
             j = ia[i % ia.Length];

@@ -58,16 +58,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1 + 0;
-                    q[i] = a[i] * 0 + 1;
+                    p[i % p.Length] = a[i % a.Length] * 1 + 0;
+                    q[i % q.Length] = a[i % a.Length] * 0 + 1;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + b[i] * 1;
-                    q[i] = a[i] * q[i - 1] + b[i] * 0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * 1;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * 0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + b[i] * p[i - 2];
-                    q[i] = a[i] * q[i - 1] + b[i] * q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * q[(i - 2) % q.Length];
                     break;
             }
         }
@@ -192,16 +192,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1 + 0;
-                    q[i] = a[i] * 0 + 1;
+                    p[i % p.Length] = a[i % a.Length] * 1 + 0;
+                    q[i % q.Length] = a[i % a.Length] * 0 + 1;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + 1;
-                    q[i] = a[i] * q[i - 1] + 0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + 1;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + 0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + p[i - 2];
-                    q[i] = a[i] * q[i - 1] + q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + q[(i - 2) % q.Length];
                     break;
             }
         }
@@ -302,7 +302,7 @@ public static class ContinuedFraction
         for (i = 0; i < n; i++)
         {
             Console.WriteLine("  " + i.ToString(CultureInfo.InvariantCulture).PadLeft(8)
-                                   + ": " + a[i].ToString(CultureInfo.InvariantCulture).PadLeft(8) + "");
+                                   + ": " + a[i % a.Length].ToString(CultureInfo.InvariantCulture).PadLeft(8) + "");
         }
     }
 
@@ -359,16 +359,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1 + 0;
-                    q[i] = a[i] * 0 + 1;
+                    p[i % p.Length] = a[i % a.Length] * 1 + 0;
+                    q[i % q.Length] = a[i % a.Length] * 0 + 1;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + b[i] * 1;
-                    q[i] = a[i] * q[i - 1] + b[i] * 0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * 1;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * 0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + b[i] * p[i - 2];
-                    q[i] = a[i] * q[i - 1] + b[i] * q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * q[(i - 2) % q.Length];
                     break;
             }
         }
@@ -494,16 +494,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1 + 0;
-                    q[i] = a[i] * 0 + 1;
+                    p[i % p.Length] = a[i % a.Length] * 1 + 0;
+                    q[i % q.Length] = a[i % a.Length] * 0 + 1;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + 1;
-                    q[i] = a[i] * q[i - 1] + 0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + 1;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + 0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + p[i - 2];
-                    q[i] = a[i] * q[i - 1] + q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + q[(i - 2) % q.Length];
                     break;
             }
         }
@@ -613,7 +613,7 @@ public static class ContinuedFraction
             {
                 for (i = 0; i <= n; i++)
                 {
-                    a[i] = 0;
+                    a[i % a.Length] = 0;
                 }
 
                 return;
@@ -625,8 +625,8 @@ public static class ContinuedFraction
 
         for (i = 1; i <= n; i++)
         {
-            r2 = 1.0 / (r2 - a[i - 1]);
-            a[i] = (int) r2;
+            r2 = 1.0 / (r2 - a[(i - 1) % a.Length]);
+            a[i % a.Length] = (int) r2;
         }
 
     }
@@ -735,7 +735,7 @@ public static class ContinuedFraction
             {
                 for (i = 0; i <= n; i++)
                 {
-                    a[i] = 0;
+                    a[i % a.Length] = 0;
                 }
 
                 return;
@@ -747,8 +747,8 @@ public static class ContinuedFraction
 
         for (i = 1; i <= n; i++)
         {
-            r2 = 1.0 / (r2 - a[i - 1]);
-            a[i] = (long) r2;
+            r2 = 1.0 / (r2 - a[(i - 1) % a.Length]);
+            a[i % a.Length] = (long) r2;
         }
 
     }
@@ -852,16 +852,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1.0 + 0.0;
-                    q[i] = a[i] * 0.0 + 1.0;
+                    p[i % p.Length] = a[i % a.Length] * 1.0 + 0.0;
+                    q[i % q.Length] = a[i % a.Length] * 0.0 + 1.0;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + b[i] * 1.0;
-                    q[i] = a[i] * q[i - 1] + b[i] * 0.0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * 1.0;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * 0.0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + b[i] * p[i - 2];
-                    q[i] = a[i] * q[i - 1] + b[i] * q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + b[i % b.Length] * p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + b[i % b.Length] * q[(i - 2) % q.Length];
                     break;
             }
         }
@@ -977,16 +977,16 @@ public static class ContinuedFraction
             switch (i)
             {
                 case 0:
-                    p[i] = a[i] * 1.0 + 0.0;
-                    q[i] = a[i] * 0.0 + 1.0;
+                    p[i % p.Length] = a[i % a.Length] * 1.0 + 0.0;
+                    q[i % q.Length] = a[i % a.Length] * 0.0 + 1.0;
                     break;
                 case 1:
-                    p[i] = a[i] * p[i - 1] + 1.0;
-                    q[i] = a[i] * q[i - 1] + 0.0;
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + 1.0;
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + 0.0;
                     break;
                 default:
-                    p[i] = a[i] * p[i - 1] + p[i - 2];
-                    q[i] = a[i] * q[i - 1] + q[i - 2];
+                    p[i % p.Length] = a[i % a.Length] * p[(i - 1) % p.Length] + p[(i - 2) % p.Length];
+                    q[i % q.Length] = a[i % a.Length] * q[(i - 1) % q.Length] + q[(i - 2) % q.Length];
                     break;
             }
         }
