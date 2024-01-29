@@ -316,7 +316,7 @@ public static partial class Algorithms
                         ifault = 2;
                         return;
                     default:
-                        u[((k - 1 + u.Length) % u.Length] = Math.Sqrt(w);
+                        u[((k - 1) + u.Length) % u.Length] = Math.Sqrt(w);
                         break;
                 }
             }

@@ -290,7 +290,7 @@ public static partial class Algorithms
 
         for (int i = 1; i <= m; i++)
         {
-            int ii = ic1[((i - 1) + ic1.Length) + ic1.Length)];
+            int ii = ic1[((i - 1) + ic1.Length) % ic1.Length];
             for (int j = 1; j <= n; j++)
             {
                 c[((ii - 1 + (j - 1) * k) + c.Length) % c.Length] += a[((i - 1 + (j - 1) * m) + a.Length) % a.Length];
@@ -400,7 +400,7 @@ public static partial class Algorithms
             live[((l - 1) + live.Length) % live.Length] = itran[((l - 1) + itran.Length) % itran.Length] switch
             {
                 1 => m + 1,
-                _ => live[((l - 1)) + live.Length) % live.Length]
+                _ => live[((l - 1) + live.Length) % live.Length]
             };
         }
 

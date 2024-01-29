@@ -639,7 +639,7 @@ public static class Blend
         {
             double r = i  / ( double ) ( m - 1 );
 
-            ret[i] = blend_101 ( r, ret[0], ret[m-1] );
+            ret[i] = blend_101 ( r, ret[0], ret[((m-1) + ret.Length) % ret.Length] );
 
         }
 
@@ -716,15 +716,15 @@ public static class Blend
         for (int i = 1; i < m1 - 1; i++ )
         {
             double r = i / ( double ) ( m1 - 1 );
-            ret[i*m2] = blend_101 ( r, ret[0], ret[m1*m2-m2] );
-            ret[i*m2+m2-1] = blend_101 ( r, ret[m2-1], ret[m1*m2-1] );
+            ret[((i*m2) + ret.Length) % ret.Length] = blend_101 ( r, ret[0], ret[((m1*m2-m2) + ret.Length) % ret.Length] );
+            ret[((i*m2+m2-1) + ret.Length) % ret.Length] = blend_101 ( r, ret[((m2-1) + ret.Length) % ret.Length], ret[((m1*m2-1) + ret.Length) % ret.Length] );
         }
 
         for (int j = 1; j < m2 - 1; j++ )
         {
             double s = j / ( double ) ( m2 - 1 );
-            ret[j] = blend_101 ( s, ret[0], ret[m2-1] );
-            ret[(m1-1)*m2+j] = blend_101 ( s, ret[m1*m2-m2], ret[m1*m2-1] );
+            ret[((j) + ret.Length) % ret.Length] = blend_101 ( s, ret[0], ret[((m2-1) + ret.Length) % ret.Length] );
+            ret[(((m1-1)*m2+j) + ret.Length) % ret.Length] = blend_101 ( s, ret[((m1*m2-m2) + ret.Length) % ret.Length], ret[((m1*m2-1) + ret.Length) % ret.Length] );
         }
         //
         //  Interpolate values in the interior.
@@ -736,8 +736,8 @@ public static class Blend
             for (int j = 1; j < m2 - 1; j++ )
             {
                 double s = j / ( double ) ( m2 - 1 );
-                ret[i*m2+j] = blend_112 ( r, s, ret[0], ret[m2-1], ret[m1*m2-m2], ret[m1*m2-1],
-                    ret[i*m2], ret[i*m2+m2-1], ret[j], ret[(m1-1)*m2+j] );
+                ret[((i*m2+j) + ret.Length) % ret.Length] = blend_112 ( r, s, ret[0], ret[((m2-1) + ret.Length) % ret.Length], ret[((m1*m2-m2) + ret.Length) % ret.Length], ret[((m1*m2-1) + ret.Length) % ret.Length],
+                    ret[((i*m2) + ret.Length) % ret.Length], ret[((i*m2+m2-1) + ret.Length) % ret.Length], ret[((j) + ret.Length) % ret.Length], ret[(((m1-1)*m2+j) + ret.Length) % ret.Length] );
             }
         }
         return ret;
@@ -817,8 +817,8 @@ public static class Blend
             {
                 double s = j / ( double ) ( m2 - 1 );
 
-                ret[i*m2+j] = blend_112 ( r, s, ret[0], ret[m2-1], ret[m1*m2-m2], ret[m1*m2-1],
-                    ret[i*m2], ret[i*m2+m2-1], ret[j], ret[(m1-1)*m2+j] );
+                ret[((i*m2+j) + ret.Length) % ret.Length] = blend_112 ( r, s, ret[0], ret[((m2-1) + ret.Length) % ret.Length], ret[((m1*m2-m2) + ret.Length) % ret.Length], ret[((m1*m2-1) + ret.Length) % ret.Length],
+                    ret[((i*m2) + ret.Length) % ret.Length], ret[((i*m2+m2-1) + ret.Length) % ret.Length], ret[((j) + ret.Length) % ret.Length], ret[(((m1-1)*m2+j) + ret.Length) % ret.Length] );
 
             }
         }
@@ -906,37 +906,37 @@ public static class Blend
         for (int i = 1; i < m1 - 1; i++ )
         {
             double r = i / ( double ) ( m1 - 1 );
-            ret[i*m3*m2] = blend_101 ( r, ret[0], ret[(m1-1)*m3*m2]);
+            ret[((i*m3*m2) + ret.Length) % ret.Length] = blend_101 ( r, ret[0], ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length]);
 
-            ret[(i*m3+m2-1)*m2] = blend_101 ( r, ret[(m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2]);
+            ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length] = blend_101 ( r, ret[(((m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length]);
 
-            ret[i*m3*m2+m3-1] = blend_101 ( r, ret[m3-1], ret[(m1-1)*m3*m2+m3-1]);
+            ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length] = blend_101 ( r, ret[((m3-1) + ret.Length) % ret.Length], ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length]);
 
-            ret[(i*m3+m2-1)*m2+m3-1] = blend_101 ( r, ret[(m2-1)*m2+m3-1], ret[((m1-1)*m3+m2-1)*m2+m3-1]);
+            ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length] = blend_101 ( r, ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length]);
         }
 
         for (int j = 1; j < m2 - 1; j++ )
         {
             double s = j / ( double ) ( m2 - 1 );
-            ret[j*m2] = blend_101 ( s, ret[0], ret[(m2-1)*m2]);
+            ret[((j*m2) + ret.Length) % ret.Length] = blend_101 ( s, ret[0], ret[(((m2-1)*m2) + ret.Length) % ret.Length]);
 
-            ret[((m1-1)*m3+j)*m2] = blend_101 ( s, ret[(m1-1)*m3*m2], ret[((m1-1)*m3+m2-1)*m2]);
+            ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length] = blend_101 ( s, ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length]);
 
-            ret[j*m2+m3-1] = blend_101 ( s, ret[m3-1], ret[(m2-1)*m2+m3-1]);
+            ret[((j*m2+m3-1) + ret.Length) % ret.Length] = blend_101 ( s, ret[((m3-1) + ret.Length) % ret.Length], ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length]);
 
-            ret[((m1-1)*m3+j)*m2+m3-1] = blend_101 ( s, ret[(m1-1)*m3*m2+m3-1], ret[((m1-1)*m3+m2-1)*m2+m3-1]);
+            ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length] = blend_101 ( s, ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length]);
         }
 
         for (int k = 1; k < m3 - 1; k++ )
         {
             double t = k / ( double ) ( m3 - 1 );
-            ret[k] = blend_101 ( t, ret[0], ret[m3-1]);
+            ret[((k) + ret.Length) % ret.Length] = blend_101 ( t, ret[0], ret[((m3-1) + ret.Length) % ret.Length]);
 
-            ret[(m1-1)*m3*m2+k] = blend_101 ( t, ret[(m1-1)*m3*m2], ret[(m1-1)*m3*m2+m3-1]);
+            ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length] = blend_101 ( t, ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length], ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length]);
 
-            ret[(m2-1)*m2+k] = blend_101 ( t, ret[(m2-1)*m2], ret[(m2-1)*m2+m3-1]);
+            ret[(((m2-1)*m2+k) + ret.Length) % ret.Length] = blend_101 ( t, ret[(((m2-1)*m2) + ret.Length) % ret.Length], ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length]);
 
-            ret[((m1-1)*m3+m2-1)*m2+k] = blend_101 ( t, ret[((m1-1)*m3+m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2+m3-1]);
+            ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length] = blend_101 ( t, ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length]);
         }
         //
         //  Interpolate values along the "faces", that is, index triplets (i,j,k)
@@ -949,18 +949,18 @@ public static class Blend
             {
                 double t = k / ( double ) ( m3 - 1 );
 
-                ret[j*m2+k] = blend_112 ( s, t,
-                    ret[0],                   ret[m3-1],
-                    ret[(m2-1)*m2],           ret[(m2-1)*m2+m3-1],
-                    ret[j*m2],                ret[j*m2+m3-1],
-                    ret[k],                   ret[(m2-1)*m2+k]
+                ret[((j*m2+k) + ret.Length) % ret.Length] = blend_112 ( s, t,
+                    ret[0],                   ret[((m3-1) + ret.Length) % ret.Length],
+                    ret[(((m2-1)*m2) + ret.Length) % ret.Length],           ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((j*m2) + ret.Length) % ret.Length],                ret[((j*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((k) + ret.Length) % ret.Length],                   ret[(((m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
 
-                ret[((m1-1)*m3+j)*m2+k] = blend_112 ( s, t,
-                    ret[(m1-1)*m3*m2],        ret[(m1-1)*m3*m2+m3-1],
-                    ret[((m1-1)*m3+m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[((m1-1)*m3+j)*m2],    ret[((m1-1)*m3+j)*m2+m3-1],
-                    ret[(m1-1)*m3*m2+k],      ret[((m1-1)*m3+m2-1)*m2+k]
+                ret[((((m1-1)*m3+j)*m2+k) + ret.Length) % ret.Length] = blend_112 ( s, t,
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],        ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length],    ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length],      ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
 
             }
@@ -974,17 +974,17 @@ public static class Blend
                 double t = k / ( double ) ( m3 - 1 );
 
                 ret[i*m3*m2+k] = blend_112 ( r, t,
-                    ret[0],                   ret[m3-1],
-                    ret[(m1-1)*m3*m2],        ret[(m1-1)*m3*m2+m3-1],
-                    ret[i*m3*m2],             ret[i*m3*m2+m3-1],
-                    ret[k],                   ret[(m1-1)*m3*m2+k]
+                    ret[0],                   ret[((m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],        ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2) + ret.Length) % ret.Length],             ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((k) + ret.Length) % ret.Length],                   ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length]
                 );
 
                 x[(i*m3+m2-1)*m2+k] = blend_112 ( r, t,
-                    ret[(m2-1)*m2],           ret[(m2-1)*m2+m3-1],
-                    ret[((m1-1)*m3+m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[(i*m3+m2-1)*m2],      ret[(i*m3+m2-1)*m2+m3-1],
-                    ret[(m2-1)*m2+k],         ret[((m1-1)*m3+m2-1)*m2+k]
+                    ret[(((m2-1)*m2) + ret.Length) % ret.Length],           ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m2-1)*m2+k) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
             }
         }
@@ -997,17 +997,17 @@ public static class Blend
                 double s = j / ( double ) ( m2 - 1 );
 
                 ret[(i*m3+j)*m2] = blend_112 ( r, s,
-                    ret[0],            ret[(m2-1)*m2],
-                    ret[(m1-1)*m3*m2], ret[((m1-1)*m3+m2-1)*m2],
-                    ret[i*m3*m2],      ret[(i*m3+m2-1)*m2],
-                    ret[j*m2],         ret[((m1-1)*m3+j)*m2]
+                    ret[0],            ret[(((m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[((j*m2) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length]
                 );
 
                 ret[(i*m3+j)*m2+m3-1] = blend_112 ( r, s,
-                    ret[m3-1],              ret[(m2-1)*m2+m3-1],
-                    ret[(m1-1)*m3*m2+m3-1], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[i*m3*m2+m3-1],      ret[(i*m3+m2-1)*m2+m3-1],
-                    ret[j*m2+m3-1],         ret[((m1-1)*m3+j)*m2+m3-1]
+                    ret[((m3-1) + ret.Length) % ret.Length],              ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((j*m2+m3-1) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length]
                 );
             }
         }
@@ -1023,20 +1023,20 @@ public static class Blend
                 for (int k = 1; k < m3 - 1; k++ )
                 {
                     double t = k / ( double ) ( m3 - 1 );
-                    ret[(i*m3+j)*m2+k] = blend_123 ( r, s, t,
-                        ret[0],                    ret[m3-1],
-                        ret[(m2-1)*m2],            ret[(m2-1)*m2+m3-1],
-                        ret[(m1-1)*m3*m2],         ret[(m1-1)*m3*m2+m3-1],
-                        ret[((m1-1)*m3+m2-1)*m2],  ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                        ret[i*m3*m2],              ret[i*m3*m2+m3-1],
-                        ret[(i*m3+m2-1)*m2],       ret[(i*m3+m2-1)*m2+m3-1],
-                        ret[j*m2],                 ret[j*m2+m3-1],
-                        ret[((m1-1)*m3+j)*m2],     ret[((m1-1)*m3+j)*m2+m3-1],
-                        ret[k],                    ret[(m2-1)*m2+k],
-                        ret[(m1-1)*m3*m2+k],       ret[((m1-1)*m3+m2-1)*m2+k],
-                        ret[j*m3+k],               ret[((m1-1)*m3+j)*m2+k],
-                        ret[i*m3*m2+k],            ret[(i*m3+m2-1)*m2+k],
-                        ret[(i*m3+j)*m2],          ret[(i*m3+j)*m2+m3-1]
+                    ret[(((i*m3+j)*m2+k) + ret.Length) % ret.Length] = blend_123 ( r, s, t,
+                        ret[0],                    ret[((m3-1) + ret.Length) % ret.Length],
+                        ret[(((m2-1)*m2) + ret.Length) % ret.Length],            ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],         ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length],  ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2) + ret.Length) % ret.Length],              ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],       ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((j*m2) + ret.Length) % ret.Length],                 ret[((j*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length],     ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((k) + ret.Length) % ret.Length],                    ret[(((m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length],       ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[((j*m3+k) + ret.Length) % ret.Length],               ret[((((m1-1)*m3+j)*m2+k) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2+k) + ret.Length) % ret.Length],            ret[(((i*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((i*m3+j)*m2) + ret.Length) % ret.Length],          ret[(((i*m3+j)*m2+m3-1) + ret.Length) % ret.Length]
                     );
                 }
             }
@@ -1129,18 +1129,18 @@ public static class Blend
             {
                 double t = k / ( double ) ( m3 - 1 );
 
-                ret[j*m2+k] = blend_112 ( s, t,
-                    ret[0],                   ret[m3-1],
-                    ret[(m2-1)*m2],           ret[(m2-1)*m2+m3-1],
-                    ret[j*m2],                ret[j*m2+m3-1],
-                    ret[k],                   ret[(m2-1)*m2+k]
+                ret[((j*m2+k) + ret.Length) % ret.Length] = blend_112 ( s, t,
+                    ret[0],                   ret[((m3-1) + ret.Length) % ret.Length],
+                    ret[(((m2-1)*m2) + ret.Length) % ret.Length],           ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((j*m2) + ret.Length) % ret.Length],                ret[((j*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((k) + ret.Length) % ret.Length],                   ret[(((m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
 
-                ret[((m1-1)*m3+j)*m2+k] = blend_112 ( s, t,
-                    ret[(m1-1)*m3*m2],        ret[(m1-1)*m3*m2+m3-1],
-                    ret[((m1-1)*m3+m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[((m1-1)*m3+j)*m2],    ret[((m1-1)*m3+j)*m2+m3-1],
-                    ret[(m1-1)*m3*m2+k],      ret[((m1-1)*m3+m2-1)*m2+k]
+                ret[((((m1-1)*m3+j)*m2+k) + ret.Length) % ret.Length] = blend_112 ( s, t,
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],        ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length],    ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length],      ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
             }
         }
@@ -1153,17 +1153,17 @@ public static class Blend
                 double t = k / ( double ) ( m3 - 1 );
 
                 ret[i*m3*m2+k] = blend_112 ( r, t,
-                    ret[0],                   ret[m3-1],
-                    ret[(m1-1)*m3*m2],        ret[(m1-1)*m3*m2+m3-1],
-                    ret[i*m3*m2],             ret[i*m3*m2+m3-1],
-                    ret[k],                   ret[(m1-1)*m3*m2+k]
+                    ret[((0) + ret.Length) % ret.Length],                   ret[((m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],        ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2) + ret.Length) % ret.Length],             ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((k) + ret.Length) % ret.Length],                   ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length]
                 );
 
-                ret[(i*m3+m2-1)*m2+k] = blend_112 ( r, t,
-                    ret[(m2-1)*m2],           ret[(m2-1)*m2+m3-1],
-                    ret[((m1-1)*m3+m2-1)*m2], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[(i*m3+m2-1)*m2],      ret[(i*m3+m2-1)*m2+m3-1],
-                    ret[(m2-1)*m2+k],         ret[((m1-1)*m3+m2-1)*m2+k]
+                ret[(((i*m3+m2-1)*m2+k) + ret.Length) % ret.Length] = blend_112 ( r, t,
+                    ret[(((m2-1)*m2) + ret.Length) % ret.Length],           ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m2-1)*m2+k) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length]
                 );
             }
         }
@@ -1175,18 +1175,18 @@ public static class Blend
             {
                 double s = j / ( double ) ( m2 - 1 );
 
-                ret[(i*m3+j)*m2] = blend_112 ( r, s,
-                    ret[0],            ret[(m2-1)*m2],
-                    ret[(m1-1)*m3*m2], ret[((m1-1)*m3+m2-1)*m2],
-                    ret[i*m3*m2],      ret[(i*m3+m2-1)*m2],
-                    ret[j*m2],         ret[((m1-1)*m3+j)*m2]
+                ret[(((i*m3+j)*m2) + ret.Length) % ret.Length] = blend_112 ( r, s,
+                    ret[0],            ret[(((m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],
+                    ret[((j*m2) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length]
                 );
 
                 ret[(i*m3+j)*m2+m3-1] = blend_112 ( r, s,
-                    ret[m3-1],              ret[(m2-1)*m2+m3-1],
-                    ret[(m1-1)*m3*m2+m3-1], ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                    ret[i*m3*m2+m3-1],      ret[(i*m3+m2-1)*m2+m3-1],
-                    ret[j*m2+m3-1],         ret[((m1-1)*m3+j)*m2+m3-1]
+                    ret[((m3-1) + ret.Length) % ret.Length],              ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length], ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],      ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                    ret[((j*m2+m3-1) + ret.Length) % ret.Length],         ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length]
                 );
             }
         }
@@ -1202,20 +1202,20 @@ public static class Blend
                 for (int k = 1; k < m3 - 1; k++ )
                 {
                     double t = k / ( double ) ( m3 - 1 );
-                    ret[(i*m3+j)*m2+k] = blend_123 ( r, s, t,
-                        ret[0],                    ret[m3-1],
-                        ret[(m2-1)*m2],            ret[(m2-1)*m2+m3-1],
-                        ret[(m1-1)*m3*m2],         ret[(m1-1)*m3*m2+m3-1],
-                        ret[((m1-1)*m3+m2-1)*m2],  ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                        ret[i*m3*m2],              ret[i*m3*m2+m3-1],
-                        ret[(i*m3+m2-1)*m2],       ret[(i*m3+m2-1)*m2+m3-1],
-                        ret[j*m2],                 ret[j*m2+m3-1],
-                        ret[((m1-1)*m3+j)*m2],     ret[((m1-1)*m3+j)*m2+m3-1],
-                        ret[k],                    ret[(m2-1)*m2+k],
-                        ret[(m1-1)*m3*m2+k],       ret[((m1-1)*m3+m2-1)*m2+k],
-                        ret[j*m3+k],               ret[((m1-1)*m3+j)*m2+k],
-                        ret[i*m3*m2+k],            ret[(i*m3+m2-1)*m2+k],
-                        ret[(i*m3+j)*m2],          ret[(i*m3+j)*m2+m3-1]
+                    ret[(((i*m3+j)*m2+k) + ret.Length) % ret.Length] = blend_123 ( r, s, t,
+                        ret[0],                    ret[((m3-1) + ret.Length) % ret.Length],
+                        ret[(((m2-1)*m2) + ret.Length) % ret.Length],            ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],         ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length],  ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2) + ret.Length) % ret.Length],              ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],       ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((j*m2) + ret.Length) % ret.Length],                 ret[((j*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length],     ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((k) + ret.Length) % ret.Length],                    ret[(((m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length],       ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[((j*m3+k) + ret.Length) % ret.Length],               ret[((((m1-1)*m3+j)*m2+k) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2+k) + ret.Length) % ret.Length],            ret[(((i*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((i*m3+j)*m2) + ret.Length) % ret.Length],          ret[(((i*m3+j)*m2+m3-1) + ret.Length) % ret.Length]
                     );
 
                 }
@@ -1313,20 +1313,20 @@ public static class Blend
                 for (int k = 1; k < m3 - 1; k++ )
                 {
                     double t = k / ( double ) ( m3 - 1 );
-                    ret[(i*m3+j)*m2+k] = blend_123 ( r, s, t,
-                        ret[0],                    ret[m3-1],
-                        ret[(m2-1)*m2],            ret[(m2-1)*m2+m3-1],
-                        ret[(m1-1)*m3*m2],         ret[(m1-1)*m3*m2+m3-1],
-                        ret[((m1-1)*m3+m2-1)*m2],  ret[((m1-1)*m3+m2-1)*m2+m3-1],
-                        ret[i*m3*m2],              ret[i*m3*m2+m3-1],
-                        ret[(i*m3+m2-1)*m2],       ret[(i*m3+m2-1)*m2+m3-1],
-                        ret[j*m2],                 ret[j*m2+m3-1],
-                        ret[((m1-1)*m3+j)*m2],     ret[((m1-1)*m3+j)*m2+m3-1],
-                        ret[k],                    ret[(m2-1)*m2+k],
-                        ret[(m1-1)*m3*m2+k],       ret[((m1-1)*m3+m2-1)*m2+k],
-                        ret[j*m3+k],               ret[((m1-1)*m3+j)*m2+k],
-                        ret[i*m3*m2+k],            ret[(i*m3+m2-1)*m2+k],
-                        ret[(i*m3+j)*m2],          ret[(i*m3+j)*m2+m3-1]
+                    ret[(((i*m3+j)*m2+k) + ret.Length) % ret.Length] = blend_123 ( r, s, t,
+                        ret[0],                    ret[((m3-1) + ret.Length) % ret.Length],
+                        ret[(((m2-1)*m2) + ret.Length) % ret.Length],            ret[(((m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2) + ret.Length) % ret.Length],         ret[(((m1-1)*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+m2-1)*m2) + ret.Length) % ret.Length],  ret[((((m1-1)*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2) + ret.Length) % ret.Length],              ret[((i*m3*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[(((i*m3+m2-1)*m2) + ret.Length) % ret.Length],       ret[(((i*m3+m2-1)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((j*m2) + ret.Length) % ret.Length],                 ret[((j*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((((m1-1)*m3+j)*m2) + ret.Length) % ret.Length],     ret[((((m1-1)*m3+j)*m2+m3-1) + ret.Length) % ret.Length],
+                        ret[((k) + ret.Length) % ret.Length],                    ret[(((m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((m1-1)*m3*m2+k) + ret.Length) % ret.Length],       ret[((((m1-1)*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[((j*m3+k) + ret.Length) % ret.Length],               ret[((((m1-1)*m3+j)*m2+k) + ret.Length) % ret.Length],
+                        ret[((i*m3*m2+k) + ret.Length) % ret.Length],            ret[(((i*m3+m2-1)*m2+k) + ret.Length) % ret.Length],
+                        ret[(((i*m3+j)*m2) + ret.Length) % ret.Length],          ret[(((i*m3+j)*m2+m3-1) + ret.Length) % ret.Length]
                     );
 
                 }

@@ -735,7 +735,7 @@ public static partial class Algorithms
                         Console.WriteLine("  A(COMP,ELEM) < 0.");
                         Console.WriteLine("  COMP = " + comp_i + "");
                         Console.WriteLine("  ELEM = " + elem_i + "");
-                        Console.WriteLine("  A[COMP,ELEM] = " + a[((comp_i + elem_i * comp_max) + .Length) % a.Length] + "");
+                        Console.WriteLine("  A[COMP,ELEM] = " + a[((comp_i + elem_i * comp_max) + a.Length) % a.Length] + "");
                         break;
                 }
             }

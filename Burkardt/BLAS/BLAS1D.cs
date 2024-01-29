@@ -260,7 +260,7 @@ public static class BLAS1D
 
                 for (i = m; i < n; i += 7)
                 {
-                    dy[(yIndex + i) % dy.Length] = dx[(xIndex + i];
+                    dy[(yIndex + i) % dy.Length] = dx[((xIndex + i) + dx.Length) % dx.Length];
                     dy[(yIndex + i + 1) % dy.Length] = dx[(xIndex + i + 1) % dx.Length];
                     dy[(yIndex + i + 2) % dy.Length] = dx[(xIndex + i + 2) % dx.Length];
                     dy[(yIndex + i + 3) % dy.Length] = dx[(xIndex + i + 3) % dx.Length];
@@ -973,14 +973,14 @@ public static class BLAS1D
             {
                 s[((l - 1) + s.Length) % s.Length] = dnrm2(m - l + 1, a, 1, + l - 1 + (l - 1) * lda);
 
-                if (s[((l - 1 + s.Length) % s.Length] != 0.0)
+                if (s[((l - 1) + s.Length) % s.Length] != 0.0)
                 {
                     if (a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length] != 0.0)
                     {
                         s[((l - 1) + s.Length) % s.Length] = typeMethods.r8_sign(a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length]) * Math.Abs(s[((l - 1) + s.Length) % s.Length]);
                     }
 
-                    dscal(m - l + 1, 1.0 / s[((l - 1) + .Length) % .Length], ref a, 1, + l - 1 + (l - 1) * lda);
+                    dscal(m - l + 1, 1.0 / s[((l - 1) + s.Length) % s.Length], ref a, 1, + l - 1 + (l - 1) * lda);
                     a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length] = 1.0 + a[((l - 1 + (l - 1) * lda) + a.Length) % a.Length];
                 }
 
@@ -1041,25 +1041,25 @@ public static class BLAS1D
                     e[((l) + e.Length) % e.Length] = 1.0 + e[((l) + e.Length) % e.Length];
                 }
 
-                e[l - 1] = -e[l - 1];
+                e[((l - 1) + e.Length) % e.Length] = -e[((l - 1) + e.Length) % e.Length];
                 //
                 //  Apply the transformation.
                 //
-                if (l + 1 <= m && e[l - 1] != 0.0)
+                if (l + 1 <= m && e[((l - 1) + e.Length) % e.Length] != 0.0)
                 {
                     for (j = l + 1; j <= m; j++)
                     {
-                        work[j - 1] = 0.0;
+                        work[((j - 1) + work.Length) % work.Length] = 0.0;
                     }
 
                     for (j = l + 1; j <= n; j++)
                     {
-                        daxpy(m - l, e[j - 1], a, 1, ref work, 1, + l + (j - 1) * lda, + l);
+                        daxpy(m - l, e[((j - 1) + e.Length) % e.Length], a, 1, ref work, 1, + l + (j - 1) * lda, + l);
                     }
 
                     for (j = l + 1; j <= n; j++)
                     {
-                        daxpy(m - l, -e[j - 1] / e[l], work, 1, ref a, 1, + l, + l + (j - 1) * lda);
+                        daxpy(m - l, -e[((j - 1) + e.Length) % e.Length] / e[((l) + e.Length) % e.Length], work, 1, ref a, 1, + l, + l + (j - 1) * lda);
                     }
                 }
 
@@ -1072,7 +1072,7 @@ public static class BLAS1D
                     {
                         for (j = l + 1; j <= n; j++)
                         {
-                            v[j - 1 + (l - 1) * ldv] = e[j - 1];
+                            v[((j - 1 + (l - 1) * ldv) + v.Length) % v.Length] = e[((j - 1) + e.Length) % e.Length];
                         }
 
                         break;
@@ -1090,20 +1090,20 @@ public static class BLAS1D
 
         if (nct < n)
         {
-            s[nctp1 - 1] = a[nctp1 - 1 + (nctp1 - 1) * lda];
+            s[((nctp1 - 1) + s.Length) % s.Length] = a[((nctp1 - 1 + (nctp1 - 1) * lda) + a.Length) % a.Length];
         }
 
         if (m < mn)
         {
-            s[mn - 1] = 0.0;
+            s[((mn - 1) + s.Length) % s.Length] = 0.0;
         }
 
         if (nrtp1 < mn)
         {
-            e[nrtp1 - 1] = a[nrtp1 - 1 + (mn - 1) * lda];
+            e[((nrtp1 - 1) + e.Length) % e.Length] = a[((nrtp1 - 1 + (mn - 1) * lda) + a.Length) % a.Length];
         }
 
-        e[mn - 1] = 0.0;
+        e[((mn - 1) + e.Length) % e.Length] = 0.0;
         switch (wantu)
         {
             //
@@ -1115,25 +1115,25 @@ public static class BLAS1D
                 {
                     for (j = nctp1; j <= ncu; j++)
                     {
-                        u[i - 1 + (j - 1) * ldu] = 0.0;
+                        u[((i - 1 + (j - 1) * ldu) + u.Length) % u.Length] = 0.0;
                     }
                 }
 
                 for (j = nctp1; j <= ncu; j++)
                 {
-                    u[j - 1 + (j - 1) * ldu] = 1.0;
+                    u[((j - 1 + (j - 1) * ldu) + u.Length) % u.Length] = 1.0;
                 }
 
                 for (ll = 1; ll <= nct; ll++)
                 {
                     l = nct - ll + 1;
 
-                    if (s[l - 1] != 0.0)
+                    if (s[((l - 1) + s.Length) % s.Length] != 0.0)
                     {
                         for (j = l + 1; j <= ncu; j++)
                         {
                             t = -ddot(m - l + 1, u, 1, u, 1, + (l - 1) + (l - 1) * ldu, + (l - 1) + (j - 1) * ldu)
-                                / u[l - 1 + (l - 1) * ldu];
+                                / u[((l - 1 + (l - 1) * ldu) + u.Length) % u.Length];
                             daxpy(m - l + 1, t, u, 1, ref u, 1, + (l - 1) + (l - 1) * ldu, + (l - 1) + (j - 1) * ldu);
                         }
 
@@ -1148,10 +1148,10 @@ public static class BLAS1D
                     {
                         for (i = 1; i <= m; i++)
                         {
-                            u[i - 1 + (l - 1) * ldu] = 0.0;
+                            u[((i - 1 + (l - 1) * ldu) + u.Length) % u.Length] = 0.0;
                         }
 
-                        u[l - 1 + (l - 1) * ldu] = 1.0;
+                        u[((l - 1 + (l - 1) * ldu) + u.Length) % u.Length] = 1.0;
                     }
                 }
 
@@ -1170,7 +1170,7 @@ public static class BLAS1D
                 {
                     l = n - ll + 1;
 
-                    if (l <= nrt && e[l - 1] != 0.0)
+                    if (l <= nrt && e[((l - 1) + e.Length) % e.Length] != 0.0)
                     {
                         for (j = l + 1; j <= n; j++)
                         {
@@ -1233,15 +1233,15 @@ public static class BLAS1D
                     break;
                 }
 
-                test = Math.Abs(s[l - 1]) + Math.Abs(s[l]);
-                ztest = test + Math.Abs(e[l - 1]);
+                test = Math.Abs(s[((l - 1) + s.Length) % s.Length]) + Math.Abs(s[((l) + s.Length) % s.Length]);
+                ztest = test + Math.Abs(e[((l - 1) + e.Length) % e.Length]);
 
                 if (!(Math.Abs(ztest - test) <= typeMethods.r8_epsilon()))
                 {
                     continue;
                 }
 
-                e[l - 1] = 0.0;
+                e[((l - 1) + e.Length) % e.Length] = 0.0;
                 break;
             }
 
@@ -1265,22 +1265,22 @@ public static class BLAS1D
                     test = 0.0;
                     if (ls != mn)
                     {
-                        test += Math.Abs(e[ls - 1]);
+                        test += Math.Abs(e[((ls - 1) + e.Length) % e.Length]);
                     }
 
                     if (ls != l + 1)
                     {
-                        test += Math.Abs(e[ls - 2]);
+                        test += Math.Abs(e[((ls - 2) + e.Length) % e.Length]);
                     }
 
-                    ztest = test + Math.Abs(s[ls - 1]);
+                    ztest = test + Math.Abs(s[((ls - 1) + s.Length) % s.Length]);
 
                     if (!(Math.Abs(ztest - test) <= typeMethods.r8_epsilon()))
                     {
                         continue;
                     }
 
-                    s[ls - 1] = 0.0;
+                    s[((ls - 1) + s.Length) % s.Length] = 0.0;
                     break;
 
                 }
@@ -1313,21 +1313,21 @@ public static class BLAS1D
                 case 1:
                 {
                     mm1 = mn - 1;
-                    f = e[mn - 2];
-                    e[mn - 2] = 0.0;
+                    f = e[((mn - 2) + e.Length) % e.Length];
+                    e[((mn - 2) + e.Length) % e.Length] = 0.0;
 
                     int kk = 0;
                     for (kk = 1; kk <= mm1; kk++)
                     {
                         k = mm1 - kk + l;
-                        t1 = s[k - 1];
+                        t1 = s[((k - 1) + s.Length) % s.Length];
                         drotg(ref t1, ref f, ref cs, ref sn);
                         s[k - 1] = t1;
 
                         if (k != l)
                         {
-                            f = -sn * e[k - 2];
-                            e[k - 2] = cs * e[k - 2];
+                            f = -sn * e[((k - 2) + e.Length) % e.Length];
+                            e[((k - 2) + e.Length) % e.Length] = cs * e[((k - 2) + e.Length) % e.Length];
                         }
 
                         switch (wantv)
@@ -1345,16 +1345,16 @@ public static class BLAS1D
                 //
                 case 2:
                 {
-                    f = e[l - 2];
-                    e[l - 2] = 0.0;
+                    f = e[((l - 2) + e.Length) % e.Length];
+                    e[((l - 2) + e.Length) % e.Length] = 0.0;
 
                     for (k = l; k <= mn; k++)
                     {
-                        t1 = s[k - 1];
+                        t1 = s[((k - 1) + s.Length) % s.Length];
                         drotg(ref t1, ref f, ref cs, ref sn);
-                        s[k - 1] = t1;
-                        f = -sn * e[k - 1];
-                        e[k - 1] = cs * e[k - 1];
+                        s[((k - 1) + s.Length) % s.Length] = t1;
+                        f = -sn * e[((k - 1) + e.Length) % e.Length];
+                        e[((k - 1) + e.Length) % e.Length] = cs * e[((k - 1) + e.Length) % e.Length];
                         switch (wantu)
                         {
                             case true:
@@ -1373,16 +1373,16 @@ public static class BLAS1D
                     //
                     //  Calculate the shift.
                     //
-                    double scale = Math.Max(Math.Abs(s[mn - 1]),
-                        Math.Max(Math.Abs(s[mn - 2]),
-                            Math.Max(Math.Abs(e[mn - 2]),
-                                Math.Max(Math.Abs(s[l - 1]), Math.Abs(e[l - 1])))));
+                    double scale = Math.Max(Math.Abs(s[((mn - 1) + s.Length) % s.Length]),
+                        Math.Max(Math.Abs(s[((mn - 2) + s.Length) % s.Length]),
+                            Math.Max(Math.Abs(e[((mn - 2) + e.Length) % e.Length]),
+                                Math.Max(Math.Abs(s[((l - 1) + s.Length) % s.Length]), Math.Abs(e[((l - 1) + e.Length) % e.Length])))));
 
-                    double sm = s[mn - 1] / scale;
-                    double smm1 = s[mn - 2] / scale;
-                    double emm1 = e[mn - 2] / scale;
-                    double sl = s[l - 1] / scale;
-                    double el = e[l - 1] / scale;
+                    double sm = s[((mn - 1) + s.Length) % s.Length] / scale;
+                    double smm1 = s[((mn - 2) + s.Length) % s.Length] / scale;
+                    double emm1 = e[((mn - 2) + e.Length) % e.Length] / scale;
+                    double sl = s[((l - 1) + s.Length) % s.Length] / scale;
+                    double el = e[((l - 1) + e.Length) % e.Length] / scale;
                     double b = ((smm1 + sm) * (smm1 - sm) + emm1 * emm1) / 2.0;
                     double c = sm * emm1 * (sm * emm1);
                     double shift = 0.0;
@@ -1411,13 +1411,13 @@ public static class BLAS1D
 
                         if (k != l)
                         {
-                            e[k - 2] = f;
+                            e[((k - 2) + e.Length) % e.Length] = f;
                         }
 
-                        f = cs * s[k - 1] + sn * e[k - 1];
-                        e[k - 1] = cs * e[k - 1] - sn * s[k - 1];
-                        g = sn * s[k];
-                        s[k] = cs * s[k];
+                        f = cs * s[((k - 1) + s.Length) % s.Length] + sn * e[((k - 1) + e.Length) % e.Length];
+                        e[((k - 1) + e.Length) % e.Length] = cs * e[((k - 1) + e.Length) % e.Length] - sn * s[((k - 1) + s.Length) % s.Length];
+                        g = sn * s[((k) + s.Length) % s.Length];
+                        s[((k) + s.Length) % s.Length] = cs * s[((k) + s.Length) % s.Length];
 
                         switch (wantv)
                         {
@@ -1427,11 +1427,11 @@ public static class BLAS1D
                         }
 
                         drotg(ref f, ref g, ref cs, ref sn);
-                        s[k - 1] = f;
-                        f = cs * e[k - 1] + sn * s[k];
-                        s[k] = -sn * e[k - 1] + cs * s[k];
-                        g = sn * e[k];
-                        e[k] = cs * e[k];
+                        s[((k - 1) + s.Length) % s.Length] = f;
+                        f = cs * e[((k - 1) + e.Length) % e.Length] + sn * s[((k) + s.Length) % s.Length];
+                        s[((k) + s.Length) % s.Length] = -sn * e[((k - 1) + e.Length) % e.Length] + cs * s[((k) + s.Length) % s.Length];
+                        g = sn * e[((k) + e.Length) % e.Length];
+                        e[((k) + e.Length) % e.Length] = cs * e[((k) +e .Length) % e.Length];
 
                         switch (wantu)
                         {
@@ -1450,14 +1450,14 @@ public static class BLAS1D
                 //
                 case 4:
                 {
-                    switch (s[l - 1])
+                    switch (s[((l - 1) + s.Length) % s.Length])
                     {
                         //
                         //  Make the singular value nonnegative.
                         //
                         case < 0.0:
                         {
-                            s[l - 1] = -s[l - 1];
+                            s[((l - 1) + s.Length) % s.Length] = -s[((l - 1) + s.Length) % s.Length];
                             switch (wantv)
                             {
                                 case true:
@@ -1479,14 +1479,14 @@ public static class BLAS1D
                             break;
                         }
 
-                        if (s[l] <= s[l - 1])
+                        if (s[((l) + s.Length) % s.Length] <= s[((l - 1) + s.Length) % s.Length])
                         {
                             break;
                         }
 
-                        t = s[l - 1];
-                        s[l - 1] = s[l];
-                        s[l] = t;
+                        t = s[((l - 1) + s.Length) % s.Length];
+                        s[((l - 1) + s.Length) % s.Length] = s[((l) + s.Length) % s.Length];
+                        s[((l) + s.Length) % s.Length] = t;
 
                         switch (wantv)
                         {
@@ -1581,24 +1581,24 @@ public static class BLAS1D
 
                         for (i = 0; i < m; i++)
                         {
-                            temp = x[i + xIndex];
-                            x[i + xIndex] = y[i + yIndex];
-                            y[i + yIndex] = temp;
+                            temp = x[((i + xIndex) + x.Length) % x.Length];
+                            x[((i + xIndex) + x.Length) % x.Length] = y[((i + yIndex) + y.Length) % y.Length];
+                            y[((i + yIndex) + y.Length) % y.Length] = temp;
                         }
 
                         for (i = m; i < n; i += 3)
                         {
-                            temp = x[i + xIndex];
-                            x[i + xIndex] = y[i + yIndex];
-                            y[i + yIndex] = temp;
+                            temp = x[((i + xIndex) + x.Length) % x.Length];
+                            x[((i + xIndex) + x.Length) % x.Length] = y[((i + yIndex) + y.Length) % y.Length];
+                            y[((i + yIndex) + y.Length) % y.Length] = temp;
 
-                            temp = x[i + 1 + xIndex];
-                            x[i + 1 + xIndex] = y[i + 1 + yIndex];
-                            y[i + 1 + yIndex] = temp;
+                            temp = x[((i + 1 + xIndex) + x.Length) % x.Length];
+                            x[((i + 1 + xIndex) + x.Length) % x.Length] = y[((i + 1 + yIndex) + y.Length) % y.Length];
+                            y[((i + 1 + yIndex) + y.Length) % y.Length] = temp;
 
-                            temp = x[i + 2 + xIndex];
-                            x[i + 2 + xIndex] = y[i + 2 + yIndex];
-                            y[i + 2 + yIndex] = temp;
+                            temp = x[((i + 2 + xIndex) + x.Length) % x.Length];
+                            x[((i + 2 + xIndex) + x.Length) % x.Length] = y[((i + 2 + yIndex) + y.Length) % y.Length];
+                            y[((i + 2 + yIndex) + y.Length) % y.Length] = temp;
                         }
 
                         break;
@@ -1619,9 +1619,9 @@ public static class BLAS1D
 
                         for (i = 0; i < n; i++)
                         {
-                            temp = x[ix + xIndex];
-                            x[ix + xIndex] = y[iy + yIndex];
-                            y[iy + yIndex] = temp;
+                            temp = x[((ix + xIndex) + x.Length) % x.Length];
+                            x[((ix + xIndex) + x.Length) % x.Length] = y[((iy + yIndex) + y.Length) % y.Length];
+                            y[((iy + yIndex) + y.Length) % y.Length] = temp;
                             ix += incx;
                             iy += incy;
                         }
@@ -1709,17 +1709,17 @@ public static class BLAS1D
         {
             case 1:
             {
-                dmax = Math.Abs(dx[0 + index]);
+                dmax = Math.Abs(dx[((0 + index) + dx.Length) % dx.Length]);
 
                 for (i = 1; i < n; i++)
                 {
-                    if (!(dmax < Math.Abs(dx[i + index])))
+                    if (!(dmax < Math.Abs(dx[((i + index) + dx.Length) % dx.Length])))
                     {
                         continue;
                     }
 
                     value = i + 1;
-                    dmax = Math.Abs(dx[i + index]);
+                    dmax = Math.Abs(dx[((i + index) + dx.Length) % dx.Length]);
                 }
 
                 break;
@@ -1727,15 +1727,15 @@ public static class BLAS1D
             default:
             {
                 int ix = 0;
-                dmax = Math.Abs(dx[0 + index]);
+                dmax = Math.Abs(dx[((0 + index) + dx.Length) % dx.Length]);
                 ix += incx;
 
                 for (i = 1; i < n; i++)
                 {
-                    if (dmax < Math.Abs(dx[ix + index]))
+                    if (dmax < Math.Abs(dx[((ix + index) + dx.Length) % dx.Length]))
                     {
                         value = i + 1;
-                        dmax = Math.Abs(dx[ix + index]);
+                        dmax = Math.Abs(dx[((ix + index) + dx.Length) % dx.Length]);
                     }
 
                     ix += incx;

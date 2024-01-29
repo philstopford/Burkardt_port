@@ -352,8 +352,8 @@ public static partial class Algorithms
 //
         for (i = 1; i <= nrow; i++)
         {
-            rsort[(i - 1) % rsort.Length] = i;
-            csort[(i - 1) % csort.Length] = i;
+            rsort[((i - 1) + rsort.Length) % rsort.Length] = i;
+            csort[((i - 1) + csort.Length)  % csort.Length] = i;
         }
 
 //
@@ -365,16 +365,16 @@ public static partial class Algorithms
 //  Find the next row.
 //
             jrc = irc;
-            p = rmod[(irc - 1) % rmod.Length];
+            p = rmod[((irc - 1) + rmod.Length) % rmod.Length];
 
             for (i = irc + 1; i <= nrow; i++)
             {
-                if (rmod[(i - 1) % rmod.Length] >= p)
+                if (rmod[((i - 1) + rmod.Length) % rmod.Length] >= p)
                 {
                     continue;
                 }
 
-                p = rmod[(i - 1) % rmod.Length];
+                p = rmod[((i - 1) + rmod.Length) % rmod.Length];
                 jrc = i;
             }
 
@@ -383,13 +383,13 @@ public static partial class Algorithms
                 continue;
             }
 
-            i = rmod[(irc - 1) % rmod.Length];
-            rmod[(irc - 1) % rmod.Length] = rmod[(jrc - 1) % rmod.Length];
-            rmod[(jrc - 1) % rmod.Length] = i;
+            i = rmod[((irc - 1) + rmod.Length) % rmod.Length];
+            rmod[((irc - 1) + rmod.Length) % rmod.Length] = rmod[((jrc - 1) + rmod.Length) % rmod.Length];
+            rmod[((jrc - 1) + rmod.Length) % rmod.Length] = i;
 
-            i = rsort[(irc - 1) % rsort.Length];
-            rsort[(irc - 1) % rsort.Length] = rsort[(jrc - 1) % rsort.Length];
-            rsort[(jrc - 1) % rsort.Length] = i;
+            i = rsort[((irc - 1) + rsort.Length) % rsort.Length];
+            rsort[((irc - 1) + rsort.Length) % rsort.Length] = rsort[((jrc - 1) + rsort.Length) % rsort.Length];
+            rsort[((jrc - 1) + rsort.Length) % rsort.Length] = i;
 //
 //  Switch the rows.
 //
@@ -398,9 +398,9 @@ public static partial class Algorithms
 
             for (j = 1; j <= nrow; j++)
             {
-                i = mat[(kirc + j - 1) % mat.Length];
-                mat[(kirc + j - 1) % mat.Length] = mat[(kjrc + j - 1) % mat.Length];
-                mat[(kjrc + j - 1) % mat.Length] = i;
+                i = mat[((kirc + j - 1) + mat.Length) % mat.Length];
+                mat[((kirc + j - 1) + mat.Length) % mat.Length] = mat[((kjrc + j - 1) + mat.Length) % mat.Length];
+                mat[((kjrc + j - 1) + mat.Length) % mat.Length] = i;
             }
         }
 

@@ -379,7 +379,7 @@ public static class BLAS1Z
 
             for (i = 0; i < n; i++)
             {
-                cy[yIndex + iy] += ca * cx[xIndex + ix];
+                cy[((yIndex + iy) + cy.Length) % cy.Length] += ca * cx[((xIndex + ix) + cx.Length) % cx.Length];
                 ix += incx;
                 iy += incy;
             }
@@ -388,7 +388,7 @@ public static class BLAS1Z
         {
             for (i = 0; i < n; i++)
             {
-                cy[yIndex + i] += ca * cx[xIndex + i];
+                cy[((yIndex + i) + cy.Length) % cy.Length] += ca * cx[((xIndex + i) + cx.Length) % cx.Length];
             }
 
         }
@@ -468,7 +468,7 @@ public static class BLAS1Z
 
             for (i = 0; i < n; i++)
             {
-                cy[iy] = cx[ix];
+                cy[((iy) + cy.Length) % cy.Length] = cx[((ix) + cx.Length) % cx.Length];
                 ix += incx;
                 iy += incy;
             }
@@ -477,7 +477,7 @@ public static class BLAS1Z
         {
             for (i = 0; i < n; i++)
             {
-                cy[i] = cx[i];
+                cy[((i) + cy.Length) % cy.Length] = cx[((i) + cx.Length) % cx.Length];
             }
         }
     }
@@ -551,7 +551,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    value += Complex.Conjugate(cx[(xIndex + i) % cx.Length]) * cy[(yIndex + i) % cy.Length];
+                    value += Complex.Conjugate(cx[((xIndex + i) + cx.Length) % cx.Length]) * cy[((yIndex + i) + cy.Length) % cy.Length];
                 }
 
                 break;
@@ -572,7 +572,7 @@ public static class BLAS1Z
 
                 for (i = 0; i < n; i++)
                 {
-                    value += Complex.Conjugate(cx[(xIndex + ix) % cx.Length]) * cy[(yIndex + iy) % cy.Length];
+                    value += Complex.Conjugate(cx[((xIndex + ix) + cx.Length) % cx.Length]) * cy[((yIndex + iy) + cy.Length) % cy.Length];
                     ix += incx;
                     iy += incy;
                 }
@@ -653,7 +653,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    value += cx[xIndex + i] * cy[yIndex + i];
+                    value += cx[((xIndex + i) + cx.Length) % cx.Length] * cy[((yIndex + i) + cy.Length) % cy.Length];
                 }
 
                 break;
@@ -674,7 +674,7 @@ public static class BLAS1Z
 
                 for (i = 0; i < n; i++)
                 {
-                    value += cx[xIndex + ix] * cy[yIndex + iy];
+                    value += cx[((xIndex + ix) + cx.Length) % cx.Length] * cy[((yIndex + iy) + cy.Length) % cy.Length];
                     ix += incx;
                     iy += incy;
                 }
@@ -756,9 +756,9 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    ctemp = c * cx[xIndex + i] + s * cy[yIndex + i];
-                    cy[yIndex + i] = c * cy[yIndex + i] - s * cx[xIndex + i];
-                    cx[xIndex + i] = ctemp;
+                    ctemp = c * cx[((xIndex + i) + cx.Length) % cx.Length] + s * cy[((yIndex + i) + cy.Length) % cy.Length];
+                    cy[((yIndex + i) + cy.Length) % cy.Length] = c * cy[((yIndex + i) + cy.Length) % cy.Length] - s * cx[((xIndex + i) + cx.Length) % cx.Length];
+                    cx[((xIndex + i) + cx.Length) % cx.Length] = ctemp;
                 }
 
                 break;
@@ -779,9 +779,9 @@ public static class BLAS1Z
 
                 for (i = 0; i < n; i++)
                 {
-                    ctemp = c * cx[xIndex + ix] + s * cy[yIndex + iy];
-                    cy[yIndex + iy] = c * cy[yIndex + iy] - s * cx[xIndex + ix];
-                    cx[xIndex + ix] = ctemp;
+                    ctemp = c * cx[((xIndex + ix) + cx.Length) % cx.Length] + s * cy[((yIndex + iy) + cy.Length) % cy.Length];
+                    cy[((yIndex + iy) + cy.Length) % cy.Length] = c * cy[((yIndex + iy) + cy.Length) % cy.Length] - s * cx[((xIndex + ix) + cx.Length) % cx.Length];
+                    cx[((xIndex + ix) + cx.Length) % cx.Length] = ctemp;
                     ix += incx;
                     iy += incy;
                 }
@@ -854,7 +854,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    cx[i] = sa * cx[i];
+                    cx[((i) + cx.Length) % cx.Length] = sa * cx[((i) + cx.Length) % cx.Length];
                 }
 
                 break;
@@ -863,7 +863,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    cx[i * incx] = sa * cx[i * incx];
+                    cx[((i * incx) + cx.Length) % cx.Length] = sa * cx[((i * incx) + cx.Length) % cx.Length];
                 }
 
                 break;
@@ -1018,7 +1018,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    cx[index + i] = ca * cx[index + i];
+                    cx[((index + i) + cx.Length) % cx.Length] = ca * cx[((index + i) + cx.Length) % cx.Length];
                 }
 
                 break;
@@ -1027,7 +1027,7 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    cx[index + i * incx] = ca * cx[index + i * incx];
+                    cx[((index + i * incx) + cx.Length) % cx.Length] = ca * cx[((index + i * incx) + cx.Length) % cx.Length];
                 }
 
                 break;
@@ -1100,9 +1100,9 @@ public static class BLAS1Z
             {
                 for (i = 0; i < n; i++)
                 {
-                    ctemp = cx[xIndex + i];
-                    cx[xIndex + i] = cy[yIndex + i];
-                    cy[yIndex + i] = ctemp;
+                    ctemp = cx[((xIndex + i) + cx.Length) % cx.Length];
+                    cx[((xIndex + i) + cx.Length) % cx.Length] = cy[((yIndex + i) + cy.Length) % cy.Length];
+                    cy[((yIndex + i) + cy.Length) % cy.Length] = ctemp;
                 }
 
                 break;
@@ -1123,9 +1123,9 @@ public static class BLAS1Z
 
                 for (i = 0; i < n; i++)
                 {
-                    ctemp = cx[xIndex + ix];
-                    cx[xIndex + ix] = cy[yIndex + iy];
-                    cy[yIndex + iy] = ctemp;
+                    ctemp = cx[((xIndex + ix) + cx.Length) % cx.Length];
+                    cx[((xIndex + ix) + cx.Length) % cx.Length] = cy[((yIndex + iy) + cy.Length) % cy.Length];
+                    cy[((yIndex + iy) + cy.Length) % cy.Length] = ctemp;
                     ix += incx;
                     iy += incy;
                 }

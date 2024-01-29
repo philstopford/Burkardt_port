@@ -197,7 +197,7 @@ public static class BLAS2D
                 {
                     for (i = 0; i < leny; i++)
                     {
-                        y[i] = 0.0;
+                        y[((i) + y.Length) % y.Length] = 0.0;
                     }
 
                     break;
@@ -206,7 +206,7 @@ public static class BLAS2D
                 {
                     for (i = 0; i < leny; i++)
                     {
-                        y[i] = beta * y[i];
+                        y[((i) + y.Length) % y.Length] = beta * y[((i) + y.Length) % y.Length];
                     }
 
                     break;
@@ -220,7 +220,7 @@ public static class BLAS2D
                         {
                             for (i = 0; i < leny; i++)
                             {
-                                y[iy] = 0.0;
+                                y[((iy) + y.Length) % y.Length] = 0.0;
                                 iy += incy;
                             }
 
@@ -230,7 +230,7 @@ public static class BLAS2D
                         {
                             for (i = 0; i < leny; i++)
                             {
-                                y[iy] = beta * y[iy];
+                                y[((iy) + y.Length) % y.Length] = beta * y[((iy) + y.Length) % y.Length];
                                 iy += incy;
                             }
 
@@ -263,12 +263,12 @@ public static class BLAS2D
                     {
                         for (j = 0; j < n; j++)
                         {
-                            if (x[jx] != 0.0)
+                            if (x[((jx) + x.Length) % x.Length] != 0.0)
                             {
-                                temp = alpha * x[jx];
+                                temp = alpha * x[((jx) + x.Length) % x.Length];
                                 for (i = 0; i < m; i++)
                                 {
-                                    y[i] += temp * a[i + j * lda];
+                                    y[((i) + y.Length) % y.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                                 }
                             }
 
@@ -283,11 +283,11 @@ public static class BLAS2D
                         {
                             if (x[jx] != 0.0)
                             {
-                                temp = alpha * x[jx];
+                                temp = alpha * x[((jx) + x.Length) % x.Length];
                                 iy = ky;
                                 for (i = 0; i < m; i++)
                                 {
-                                    y[iy] += temp * a[i + j * lda];
+                                    y[((iy) + y.Length) % y.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                                     iy += incy;
                                 }
                             }
@@ -316,10 +316,10 @@ public static class BLAS2D
                             temp = 0.0;
                             for (i = 0; i < m; i++)
                             {
-                                temp += a[i + j * lda] * x[i];
+                                temp += a[((i + j * lda) + a.Length) % a.Length] * x[((i) + x.Length) % x.Length];
                             }
 
-                            y[jy] += alpha * temp;
+                            y[((jy) + y.Length) % y.Length] += alpha * temp;
                             jy += incy;
                         }
 
@@ -333,11 +333,11 @@ public static class BLAS2D
                             int ix = kx;
                             for (i = 0; i < m; i++)
                             {
-                                temp += a[i + j * lda] * x[ix];
+                                temp += a[((i + j * lda) + a.Length) % a.Length] * x[((ix) + x.Length) % x.Length];
                                 ix += incx;
                             }
 
-                            y[jy] += alpha * temp;
+                            y[((jy) + y.Length) % y.Length] += alpha * temp;
                             jy += incy;
                         }
 
@@ -496,12 +496,12 @@ public static class BLAS2D
             {
                 for (j = 0; j < n; j++)
                 {
-                    if (y[jy] != 0.0)
+                    if (y[((jy) + y.Length) % y.Length] != 0.0)
                     {
-                        temp = alpha * y[jy];
+                        temp = alpha * y[((jy) + y.Length) % y.Length];
                         for (i = 0; i < m; i++)
                         {
-                            a[i + j * lda] += x[i] * temp;
+                            a[((i + j * lda) + a.Length) % a.Length] += x[((i) + x.Length) % x.Length] * temp;
                         }
                     }
 
@@ -520,13 +520,13 @@ public static class BLAS2D
 
                 for (j = 0; j < n; j++)
                 {
-                    if (y[jy] != 0.0)
+                    if (y[((jy) + y.Length) % y.Length] != 0.0)
                     {
-                        temp = alpha * y[jy];
+                        temp = alpha * y[((jy) + y.Length) % y.Length];
                         int ix = kx;
                         for (i = 0; i < m; i++)
                         {
-                            a[i + j * lda] += x[ix] * temp;
+                            a[((i + j * lda) + a.Length) % a.Length] += x[((ix) + x.Length) % x.Length] * temp;
                             ix += incx;
                         }
                     }
@@ -716,18 +716,18 @@ public static class BLAS2D
                     {
                         for (j = 0; j < n; j++)
                         {
-                            if (x[j] != 0.0)
+                            if (x[((j) + x.Length) % x.Length] != 0.0)
                             {
-                                temp = x[j];
+                                temp = x[((j) + x.Length) % x.Length];
                                 for (int i = 0; i < j; i++)
                                 {
-                                    x[i] += temp * a[i + j * lda];
+                                    x[((i) + x.Length) % x.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                                 }
 
                                 switch (nounit)
                                 {
                                     case true:
-                                        x[j] *= a[j + j * lda];
+                                        x[((j) + x.Length) % x.Length] *= a[((j + j * lda) + a.Length) % a.Length];
                                         break;
                                 }
                             }
@@ -740,20 +740,20 @@ public static class BLAS2D
                         jx = kx;
                         for (j = 0; j < n; j++)
                         {
-                            if (x[jx] != 0.0)
+                            if (x[((jx) + x.Length) % x.Length] != 0.0)
                             {
-                                temp = x[jx];
+                                temp = x[((jx) + x.Length) % x.Length];
                                 ix = kx;
                                 for (int i = 0; i < j; i++)
                                 {
-                                    x[ix] += temp * a[i + j * lda];
+                                    x[((ix) + x.Length) % x.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                                     ix += incx;
                                 }
 
                                 switch (nounit)
                                 {
                                     case true:
-                                        x[jx] *= a[j + j * lda];
+                                        x[((jx) + x.Length) % x.Length] *= a[((j + j * lda) + a.Length) % a.Length];
                                         break;
                                 }
                             }
@@ -771,18 +771,18 @@ public static class BLAS2D
             {
                 for (j = n - 1; 0 <= j; j--)
                 {
-                    if (x[j] != 0.0)
+                    if (x[((j) + x.Length) % x.Length] != 0.0)
                     {
-                        temp = x[j];
+                        temp = x[((j) + x.Length) % x.Length];
                         for (int i = n - 1; j < i; i--)
                         {
-                            x[i] += temp * a[i + j * lda];
+                            x[((i) + x.Length) % x.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                         }
 
                         switch (nounit)
                         {
                             case true:
-                                x[j] *= a[j + j * lda];
+                                x[((j) + x.Length) % x.Length] *= a[((j + j * lda) + a.Length) % a.Length];
                                 break;
                         }
                     }
@@ -796,20 +796,20 @@ public static class BLAS2D
                 jx = kx;
                 for (j = n - 1; 0 <= j; j--)
                 {
-                    if (x[jx] != 0.0)
+                    if (x[((jx) + x.Length) % x.Length] != 0.0)
                     {
-                        temp = x[jx];
+                        temp = x[((jx) + x.Length) % x.Length];
                         ix = kx;
                         for (int i = n - 1; j < i; i--)
                         {
-                            x[ix] += temp * a[i + j * lda];
+                            x[((ix) + x.Length) % x.Length] += temp * a[((i + j * lda) + a.Length) % a.Length];
                             ix -= incx;
                         }
 
                         switch (nounit)
                         {
                             case true:
-                                x[jx] *= a[j + j * lda];
+                                x[((jx) + x.Length) % x.Length] *= a[((j + j * lda) + a.Length) % a.Length];
                                 break;
                         }
                     }
@@ -828,20 +828,20 @@ public static class BLAS2D
                     {
                         for (j = n - 1; 0 <= j; j--)
                         {
-                            temp = x[j];
+                            temp = x[((j) + x.Length) % x.Length];
                             switch (nounit)
                             {
                                 case true:
-                                    temp *= a[j + j * lda];
+                                    temp *= a[((j + j * lda) + a.Length) % a.Length];
                                     break;
                             }
 
                             for (int i = j - 1; 0 <= i; i--)
                             {
-                                temp += a[i + j * lda] * x[i];
+                                temp += a[((i + j * lda) + a.Length) % a.Length] * x[((i) + x.Length) % x.Length];
                             }
 
-                            x[j] = temp;
+                            x[((j) + x.Length) % x.Length] = temp;
                         }
 
                         break;
@@ -851,22 +851,22 @@ public static class BLAS2D
                         jx = kx + (n - 1) * incx;
                         for (j = n - 1; 0 <= j; j--)
                         {
-                            temp = x[jx];
+                            temp = x[((jx) + x.Length) % x.Length];
                             ix = jx;
                             switch (nounit)
                             {
                                 case true:
-                                    temp *= a[j + j * lda];
+                                    temp *= a[((j + j * lda) + a.Length) % a.Length];
                                     break;
                             }
 
                             for (int i = j - 1; 0 <= i; i--)
                             {
                                 ix -= incx;
-                                temp += a[i + j * lda] * x[ix];
+                                temp += a[((i + j * lda) + a.Length) % a.Length] * x[((ix) + x.Length) % x.Length];
                             }
 
-                            x[jx] = temp;
+                            x[((jx) + x.Length) % x.Length] = temp;
                             jx -= incx;
                         }
 
@@ -880,20 +880,20 @@ public static class BLAS2D
                             {
                                 for (j = 0; j < n; j++)
                                 {
-                                    temp = x[j];
+                                    temp = x[((j) + x.Length) % x.Length];
                                     switch (nounit)
                                     {
                                         case true:
-                                            temp *= a[j + j * lda];
+                                            temp *= a[((j + j * lda) + a.Length) % a.Length];
                                             break;
                                     }
 
                                     for (int i = j + 1; i < n; i++)
                                     {
-                                        temp += a[i + j * lda] * x[i];
+                                        temp += a[((i + j * lda) + a.Length) % a.Length] * x[((i) + x.Length) % x.Length];
                                     }
 
-                                    x[j] = temp;
+                                    x[((j) + x.Length) % x.Length] = temp;
                                 }
 
                                 break;
@@ -903,22 +903,22 @@ public static class BLAS2D
                                 jx = kx;
                                 for (j = 0; j < n; j++)
                                 {
-                                    temp = x[jx];
+                                    temp = x[((jx) + x.Length) % x.Length];
                                     ix = jx;
                                     switch (nounit)
                                     {
                                         case true:
-                                            temp *= a[j + j * lda];
+                                            temp *= a[((j + j * lda) + a.Length) % a.Length];
                                             break;
                                     }
 
                                     for (int i = j + 1; i < n; i++)
                                     {
                                         ix += incx;
-                                        temp += a[i + j * lda] * x[ix];
+                                        temp += a[((i + j * lda) + a.Length) % a.Length] * x[((ix) + x.Length) % x.Length];
                                     }
 
-                                    x[jx] = temp;
+                                    x[((jx) + x.Length) % x.Length] = temp;
                                     jx += incx;
                                 }
 

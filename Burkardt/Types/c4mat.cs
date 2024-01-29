@@ -179,7 +179,7 @@ public static partial class typeMethods
             {
                 float angle = (float) (2.0 * Math.PI * (float) (i * j) / (float) n);
 
-                a[i + j * n] = Complex.Exp(I * angle) / Math.Sqrt((float) n);
+                a[((i + j * n) + a.Length) % a.Length] = Complex.Exp(I * angle) / Math.Sqrt((float) n);
             }
         }
 
@@ -219,9 +219,9 @@ public static partial class typeMethods
         {
             for (int i = 0; i < j; i++)
             {
-                Complex t = Complex.Conjugate(a[i + j * n]);
-                a[i + j * n] = Complex.Conjugate(a[j + i * n]);
-                a[j + i * n] = t;
+                Complex t = Complex.Conjugate(a[((i + j * n) + a.Length) % a.Length]);
+                a[((i + j * n) + a.Length) % a.Length] = Complex.Conjugate(a[((j + i * n) + a.Length) % a.Length]);
+                a[((j + i * n) + a.Length) % a.Length] = t;
             }
         }
 
