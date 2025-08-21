@@ -627,10 +627,10 @@ public static partial class typeMethods
 
         double det = 1.0;
 
-        for (i = 1; i <= n; i++)
+        for (i = 0; i < n; i++)
         {
-            det *= a_lu[i - 1 + (i - 1) * n];
-            if (pivot[i - 1] != i)
+            det *= a_lu[i + i * n];
+            if (pivot[i] != i + 1)
             {
                 det = -det;
             }
